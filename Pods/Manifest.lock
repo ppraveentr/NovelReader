@@ -1,4 +1,12 @@
 PODS:
+  - AppCenter (1.6.0):
+    - AppCenter/Analytics (= 1.6.0)
+    - AppCenter/Crashes (= 1.6.0)
+  - AppCenter/Analytics (1.6.0):
+    - AppCenter/Core
+  - AppCenter/Core (1.6.0)
+  - AppCenter/Crashes (1.6.0):
+    - AppCenter/Core
   - GoogleSignIn (4.0.2):
     - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
@@ -21,21 +29,24 @@ PODS:
     - GTMSessionFetcher/Core (= 1.1.11)
 
 DEPENDENCIES:
+  - AppCenter
   - GoogleSignIn
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - AppCenter
     - GoogleSignIn
     - GoogleToolboxForMac
     - GTMOAuth2
     - GTMSessionFetcher
 
 SPEC CHECKSUMS:
+  AppCenter: 05e11ff99d3224131363abb61830172f5f28e53e
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
 
-PODFILE CHECKSUM: bfb1b9d241aef642892a56486d1d24ccf6af59f1
+PODFILE CHECKSUM: e25d5d74fabaec015398cdf505f11fe30e458950
 
 COCOAPODS: 1.5.0

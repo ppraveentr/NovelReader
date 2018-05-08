@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
 
 class NRAppManager {
 
@@ -24,6 +27,11 @@ class NRAppManager {
 
         //Debug-only code
         self.configDebug()
+
+        MSAppCenter.start("6778a47c-7742-4dea-ace3-63c28b424350", withServices:[
+            MSAnalytics.self,
+            MSCrashes.self
+            ])
     }
 
     class func endpointURL() -> String {
