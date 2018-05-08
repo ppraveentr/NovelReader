@@ -1,0 +1,49 @@
+{
+    "NovelBase": {
+        "timeout": "60"
+    },
+    "fetchRecentUpdatesList": {
+        "super": "NovelBase",
+        "type": "GET",
+        "path": "novel/recentupdates",
+        "response": {
+            "arrayOf": "NRNovel"
+        }
+    },
+    "fetchNovelList": {
+        "super": "NovelBase",
+        "type": "GET",
+        "path": "novel/top-list",
+        "requestQuery": {
+            "type": "type",
+            "category": "category",
+            "state": "state",
+            "page": "page"
+        },
+        "response": {
+            "arrayOf": "NRNovel"
+        }
+    },
+    "fetchNovelChapters": {
+        "super": "NovelBase",
+        "type": "GET",
+        "path": "novel/chapters-list",
+        "requestQuery": {
+            "id": "identifier"
+        },
+        "response": {
+            "bindAs": "NRNovel"
+        }
+    },
+    "fetchChapter": {
+        "super": "NovelBase",
+        "type": "GET",
+        "path": "novel/chapter",
+        "requestQuery": {
+            "id": "identifier"
+        },
+        "response": {
+            "bindAs": "NRNovelChapter"
+        }
+    }
+}

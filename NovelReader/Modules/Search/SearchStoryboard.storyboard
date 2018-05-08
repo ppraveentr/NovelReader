@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Base Navigation Controller-->
+        <scene sceneID="xbU-UW-kpA">
+            <objects>
+                <navigationController storyboardIdentifier="kSearchStoryboardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RWB-y3-EKe" customClass="FTBaseNavigationController" customModule="FTMobileCoreUI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="Bhl-Xh-6kk"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4PQ-BF-gfs">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="29j-l3-Nca" kind="relationship" relationship="rootViewController" id="q48-wt-zAj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cq3-IA-vgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-215" y="-29"/>
+        </scene>
+        <!--Search Collection View Controller-->
+        <scene sceneID="chX-YF-7gO">
+            <objects>
+                <viewController id="29j-l3-Nca" customClass="NRSearchCollectionViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mjV-aU-BQa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9av-Hg-BIx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zgd-4J-68q"/>
+                    <connections>
+                        <segue destination="SG6-mq-AhZ" kind="show" identifier="kShowNovelChapterList" id="goq-dh-h6f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O65-Ni-Lec" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="665" y="-29"/>
+        </scene>
+        <!--NRNovelChapterViewController-->
+        <scene sceneID="AEO-ib-W8q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NovelReader" referencedIdentifier="NRNovelChapterViewController" id="SG6-mq-AhZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bhb-WW-b9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1377" y="-126"/>
+        </scene>
+    </scenes>
+</document>

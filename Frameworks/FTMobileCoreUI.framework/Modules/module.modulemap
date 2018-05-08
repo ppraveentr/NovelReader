@@ -1,0 +1,11 @@
+framework module FTMobileCoreUI {
+  umbrella header "FTMobileCoreUI.h"
+
+  export *
+  module * { export * }
+}
+
+module FTMobileCoreUI.Swift {
+    header "FTMobileCoreUI-Swift.h"
+    requires objc
+}

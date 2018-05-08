@@ -1,0 +1,43 @@
+{
+    "NRNovels": {
+        "type": "type",
+        "category": "category",
+        "state": "state",
+        "page": "page",
+        "totalItems": "totalItems",
+        "novelList": {
+            "bindKey": "novelList",
+            "arrayOf": "NRNovel"
+        }
+    },
+    "NRNovel": {
+        "identifier": "identifier",
+        "title": "name",
+        "searchString": "nameunsigned",
+        "author": "author",
+        "artist": "artist",
+        "status": "status",
+        "novelType": "type",
+        "imageURL": "image",
+        "rating": "rating",
+        "lastUpdated": "updatetime",
+        "views": "views",
+        "contentDescription": "summary",
+        "lastChapter": "lastchapter",
+        "genres": {
+            "bindKey": "genres",
+            "arrayOf": "String"
+        },
+        "chapterList": {
+            "bindKey": "chapters",
+            "arrayOf": "NRNovelChapter"
+        }
+    },
+    "NRNovelChapter": {
+        "content": "content",
+        "title": "name",
+        "identifier": "identifier",
+        "shortTitle": "shortTitle",
+        "releaseDate": "releaseDate"
+    }
+}

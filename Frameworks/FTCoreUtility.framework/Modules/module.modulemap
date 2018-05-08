@@ -1,0 +1,11 @@
+framework module FTCoreUtility {
+  umbrella header "FTCoreUtility.h"
+
+  export *
+  module * { export * }
+}
+
+module FTCoreUtility.Swift {
+    header "FTCoreUtility-Swift.h"
+    requires objc
+}
