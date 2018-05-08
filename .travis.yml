@@ -1,0 +1,10 @@
+language: objective-c
+xcode_workspace: NovelReader.xcworkspace # path to your xcodeproj folder
+osx_image: xcode9.3
+xcode_scheme: NovelReader
+script:
+ #- xcodebuild -scheme NovelReader  -sdk "iphonesimulator" -configuration Release -arch x86_64 -arch i386 only_active_arch=no defines_module=yes
+ #- xcodebuild -workspace "FTMobileCoreSampleWorkspace.xcworkspace" -scheme FTMobileCoreSample -sdk "iphoneos" -configuration Release -arch arm64 -arch armv7 -arch armv7s only_active_arch=no defines_module=yes
+ #Without pod dependency 
+ #- xcodebuild -project NovelReader.xcodeproj -scheme NovelReader -arch x86_64 -arch i386 -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO build | xcpretty -c
+ - xcodebuild -workspace "NovelReader.xcworkspace" -scheme NovelReader -arch x86_64 -arch i386 -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO build | xcpretty -c
