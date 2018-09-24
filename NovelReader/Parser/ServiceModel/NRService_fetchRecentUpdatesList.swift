@@ -8,10 +8,17 @@
 
 import Foundation
 
-final class NRService_fetchRecentUpdatesList: FTServiceStack {
-    override func serviceName() -> String { return "fetchRecentUpdatesList" }
+final class NRService_fetchRecentUpdatesList: FTServiceClient {
 
-    override func responseType() -> FTModelData.Type {
-        return [NRNovel].self
+
+    var inputStack: FTModelData?
+
+    var serviceName = "fetchRecentUpdatesList"
+//    var responseType: FTModelData.Type {
+//        return [NRNovel].self
+//    }
+
+    init(inputStack: FTModelData?) {
+        self.inputStack = inputStack
     }
 }

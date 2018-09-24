@@ -75,7 +75,8 @@ class NRAppManager {
             FTThemesManager.setStatusBarBackgroundColor(color)
         }
 
-        UIApplication.shared.statusBarStyle = .lightContent
+        //WARNING :
+        //UIApplication.shared.statusBarStyle = .lightContent
 
     }
 }

@@ -113,10 +113,9 @@ extension NRAppDelegate {
         return appDelegate.window!.rootViewController!
     }
 
-    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
         -> Bool {
-            return GIDSignIn.sharedInstance().handle(url,
-                    sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
-                    annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+            return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                                                     annotation: options[UIApplication.OpenURLOptionsKey.annotation])
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class NRRules_fetchNovelList: FTServiceRulesProtocal {
+final class NRRules_fetchNovelList: FTServiceRulesProtocol {
 
     static func configure(requestHeaders urlRequest: URLRequest){
         

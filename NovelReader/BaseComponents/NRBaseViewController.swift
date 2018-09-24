@@ -10,6 +10,26 @@ import Foundation
 
 public class NRBaseViewController: FTBaseViewController {
 
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideBottomBar(false)
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        hideBottomBar(false)
+    }
+
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        hideBottomBar(true)
+    }
+
+    func hideBottomBar(_ isHidden: Bool) {
+        self.tabBarController?.tabBar.isHidden = isHidden
+    }
+
+
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "kShowNovelChapterList" {

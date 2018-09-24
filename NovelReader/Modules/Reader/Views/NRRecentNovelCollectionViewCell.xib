@@ -6,82 +6,86 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NRRecentNovelCollectionViewCell" customModule="NovelReader" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NRRecentNovelCollectionViewCell" customModule="NovelReader" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="294" height="134"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1W-mP-lLI" customClass="FTLabel" customModule="FTMobileCoreUI">
-                    <rect key="frame" x="10" y="8" width="256" height="92"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="theme" value="system17R"/>
-                    </userDefinedRuntimeAttributes>
-                </label>
-                <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="V2q-Ux-E7A">
-                    <rect key="frame" x="10" y="110" width="256" height="16"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" text="Last Update: " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyM-yl-Ifc" customClass="FTLabel" customModule="FTMobileCoreUI">
-                            <rect key="frame" x="0.0" y="0.0" width="81.5" height="16"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="theme" value="system13Gray"/>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnF-ON-zhF" customClass="FTLabel" customModule="FTMobileCoreUI">
-                            <rect key="frame" x="85.5" y="0.0" width="170.5" height="16"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="theme" value="system13Gray"/>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                    </subviews>
-                </stackView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navArrow" translatesAutoresizingMaskIntoConstraints="NO" id="DAe-R2-Ice">
-                    <rect key="frame" x="270" y="57" width="20" height="20"/>
-                    <color key="tintColor" red="1" green="0.56898993180000002" blue="0.5228666153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="20" id="LVL-pF-p85"/>
-                        <constraint firstAttribute="height" constant="20" id="fgI-SZ-4Hq"/>
-                    </constraints>
-                </imageView>
-            </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="kRecentNovelCellIdentifier" id="TsU-yb-VIy" customClass="NRRecentNovelCollectionViewCell" customModule="NovelReader" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="399" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="399" height="93"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navArrow" translatesAutoresizingMaskIntoConstraints="NO" id="6Gh-98-tSv">
+                        <rect key="frame" x="375" y="36.5" width="20" height="20"/>
+                        <color key="tintColor" red="1" green="0.56898993180000002" blue="0.5228666153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="ftJ-OA-P7Z"/>
+                            <constraint firstAttribute="height" constant="20" id="iYl-BW-MXp"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="  " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhe-Uf-VP9" customClass="FTLabel" customModule="FTMobileCoreUI">
+                        <rect key="frame" x="10" y="10" width="361" height="47"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="0Li-N5-5Ee"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="theme" value="system17R"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="B8i-VA-Mxq">
+                        <rect key="frame" x="10" y="67" width="361" height="16"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" text="Last Update: " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXk-Ac-Emq" customClass="FTLabel" customModule="FTMobileCoreUI">
+                                <rect key="frame" x="0.0" y="0.0" width="81.5" height="16"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="theme" value="system13Gray"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text=" " textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ZZ-5I-57W" customClass="FTLabel" customModule="FTMobileCoreUI">
+                                <rect key="frame" x="85.5" y="0.0" width="275.5" height="16"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="theme" value="system13Gray"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="B1W-mP-lLI" secondAttribute="trailing" constant="8" id="0T7-ST-QGe"/>
-                <constraint firstItem="DAe-R2-Ice" firstAttribute="leading" secondItem="B1W-mP-lLI" secondAttribute="trailing" constant="4" id="0zj-xZ-2Wk"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="V2q-Ux-E7A" secondAttribute="trailing" constant="8" id="6EB-Eu-Ag8"/>
-                <constraint firstItem="B1W-mP-lLI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="FV7-dw-lNJ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DAe-R2-Ice" secondAttribute="trailing" constant="4" id="Hli-1A-Ncb"/>
-                <constraint firstItem="B1W-mP-lLI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="J1r-99-Mkk"/>
-                <constraint firstItem="V2q-Ux-E7A" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="Qcf-KC-hKT"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="V2q-Ux-E7A" secondAttribute="bottom" constant="8" id="gvZ-Nh-6GJ"/>
-                <constraint firstItem="DAe-R2-Ice" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hAh-An-fFW"/>
-                <constraint firstItem="V2q-Ux-E7A" firstAttribute="top" secondItem="B1W-mP-lLI" secondAttribute="bottom" constant="10" id="rUf-7h-KHw"/>
-                <constraint firstItem="V2q-Ux-E7A" firstAttribute="trailing" secondItem="B1W-mP-lLI" secondAttribute="trailing" id="uOa-I1-wjm"/>
+                <constraint firstAttribute="trailing" secondItem="6Gh-98-tSv" secondAttribute="trailing" constant="4" id="0QY-Lg-bhK"/>
+                <constraint firstItem="6Gh-98-tSv" firstAttribute="leading" secondItem="B8i-VA-Mxq" secondAttribute="trailing" constant="4" id="DM2-LH-FUo"/>
+                <constraint firstItem="lhe-Uf-VP9" firstAttribute="leading" secondItem="B8i-VA-Mxq" secondAttribute="leading" id="EJ7-YX-Uwx"/>
+                <constraint firstItem="B8i-VA-Mxq" firstAttribute="leadingMargin" secondItem="TsU-yb-VIy" secondAttribute="leading" constant="10" id="WlL-Wh-1Q4"/>
+                <constraint firstAttribute="bottomMargin" secondItem="B8i-VA-Mxq" secondAttribute="bottom" constant="10" id="Wv2-iN-Yxv"/>
+                <constraint firstItem="lhe-Uf-VP9" firstAttribute="top" secondItem="TsU-yb-VIy" secondAttribute="top" constant="10" id="Wwh-hI-gQK"/>
+                <constraint firstItem="B8i-VA-Mxq" firstAttribute="top" secondItem="lhe-Uf-VP9" secondAttribute="bottom" constant="10" id="cq2-77-6HS"/>
+                <constraint firstItem="lhe-Uf-VP9" firstAttribute="trailing" secondItem="B8i-VA-Mxq" secondAttribute="trailing" id="gqT-Nk-wnW"/>
+                <constraint firstItem="6Gh-98-tSv" firstAttribute="centerY" secondItem="TsU-yb-VIy" secondAttribute="centerY" id="qIx-k6-1ZP"/>
             </constraints>
-            <nil key="simulatedTopBarMetrics"/>
-            <nil key="simulatedBottomBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <viewLayoutGuide key="safeArea" id="ufX-HO-55h"/>
+            <size key="customSize" width="399" height="93"/>
             <connections>
-                <outlet property="lastUpdateTimeLabel" destination="TnF-ON-zhF" id="tq5-4o-FuQ"/>
-                <outlet property="lastUpdateTitleLabel" destination="PyM-yl-Ifc" id="qev-J2-MVh"/>
-                <outlet property="novelTitle" destination="B1W-mP-lLI" id="IIj-cz-ev0"/>
+                <outlet property="lastUpdateTimeLabel" destination="4ZZ-5I-57W" id="7y1-XT-8qQ"/>
+                <outlet property="lastUpdateTitleLabel" destination="eXk-Ac-Emq" id="XVs-o5-ZL8"/>
+                <outlet property="novelTitle" destination="lhe-Uf-VP9" id="egW-J8-cqB"/>
             </connections>
-            <point key="canvasLocation" x="-33" y="-77"/>
-        </view>
+            <point key="canvasLocation" x="-15.5" y="-26.5"/>
+        </collectionViewCell>
     </objects>
     <resources>
         <image name="navArrow" width="100" height="100"/>

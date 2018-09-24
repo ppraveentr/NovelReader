@@ -45,8 +45,8 @@
 		DEAD34202058263C0064C46A /* Themes.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAD34162058263C0064C46A /* Themes.json */; };
 		DEAD3422205826660064C46A /* Bindings in Resources */ = {isa = PBXBuildFile; fileRef = DEAD3421205826660064C46A /* Bindings */; };
 		DEAD3423205826660064C46A /* Bindings in Resources */ = {isa = PBXBuildFile; fileRef = DEAD3421205826660064C46A /* Bindings */; };
-		DEBC650620970CB50057F649 /* NRProtocalUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650520970CB50057F649 /* NRProtocalUtility.swift */; };
-		DEBC650720970CB50057F649 /* NRProtocalUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650520970CB50057F649 /* NRProtocalUtility.swift */; };
+		DEBC650620970CB50057F649 /* NRProtocolUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650520970CB50057F649 /* NRProtocolUtility.swift */; };
+		DEBC650720970CB50057F649 /* NRProtocolUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650520970CB50057F649 /* NRProtocolUtility.swift */; };
 		DEBC650E20970E1E0057F649 /* NRGoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */; };
 		DEBC650F20970E1E0057F649 /* NRGoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */; };
 		DEBC65142097601A0057F649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC65132097601A0057F649 /* Main.storyboard */; };
@@ -260,7 +260,7 @@
 		DEA7E1B61F49A67F0002C148 /* NRAppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRAppManager.swift; sourceTree = "<group>"; };
 		DEAD34162058263C0064C46A /* Themes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Themes.json; sourceTree = "<group>"; };
 		DEAD3421205826660064C46A /* Bindings */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Bindings; sourceTree = "<group>"; };
-		DEBC650520970CB50057F649 /* NRProtocalUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRProtocalUtility.swift; sourceTree = "<group>"; };
+		DEBC650520970CB50057F649 /* NRProtocolUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRProtocolUtility.swift; sourceTree = "<group>"; };
 		DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRGoogleAuth.swift; sourceTree = "<group>"; };
 		DEBC65132097601A0057F649 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DEBC6520209764790057F649 /* NovelReader.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NovelReader.storyboard; sourceTree = "<group>"; };
@@ -487,7 +487,7 @@
 			children = (
 				DEA7E1B61F49A67F0002C148 /* NRAppManager.swift */,
 				DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */,
-				DEBC650520970CB50057F649 /* NRProtocalUtility.swift */,
+				DEBC650520970CB50057F649 /* NRProtocolUtility.swift */,
 				DEA7E1AD1F4992030002C148 /* NRBaseTableViewController.swift */,
 				DEA7E1A01F497B5D0002C148 /* NRBaseViewController.swift */,
 				DEA7E1A11F497B5D0002C148 /* NRTabBarController.swift */,
@@ -507,11 +507,11 @@
 		DEA7E1AF1F4996910002C148 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
-				DEDE271A2069522300E4C992 /* Rules */,
-				DE4EBE642067B6F5008AC70B /* ServiceModel */,
-				DE84280420558FE7006605C0 /* ModelObjects */,
 				DEA7E1B01F4996A90002C148 /* NRServiceProvider.swift */,
 				DE5A775C204AB8D5008B19ED /* NRServiceConstants.swift */,
+				DEDE271A2069522300E4C992 /* Rules */,
+				DE84280420558FE7006605C0 /* ModelObjects */,
+				DE4EBE642067B6F5008AC70B /* ServiceModel */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -560,17 +560,17 @@
 		DEBC6523209764790057F649 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DEBC6524209764790057F649 /* NRNovelCollectionViewCell.xib */,
-				DEBC6525209764790057F649 /* NRRecentNovelCollectionViewCell.xib */,
+				DEBC652C209764790057F649 /* FTFontPickerViewController.swift */,
 				DEBC6526209764790057F649 /* FTFontPickerView.xib */,
 				DEBC6527209764790057F649 /* FTFontPickerView.swift */,
 				DEBC6528209764790057F649 /* NRNovelDescriptionView.swift */,
 				DEBC6529209764790057F649 /* NRNovelDescriptionView.xib */,
 				DEBC652A209764790057F649 /* NRNovelTableViewCell.swift */,
-				DEBC652B209764790057F649 /* NRNovelCollectionViewCell.swift */,
-				DEBC652C209764790057F649 /* FTFontPickerViewController.swift */,
 				DEBC652D209764790057F649 /* NRNovelTableViewCell.xib */,
+				DEBC652B209764790057F649 /* NRNovelCollectionViewCell.swift */,
+				DEBC6524209764790057F649 /* NRNovelCollectionViewCell.xib */,
 				DEBC652E209764790057F649 /* NRRecentNovelCollectionViewCell.swift */,
+				DEBC6525209764790057F649 /* NRRecentNovelCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1020,7 +1020,7 @@
 				DEBC650F20970E1E0057F649 /* NRGoogleAuth.swift in Sources */,
 				DEDE27212069522300E4C992 /* NRRules_fetchNovelList.swift in Sources */,
 				DE23237920551287004F1480 /* NRServiceProvider.swift in Sources */,
-				DEBC650720970CB50057F649 /* NRProtocalUtility.swift in Sources */,
+				DEBC650720970CB50057F649 /* NRProtocolUtility.swift in Sources */,
 				DEBC6545209764790057F649 /* NRNovelTableViewCell.swift in Sources */,
 				DE23237B20551287004F1480 /* NRBaseTableViewController.swift in Sources */,
 				DEE9351720959E1D00B10398 /* NRService_fetchChapter.swift in Sources */,
@@ -1063,7 +1063,7 @@
 				DEBC650E20970E1E0057F649 /* NRGoogleAuth.swift in Sources */,
 				DEDE27202069522300E4C992 /* NRRules_fetchNovelList.swift in Sources */,
 				DEA7E1B11F4996A90002C148 /* NRServiceProvider.swift in Sources */,
-				DEBC650620970CB50057F649 /* NRProtocalUtility.swift in Sources */,
+				DEBC650620970CB50057F649 /* NRProtocolUtility.swift in Sources */,
 				DEBC6544209764790057F649 /* NRNovelTableViewCell.swift in Sources */,
 				DEA7E1AE1F4992030002C148 /* NRBaseTableViewController.swift in Sources */,
 				DEE9351620959E1D00B10398 /* NRService_fetchChapter.swift in Sources */,
@@ -1172,7 +1172,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "NovelReader/NovelReader-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1192,7 +1192,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NovelReader/NovelReader-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1378,6 +1378,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "$(SRCROOT)/NovelReader/Resources/plist/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ft.NovelReader;
@@ -1403,6 +1404,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "$(SRCROOT)/NovelReader/Resources/plist/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ft.NovelReader;

@@ -56,7 +56,7 @@ class FTImageView: UIImageView {
     }
 }
 
-class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProtocal {
+class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProtocol {
 
     @IBOutlet var titleLabel: FTLabel?
     @IBOutlet var contentImageView: FTImageView?
@@ -69,7 +69,7 @@ class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProto
         self.addBorder()
     }
     
-    func configureContent(novel: NRNovel) {
+    func configureContent(novel: NRNovel, view: UICollectionView? = nil, indexPath: IndexPath? = nil) {
         if let url = novel.imageURL {
          self.contentImageView?.downloadedFrom(link: url)
         }

@@ -37,7 +37,7 @@ class NRReaderViewController: FTBaseViewController {
     
     func setupViewContent() {
         
-        self.title = novelChapter?.shortTitle ?? novelChapter?.title
+        self.title = novelChapter?.shortTitle ?? novelChapter?.title ?? novel?.title
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: NRReaderViewController.backButton)
         

@@ -28,5 +28,8 @@ class NRNovelDescriptionView: FTView {
         self.chapterLabel?.text = novel.lastChapter
         self.lastUpdateLabel?.text = novel.lastUpdated
         self.viewsButton?.setTitle(novel.views, for: .normal)
+
+        setNeedsLayout()
+        layoutIfNeeded()
     }
 }

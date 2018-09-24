@@ -9,5 +9,9 @@
 import Foundation
 
 class NRTabBarController: FTBaseTabBarController {
-    
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.hidesBottomBarWhenPushed = true
+    }
 }

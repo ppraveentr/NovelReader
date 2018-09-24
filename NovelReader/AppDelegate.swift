@@ -11,7 +11,7 @@ import UIKit
 @UIApplicationMain
 class NRAppDelegate: FTAppDelegate {
 
-    open override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]?) -> Bool {
+    open override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         
         NRAppManager.configureAppBase()
         NRAppManager.configureAppTheme()

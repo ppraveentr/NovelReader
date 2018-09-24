@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,37 +14,68 @@
             <rect key="frame" x="0.0" y="0.0" width="715" height="286"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3BL-kc-D59">
-                    <rect key="frame" x="0.0" y="15" width="106" height="142"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="142" id="17e-Ff-Usw"/>
-                        <constraint firstAttribute="width" constant="106" id="E3D-hT-MEF"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilv-Mr-Unf" customClass="FTLabel" customModule="FTMobileCoreUI">
-                    <rect key="frame" x="121" y="15" width="594" height="20.5"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                    <color key="textColor" red="0.87058823529999996" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="des" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyB-PB-OpL" customClass="FTLabel" customModule="FTMobileCoreUI">
-                    <rect key="frame" x="0.0" y="177" width="715" height="101"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="hxE-jf-LpK">
+                    <rect key="frame" x="0.0" y="20" width="715" height="266"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8O0-ex-a8q">
+                            <rect key="frame" x="0.0" y="0.0" width="715" height="249"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3BL-kc-D59">
+                                    <rect key="frame" x="0.0" y="0.0" width="508.5" height="142"/>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HS4-oV-7Ue">
+                                    <rect key="frame" x="518.5" y="0.0" width="196.5" height="234"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ciR-Aj-CoL">
+                                            <rect key="frame" x="0.0" y="0.0" width="178" height="50"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text=" " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilv-Mr-Unf" customClass="FTLabel" customModule="FTMobileCoreUI">
+                                            <rect key="frame" x="0.0" y="55" width="4.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <color key="textColor" red="0.87058823529999996" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYn-Wf-eYc">
+                                            <rect key="frame" x="0.0" y="80.5" width="98.5" height="20.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mg-DM-r0d">
+                                                    <rect key="frame" x="0.0" y="0.0" width="56.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fob-Hf-dpo">
+                                                    <rect key="frame" x="56.5" y="0.0" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZw-p6-JeL">
+                                            <rect key="frame" x="0.0" y="106" width="172.5" height="128"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text=" " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyB-PB-OpL" customClass="FTLabel" customModule="FTMobileCoreUI">
+                            <rect key="frame" x="0.0" y="249" width="715" height="17"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="dyB-PB-OpL" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" id="Ai6-FI-xce"/>
-                <constraint firstItem="3BL-kc-D59" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="C0L-d2-e4M"/>
-                <constraint firstAttribute="trailing" secondItem="ilv-Mr-Unf" secondAttribute="trailing" id="C4F-hZ-hnS"/>
-                <constraint firstItem="ilv-Mr-Unf" firstAttribute="leading" secondItem="3BL-kc-D59" secondAttribute="trailing" constant="15" id="J1x-fh-pTv"/>
-                <constraint firstItem="dyB-PB-OpL" firstAttribute="top" secondItem="3BL-kc-D59" secondAttribute="bottom" constant="20" id="KdA-Az-ofL"/>
-                <constraint firstItem="3BL-kc-D59" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ceg-14-whV"/>
-                <constraint firstItem="dyB-PB-OpL" firstAttribute="leading" secondItem="3BL-kc-D59" secondAttribute="leading" id="fdC-Ce-FmU"/>
-                <constraint firstItem="ilv-Mr-Unf" firstAttribute="top" secondItem="3BL-kc-D59" secondAttribute="top" id="kqJ-2p-Wr6"/>
-                <constraint firstAttribute="trailing" secondItem="dyB-PB-OpL" secondAttribute="trailing" id="mm1-Ib-Ay7"/>
+                <constraint firstItem="hxE-jf-LpK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="BDu-bB-2nb"/>
+                <constraint firstItem="hxE-jf-LpK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BZf-iz-uzv"/>
+                <constraint firstAttribute="trailing" secondItem="hxE-jf-LpK" secondAttribute="trailing" id="PPT-TR-F52"/>
+                <constraint firstAttribute="bottom" secondItem="hxE-jf-LpK" secondAttribute="bottom" id="R3y-Ry-ufD"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

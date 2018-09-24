@@ -8,10 +8,16 @@
 
 import Foundation
 
-final class NRService_fetchNovelChapters: FTServiceStack {
-    override func serviceName() -> String { return "fetchNovelChapters" }
+final class NRService_fetchNovelChapters: FTServiceClient {
 
-    override func responseType() -> FTModelData.Type {
+    var serviceName = "fetchNovelChapters"
+    var responseType: FTModelData.Type {
         return NRNovel.self
     }
+
+    var inputStack: FTModelData?
+    init(inputStack: FTModelData?) {
+        self.inputStack = inputStack
+    }
+
 }

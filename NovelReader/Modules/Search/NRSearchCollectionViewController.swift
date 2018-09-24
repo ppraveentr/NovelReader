@@ -19,7 +19,7 @@ class NRSearchCollectionViewController: NRBaseViewController {
     }
 
     //Dummycell for collectionView cell Height calculation
-    var dummyNovelCell: NRConfigureNovelCellProtocal = NRNovelCollectionViewCell.fromNib() as! NRNovelCollectionViewCell
+    var dummyNovelCell: NRConfigureNovelCellProtocol = NRNovelCollectionViewCell.fromNib() as! NRNovelCollectionViewCell
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,8 +108,8 @@ extension NRSearchCollectionViewController: UICollectionViewDataSource, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "kNovelCellIdentifier", for: indexPath)
 
         if let cur = currentNovelList?[indexPath.row] {
-            if let cell = cell as? NRConfigureNovelCellProtocal {
-                cell.configureContent(novel: cur)
+            if let cell = cell as? NRConfigureNovelCellProtocol {
+                cell.configureContent(novel: cur, view: collectionView, indexPath: indexPath)
             }
         }
 
@@ -122,7 +122,7 @@ extension NRSearchCollectionViewController: UICollectionViewDataSource, UICollec
         let cell = self.dummyNovelCell
 
         if let cur = currentNovelList?[indexPath.row] {
-            cell.configureContent(novel: cur)
+            cell.configureContent(novel: cur, view: collectionView, indexPath: indexPath)
         }
 
         return cell.getSize(baseView: collectionView)

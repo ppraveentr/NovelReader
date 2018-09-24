@@ -13,11 +13,10 @@ class NRNovelTableViewCell: UITableViewCell {
     @IBOutlet var chapterDate: FTLabel?
     @IBOutlet var titleLabel: FTLabel?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        self.addBorder()
-    }
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        self.addBorder()
+//    }
     
     func configureContent(novel: NRNovelChapter) {
         

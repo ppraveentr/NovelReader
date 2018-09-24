@@ -13,10 +13,10 @@ class NRServiceProvider {
     //Get list of all Novels
     class func fetchRecentUpdateList(_ completionHandler: @escaping (_ novelsList: [NRNovel]?) -> Swift.Void) {
 
-        FTServiceClient.make(FTServicefetchRecentUpdatesList.self) { (status) in
+        FTServicefetchRecentUpdatesList.make { (status) in
             switch (status) {
             case .success(let res, _):
-                completionHandler(res.responseStack as? [NRNovel])
+                completionHandler(res?.responseStack as? [NRNovel])
             case .failed(let res, _):
                 completionHandler(res?.responseStack as? [NRNovel])
             }
@@ -26,17 +26,17 @@ class NRServiceProvider {
     //Get list of all Novels
     class func fetchNovelList(novel: NRNovels?, _ completionHandler: @escaping (_ novelsList: NRNovels?) -> Swift.Void) {
 
-        FTServiceClient.make(FTServicefetchNovelList.self, modelStack: nil) { (status) in
+        FTServicefetchNovelList.make(modelStack: nil) { (status) in
             switch (status) {
             case .success(let res, _):
                 //FIXIT: Has be done in FTServiceClient
-                if let novelResponse = res.responseStack as? NRNovels {
+                if let novelResponse = res?.responseStack as? NRNovels {
                     var novel = novel
                     novel!.merge(data: novelResponse)
                     completionHandler(novel)
                 }
                 //TODO: To be removed once Mock is done
-                else if let novelList = res.responseStack as? [NRNovel] {
+                else if let novelList = res?.responseStack as? [NRNovel] {
                     let novel = novel ?? NRNovels()
                     if(novel.novelList == nil) {
                         novel.novelList = []
@@ -44,7 +44,7 @@ class NRServiceProvider {
                     novel.novelList?.append(contentsOf: novelList)
                     completionHandler(novel)
                 }else {
-                    completionHandler(res.responseStack as? NRNovels)
+                    completionHandler(res?.responseStack as? NRNovels)
                 }
                 break
             case .failed(let res, _):
@@ -60,14 +60,14 @@ class NRServiceProvider {
 
         let model: FTModelData = ["id": novel.identifier]
 
-        FTServiceClient.make(kfetchNovelChapters, modelStack: model) { (status) in
+        FTServicefetchNovelChapters.make(modelStack: model) { (status) in
             switch (status) {
             case .success(let res, _):
-                if let novelResponse = res.responseStack as? NRNovel {
+                if let novelResponse = res?.responseStack as? NRNovel {
                     completionHandler(novelResponse)
                 }
                 else {
-                    completionHandler(res.responseStack as? NRNovel)
+                    completionHandler(res?.responseStack as? NRNovel)
                 }
                 break
             case .failed(let res, _):
@@ -83,10 +83,10 @@ class NRServiceProvider {
         
         let model: FTModelData = ["id": identifier]
 
-        FTServiceClient.make(kfetchChapter, modelStack: model) { (status) in
+        FTServicefetchChapter.make(modelStack: model) { (status) in
             switch (status) {
             case .success(let res, _):
-                completionHandler(res.responseStack as? NRNovelChapter)
+                completionHandler(res?.responseStack as? NRNovelChapter)
                 break
             case .failed(let res, _):
                 completionHandler(res?.responseStack as? NRNovelChapter)

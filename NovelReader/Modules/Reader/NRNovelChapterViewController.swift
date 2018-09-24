@@ -12,9 +12,9 @@ class NRNovelChapterViewController: NRBaseTableViewController {
 
     var novel: NRNovel?
     
-    var novelDescView: NRNovelDescriptionView? = NRNovelDescriptionView.fromNib() as? NRNovelDescriptionView
+    lazy var novelDescView: NRNovelDescriptionView? = NRNovelDescriptionView.fromNib() as? NRNovelDescriptionView
     
-    override func class_TableViewStyle() -> UITableViewStyle { return .grouped }
+    override func class_TableViewStyle() -> UITableView.Style { return .grouped }
     override func class_TableViewEdgeOffsets() -> FTEdgeOffsets { return FTEdgeOffsets(10, 0, 10, 0) }
     
     override func viewDidLoad() {
@@ -50,13 +50,9 @@ extension NRNovelChapterViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 5.0
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return novel?.chapterList?.count ?? 0
-    }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return novel?.chapterList?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,7 +61,7 @@ extension NRNovelChapterViewController {
         
         if
             let cell = cell as? NRNovelTableViewCell,
-            let cur = novel?.chapterList?[indexPath.section] {
+            let cur = novel?.chapterList?[indexPath.row] {
             cell.configureContent(novel: cur)
         }
         
@@ -77,7 +73,7 @@ extension NRNovelChapterViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let cur = novel?.chapterList?[indexPath.section] {
+        if let cur = novel?.chapterList?[indexPath.row] {
             self.performSegue(withIdentifier: "kShowNovelReaderView", sender: cur)
         }
     }
