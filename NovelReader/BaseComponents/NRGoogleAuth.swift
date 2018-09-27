@@ -30,7 +30,7 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
 //        GIDSignIn.sharedInstance().delegate = NRGoogleAuth.sharedInstance
 //        GIDSignIn.sharedInstance().uiDelegate = NRGoogleAuth.sharedInstance
 //
-//        // Uncomment to automatically sign in the user.
+//        Uncomment to automatically sign in the user.
 //        GIDSignIn.sharedInstance().signInSilently()
     }
 
@@ -40,14 +40,14 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
         signButtton.theme = "googleButton"
         signButtton.addSizeConstraint(44, 44)
 
-        //Update with User Profile
+        // Update with User Profile
         if let profile = GIDSignIn.sharedInstance().currentUser?.profile {
             profile.imageURL(withDimension: 44).downloadedImage { (image) in
                 signButtton.setImage(image, for: .normal)
             }
         }
 
-        //Update with User Profile after SignIn
+        // Update with User Profile after SignIn
         NotificationCenter.default.addObserver(forName: .FTAuthentication_GoogleSignIn_SignedIn, object: nil, queue: nil) { (notificationn) in
 
             if let userObject = notificationn.object as? GIDGoogleUser {
@@ -57,12 +57,12 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
             }
         }
 
-        //Remove User Profile
+        // Remove User Profile
         NotificationCenter.default.addObserver(forName: .FTAuthentication_GoogleSignIn_SignedOut, object: nil, queue: nil) { (nnnot) in
             signButtton.theme = "googleButton"
         }
 
-        //SignIn Button Tap Action
+        // SignIn Button Tap Action
         signButtton.addTapActionBlock {
             if ((GIDSignIn.sharedInstance().uiDelegate != nil) || (GIDSignIn.sharedInstance().delegate != nil)) {
                 GIDSignIn.sharedInstance().signIn()

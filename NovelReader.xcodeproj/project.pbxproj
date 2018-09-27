@@ -437,14 +437,14 @@
 		DEA7E1421F496BAB0002C148 /* NovelReader */ = {
 			isa = PBXGroup;
 			children = (
-				DEBC651E209764790057F649 /* Modules */,
-				DEAD340C2058263C0064C46A /* Resources */,
-				DEA7E1AF1F4996910002C148 /* Parser */,
-				DEA7E19F1F497B5D0002C148 /* BaseComponents */,
+				DEA7E1801F496C1C0002C148 /* NovelReader-Bridging-Header.h */,
 				DEA7E1431F496BAB0002C148 /* AppDelegate.swift */,
 				DEBC65132097601A0057F649 /* Main.storyboard */,
 				DEA7E14E1F496BAB0002C148 /* LaunchScreen.storyboard */,
-				DEA7E1801F496C1C0002C148 /* NovelReader-Bridging-Header.h */,
+				DEA7E19F1F497B5D0002C148 /* BaseComponents */,
+				DEBC651E209764790057F649 /* Modules */,
+				DEAD340C2058263C0064C46A /* Resources */,
+				DEA7E1AF1F4996910002C148 /* Parser */,
 			);
 			path = NovelReader;
 			sourceTree = "<group>";
@@ -1386,7 +1386,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "NovelReader/NovelReader-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -1411,7 +1411,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NovelReader/NovelReader-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;

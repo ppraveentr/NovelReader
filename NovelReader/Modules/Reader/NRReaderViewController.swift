@@ -82,7 +82,7 @@ extension NRReaderViewController: FTFontPickerViewprotocol {
 extension NRReaderViewController: UIPopoverPresentationControllerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //segue for the popover configuration window
+        // segue for the popover configuration window
         if segue.identifier == "kShowFontPicker" {
             if let controller = segue.destination as? FTFontPickerViewController {
                 controller.fontPickerViewDelegate = self

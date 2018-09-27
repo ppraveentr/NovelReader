@@ -35,7 +35,7 @@ class NRServiceProvider {
                     novel!.merge(data: novelResponse)
                     completionHandler(novel)
                 }
-                //TODO: To be removed once Mock is done
+                // TODO: To be removed once Mock is done
                 else if let novelList = res?.responseStack as? [NRNovel] {
                     let novel = novel ?? NRNovels()
                     if(novel.novelList == nil) {
@@ -43,7 +43,7 @@ class NRServiceProvider {
                     }
                     novel.novelList?.append(contentsOf: novelList)
                     completionHandler(novel)
-                }else {
+                } else {
                     completionHandler(res?.responseStack as? NRNovels)
                 }
                 break

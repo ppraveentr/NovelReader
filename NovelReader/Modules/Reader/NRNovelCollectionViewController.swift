@@ -57,7 +57,7 @@ class NRNovelCollectionViewController: NRBaseViewController {
             NRServiceProvider.fetchRecentUpdateList() { [weak self] (novelList) in
                 if let novelList = novelList {
                     self?.currentNovelList = novelList
-                }else {
+                } else {
                     self?.showRetryAlert()
                 }
             }
@@ -98,30 +98,30 @@ extension NRNovelCollectionViewController {
 
     func configureColletionView() {
 
-        //Relaod collectionView on exit
+        // Relaod collectionView on exit
         defer {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
         }
 
-        //Only re-load collectionView if already present
+        // Only re-load collectionView if already present
         guard collectionView.superview == nil else {
             return
         }
 
-        //Setup collectionView, if not added in view.
+        // Setup collectionView, if not added in view.
 
-        //Register Cell
+        // Register Cell
         NRNovelCollectionType.topNovel.registerCell(collectionView)
         NRNovelCollectionType.recentNovel.registerCell(collectionView)
 
-        //Collection Header: Segment Control
+        // Collection Header: Segment Control
         collectionView.register(NRNovelCollectionHeaderView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: "headerCell")
 
-        //CollectionView delegate
+        // CollectionView delegate
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
@@ -185,7 +185,7 @@ extension NRNovelCollectionViewController: UICollectionViewDataSource, UICollect
 
         if novelCollectionType == .recentNovel {
             self.performSegue(withIdentifier: "kShowNovelReaderView", sender: cur)
-        }else{
+        } else{
             self.performSegue(withIdentifier: "kShowNovelChapterList", sender: cur)
         }
     }
@@ -250,4 +250,5 @@ enum NRNovelCollectionType: Int {
             return NRNovelCollectionViewCell.fromNib() as! NRNovelCollectionViewCell
         }
     }
+    
 }

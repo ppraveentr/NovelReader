@@ -110,7 +110,7 @@ extension NRNovelChapterViewController {
     
     //    func setupToolBar() {
     //
-    //        let refresh = UIRefreshControl();
+    //        let refresh = UIRefreshControl()
     //        refresh.addTarget(self, action: #selector(setupSearchBar), for: .valueChanged)
     //        self.tableView.addSubview(refresh)
     //        self.tableViewController.refreshControl = refresh

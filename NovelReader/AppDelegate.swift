@@ -28,16 +28,16 @@ class NRAppDelegate: FTAppDelegate {
 
         //        var novels = NRNovelChapter(title: "title", url: (Bundle.main.path(forResource: "EmperorDominationChapter", ofType: "html")!))
         //        NRServiceProvider.parseNovelReader(&novels)
-        //
+        // 
         //        self.performSegue(withIdentifier: "kShowNovelReaderView", sender: novels)
 
 
         //        NotificationCenter.default.addObserver(forName: .FTMobileCoreUI_ViewController_DidAppear, object: self, queue: nil) { (not) in
-        //
+        // 
         //        }
-        //
+        // 
         //        NotificationCenter.default.addObserver(forName: .FTMobileCoreUI_ViewController_WillDisappear, object: self, queue: nil) { (not) in
-        //
+        // 
         //        }
     }
 }

@@ -10,7 +10,6 @@ import Foundation
 
 final class NRRules_fetchNovelList: FTServiceRulesProtocol {
 
-    static func configure(requestHeaders urlRequest: URLRequest){
-        
+    static func configure(requestHeaders urlRequest: URLRequest) {
     }
 }

@@ -41,7 +41,7 @@ open class FTFontPickerView: FTView {
     @IBAction func fontSizeChanged(_ sender: FTButton) {
         if sender == decrementFontButton {
             pickerDelegate?.fontSize(.decrement)
-        }else{
+        } else{
             pickerDelegate?.fontSize(.increment)
         }
     }
@@ -112,7 +112,7 @@ extension FTFontPickerView: UITableViewDataSource, UITableViewDelegate {
         
         if fontTypes[indexPath.section] == selectedFont {
             selectedFont = nil
-        }else {
+        } else {
             selectedFont = fontTypes[indexPath.section]
         }
         

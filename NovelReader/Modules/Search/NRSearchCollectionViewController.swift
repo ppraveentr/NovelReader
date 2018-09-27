@@ -68,25 +68,25 @@ extension NRSearchCollectionViewController {
 
     func configureColletionView() {
 
-        //Relaod collectionView on exit
+        // Relaod collectionView on exit
         defer {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
         }
 
-        //Only re-load collectionView if already present
+        // Only re-load collectionView if already present
         guard collectionView.superview == nil else {
             return
         }
 
-        //Setup collectionView, if not added in view.
+        // Setup collectionView, if not added in view.
 
-        //Register Cell
+        // Register Cell
         collectionView.register(NRNovelCollectionViewCell.getNIBFile(),
                                 forCellWithReuseIdentifier: "kNovelCellIdentifier")
 
-        //CollectionView delegate
+        // CollectionView delegate
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear

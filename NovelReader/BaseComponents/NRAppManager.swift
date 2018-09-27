@@ -15,17 +15,17 @@ class NRAppManager {
 
     class func configureAppBase() {
 
-        //Register self's type as Bundle-Identifier for getting class name
+        // Register self's type as Bundle-Identifier for getting class name
         FTReflection.registerModuleIdentifier(NRAppDelegate.self)
 
-        //Service Binding
+        // Service Binding
         FTMobileConfig.serviceBindingPath = "Bindings/ServiceBindings"
         FTMobileConfig.serviceBindingRulesName = "NovelServiceRules.plist"
 
-        //App Config
+        // App Config
         FTMobileConfig.appBaseURL = NRAppManager.endpointURL()
 
-        //Debug-only code
+        // Debug-only code
         self.configDebug()
 
         MSAppCenter.start("6778a47c-7742-4dea-ace3-63c28b424350", withServices:[
@@ -48,9 +48,9 @@ class NRAppManager {
     }
 
     class func generateModelBinding() {
-        //Model Binding Generator
+        // Model Binding Generator
         if let resourcePath = Bundle.main.resourceURL {
-            FTModelCreator.configureSourcePath(path: resourcePath.appendingPathComponent("Bindings/ModelBindings").path);
+            FTModelCreator.configureSourcePath(path: resourcePath.appendingPathComponent("Bindings/ModelBindings").path)
             FTModelCreator.generateOutput()
         }
     }
@@ -75,8 +75,8 @@ class NRAppManager {
             FTThemesManager.setStatusBarBackgroundColor(color)
         }
 
-        //WARNING :
-        //UIApplication.shared.statusBarStyle = .lightContent
+        // WARNING :
+        // UIApplication.shared.statusBarStyle = .lightContent
 
     }
 }
