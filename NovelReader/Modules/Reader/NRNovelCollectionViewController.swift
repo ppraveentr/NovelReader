@@ -38,7 +38,7 @@ class NRNovelCollectionViewController: NRBaseViewController {
     //View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Novel Reader"
+        self.title = kNovelReaderTitle
         self.novelCollectionType = .recentNovel
 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: NRGoogleAuth.signInButton())
@@ -69,8 +69,8 @@ class NRNovelCollectionViewController: NRBaseViewController {
     }
 
     func showRetryAlert() {
-        let alert = UIAlertController(title: "Failed", message: "Please try again", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { [weak self] action in
+        let alert = UIAlertController(title: kServiceFailureAlertTitle, message: kServiceFailureAlertMessage, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: kRetryString, style: .default, handler: { [weak self] action in
             self?.fetchNovelList()
         }))
         self.present(alert, animated: true, completion: nil)
@@ -163,7 +163,7 @@ extension NRNovelCollectionViewController: UICollectionViewDataSource, UICollect
                 cell.configureContent(novel: cur, view: collectionView, indexPath: indexPath)
             }
         }
-//        cell.invalidateIntrinsicContentSize()
+        cell.invalidateIntrinsicContentSize()
 
         return cell
     }
@@ -184,9 +184,9 @@ extension NRNovelCollectionViewController: UICollectionViewDataSource, UICollect
         let cur = currentNovelList?[indexPath.row]
 
         if novelCollectionType == .recentNovel {
-            self.performSegue(withIdentifier: "kShowNovelReaderView", sender: cur)
+            self.performSegue(withIdentifier: kShowNovelReaderView, sender: cur)
         } else{
-            self.performSegue(withIdentifier: "kShowNovelChapterList", sender: cur)
+            self.performSegue(withIdentifier: kShowNovelChapterList, sender: cur)
         }
     }
 }
@@ -209,7 +209,7 @@ class NRNovelCollectionHeaderView: UICollectionReusableView {
     func setupSegmentView() {
         self.theme = ThemeStyle.defaultStyle
 
-        segmentedControl = FTSegmentedControl(items: [ "Recent Update", "Top Views" ]) { (segment) in
+        segmentedControl = FTSegmentedControl(items: [ kRecentUpdateString, kTopViews ]) { (segment) in
             print(segment)
         };
 
@@ -225,9 +225,9 @@ enum NRNovelCollectionType: Int {
     var cellIdentifier: String {
         switch self {
         case .recentNovel:
-            return "kRecentNovelCellIdentifier"
+            return kRecentNovelCellIdentifier
         case .topNovel:
-            return "kNovelCellIdentifier"
+            return kNovelCellIdentifier
         }
     }
 

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,18 +25,35 @@
                             <constraint firstAttribute="height" constant="142" id="qDL-l3-tfz"/>
                         </constraints>
                     </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Q5q-Lg-WtJ">
+                        <rect key="frame" x="126" y="10" width="237" height="34.666666666666664"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="1000" text=" " lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGF-eC-lwT" customClass="FTLabel" customModule="FTMobileCoreUI">
+                                <rect key="frame" x="0.0" y="0.0" width="237" height="20.333333333333332"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="0.87058823529411766" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="theme" value="system17R"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text=" " lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bf-hK-caS" customClass="FTLabel" customModule="FTMobileCoreUI">
+                                <rect key="frame" x="0.0" y="20.333333333333332" width="237" height="14.333333333333332"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjo-zg-ln4">
-                        <rect key="frame" x="10" y="159" width="373" height="1"/>
+                        <rect key="frame" x="10" y="160" width="373" height="1"/>
                         <color key="backgroundColor" red="0.89805901050567627" green="0.89804208278656006" blue="0.89805364608764648" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="b5J-ic-3ea"/>
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JPN-lI-Jvc" customClass="FTButton" customModule="FTMobileCoreUI">
-                        <rect key="frame" x="10" y="168" width="26" height="25"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="25" id="lMY-G6-EDd"/>
-                        </constraints>
+                        <rect key="frame" x="10" y="169" width="36" height="24"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                         <color key="tintColor" red="0.87058823529411766" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -47,30 +62,15 @@
                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="1000" text=" " lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGF-eC-lwT" customClass="FTLabel" customModule="FTMobileCoreUI">
-                        <rect key="frame" x="126" y="10" width="242" height="45"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                        <color key="textColor" red="0.87058823529411766" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="theme" value="system17R"/>
-                        </userDefinedRuntimeAttributes>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text=" " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bf-hK-caS" customClass="FTLabel" customModule="FTMobileCoreUI">
-                        <rect key="frame" x="126" y="55" width="242" height="14.333333333333329"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navArrow" translatesAutoresizingMaskIntoConstraints="NO" id="9NO-IZ-FN3">
-                        <rect key="frame" x="368" y="91" width="20" height="20"/>
+                        <rect key="frame" x="368" y="90.666666666666671" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="QOo-ma-cMH"/>
                             <constraint firstAttribute="height" constant="20" id="iPs-er-BC5"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="751" text=" asdasds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4P-O4-zCY" customClass="FTLabel" customModule="FTMobileCoreUI">
-                        <rect key="frame" x="329" y="168" width="54" height="25"/>
+                        <rect key="frame" x="329" y="169" width="54" height="24"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                         <color key="textColor" red="0.62750589847564697" green="0.62749385833740234" blue="0.62750202417373657" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
@@ -80,29 +80,24 @@
             <color key="backgroundColor" red="1" green="0.99998795986175537" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="wjo-zg-ln4" firstAttribute="top" secondItem="yfT-9u-dIK" secondAttribute="bottom" priority="750" constant="8" id="5BX-Zj-40R"/>
+                <constraint firstAttribute="trailing" secondItem="Q5q-Lg-WtJ" secondAttribute="trailing" constant="30" id="82y-GW-82l"/>
                 <constraint firstItem="k4P-O4-zCY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JPN-lI-Jvc" secondAttribute="trailing" constant="20" id="Ic0-D6-sGU"/>
                 <constraint firstAttribute="trailing" secondItem="k4P-O4-zCY" secondAttribute="trailing" constant="10" id="In2-cF-mR8"/>
-                <constraint firstItem="JGF-eC-lwT" firstAttribute="top" secondItem="yfT-9u-dIK" secondAttribute="top" id="LCW-5h-9pe"/>
-                <constraint firstItem="4Bf-hK-caS" firstAttribute="leading" secondItem="yfT-9u-dIK" secondAttribute="trailing" constant="10" id="LGI-Ox-hNW"/>
                 <constraint firstItem="wjo-zg-ln4" firstAttribute="leading" secondItem="tVl-ci-X2h" secondAttribute="leading" constant="10" id="LjU-PS-oWi"/>
                 <constraint firstItem="JPN-lI-Jvc" firstAttribute="leading" secondItem="yfT-9u-dIK" secondAttribute="leading" id="Qpg-WA-j16"/>
+                <constraint firstItem="Q5q-Lg-WtJ" firstAttribute="leading" secondItem="yfT-9u-dIK" secondAttribute="trailing" constant="10" id="RY7-aq-fkE"/>
                 <constraint firstItem="JPN-lI-Jvc" firstAttribute="top" secondItem="wjo-zg-ln4" secondAttribute="bottom" constant="8" id="Se0-RQ-iJh"/>
                 <constraint firstAttribute="trailing" secondItem="9NO-IZ-FN3" secondAttribute="trailing" constant="5" id="VkO-rn-O94"/>
+                <constraint firstItem="Q5q-Lg-WtJ" firstAttribute="top" secondItem="tVl-ci-X2h" secondAttribute="top" constant="10" id="VwW-37-eDm"/>
                 <constraint firstItem="9NO-IZ-FN3" firstAttribute="centerY" secondItem="tVl-ci-X2h" secondAttribute="centerY" id="ZTZ-6J-nQS"/>
-                <constraint firstItem="4Bf-hK-caS" firstAttribute="leading" secondItem="JGF-eC-lwT" secondAttribute="leading" id="bmi-OE-IIU"/>
-                <constraint firstItem="4Bf-hK-caS" firstAttribute="top" secondItem="JGF-eC-lwT" secondAttribute="bottom" id="byi-Mz-5S1"/>
+                <constraint firstItem="wjo-zg-ln4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Q5q-Lg-WtJ" secondAttribute="bottom" constant="10" id="eVw-lk-cvF"/>
                 <constraint firstItem="k4P-O4-zCY" firstAttribute="centerY" secondItem="JPN-lI-Jvc" secondAttribute="centerY" id="lIM-qy-cTc"/>
-                <constraint firstItem="wjo-zg-ln4" firstAttribute="top" secondItem="4Bf-hK-caS" secondAttribute="bottom" priority="749" constant="10" id="mBL-fP-ab5"/>
-                <constraint firstItem="JGF-eC-lwT" firstAttribute="width" relation="greaterThanOrEqual" secondItem="yfT-9u-dIK" secondAttribute="width" multiplier="16:9" id="np5-gi-Uyo"/>
                 <constraint firstItem="yfT-9u-dIK" firstAttribute="top" secondItem="tVl-ci-X2h" secondAttribute="top" constant="10" id="oSN-Fi-NRn"/>
                 <constraint firstItem="yfT-9u-dIK" firstAttribute="leading" secondItem="tVl-ci-X2h" secondAttribute="leading" constant="10" id="onX-Cd-sSB"/>
                 <constraint firstItem="k4P-O4-zCY" firstAttribute="height" secondItem="JPN-lI-Jvc" secondAttribute="height" id="pCB-xM-TDm"/>
                 <constraint firstItem="JPN-lI-Jvc" firstAttribute="leading" secondItem="tVl-ci-X2h" secondAttribute="leading" constant="10" id="pyv-q9-eNO"/>
                 <constraint firstAttribute="trailing" secondItem="wjo-zg-ln4" secondAttribute="trailing" constant="10" id="pzz-8P-Bn0"/>
-                <constraint firstItem="4Bf-hK-caS" firstAttribute="trailing" secondItem="JGF-eC-lwT" secondAttribute="trailing" id="qTI-3p-n9N"/>
-                <constraint firstAttribute="trailing" secondItem="JGF-eC-lwT" secondAttribute="trailing" constant="25" id="sHn-FC-MQj"/>
                 <constraint firstAttribute="bottom" secondItem="JPN-lI-Jvc" secondAttribute="bottom" constant="8" id="vQa-3A-Lin"/>
-                <constraint firstItem="yfT-9u-dIK" firstAttribute="centerY" secondItem="JGF-eC-lwT" secondAttribute="baseline" priority="750" constant="30" id="yoa-2q-2TL"/>
             </constraints>
             <size key="customSize" width="393" height="201"/>
             <connections>
@@ -116,7 +111,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="dot" width="22" height="22"/>
-        <image name="navArrow" width="100" height="100"/>
+        <image name="dot" width="32.400001525878906" height="32.400001525878906"/>
+        <image name="navArrow" width="200" height="200"/>
     </resources>
 </document>

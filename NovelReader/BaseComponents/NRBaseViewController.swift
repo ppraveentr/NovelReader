@@ -8,6 +8,13 @@
 
 import Foundation
 
+let kShowNovelChapterList = "kShowNovelChapterList"
+let kShowFontPicker = "kShowFontPicker"
+let kShowNovelReaderView = "kShowNovelReaderView"
+
+let kNovelCellIdentifier = "kNovelCellIdentifier"
+let kRecentNovelCellIdentifier = "kRecentNovelCellIdentifier"
+
 public class NRBaseViewController: FTBaseViewController {
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -32,12 +39,12 @@ public class NRBaseViewController: FTBaseViewController {
 
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        if segue.identifier == "kShowNovelChapterList" {
+        if segue.identifier == kShowNovelChapterList {
             if let nextViewController = segue.destination as? NRNovelChapterViewController {
                 nextViewController.novel = sender as? NRNovel
             }
         }
-        else if segue.identifier == "kShowNovelReaderView" {
+        else if segue.identifier == kShowNovelReaderView {
             if let nextViewController = segue.destination as? NRReaderViewController {
                 nextViewController.novel = sender as? NRNovel
             }

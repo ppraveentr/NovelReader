@@ -13,7 +13,7 @@ class FTImageView: UIImageView {
     var grain: UIImage? = nil
 
 //    override var image: UIImage?{
-//        didSet{
+//        didSet {
 //            if grain == nil {
 //                
 //                    grain = self.imageWithGradient(img: image)

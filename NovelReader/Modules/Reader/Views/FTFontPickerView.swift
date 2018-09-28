@@ -47,7 +47,7 @@ open class FTFontPickerView: FTView {
     }
     
     var selectedFont: String? {
-        didSet{
+        didSet {
              pickerDelegate?.fontFamily(selectedFont)
         }
     }

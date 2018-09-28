@@ -101,6 +101,8 @@
 		DEEA25F920A204AB0015CCC0 /* FTCoreUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA25F520A204A20015CCC0 /* FTCoreUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEEA25FA20A204AB0015CCC0 /* FTMobileCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA25F320A204A20015CCC0 /* FTMobileCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEEA25FB20A204AB0015CCC0 /* FTMobileCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA25F420A204A20015CCC0 /* FTMobileCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEF2411C215E6DE400F7B0C6 /* NRConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF2411B215E6DE400F7B0C6 /* NRConstants.swift */; };
+		DEF2411D215E6DE400F7B0C6 /* NRConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF2411B215E6DE400F7B0C6 /* NRConstants.swift */; };
 		DEF76490208341DD00E6F614 /* NRService_fetchNovelChapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7648C208341DD00E6F614 /* NRService_fetchNovelChapters.swift */; };
 		DEF76491208341DD00E6F614 /* NRService_fetchNovelChapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7648C208341DD00E6F614 /* NRService_fetchNovelChapters.swift */; };
 		DEF8D593206783B5001AFEC2 /* NRNovels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF8D58E20678310001AFEC2 /* NRNovels.swift */; };
@@ -289,6 +291,7 @@
 		DEEA25F320A204A20015CCC0 /* FTMobileCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FTMobileCore.framework; sourceTree = "<group>"; };
 		DEEA25F420A204A20015CCC0 /* FTMobileCoreUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FTMobileCoreUI.framework; sourceTree = "<group>"; };
 		DEEA25F520A204A20015CCC0 /* FTCoreUtility.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FTCoreUtility.framework; sourceTree = "<group>"; };
+		DEF2411B215E6DE400F7B0C6 /* NRConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRConstants.swift; sourceTree = "<group>"; };
 		DEF7648C208341DD00E6F614 /* NRService_fetchNovelChapters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRService_fetchNovelChapters.swift; sourceTree = "<group>"; };
 		DEF8D58E20678310001AFEC2 /* NRNovels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRNovels.swift; sourceTree = "<group>"; };
 		E79CFA97A43C0FF6EC2DF089 /* Pods-NovelReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NovelReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-NovelReader/Pods-NovelReader.release.xcconfig"; sourceTree = "<group>"; };
@@ -352,8 +355,8 @@
 		DE4EBE642067B6F5008AC70B /* ServiceModel */ = {
 			isa = PBXGroup;
 			children = (
-				DEE9351520959E1C00B10398 /* NRService_fetchChapter.swift */,
 				DE818242208356BA001316E5 /* NRService_fetchRecentUpdatesList.swift */,
+				DEE9351520959E1C00B10398 /* NRService_fetchChapter.swift */,
 				DEF7648C208341DD00E6F614 /* NRService_fetchNovelChapters.swift */,
 				DE4EBE652067B6F5008AC70B /* NRService_fetchNovelList.swift */,
 			);
@@ -485,6 +488,7 @@
 		DEA7E19F1F497B5D0002C148 /* BaseComponents */ = {
 			isa = PBXGroup;
 			children = (
+				DEF2411B215E6DE400F7B0C6 /* NRConstants.swift */,
 				DEA7E1B61F49A67F0002C148 /* NRAppManager.swift */,
 				DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */,
 				DEBC650520970CB50057F649 /* NRProtocolUtility.swift */,
@@ -1038,6 +1042,7 @@
 				DEBC6537209764790057F649 /* NRNovelCollectionViewController.swift in Sources */,
 				DEF8D594206783B6001AFEC2 /* NRNovels.swift in Sources */,
 				DE84280D20558FE8006605C0 /* NovelChapter.swift in Sources */,
+				DEF2411D215E6DE400F7B0C6 /* NRConstants.swift in Sources */,
 				DEBC653F209764790057F649 /* FTFontPickerView.swift in Sources */,
 				DEBC6547209764790057F649 /* NRNovelCollectionViewCell.swift in Sources */,
 				DEBC654D209764790057F649 /* NRRecentNovelCollectionViewCell.swift in Sources */,
@@ -1081,6 +1086,7 @@
 				DEBC6536209764790057F649 /* NRNovelCollectionViewController.swift in Sources */,
 				DEF8D593206783B5001AFEC2 /* NRNovels.swift in Sources */,
 				DE84280C20558FE8006605C0 /* NovelChapter.swift in Sources */,
+				DEF2411C215E6DE400F7B0C6 /* NRConstants.swift in Sources */,
 				DEBC653E209764790057F649 /* FTFontPickerView.swift in Sources */,
 				DEBC6546209764790057F649 /* NRNovelCollectionViewCell.swift in Sources */,
 				DEBC654C209764790057F649 /* NRRecentNovelCollectionViewCell.swift in Sources */,

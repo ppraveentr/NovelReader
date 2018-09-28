@@ -84,7 +84,7 @@ extension NRSearchCollectionViewController {
 
         // Register Cell
         collectionView.register(NRNovelCollectionViewCell.getNIBFile(),
-                                forCellWithReuseIdentifier: "kNovelCellIdentifier")
+                                forCellWithReuseIdentifier: kNovelCellIdentifier)
 
         // CollectionView delegate
         collectionView.delegate = self
@@ -105,7 +105,7 @@ extension NRSearchCollectionViewController: UICollectionViewDataSource, UICollec
     //cellForItem
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "kNovelCellIdentifier", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNovelCellIdentifier, for: indexPath)
 
         if let cur = currentNovelList?[indexPath.row] {
             if let cell = cell as? NRConfigureNovelCellProtocol {

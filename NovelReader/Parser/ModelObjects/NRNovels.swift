@@ -6,7 +6,7 @@
 //  Copyright © 2017 Praveen Prabhakar. All rights reserved.
 //
 
-final class NRNovels: FTModelData {
+final class NRNovels: FTServiceModel {
     // TODO: Yet to setup model creator for Static data
     var state: String? = nil
     var novelList: [NRNovel]? = nil

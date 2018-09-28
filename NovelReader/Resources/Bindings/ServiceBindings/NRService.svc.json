@@ -1,13 +1,14 @@
 {
     "NovelBase": {
-        "timeout": "60"
+        "timeout": "60",
+        "x-api-key": "bdb6d57f4df64420aa0b220cd924f85e"
     },
     "fetchRecentUpdatesList": {
         "super": "NovelBase",
         "type": "GET",
         "path": "novel/recentupdates",
-        "response": {
-            "arrayOf": "NRNovel"
+        "responseType": {
+            "bindAs": "NRService_fetchRecentUpdatesListResponse"
         }
     },
     "fetchNovelList": {
@@ -20,7 +21,7 @@
             "state": "state",
             "page": "page"
         },
-        "response": {
+        "responseType": {
             "arrayOf": "NRNovel"
         }
     },
@@ -31,7 +32,7 @@
         "requestQuery": {
             "id": "identifier"
         },
-        "response": {
+        "responseType": {
             "bindAs": "NRNovel"
         }
     },
@@ -42,7 +43,7 @@
         "requestQuery": {
             "id": "identifier"
         },
-        "response": {
+        "responseType": {
             "bindAs": "NRNovelChapter"
         }
     }

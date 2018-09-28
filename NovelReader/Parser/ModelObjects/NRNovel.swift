@@ -1,4 +1,4 @@
-final class NRNovel: FTModelData {
+final class NRNovel: FTServiceModel {
 
     var identifier: String? = nil
     var lastChapter: String? = nil

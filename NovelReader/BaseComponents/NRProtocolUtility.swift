@@ -23,17 +23,17 @@ extension NRConfigureNovelCellProtocol where Self: UIView {
         
         let compressedSize = self.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
 
-        if (compressedSize.width*2 + 15*3) < baseView.frame.width/2 {
-            return CGSize(width: compressedSize.width, height: compressedSize.height)
-        }
+//        if (compressedSize.width*2 + 15*3) < baseView.frame.width/2 {
+//            return CGSize(width: compressedSize.width, height: compressedSize.height)
+//        }
 
         let width = baseView.frame.width
 
         let size = self.systemLayoutSizeFitting( CGSize(width: width, height: 0),
                                                  withHorizontalFittingPriority: UILayoutPriority.required,
                                                  verticalFittingPriority: UILayoutPriority.fittingSizeLevel)
-
-        return CGSize(width: width - 38, height: size.height)
+//size.height ??
+        return CGSize(width: width - 38, height:  150)
 
     }
 }

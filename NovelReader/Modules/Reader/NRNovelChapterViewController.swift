@@ -21,7 +21,7 @@ class NRNovelChapterViewController: NRBaseTableViewController {
         super.viewDidLoad()
         setupToolBar()
         tableView.backgroundColor = .clear
-        tableView.register(NRNovelTableViewCell.getNIBFile(), forCellReuseIdentifier: "kNovelCellIdentifier")
+        tableView.register(NRNovelTableViewCell.getNIBFile(), forCellReuseIdentifier: kNovelCellIdentifier)
         
         NRServiceProvider.getNovelChaptersList(novel!, completionHandler: { (novelResponse: NRNovel?) in
             guard (novelResponse != nil) else { return }
@@ -57,7 +57,7 @@ extension NRNovelChapterViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "kNovelCellIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: kNovelCellIdentifier, for: indexPath)
         
         if
             let cell = cell as? NRNovelTableViewCell,
@@ -74,13 +74,13 @@ extension NRNovelChapterViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let cur = novel?.chapterList?[indexPath.row] {
-            self.performSegue(withIdentifier: "kShowNovelReaderView", sender: cur)
+            self.performSegue(withIdentifier: kShowNovelReaderView, sender: cur)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "kShowNovelReaderView" {
+        if segue.identifier == kShowNovelReaderView {
             if let nextViewController = segue.destination as? NRReaderViewController{
                 nextViewController.novelChapter = sender as? NRNovelChapter
             }

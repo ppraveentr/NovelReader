@@ -21,7 +21,7 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
 
     static let sharedInstance = NRGoogleAuth()
 
-    class func setupGoogleAuth() {
+    static func setupGoogleAuth() {
 
         FTThemesManager.addImageSourceBundle(imageSource: "GoogleSignIn".bundle())
 
@@ -34,7 +34,7 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
 //        GIDSignIn.sharedInstance().signInSilently()
     }
 
-    class func signInButton() -> FTButton {
+    static func signInButton() -> FTButton {
 
         let signButtton = FTButton(type: .custom)
         signButtton.theme = "googleButton"
@@ -108,7 +108,7 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
 
 extension NRAppDelegate {
 
-    class func getRootController() -> UIViewController {
+    static func getRootController() -> UIViewController {
         let appDelegate = UIApplication.shared.delegate as! NRAppDelegate
         return appDelegate.window!.rootViewController!
     }

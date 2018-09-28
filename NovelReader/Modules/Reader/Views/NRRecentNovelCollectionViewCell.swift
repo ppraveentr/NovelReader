@@ -24,7 +24,7 @@ class NRRecentNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCel
 
     func configureContent(novel: NRNovel, view: UICollectionView? = nil, indexPath: IndexPath? = nil) {
         novelTitle?.text = novel.title
-        novelTitle?.isLinkUnderLineEnabled = true
+//        novelTitle?.isLinkUnderLineEnabled = true
 
         lastUpdateTitleLabel?.text = "Last Update:"
         lastUpdateTimeLabel?.text = novel.lastUpdated

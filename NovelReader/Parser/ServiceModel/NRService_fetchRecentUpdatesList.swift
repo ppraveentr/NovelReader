@@ -8,17 +8,17 @@
 
 import Foundation
 
+final class NRServiceResponse_fetchRecentUpdatesList: FTServiceModel {
+    var response: [NRNovel]?
+}
+
 final class NRService_fetchRecentUpdatesList: FTServiceClient {
 
-
-    var inputStack: FTModelData?
-
+    var inputStack: FTServiceModel?
     var serviceName = "fetchRecentUpdatesList"
-//    var responseType: FTModelData.Type {
-//        return [NRNovel].self
-//    }
+    var responseModelType: Any? = NRServiceResponse_fetchRecentUpdatesList.self
 
-    init(inputStack: FTModelData?) {
+    init(inputStack: FTServiceModel?) {
         self.inputStack = inputStack
     }
 }

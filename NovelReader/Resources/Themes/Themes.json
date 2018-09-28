@@ -29,6 +29,9 @@
         }
     },
     "appearance": {
+        "UIStatusBar": {
+            "tintColor": "white"
+        },
         "UINavigationBar:UINavigationController": {
             "barTintColor": "white",
             "tintColor": "white",

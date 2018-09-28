@@ -11,87 +11,74 @@ import Foundation
 class NRServiceProvider {
 
     //Get list of all Novels
-    class func fetchRecentUpdateList(_ completionHandler: @escaping (_ novelsList: [NRNovel]?) -> Swift.Void) {
+    static func fetchRecentUpdateList(_ completionHandler: @escaping (_ novelsList: [NRNovel]?) -> Swift.Void) {
 
-        FTServicefetchRecentUpdatesList.make { (status) in
-            switch (status) {
-            case .success(let res, _):
-                completionHandler(res?.responseStack as? [NRNovel])
-            case .failed(let res, _):
-                completionHandler(res?.responseStack as? [NRNovel])
-            }
+        FTLoadingIndicator.show()
+
+        FTServicefetchRecentUpdatesList.make { (response) in
+            FTLoadingIndicator.hide()
+
+            let response = response.status.responseModel as? NRServiceResponse_fetchRecentUpdatesList
+            completionHandler(response?.response)
         }
     }
 
     //Get list of all Novels
-    class func fetchNovelList(novel: NRNovels?, _ completionHandler: @escaping (_ novelsList: NRNovels?) -> Swift.Void) {
+    static func fetchNovelList(novel: NRNovels?, _ completionHandler: @escaping (_ novelsList: NRNovels?) -> Swift.Void) {
 
-        FTServicefetchNovelList.make(modelStack: nil) { (status) in
-            switch (status) {
-            case .success(let res, _):
-                //FIXIT: Has be done in FTServiceClient
-                if let novelResponse = res?.responseStack as? NRNovels {
-                    var novel = novel
-                    novel!.merge(data: novelResponse)
-                    completionHandler(novel)
+        FTLoadingIndicator.show()
+        FTServicefetchNovelList.make(modelStack: nil) { (response) in
+            FTLoadingIndicator.hide()
+
+            let res = response.status.responseModel as? NRServiceResponse_fetchNovelList
+
+            if let novelList = res?.response {
+                let novel = novel ?? NRNovels()
+                if(novel.novelList == nil) {
+                    novel.novelList = []
                 }
-                // TODO: To be removed once Mock is done
-                else if let novelList = res?.responseStack as? [NRNovel] {
-                    let novel = novel ?? NRNovels()
-                    if(novel.novelList == nil) {
-                        novel.novelList = []
-                    }
-                    novel.novelList?.append(contentsOf: novelList)
-                    completionHandler(novel)
-                } else {
-                    completionHandler(res?.responseStack as? NRNovels)
-                }
-                break
-            case .failed(let res, _):
-                completionHandler(res?.responseStack as? NRNovels)
-                break
+                novel.novelList?.append(contentsOf: novelList)
             }
+            completionHandler(novel)
+
+//            //FIXIT: Has be done in FTServiceClient
+//            if let novelResponse = res?.responseStack as? NRNovels {
+//                var novel = novel
+//                novel!.merge(data: novelResponse)
+//                completionHandler(novel)
+//            }
         }
     }
     
     //Get list of all chapters from a single NRNovelObject
-    class func getNovelChaptersList(_ novel: NRNovel, getChapters: Bool = true,
+    static func getNovelChaptersList(_ novel: NRNovel, getChapters: Bool = true,
                                 completionHandler: @escaping (_ novel: NRNovel?) -> Swift.Void) {
 
-        let model: FTModelData = ["id": novel.identifier]
+        FTLoadingIndicator.show()
 
-        FTServicefetchNovelChapters.make(modelStack: model) { (status) in
-            switch (status) {
-            case .success(let res, _):
-                if let novelResponse = res?.responseStack as? NRNovel {
-                    completionHandler(novelResponse)
-                }
-                else {
-                    completionHandler(res?.responseStack as? NRNovel)
-                }
-                break
-            case .failed(let res, _):
-                completionHandler(res?.responseStack as? NRNovel)
-                break
-            }
+        let model: FTServiceModel = ["id": novel.identifier]
+
+        FTServicefetchNovelChapters.make(modelStack: model) { (response) in
+            FTLoadingIndicator.hide()
+
+            let res = response.status.responseModel as? NRServiceResponse_fetchNovelChapters
+            completionHandler(res?.response)
         }
     }
     
     //Get chapter content
-    class func getNovelChapter(_ identifier: String,
+    static func getNovelChapter(_ identifier: String,
                                 completionHandler: @escaping (_ chapterContent: NRNovelChapter?) -> Swift.Void) {
-        
-        let model: FTModelData = ["id": identifier]
 
-        FTServicefetchChapter.make(modelStack: model) { (status) in
-            switch (status) {
-            case .success(let res, _):
-                completionHandler(res?.responseStack as? NRNovelChapter)
-                break
-            case .failed(let res, _):
-                completionHandler(res?.responseStack as? NRNovelChapter)
-                break
-            }
+        FTLoadingIndicator.show()
+
+        let model: FTServiceModel = ["id": identifier]
+
+        FTServicefetchChapter.make(modelStack: model) { (response) in
+            FTLoadingIndicator.hide()
+
+            let res = response.status.responseModel as? NRServiceResponse_fetchChapter
+            completionHandler(res?.response)
         }
     }
 }

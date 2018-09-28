@@ -22,7 +22,7 @@ class NRReaderViewController: FTBaseViewController {
 //        }
 //    }
 
-    var textSize: Int = 140
+    var textSize: Int = kReaderInitalFontSize
     let contentView = FTContentView()
     
     override func viewDidLoad() {
@@ -66,7 +66,7 @@ class NRReaderViewController: FTBaseViewController {
 extension NRReaderViewController: FTFontPickerViewprotocol {
 
     func fontSize(_ size: FontSizePicker) {
-        textSize += (size == .increment) ? 10 : -10;
+        textSize += (size == .increment) ? kReaderFontSize : -kReaderFontSize;
         contentView.webView.setContentFontSize(textSize)
     }
     
@@ -83,7 +83,7 @@ extension NRReaderViewController: UIPopoverPresentationControllerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // segue for the popover configuration window
-        if segue.identifier == "kShowFontPicker" {
+        if segue.identifier == kShowFontPicker {
             if let controller = segue.destination as? FTFontPickerViewController {
                 controller.fontPickerViewDelegate = self
                 controller.popoverPresentationController!.delegate = self

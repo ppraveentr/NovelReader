@@ -13,14 +13,22 @@ import AppCenterCrashes
 
 class NRAppManager {
 
-    class func configureAppBase() {
+    //MARK: Setup
+    static func setupApplication() {
+        NRAppManager.configureAppBase()
+        NRAppManager.configureAppTheme()
+        NRGoogleAuth.setupGoogleAuth()
+    }
+
+    //MARK: Model Binding
+    static func configureAppBase() {
 
         // Register self's type as Bundle-Identifier for getting class name
         FTReflection.registerModuleIdentifier(NRAppDelegate.self)
 
         // Service Binding
-        FTMobileConfig.serviceBindingPath = "Bindings/ServiceBindings"
-        FTMobileConfig.serviceBindingRulesName = "NovelServiceRules.plist"
+        FTMobileConfig.serviceBindingPath = kServiceBindingsName
+        FTMobileConfig.serviceBindingRulesName = kServiceBindingRulesName
 
         // App Config
         FTMobileConfig.appBaseURL = NRAppManager.endpointURL()
@@ -28,37 +36,42 @@ class NRAppManager {
         // Debug-only code
         self.configDebug()
 
-        MSAppCenter.start("6778a47c-7742-4dea-ace3-63c28b424350", withServices:[
+        MSAppCenter.start(kMSAppCenter, withServices:[
             MSAnalytics.self,
             MSCrashes.self
             ])
     }
 
-    class func endpointURL() -> String {
-        return Bundle.main.infoDictionary!["EndpointURL"] as? String ?? ""
+    // plist Endpoint
+    static func endpointURL() -> String {
+        return Bundle.main.infoDictionary![kEndpointURL] as? String ?? ""
     }
 
-    class func configDebug() {
+    // Config
+    static func configDebug() {
         #if DEBUG
+        // Debug-Postman
+//        FTMobileConfig.appBaseURL = kPostmanURL
         // Debug-only code
-        FTMobileConfig.appBaseURL = "http://127.0.0.1:3000"
-        FTMobileConfig.mockBundleResource = "FTNovelReaderMockBundle.bundle".bundleURL()
-        FTMobileConfig.isMockData = true
+        FTMobileConfig.appBaseURL = kMockServerURL
+//        FTMobileConfig.mockBundleResource = kMockBundleResource
+//        FTMobileConfig.isMockData = kMockDataEnabled
         #endif
     }
 
-    class func generateModelBinding() {
+    static func generateModelBinding() {
         // Model Binding Generator
         if let resourcePath = Bundle.main.resourceURL {
-            FTModelCreator.configureSourcePath(path: resourcePath.appendingPathComponent("Bindings/ModelBindings").path)
+            FTModelCreator.configureSourcePath(path: resourcePath.appendingPathComponent(kModelBindingsName).path)
             FTModelCreator.generateOutput()
         }
     }
 
-    class func configureAppTheme() {
+    //MARK: Theme
+    static func configureAppTheme() {
 
         if
-            let theme = Bundle.main.path(forResource: "Themes", ofType: "json"),
+            let theme = Bundle.main.path(forResource: kThemeFileName, ofType: nil),
             let themeContent: FTThemeDic = try! theme.jsonContentAtPath() {
 
             FTThemesManager.setupThemes(themes: themeContent, imageSourceBundle: [Bundle(for: NRAppDelegate.self)])
@@ -71,12 +84,29 @@ class NRAppManager {
         //        let textBarAppearance = UILabel.appearance(whenContainedInInstancesOf: [FTSearchBar.self])
         //        textBarAppearance.tintColor = .blue
 
-        if let color = "#DF6E6E".hexColor() {
-            FTThemesManager.setStatusBarBackgroundColor(color)
-        }
+        //Status Bar 
+        FTThemesManager.setStatusBarBackgroundColor(kNavigationBarColor)
 
         // WARNING :
         // UIApplication.shared.statusBarStyle = .lightContent
 
+        //Loading Indicator
+        setupLoadingIndicator()
     }
+
+    //MARK: LoadingIndicator
+    static func setupLoadingIndicator() {
+
+        var config: FTLoadingIndicator.Config = FTLoadingIndicator.Config()
+        config.backgroundColor = UIColor.clear
+        config.spinnerColor = kNavigationBarColor
+        config.titleTextColor = UIColor.white
+        config.spinnerLineWidth = 8.0
+        config.foregroundColor = kNavigationBarColor.darkerColor(30)
+        config.foregroundAlpha = 0.5
+        config.title = ""
+
+        FTLoadingIndicator.setConfig(config: config)
+    }
+
 }
