@@ -187,7 +187,7 @@ extension NRNovelCollectionViewController: UICollectionViewDataSource, UICollect
 
         if novelCollectionType == .recentNovel {
             self.performSegue(withIdentifier: kShowNovelReaderView, sender: cur)
-        } else{
+        } else {
             self.performSegue(withIdentifier: kShowNovelChapterList, sender: cur)
         }
     }
@@ -196,7 +196,6 @@ extension NRNovelCollectionViewController: UICollectionViewDataSource, UICollect
 
 //MARK: NRNovelCollectionHeaderView
 class NRNovelCollectionHeaderView: UICollectionReusableView {
-
     var segmentedControl: FTSegmentedControl? = nil
 
     override init(frame: CGRect) {

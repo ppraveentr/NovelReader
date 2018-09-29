@@ -13,7 +13,6 @@ final class NRServiceResponse_fetchRecentUpdatesList: FTServiceModel {
 }
 
 final class NRService_fetchRecentUpdatesList: FTServiceClient {
-
     var inputStack: FTServiceModel?
     var serviceName = "fetchRecentUpdatesList"
     var responseModelType: Any? = NRServiceResponse_fetchRecentUpdatesList.self

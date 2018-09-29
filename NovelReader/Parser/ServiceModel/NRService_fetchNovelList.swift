@@ -13,9 +13,7 @@ final class NRServiceResponse_fetchNovelList: FTServiceModel {
 }
 
 final class NRService_fetchNovelList: FTServiceClient {
-
     var serviceName = "fetchNovelList"
-
     var inputStack: NRNovels?
     var responseModelType: Any? = NRServiceResponse_fetchNovelList.self
 

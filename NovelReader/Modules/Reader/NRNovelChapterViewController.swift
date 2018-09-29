@@ -9,9 +9,7 @@
 import UIKit
 
 class NRNovelChapterViewController: NRBaseTableViewController {
-
     var novel: NRNovel?
-    
     lazy var novelDescView: NRNovelDescriptionView? = NRNovelDescriptionView.fromNib() as? NRNovelDescriptionView
     
     override func tableStyle() -> UITableView.Style { return .grouped }
@@ -24,7 +22,9 @@ class NRNovelChapterViewController: NRBaseTableViewController {
         tableView.register(NRNovelTableViewCell.getNIBFile(), forCellReuseIdentifier: kNovelCellIdentifier)
         
         NRServiceProvider.getNovelChaptersList(novel!, completionHandler: { (novelResponse: NRNovel?) in
-            guard (novelResponse != nil) else { return }
+            guard (novelResponse != nil) else {
+                return
+            }
             self.novel?.merge(data: novelResponse!)
             self.configureContent(novel: self.novel!)
         })

@@ -1,5 +1,4 @@
 final class NRNovel: FTServiceModel {
-
     var identifier: String? = nil
     var lastChapter: String? = nil
     var chapterList: [NRNovelChapter]? = nil
