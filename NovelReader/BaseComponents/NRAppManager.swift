@@ -42,12 +42,12 @@ class NRAppManager {
             ])
     }
 
-    //  plist Endpoint
+    // plist Endpoint
     static func endpointURL() -> String {
         return Bundle.main.infoDictionary![kEndpointURL] as? String ?? ""
     }
 
-    //  Config
+    // Config
     static func configDebug() {
         #if DEBUG
         // Debug-Postman

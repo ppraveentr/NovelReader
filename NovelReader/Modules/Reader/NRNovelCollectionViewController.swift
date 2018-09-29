@@ -78,7 +78,7 @@ class NRNovelCollectionViewController: NRBaseViewController {
     
 }
 
-//MARK: SetUp UICollectionView
+// MARK: SetUp UICollectionView
 extension NRNovelCollectionViewController {
 
     func getCollectionView() -> UICollectionView {
@@ -132,7 +132,7 @@ extension NRNovelCollectionViewController {
     
 }
 
-//MARK: UICollectionView delegates
+// MARK: UICollectionView delegates
 extension NRNovelCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
 
     // viewForSupplementaryElement
@@ -194,7 +194,7 @@ extension NRNovelCollectionViewController: UICollectionViewDataSource, UICollect
     
 }
 
-//MARK: NRNovelCollectionHeaderView
+// MARK: NRNovelCollectionHeaderView
 class NRNovelCollectionHeaderView: UICollectionReusableView {
     var segmentedControl: FTSegmentedControl? = nil
 
@@ -220,7 +220,7 @@ class NRNovelCollectionHeaderView: UICollectionReusableView {
     
 }
 
-//MARK: NRNovelCollectionType
+// MARK: NRNovelCollectionType
 enum NRNovelCollectionType: Int {
     case recentNovel = 0
     case topNovel

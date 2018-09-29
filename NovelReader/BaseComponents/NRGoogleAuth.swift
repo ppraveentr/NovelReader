@@ -9,9 +9,9 @@
 import Foundation
 import GoogleSignIn
 
-//Notification constans name
+// Notification constans name
 public extension Notification.Name {
-    // FTAuthentication - Google
+    //  FTAuthentication - Google
     public static let FTAuthentication_GoogleSignIn_SignedIn = Notification.Name("FTAuthentication_GoogleSignIn_SignedIn")
     public static let FTAuthentication_GoogleSignIn_SignedOut = Notification.Name("FTAuthentication_GoogleSignIn_SignedOut")
 
@@ -26,12 +26,12 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
         FTThemesManager.addImageSourceBundle(imageSource: "GoogleSignIn".bundle())
 
         // Initialize sign-in
-//        GIDSignIn.sharedInstance().clientID = "769359482558-l9uifqdbpq49n1pjqk6vvb2qtekm0ktl.apps.googleusercontent.com"
-//        GIDSignIn.sharedInstance().delegate = NRGoogleAuth.sharedInstance
-//        GIDSignIn.sharedInstance().uiDelegate = NRGoogleAuth.sharedInstance
+//       GIDSignIn.sharedInstance().clientID = "769359482558-l9uifqdbpq49n1pjqk6vvb2qtekm0ktl.apps.googleusercontent.com"
+//       GIDSignIn.sharedInstance().delegate = NRGoogleAuth.sharedInstance
+//       GIDSignIn.sharedInstance().uiDelegate = NRGoogleAuth.sharedInstance
 //
-//        Uncomment to automatically sign in the user.
-//        GIDSignIn.sharedInstance().signInSilently()
+//       Uncomment to automatically sign in the user.
+//       GIDSignIn.sharedInstance().signInSilently()
     }
 
     static func signInButton() -> FTButton {
@@ -93,13 +93,13 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
     // GIDSignInUIDelegate
     func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) { }
 
-    //  Present a view that prompts the user to sign in with Google
+    // Present a view that prompts the user to sign in with Google
     func sign(_ signIn: GIDSignIn!,
               present viewController: UIViewController!) {
         NRAppDelegate.getRootController().present(viewController, animated: true, completion: nil)
     }
 
-    //  Dismiss the "Sign in with Google" view
+    // Dismiss the "Sign in with Google" view
     func sign(_ signIn: GIDSignIn!,
               dismiss viewController: UIViewController!) {
         NRAppDelegate.getRootController().dismiss(animated: true, completion: nil)
