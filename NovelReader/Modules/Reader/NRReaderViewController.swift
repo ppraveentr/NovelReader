@@ -12,7 +12,6 @@ class NRReaderViewController: FTBaseViewController {
     
     var novelChapter: NRNovelChapter?
     var novel: NRNovel?
-    static let backButton = #selector(NRReaderViewController.back)
 
     @IBOutlet var fontPickerBarItem: UIBarButtonItem?
 //    @IBOutlet var chapterToolBarItem: UIToolbar?
@@ -27,21 +26,24 @@ class NRReaderViewController: FTBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // setup view content
         self.setupViewContent()
     }
-    
-    @objc func back() {
-        self.navigationController?.popViewController(animated: true)
+
+    override func shouldSetSafeAreaLayoutGuide() -> Bool {
+        return false
     }
-    
+
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
     func setupViewContent() {
         
-        self.title = novelChapter?.shortTitle ?? novelChapter?.title ?? novel?.title
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: NRReaderViewController.backButton)
-        
-        self.navigationItem.rightBarButtonItem = fontPickerBarItem
+        let title = novelChapter?.shortTitle ?? novelChapter?.title ?? novel?.title ?? ""
+        self.setupNavigationbar(title: title,
+                                leftButton: self.navigationBarButton(buttonType: .stop),
+                                rightButton: fontPickerBarItem)
 
         self.mainView?.pin(view: contentView)
 
@@ -72,6 +74,8 @@ extension NRReaderViewController: FTFontPickerViewprotocol {
     
     func pickerColor(textColor: UIColor, backgroundColor: UIColor) {
         contentView.webView.setContentColor(textColor: textColor, backgroundColor: backgroundColor)
+        self.view.backgroundColor = backgroundColor
+        self.mainView?.backgroundColor = backgroundColor
     }
     
     func fontFamily(_ fontName: String?) {
@@ -82,14 +86,7 @@ extension NRReaderViewController: FTFontPickerViewprotocol {
 extension NRReaderViewController: UIPopoverPresentationControllerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // segue for the popover configuration window
-        if segue.identifier == kShowFontPicker {
-            if let controller = segue.destination as? FTFontPickerViewController {
-                controller.fontPickerViewDelegate = self
-                controller.popoverPresentationController!.delegate = self
-                controller.preferredContentSize = CGSize(width: 250, height: 320)
-            }
-        }
+        self.prepareSegue(segue, sender: sender)
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {

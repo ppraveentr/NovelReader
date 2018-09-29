@@ -78,34 +78,22 @@ extension NRNovelChapterViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == kShowNovelReaderView {
-            if let nextViewController = segue.destination as? NRReaderViewController{
-                nextViewController.novelChapter = sender as? NRNovelChapter
-            }
-        }
-    }
 }
 
 extension NRNovelChapterViewController {
     
-    @objc func back() {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     func setupToolBar() {
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(back))
-        
+
 //        let searchBar = FTSearchBar(frame: CGRect(origin: .zero, size: CGSize(width: 300, height: 44)), textColor: .white)
 //        searchBar.configure(barTintColor: "#de6161".hexColor()!, tintColor: .white)
 //        searchBar.placeholder = "Search"
 //        searchBar.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 //        
 //        self.navigationItem.titleView = searchBar
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: nil, action: nil)
+
+        self.setupNavigationbar(title: "",
+                                leftButton: self.navigationBarButton(buttonType: .stop),
+                                rightButton: self.navigationBarButton(buttonType: .bookmarks))
     }
     
     //    func setupToolBar() {

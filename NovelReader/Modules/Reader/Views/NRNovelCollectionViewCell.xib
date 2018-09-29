@@ -45,14 +45,14 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjo-zg-ln4">
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjo-zg-ln4">
                         <rect key="frame" x="10" y="160" width="373" height="1"/>
                         <color key="backgroundColor" red="0.89805901050567627" green="0.89804208278656006" blue="0.89805364608764648" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="b5J-ic-3ea"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JPN-lI-Jvc" customClass="FTButton" customModule="FTMobileCoreUI">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JPN-lI-Jvc" customClass="FTButton" customModule="FTMobileCoreUI">
                         <rect key="frame" x="10" y="169" width="36" height="24"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                         <color key="tintColor" red="0.87058823529411766" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -69,7 +69,7 @@
                             <constraint firstAttribute="height" constant="20" id="iPs-er-BC5"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="751" text=" asdasds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4P-O4-zCY" customClass="FTLabel" customModule="FTMobileCoreUI">
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="751" text=" asdasds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4P-O4-zCY" customClass="FTLabel" customModule="FTMobileCoreUI">
                         <rect key="frame" x="329" y="169" width="54" height="24"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                         <color key="textColor" red="0.62750589847564697" green="0.62749385833740234" blue="0.62750202417373657" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

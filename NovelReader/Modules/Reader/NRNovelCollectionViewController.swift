@@ -163,7 +163,7 @@ extension NRNovelCollectionViewController: UICollectionViewDataSource, UICollect
                 cell.configureContent(novel: cur, view: collectionView, indexPath: indexPath)
             }
         }
-        cell.invalidateIntrinsicContentSize()
+        //cell.invalidateIntrinsicContentSize()
 
         return cell
     }

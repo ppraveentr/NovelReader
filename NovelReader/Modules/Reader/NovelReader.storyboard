@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +26,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="tP7-z7-4Ne" kind="show" identifier="kShowNovelChapterList" id="WkK-Ij-5Tn"/>
-                        <segue destination="sKg-cZ-zqw" kind="show" identifier="kShowNovelReaderView" id="fSp-SM-qua"/>
+                        <segue destination="4eN-BC-EyU" kind="presentation" identifier="kShowNovelReaderView" id="fSp-SM-qua"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -51,7 +51,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="7bC-Bl-Bmm"/>
                     <connections>
-                        <segue destination="sKg-cZ-zqw" kind="show" identifier="kShowNovelReaderView" id="N08-mK-hS3"/>
+                        <segue destination="4eN-BC-EyU" kind="presentation" identifier="kShowNovelReaderView" id="N08-mK-hS3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="izn-Cb-Qc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -75,6 +75,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="QlO-ka-8Ou"/>
                     <connections>
                         <outlet property="fontPickerBarItem" destination="bdI-Le-MFg" id="8JR-0I-jIF"/>
                     </connections>
@@ -88,7 +89,7 @@
                     </connections>
                 </barButtonItem>
             </objects>
-            <point key="canvasLocation" x="2628" y="1158"/>
+            <point key="canvasLocation" x="3567.1999999999998" y="1157.2713643178411"/>
         </scene>
         <!--Font Picker View Controller-->
         <scene sceneID="cAT-De-duD">
@@ -115,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqd-qv-diI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3404" y="1157"/>
+            <point key="canvasLocation" x="4343.1999999999998" y="1156.3718140929536"/>
         </scene>
         <!--FTBaseNavigationController-->
         <scene sceneID="J2u-Xw-ceI">
@@ -137,12 +138,30 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="359.37031484257875"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AWa-xD-Ofm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" hidesBarsOnTap="YES" id="4eN-BC-EyU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RaO-So-NJG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sKg-cZ-zqw" kind="relationship" relationship="rootViewController" id="JUD-4x-eVJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h08-FB-yHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2628" y="1157.2713643178411"/>
+        </scene>
     </scenes>
     <resources>
         <image name="NavigationBarDefault" width="60" height="44"/>
-        <image name="fontSize" width="22" height="22"/>
+        <image name="fontSize" width="1.537731409072876" height="1.537731409072876"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="N08-mK-hS3"/>
+        <segue reference="fSp-SM-qua"/>
     </inferredMetricsTieBreakers>
 </document>
