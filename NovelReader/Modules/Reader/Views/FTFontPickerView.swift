@@ -52,7 +52,7 @@ open class FTFontPickerView: FTView {
         }
     }
     
-    //Avaialble Fonts
+    // Avaialble Fonts
     let fontTypes = ["Arial","Courier","Georgia","Helvetica","Palatino","Times","Verdana"]
 
     open override func awakeFromNib() {

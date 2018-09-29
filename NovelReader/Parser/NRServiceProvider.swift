@@ -10,7 +10,7 @@ import Foundation
 
 class NRServiceProvider {
 
-    //Get list of all Novels
+    // Get list of all Novels
     static func fetchRecentUpdateList(_ completionHandler: @escaping (_ novelsList: [NRNovel]?) -> Swift.Void) {
 
         FTLoadingIndicator.show()
@@ -23,7 +23,7 @@ class NRServiceProvider {
         }
     }
 
-    //Get list of all Novels
+    // Get list of all Novels
     static func fetchNovelList(novel: NRNovels?, _ completionHandler: @escaping (_ novelsList: NRNovels?) -> Swift.Void) {
 
         FTLoadingIndicator.show()
@@ -50,7 +50,7 @@ class NRServiceProvider {
         }
     }
     
-    //Get list of all chapters from a single NRNovelObject
+    // Get list of all chapters from a single NRNovelObject
     static func getNovelChaptersList(_ novel: NRNovel, getChapters: Bool = true,
                                 completionHandler: @escaping (_ novel: NRNovel?) -> Swift.Void) {
 
@@ -66,7 +66,7 @@ class NRServiceProvider {
         }
     }
     
-    //Get chapter content
+    // Get chapter content
     static func getNovelChapter(_ identifier: String,
                                 completionHandler: @escaping (_ chapterContent: NRNovelChapter?) -> Swift.Void) {
 

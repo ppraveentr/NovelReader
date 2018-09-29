@@ -12,7 +12,7 @@ class NRNovelCollectionViewController: NRBaseViewController {
 
     lazy var collectionView: UICollectionView = self.getCollectionView()
 
-    //Dummycell for collectionView cell Height calculation
+    // Dummycell for collectionView cell Height calculation
     lazy var sampleTopNovelCell = NRNovelCollectionType.topNovel.getNib()
     lazy var sampleRecentNovelCell = NRNovelCollectionType.recentNovel.getNib()
     var dummyNovelCell: NRConfigureNovelCellProtocol {
@@ -24,18 +24,18 @@ class NRNovelCollectionViewController: NRBaseViewController {
         }
     }
 
-    //Collection Content Type
+    // Collection Content Type
     var novelCollectionType: NRNovelCollectionType = .recentNovel {
         didSet { self.fetchNovelList() }
     }
 
     lazy var novel: NRNovels? = NRNovels()
-    //Update collectionView when contentList changes
+    // Update collectionView when contentList changes
     var currentNovelList: [NRNovel]? = [] {
         didSet { self.configureColletionView() }
     }
 
-    //View lifecycle
+    // View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = kNovelReaderTitle
@@ -45,12 +45,12 @@ class NRNovelCollectionViewController: NRBaseViewController {
 
     }
 
-    //Updates novelCollectionType, which interns fetchNovelList from backend
+    // Updates novelCollectionType, which interns fetchNovelList from backend
     func updateNovelSegment(segmentControl: FTSegmentedControl) {
         novelCollectionType = NRNovelCollectionType(rawValue: segmentControl.selectedSegmentIndex)!
     }
 
-    //get-Novels from backend
+    // get-Novels from backend
     func fetchNovelList() {
         switch novelCollectionType {
         case .recentNovel:
@@ -133,7 +133,7 @@ extension NRNovelCollectionViewController {
 //MARK: UICollectionView delegates
 extension NRNovelCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
 
-    //viewForSupplementaryElement
+    // viewForSupplementaryElement
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell", for: indexPath) as! NRNovelCollectionHeaderView
@@ -147,12 +147,12 @@ extension NRNovelCollectionViewController: UICollectionViewDataSource, UICollect
         return headerView
     }
 
-    //numberOfItemsInSection
+    // numberOfItemsInSection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentNovelList?.count ?? 0
     }
 
-    //cellForItem
+    // cellForItem
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cellIdentifier = novelCollectionType.cellIdentifier
@@ -168,7 +168,7 @@ extension NRNovelCollectionViewController: UICollectionViewDataSource, UICollect
         return cell
     }
 
-    //Cell sizeForItem
+    // Cell sizeForItem
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let cell = self.dummyNovelCell

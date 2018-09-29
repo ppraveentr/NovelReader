@@ -13,14 +13,14 @@ import AppCenterCrashes
 
 class NRAppManager {
 
-    //MARK: Setup
+    // MARK: Setup
     static func setupApplication() {
         NRAppManager.configureAppBase()
         NRAppManager.configureAppTheme()
         NRGoogleAuth.setupGoogleAuth()
     }
 
-    //MARK: Model Binding
+    // MARK: Model Binding
     static func configureAppBase() {
 
         // Register self's type as Bundle-Identifier for getting class name
@@ -42,12 +42,12 @@ class NRAppManager {
             ])
     }
 
-    // plist Endpoint
+    //  plist Endpoint
     static func endpointURL() -> String {
         return Bundle.main.infoDictionary![kEndpointURL] as? String ?? ""
     }
 
-    // Config
+    //  Config
     static func configDebug() {
         #if DEBUG
         // Debug-Postman
@@ -67,7 +67,7 @@ class NRAppManager {
         }
     }
 
-    //MARK: Theme
+    // MARK: Theme
     static func configureAppTheme() {
 
         if
@@ -94,7 +94,7 @@ class NRAppManager {
         setupLoadingIndicator()
     }
 
-    //MARK: LoadingIndicator
+    // MARK: LoadingIndicator
     static func setupLoadingIndicator() {
 
         var config: FTLoadingIndicator.Config = FTLoadingIndicator.Config()

@@ -7,7 +7,7 @@
 //
 
 final class NRNovels: FTServiceModel {
-    // TODO: Yet to setup model creator for Static data
+    //  TODO: Yet to setup model creator for Static data
     var state: String? = nil
     var novelList: [NRNovel]? = nil
     var page: String? = "1"

@@ -11,7 +11,7 @@ import GoogleSignIn
 
 //Notification constans name
 public extension Notification.Name {
-    //FTAuthentication - Google
+    // FTAuthentication - Google
     public static let FTAuthentication_GoogleSignIn_SignedIn = Notification.Name("FTAuthentication_GoogleSignIn_SignedIn")
     public static let FTAuthentication_GoogleSignIn_SignedOut = Notification.Name("FTAuthentication_GoogleSignIn_SignedOut")
 
@@ -72,7 +72,7 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
         return signButtton
     }
 
-    //GIDSignInDelegate
+    // GIDSignInDelegate
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
 
         if let error = error {
@@ -90,16 +90,16 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
         }
     }
 
-    //GIDSignInUIDelegate
+    // GIDSignInUIDelegate
     func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) { }
 
-    // Present a view that prompts the user to sign in with Google
+    //  Present a view that prompts the user to sign in with Google
     func sign(_ signIn: GIDSignIn!,
               present viewController: UIViewController!) {
         NRAppDelegate.getRootController().present(viewController, animated: true, completion: nil)
     }
 
-    // Dismiss the "Sign in with Google" view
+    //  Dismiss the "Sign in with Google" view
     func sign(_ signIn: GIDSignIn!,
               dismiss viewController: UIViewController!) {
         NRAppDelegate.getRootController().dismiss(animated: true, completion: nil)

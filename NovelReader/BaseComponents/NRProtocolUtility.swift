@@ -19,7 +19,7 @@ extension NRConfigureNovelCellProtocol where Self: UIView {
     func configureContent(novel: NRNovel) { }
     func configureContent(novel: NRNovel, view: UICollectionView?, indexPath: IndexPath?) { }
 
-    //FIXIT: Not working
+    // FIXIT: Not working
     func getSize(baseView: UIView) -> CGSize {
         
         //let compressedSize = self.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)

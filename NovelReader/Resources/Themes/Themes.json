@@ -1,136 +1,136 @@
 {
-    "type": "Themes",
-    "color": {
-        "default": "#000000",
-        "AA": "#16c5ce",
-        "clear": "clear",
-        "black": "#000000",
-        "appRed": "#DD6060",
-        "navBarRed": "#DF6E6E",
-        "appWhite": "#F7F3F0",
-        "blue": "#1059ce",
-        "green": "#10ce1a",
-        "yellow": "#cecb10",
-        "white": "#FFFFFF",
-        "gray": "#A9A9A9"
-    },
-    "font": {
-        "default": {
-            "name": "system",
-            "size": "13.0"
-        },
-        "system14": {
-            "_super": "default",
-            "size": "14.0"
-        },
-        "system17": {
-            "_super": "default",
-            "size": "17.0"
-        }
-    },
-    "appearance": {
-        "UIStatusBar": {
-            "tintColor": "white"
-        },
-        "UINavigationBar:UINavigationController": {
-            "barTintColor": "white",
-            "tintColor": "white",
-            "isTranslucent": true,
-            "backgroundImage": {
-                "default": "@Pixel",
-                "landScape": "@Pixel"
-            },
-            "shadowImage": "@empty",
-            "titleText": {
-                "foregroundColor": "white"
-            }
-        },
-        "UIToolbar:UINavigationController": {
-            "barTintColor": "white",
-            "isTranslucent": true
-        },
-        "UISegmentedControl": {
-            "tintColor": "appRed"
-        },
-        "UISegmentedControl:UICollectionReusableView": {
-            "tintColor": "white"
-        }
-    },
-    "components": {
-        "FTView": {
-            "default": {
-                "backgroundColor": "appWhite"
-            }
-        },
-        "NRNovelCollectionHeaderView": {
-            "default": {
-                "backgroundColor": "navBarRed"
-            }
-        },
-        "FTButton": {
-            "default": {
-                "textfont": "system14",
-                "textcolor": "black",
-                "backgroundColor": "clear"
-            },
-            "button14R": {
-                "_super": "default",
-                "textcolor": "appRed"
-            },
-            "button14R:highlighted": {
-                "_super": "default",
-                "textcolor": "green"
-            },
-            "button14R:disabled": {
-                "_super": "default",
-                "textcolor": "yellow"
-            },
-            "googleButton": {
-                "_super": "default",
-                "image": "@google",
-                "backgroundColor": "white",
-                "layer": {
-                    "cornerRadius" : 22
-                }
-            }
-        },
-        "FTLabel": {
-            "default": {
-                "textfont": "system14",
-                "textcolor": "black",
-                "backgroundColor": "clear",
-                "isLinkUnderlineEnabled": true,
-                "isLinkDetectionEnabled": true
-            },
-            "system13Gray": {
-                "_super": "default",
-                "textcolor": "gray"
-            },
-            "system14R": {
-                "_super": "default",
-                "textcolor": "appRed"
-            },
-            "system17R": {
-                "_super": "default",
-                "textfont": "system17",
-                "textcolor": "appRed"
-            },
-            "system14B": {
-                "_super": "default",
-                "textcolor": "blue"
-            },
-            "system14G": {
-                "_super": "default",
-                "textcolor": "green"
-            },
-            "system14Y": {
-                "_super": "default",
-                "textcolor": "yellow"
-            },
-            "system14AA": {
-                "_super": "default",
-                "textcolor": "AA"
-            }
-        }
-    }
+	"type": "Themes",
+	"color": {
+		"default": "#000000",
+		"AA": "#16c5ce",
+		"clear": "clear",
+		"black": "#000000",
+		"appRed": "#DD6060",
+		"navBarRed": "#DF6E6E",
+		"appWhite": "#F7F3F0",
+		"blue": "#1059ce",
+		"green": "#10ce1a",
+		"yellow": "#cecb10",
+		"white": "#FFFFFF",
+		"gray": "#A9A9A9"
+	},
+	"font": {
+		"default": {
+			"name": "system",
+			"size": "13.0"
+		},
+		"system14": {
+			"_super": "default",
+			"size": "14.0"
+		},
+		"system17": {
+			"_super": "default",
+			"size": "17.0"
+		}
+	},
+	"appearance": {
+		"UIStatusBar": {
+			"tintColor": "white"
+		},
+		"UINavigationBar:UINavigationController": {
+			"barTintColor": "white",
+			"tintColor": "white",
+			"isTranslucent": true,
+			"backgroundImage": {
+				"default": "@Pixel",
+				"landScape": "@Pixel"
+			},
+			"shadowImage": "@empty",
+			"titleText": {
+				"foregroundColor": "white"
+			}
+		},
+		"UIToolbar:UINavigationController": {
+			"barTintColor": "white",
+			"isTranslucent": true
+		},
+		"UISegmentedControl": {
+			"tintColor": "appRed"
+		},
+		"UISegmentedControl:UICollectionReusableView": {
+			"tintColor": "white"
+		}
+	},
+	"components": {
+		"FTView": {
+			"default": {
+				"backgroundColor": "appWhite"
+			}
+		},
+		"NRNovelCollectionHeaderView": {
+			"default": {
+				"backgroundColor": "navBarRed"
+			}
+		},
+		"FTButton": {
+			"default": {
+				"textfont": "system14",
+				"textcolor": "black",
+				"backgroundColor": "clear"
+			},
+			"button14R": {
+				"_super": "default",
+				"textcolor": "appRed"
+			},
+			"button14R:highlighted": {
+				"_super": "default",
+				"textcolor": "green"
+			},
+			"button14R:disabled": {
+				"_super": "default",
+				"textcolor": "yellow"
+			},
+			"googleButton": {
+				"_super": "default",
+				"image": "@google",
+				"backgroundColor": "white",
+				"layer": {
+					"cornerRadius": 22
+				}
+			}
+		},
+		"FTLabel": {
+			"default": {
+				"textfont": "system14",
+				"textcolor": "black",
+				"backgroundColor": "clear",
+				"isLinkUnderlineEnabled": true,
+				"isLinkDetectionEnabled": true
+			},
+			"system13Gray": {
+				"_super": "default",
+				"textcolor": "gray"
+			},
+			"system14R": {
+				"_super": "default",
+				"textcolor": "appRed"
+			},
+			"system17R": {
+				"_super": "default",
+				"textfont": "system17",
+				"textcolor": "appRed"
+			},
+			"system14B": {
+				"_super": "default",
+				"textcolor": "blue"
+			},
+			"system14G": {
+				"_super": "default",
+				"textcolor": "green"
+			},
+			"system14Y": {
+				"_super": "default",
+				"textcolor": "yellow"
+			},
+			"system14AA": {
+				"_super": "default",
+				"textcolor": "AA"
+			}
+		}
+	}
 }

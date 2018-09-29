@@ -14,8 +14,8 @@ class NRNovelChapterViewController: NRBaseTableViewController {
     
     lazy var novelDescView: NRNovelDescriptionView? = NRNovelDescriptionView.fromNib() as? NRNovelDescriptionView
     
-    override func class_TableViewStyle() -> UITableView.Style { return .grouped }
-    override func class_TableViewEdgeOffsets() -> FTEdgeOffsets { return FTEdgeOffsets(10, 0, 10, 0) }
+    override func tableViewStyle() -> UITableView.Style { return .grouped }
+    override func tableViewEdgeOffsets() -> FTEdgeOffsets { return FTEdgeOffsets(10, 0, 10, 0) }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,11 +96,11 @@ extension NRNovelChapterViewController {
                                 rightButton: self.navigationBarButton(buttonType: .bookmarks))
     }
     
-    //    func setupToolBar() {
-    //
-    //        let refresh = UIRefreshControl()
-    //        refresh.addTarget(self, action: #selector(setupSearchBar), for: .valueChanged)
-    //        self.tableView.addSubview(refresh)
-    //        self.tableViewController.refreshControl = refresh
-    //    }
+    //     func setupToolBar() {
+    // 
+    //         let refresh = UIRefreshControl()
+    //         refresh.addTarget(self, action: #selector(setupSearchBar), for: .valueChanged)
+    //         self.tableView.addSubview(refresh)
+    //         self.tableViewController.refreshControl = refresh
+    //     }
 }

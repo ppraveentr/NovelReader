@@ -11,14 +11,14 @@ import Foundation
 class NRSearchCollectionViewController: NRBaseViewController {
 
     lazy var collectionView: UICollectionView = self.getCollectionView()
-    //Update collectionView when contentList changes
+    // Update collectionView when contentList changes
     var currentNovelList: [NRNovel]? = [] {
         didSet {
             self.configureColletionView()
         }
     }
 
-    //Dummycell for collectionView cell Height calculation
+    // Dummycell for collectionView cell Height calculation
     var dummyNovelCell: NRConfigureNovelCellProtocol = NRNovelCollectionViewCell.fromNib() as! NRNovelCollectionViewCell
 
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class NRSearchCollectionViewController: NRBaseViewController {
         self.searchNovelList()
     }
 
-    //get-Novels from backend
+    // get-Novels from backend
     func searchNovelList() {
         NRServiceProvider.fetchNovelList(novel: nil) { (novelList) in
             self.currentNovelList = novelList?.novelList
@@ -97,12 +97,12 @@ extension NRSearchCollectionViewController {
 
 extension NRSearchCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
 
-    //numberOfItemsInSection
+    // numberOfItemsInSection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentNovelList?.count ?? 0
     }
 
-    //cellForItem
+    // cellForItem
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNovelCellIdentifier, for: indexPath)
@@ -116,7 +116,7 @@ extension NRSearchCollectionViewController: UICollectionViewDataSource, UICollec
         return cell
     }
 
-    //Cell sizeForItem
+    // Cell sizeForItem
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let cell = self.dummyNovelCell
