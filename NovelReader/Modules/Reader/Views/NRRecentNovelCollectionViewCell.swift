@@ -33,4 +33,5 @@ class NRRecentNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCel
         self.collectionView = view
         self.indexPath = indexPath
     }
+    
 }

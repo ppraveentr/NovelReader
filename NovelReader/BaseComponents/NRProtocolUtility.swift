@@ -37,6 +37,7 @@ extension NRConfigureNovelCellProtocol where Self: UIView {
         return CGSize(width: size.width - 38, height:  162)
 
     }
+    
 }
 
 extension UIViewController {
@@ -59,6 +60,7 @@ extension UIViewController {
             }
 
             readerController?.novel = sender as? NRNovel
+            readerController?.novelChapter = sender as? NRNovelChapter
         }
         // segue for the popover configuration window
         else if segue.identifier == kShowFontPicker {
@@ -73,4 +75,5 @@ extension UIViewController {
             }
         }
     }
+    
 }

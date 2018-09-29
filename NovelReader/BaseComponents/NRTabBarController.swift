@@ -14,4 +14,5 @@ class NRTabBarController: FTBaseTabBarController {
         super.awakeFromNib()
         self.hidesBottomBarWhenPushed = true
     }
+    
 }

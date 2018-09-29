@@ -25,4 +25,5 @@ class FTFontPickerViewController: FTBaseViewController {
          self.mainView?.pin(view: pickerView!)
         }
     }
+    
 }

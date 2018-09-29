@@ -25,4 +25,5 @@ final class NRNovels: FTServiceModel {
         case category
 
     }
+    
 }

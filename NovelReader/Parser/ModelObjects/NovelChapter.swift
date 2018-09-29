@@ -15,5 +15,6 @@ final class NRNovelChapter: FTServiceModel {
         case releaseDate
 
     }
+    
 }
 

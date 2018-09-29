@@ -35,4 +35,5 @@ final class NRNovel: FTServiceModel {
         case novelType = "type"
 
     }
+    
 }

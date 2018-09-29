@@ -75,6 +75,7 @@ class NRNovelCollectionViewController: NRBaseViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
 }
 
 //MARK: SetUp UICollectionView
@@ -128,6 +129,7 @@ extension NRNovelCollectionViewController {
 
         self.mainView?.pin(view: collectionView)
     }
+    
 }
 
 //MARK: UICollectionView delegates
@@ -189,6 +191,7 @@ extension NRNovelCollectionViewController: UICollectionViewDataSource, UICollect
             self.performSegue(withIdentifier: kShowNovelChapterList, sender: cur)
         }
     }
+    
 }
 
 //MARK: NRNovelCollectionHeaderView
@@ -215,6 +218,7 @@ class NRNovelCollectionHeaderView: UICollectionReusableView {
 
         self.pin(view: segmentedControl!, withEdgeOffsets: FTEdgeOffsets(10))
     }
+    
 }
 
 //MARK: NRNovelCollectionType

@@ -46,6 +46,7 @@ class NRSearchCollectionViewController: NRBaseViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: NRGoogleAuth.signInButton())
 
     }
+    
 }
 
 extension NRSearchCollectionViewController {
@@ -93,6 +94,7 @@ extension NRSearchCollectionViewController {
 
         self.mainView?.pin(view: collectionView)
     }
+    
 }
 
 extension NRSearchCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
@@ -132,4 +134,5 @@ extension NRSearchCollectionViewController: UICollectionViewDataSource, UICollec
         let cur = currentNovelList?[indexPath.row]
         self.performSegue(withIdentifier: "kShowNovelChapterList", sender: cur)
     }
+    
 }

@@ -66,6 +66,7 @@ open class FTFontPickerView: FTView {
         fontTableView.backgroundView = nil
         fontTableView.register(UITableViewCell.self, forCellReuseIdentifier: "kFontType")
     }
+    
 }
 
 extension FTFontPickerView: UITableViewDataSource, UITableViewDelegate {
@@ -118,4 +119,5 @@ extension FTFontPickerView: UITableViewDataSource, UITableViewDelegate {
         
         tableView.reloadData()
     }
+    
 }

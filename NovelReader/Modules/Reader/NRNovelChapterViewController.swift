@@ -14,9 +14,9 @@ class NRNovelChapterViewController: NRBaseTableViewController {
     
     lazy var novelDescView: NRNovelDescriptionView? = NRNovelDescriptionView.fromNib() as? NRNovelDescriptionView
     
-    override func tableViewStyle() -> UITableView.Style { return .grouped }
-    override func tableViewEdgeOffsets() -> FTEdgeOffsets { return FTEdgeOffsets(10, 0, 10, 0) }
-    
+    override func tableStyle() -> UITableView.Style { return .grouped }
+//    override func tableViewEdgeOffsets() -> FTEdgeOffsets { return FTEdgeOffsets(10, 0, 10, 0) }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupToolBar()
@@ -35,6 +35,7 @@ class NRNovelChapterViewController: NRBaseTableViewController {
         self.tableView.setTableHeaderView(view: self.novelDescView)
         self.tableView.reloadData()
     }
+    
 }
 
 extension NRNovelChapterViewController {
@@ -67,6 +68,7 @@ extension NRNovelChapterViewController {
         
         return cell
     }
+    
 }
 
 extension NRNovelChapterViewController {
@@ -103,4 +105,5 @@ extension NRNovelChapterViewController {
     //         self.tableView.addSubview(refresh)
     //         self.tableViewController.refreshControl = refresh
     //     }
+    
 }

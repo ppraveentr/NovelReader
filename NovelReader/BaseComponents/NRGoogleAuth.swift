@@ -104,6 +104,7 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
               dismiss viewController: UIViewController!) {
         NRAppDelegate.getRootController().dismiss(animated: true, completion: nil)
     }
+    
 }
 
 extension NRAppDelegate {
@@ -118,4 +119,5 @@ extension NRAppDelegate {
             return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
                                                      annotation: options[UIApplication.OpenURLOptionsKey.annotation])
     }
+    
 }

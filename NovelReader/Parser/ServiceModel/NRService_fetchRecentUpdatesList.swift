@@ -21,4 +21,5 @@ final class NRService_fetchRecentUpdatesList: FTServiceClient {
     init(inputStack: FTServiceModel?) {
         self.inputStack = inputStack
     }
+    
 }

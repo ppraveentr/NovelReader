@@ -40,4 +40,5 @@ public class NRBaseViewController: FTBaseViewController {
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.prepareSegue(segue, sender: sender)
     }
+    
 }

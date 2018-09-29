@@ -63,6 +63,7 @@ class NRReaderViewController: FTBaseViewController {
     func loadWebContent(contnet: String) {
         contentView.webView.loadHTMLBody(contnet)
     }
+    
 }
 
 extension NRReaderViewController: FTFontPickerViewprotocol {
@@ -81,6 +82,7 @@ extension NRReaderViewController: FTFontPickerViewprotocol {
     func fontFamily(_ fontName: String?) {
         contentView.webView.setContentFontFamily(fontName)
     }
+    
 }
 
 extension NRReaderViewController: UIPopoverPresentationControllerDelegate {

@@ -54,6 +54,7 @@ class FTImageView: UIImageView {
         
         return image!
     }
+    
 }
 
 class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProtocol {
@@ -92,4 +93,5 @@ class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProto
         self.layer.shadowRadius = 2.0
         self.layer.shadowOffset = CGSize(width: 3, height: 3)
     }
+    
 }

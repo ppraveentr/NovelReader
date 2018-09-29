@@ -21,4 +21,5 @@ final class NRService_fetchChapter: FTServiceClient {
     init(inputStack: FTServiceModel?) {
         self.inputStack = inputStack
     }
+    
 }

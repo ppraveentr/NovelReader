@@ -22,4 +22,5 @@ final class NRService_fetchNovelList: FTServiceClient {
     init(inputStack: FTServiceModel?) {
         self.inputStack = inputStack as? NRNovels
     }
+    
 }
