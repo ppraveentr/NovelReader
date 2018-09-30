@@ -55,7 +55,7 @@ class NRAppManager {
         // Debug-Postman
 //        FTMobileConfig.appBaseURL = kPostmanURL
         // Debug-only code
-//        FTMobileConfig.appBaseURL = kMockServerURL
+        FTMobileConfig.appBaseURL = kMockServerURL
 //        FTMobileConfig.mockBundleResource = kMockBundleResource
 //        FTMobileConfig.isMockData = kMockDataEnabled
         #endif

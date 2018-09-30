@@ -52,19 +52,10 @@ class NRSearchCollectionViewController: NRBaseViewController {
 extension NRSearchCollectionViewController {
 
     func getCollectionView() -> UICollectionView {
-        let flow = self.getflowLayout()
+        let flow = UICollectionViewFlowLayout.defalutFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flow)
         collectionView.backgroundView?.backgroundColor = .clear
         return collectionView
-    }
-
-    func getflowLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.headerReferenceSize = CGSize(width:0, height:45)
-        layout.footerReferenceSize = .zero
-        layout.sectionInset = UIEdgeInsets(top: 15, left: 20, bottom: 10, right: 20)
-        layout.sectionHeadersPinToVisibleBounds = true
-        return layout
     }
 
     func configureColletionView() {
@@ -117,18 +108,6 @@ extension NRSearchCollectionViewController: UICollectionViewDataSource, UICollec
 
         return cell
     }
-
-    // Cell sizeForItem
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        let cell = self.dummyNovelCell
-//
-//        if let cur = currentNovelList?[indexPath.row] {
-//            cell.configureContent(novel: cur, view: collectionView, indexPath: indexPath)
-//        }
-//
-//        return cell.cellSize(collectionView, layout: collectionViewLayout, sizeForItemAt: indexPath)
-//    }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cur = currentNovelList?[indexPath.row]

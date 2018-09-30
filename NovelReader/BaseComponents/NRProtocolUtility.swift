@@ -45,10 +45,9 @@ public extension UICollectionViewFlowLayout {
 
 extension UICollectionViewCell {
 
-    override open func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-
-        setNeedsLayout()
-        layoutIfNeeded()
+    override open func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes)
+        -> UICollectionViewLayoutAttributes {
+            
         let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
         var newFrame = layoutAttributes.frame
         newFrame.size.width = ceil(FTScreenWidth) - (UICollectionViewFlowLayout.defaultSectionInset.left + UICollectionViewFlowLayout.defaultSectionInset.right)
