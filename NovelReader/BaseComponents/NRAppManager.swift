@@ -50,6 +50,8 @@ class NRAppManager {
     // Config
     static func configDebug() {
         #if DEBUG
+        //Console Loggin
+        FTLogger.enableConsoleLogging = true
         // Debug-Postman
 //        FTMobileConfig.appBaseURL = kPostmanURL
         // Debug-only code

@@ -15,6 +15,12 @@ let kShowNovelReaderView = "kShowNovelReaderView"
 let kNovelCellIdentifier = "kNovelCellIdentifier"
 let kRecentNovelCellIdentifier = "kRecentNovelCellIdentifier"
 
+extension FTBaseViewController {
+    open override var prefersStatusBarHidden: Bool {
+        return true
+    }
+}
+
 public class NRBaseViewController: FTBaseViewController {
 
     public override func viewWillAppear(_ animated: Bool) {

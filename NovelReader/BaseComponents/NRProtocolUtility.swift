@@ -11,33 +11,52 @@ import Foundation
 protocol NRConfigureNovelCellProtocol {
     func configureContent(novel: NRNovel)
     func configureContent(novel: NRNovel, view: UICollectionView?, indexPath: IndexPath?)
-    func getSize(baseView: UIView) -> CGSize
 }
 
 extension NRConfigureNovelCellProtocol where Self: UIView {
 
-    func configureContent(novel: NRNovel) { }
-    func configureContent(novel: NRNovel, view: UICollectionView?, indexPath: IndexPath?) { }
-
-    // FIXIT: Not working
-    func getSize(baseView: UIView) -> CGSize {
-        
-        //let compressedSize = self.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-
-//        if (compressedSize.width*2 + 15*3) < baseView.frame.width/2 {
-//            return CGSize(width: compressedSize.width, height: compressedSize.height)
-//        }
-
-        let width = baseView.frame.width
-
-        let size = self.systemLayoutSizeFitting( CGSize(width: width, height: 0),
-                                                 withHorizontalFittingPriority: UILayoutPriority.required,
-                                                 verticalFittingPriority: UILayoutPriority.fittingSizeLevel)
-//size.height ??
-        return CGSize(width: size.width - 38, height:  162)
-
+    func configureContent(novel: NRNovel) {
     }
-    
+
+    func configureContent(novel: NRNovel, view: UICollectionView?, indexPath: IndexPath?) {
+    }
+
+}
+
+public extension UICollectionViewFlowLayout {
+
+    static var defaultSectionInset: UIEdgeInsets {
+        get {
+            return UIEdgeInsets(top: 15, left: 20, bottom: 10, right: 20)
+        }
+    }
+
+    static func defalutFlowLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.headerReferenceSize = CGSize(width:0, height:45)
+        layout.footerReferenceSize = .zero
+        layout.estimatedItemSize = CGSize(width: FTScreenWidth, height: 20)
+        layout.sectionInset = UICollectionViewFlowLayout.defaultSectionInset
+        layout.sectionHeadersPinToVisibleBounds = true
+        return layout
+    }
+
+}
+
+extension UICollectionViewCell {
+
+    override open func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+
+        setNeedsLayout()
+        layoutIfNeeded()
+        let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
+        var newFrame = layoutAttributes.frame
+        newFrame.size.width = ceil(FTScreenWidth) - (UICollectionViewFlowLayout.defaultSectionInset.left + UICollectionViewFlowLayout.defaultSectionInset.right)
+        newFrame.size.height = ceil(size.height)
+        layoutAttributes.frame = newFrame
+        return layoutAttributes
+    }
+
 }
 
 extension UIViewController {
@@ -59,7 +78,9 @@ extension UIViewController {
                 readerController = segue.destination as? NRReaderViewController
             }
 
+            // Available from recent-novel-page
             readerController?.novel = sender as? NRNovel
+            // Available from chapter-list-page
             readerController?.novelChapter = sender as? NRNovelChapter
         }
         // segue for the popover configuration window

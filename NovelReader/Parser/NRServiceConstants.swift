@@ -12,6 +12,3 @@ typealias FTServicefetchRecentUpdatesList = NRService_fetchRecentUpdatesList
 typealias FTServicefetchNovelList = NRService_fetchNovelList
 typealias FTServicefetchNovelChapters = NRService_fetchNovelChapters
 typealias FTServicefetchChapter = NRService_fetchChapter
-let kfetchNovelChapters = "NRService_fetchNovelChapters"
-let kfetchChapter = "NRService_fetchChapter"
-

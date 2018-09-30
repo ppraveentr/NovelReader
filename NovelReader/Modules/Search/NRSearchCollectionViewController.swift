@@ -119,16 +119,16 @@ extension NRSearchCollectionViewController: UICollectionViewDataSource, UICollec
     }
 
     // Cell sizeForItem
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        let cell = self.dummyNovelCell
-
-        if let cur = currentNovelList?[indexPath.row] {
-            cell.configureContent(novel: cur, view: collectionView, indexPath: indexPath)
-        }
-
-        return cell.getSize(baseView: collectionView)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        let cell = self.dummyNovelCell
+//
+//        if let cur = currentNovelList?[indexPath.row] {
+//            cell.configureContent(novel: cur, view: collectionView, indexPath: indexPath)
+//        }
+//
+//        return cell.cellSize(collectionView, layout: collectionViewLayout, sizeForItemAt: indexPath)
+//    }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cur = currentNovelList?[indexPath.row]

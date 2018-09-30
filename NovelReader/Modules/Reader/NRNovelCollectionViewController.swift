@@ -15,7 +15,7 @@ class NRNovelCollectionViewController: NRBaseViewController {
     // Dummycell for collectionView cell Height calculation
     lazy var sampleTopNovelCell = NRNovelCollectionType.topNovel.getNib()
     lazy var sampleRecentNovelCell = NRNovelCollectionType.recentNovel.getNib()
-    var dummyNovelCell: NRConfigureNovelCellProtocol {
+    var dummyNovelCell: NRConfigureNovelCellProtocol? {
         switch novelCollectionType {
         case .recentNovel:
             return self.sampleRecentNovelCell
@@ -82,19 +82,10 @@ class NRNovelCollectionViewController: NRBaseViewController {
 extension NRNovelCollectionViewController {
 
     func getCollectionView() -> UICollectionView {
-        let flow = self.getflowLayout()
+        let flow = UICollectionViewFlowLayout.defalutFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flow)
         collectionView.backgroundView?.backgroundColor = .clear
         return collectionView
-    }
-
-    func getflowLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.headerReferenceSize = CGSize(width:0, height:45)
-        layout.footerReferenceSize = .zero
-        layout.sectionInset = UIEdgeInsets(top: 15, left: 20, bottom: 10, right: 20)
-        layout.sectionHeadersPinToVisibleBounds = true
-        return layout
     }
 
     func configureColletionView() {
@@ -165,21 +156,8 @@ extension NRNovelCollectionViewController: UICollectionViewDataSource, UICollect
                 cell.configureContent(novel: cur, view: collectionView, indexPath: indexPath)
             }
         }
-        //cell.invalidateIntrinsicContentSize()
 
         return cell
-    }
-
-    // Cell sizeForItem
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        let cell = self.dummyNovelCell
-
-        if let cur = currentNovelList?[indexPath.row] {
-            cell.configureContent(novel: cur, view: collectionView, indexPath: indexPath)
-        }
-
-        return cell.getSize(baseView: collectionView)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -245,12 +223,12 @@ enum NRNovelCollectionType: Int {
         }
     }
 
-    func getNib() -> (UICollectionViewCell & NRConfigureNovelCellProtocol) {
+    func getNib() -> (UICollectionViewCell & NRConfigureNovelCellProtocol)? {
         switch self {
         case .recentNovel:
-            return NRRecentNovelCollectionViewCell.fromNib() as! NRRecentNovelCollectionViewCell
+            return NRRecentNovelCollectionViewCell.fromNib() as? NRRecentNovelCollectionViewCell
         case .topNovel:
-            return NRNovelCollectionViewCell.fromNib() as! NRNovelCollectionViewCell
+            return NRNovelCollectionViewCell.fromNib() as? NRNovelCollectionViewCell
         }
     }
     

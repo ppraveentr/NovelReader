@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,9 +28,6 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="  " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhe-Uf-VP9" customClass="FTLabel" customModule="FTMobileCoreUI">
                         <rect key="frame" x="10" y="10" width="361" height="47"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="0Li-N5-5Ee"/>
-                        </constraints>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -44,7 +39,7 @@
                         <rect key="frame" x="10" y="67" width="361" height="16"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" text="Last Update: " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXk-Ac-Emq" customClass="FTLabel" customModule="FTMobileCoreUI">
-                                <rect key="frame" x="0.0" y="0.0" width="81.5" height="16"/>
+                                <rect key="frame" x="0.0" y="0.0" width="81" height="16"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,7 +48,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text=" " textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ZZ-5I-57W" customClass="FTLabel" customModule="FTMobileCoreUI">
-                                <rect key="frame" x="85.5" y="0.0" width="275.5" height="16"/>
+                                <rect key="frame" x="85" y="0.0" width="276" height="16"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,13 +63,13 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="6Gh-98-tSv" secondAttribute="trailing" constant="4" id="0QY-Lg-bhK"/>
+                <constraint firstItem="6Gh-98-tSv" firstAttribute="leading" secondItem="lhe-Uf-VP9" secondAttribute="trailing" constant="4" id="8Gm-Mq-DiZ"/>
                 <constraint firstItem="6Gh-98-tSv" firstAttribute="leading" secondItem="B8i-VA-Mxq" secondAttribute="trailing" constant="4" id="DM2-LH-FUo"/>
-                <constraint firstItem="lhe-Uf-VP9" firstAttribute="leading" secondItem="B8i-VA-Mxq" secondAttribute="leading" id="EJ7-YX-Uwx"/>
                 <constraint firstItem="B8i-VA-Mxq" firstAttribute="leadingMargin" secondItem="TsU-yb-VIy" secondAttribute="leading" constant="10" id="WlL-Wh-1Q4"/>
                 <constraint firstAttribute="bottomMargin" secondItem="B8i-VA-Mxq" secondAttribute="bottom" constant="10" id="Wv2-iN-Yxv"/>
                 <constraint firstItem="lhe-Uf-VP9" firstAttribute="top" secondItem="TsU-yb-VIy" secondAttribute="top" constant="10" id="Wwh-hI-gQK"/>
                 <constraint firstItem="B8i-VA-Mxq" firstAttribute="top" secondItem="lhe-Uf-VP9" secondAttribute="bottom" constant="10" id="cq2-77-6HS"/>
-                <constraint firstItem="lhe-Uf-VP9" firstAttribute="trailing" secondItem="B8i-VA-Mxq" secondAttribute="trailing" id="gqT-Nk-wnW"/>
+                <constraint firstItem="lhe-Uf-VP9" firstAttribute="leading" secondItem="TsU-yb-VIy" secondAttribute="leading" constant="10" id="l1f-Fr-8oD"/>
                 <constraint firstItem="6Gh-98-tSv" firstAttribute="centerY" secondItem="TsU-yb-VIy" secondAttribute="centerY" id="qIx-k6-1ZP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ufX-HO-55h"/>
@@ -84,10 +79,10 @@
                 <outlet property="lastUpdateTitleLabel" destination="eXk-Ac-Emq" id="XVs-o5-ZL8"/>
                 <outlet property="novelTitle" destination="lhe-Uf-VP9" id="egW-J8-cqB"/>
             </connections>
-            <point key="canvasLocation" x="-15.5" y="-26.5"/>
+            <point key="canvasLocation" x="-16.800000000000001" y="-26.53673163418291"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="navArrow" width="100" height="100"/>
+        <image name="navArrow" width="200" height="200"/>
     </resources>
 </document>

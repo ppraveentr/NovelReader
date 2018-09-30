@@ -17,14 +17,9 @@ class NRRecentNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCel
     var indexPath: IndexPath? = nil
     var novelItem: NRNovel? = nil
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        novelTitle?.preferredMaxLayoutWidth = self.frame.width - 38
-    }
-
     func configureContent(novel: NRNovel, view: UICollectionView? = nil, indexPath: IndexPath? = nil) {
         novelTitle?.text = novel.title
-//        novelTitle?.isLinkUnderLineEnabled = true
+        // novelTitle?.isLinkUnderLineEnabled = true
 
         lastUpdateTitleLabel?.text = "Last Update:"
         lastUpdateTimeLabel?.text = novel.lastUpdated

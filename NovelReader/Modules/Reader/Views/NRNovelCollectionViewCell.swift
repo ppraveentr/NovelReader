@@ -58,7 +58,7 @@ class FTImageView: UIImageView {
 }
 
 class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProtocol {
-
+ 
     @IBOutlet var titleLabel: FTLabel?
     @IBOutlet var contentImageView: FTImageView?
     @IBOutlet var chapterLabel: FTLabel?
@@ -71,9 +71,15 @@ class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProto
     }
     
     func configureContent(novel: NRNovel, view: UICollectionView? = nil, indexPath: IndexPath? = nil) {
+
+        //Reset image,
+        self.contentImageView?.image = nil
         if let url = novel.imageURL {
-         self.contentImageView?.downloadedFrom(link: url)
+            self.contentImageView?.downloadedFrom(link: url) { (image) in
+                self.contentImageView?.image = image
+            }
         }
+
         self.titleLabel?.text = novel.title
         self.chapterLabel?.text = novel.lastChapter
         self.lastUpdateLabel?.text = novel.lastUpdated
