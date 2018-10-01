@@ -8,9 +8,8 @@
 
 import Foundation
 
-class NRSearchCollectionViewController: NRBaseViewController {
+class NRSearchCollectionViewController: NRBaseCollectionViewController {
 
-    lazy var collectionView: UICollectionView = self.getCollectionView()
     // Update collectionView when contentList changes
     var currentNovelList: [NRNovel]? = [] {
         didSet {
@@ -47,56 +46,26 @@ class NRSearchCollectionViewController: NRBaseViewController {
 
     }
     
-}
-
-extension NRSearchCollectionViewController {
-
-    func getCollectionView() -> UICollectionView {
-        let flow = UICollectionViewFlowLayout.defalutFlowLayout()
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flow)
-        collectionView.backgroundView?.backgroundColor = .clear
-        return collectionView
-    }
-
-    func configureColletionView() {
-
-        // Relaod collectionView on exit
-        defer {
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
-
-        // Only re-load collectionView if already present
-        guard collectionView.superview == nil else {
-            return
-        }
-
-        // Setup collectionView, if not added in view.
+    // MARK: configureColletionView
+    override func configureColletionView() {
+        super.configureColletionView()
 
         // Register Cell
         collectionView.register(NRNovelCollectionViewCell.getNIBFile(),
                                 forCellWithReuseIdentifier: kNovelCellIdentifier)
-
-        // CollectionView delegate
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = .clear
-
-        self.mainView?.pin(view: collectionView)
     }
     
 }
 
-extension NRSearchCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+extension NRSearchCollectionViewController: UICollectionViewDelegateFlowLayout {
 
     // numberOfItemsInSection
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentNovelList?.count ?? 0
     }
 
     // cellForItem
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNovelCellIdentifier, for: indexPath)
 

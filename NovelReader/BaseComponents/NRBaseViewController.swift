@@ -15,12 +15,6 @@ let kShowNovelReaderView = "kShowNovelReaderView"
 let kNovelCellIdentifier = "kNovelCellIdentifier"
 let kRecentNovelCellIdentifier = "kRecentNovelCellIdentifier"
 
-extension FTBaseViewController {
-    open override var prefersStatusBarHidden: Bool {
-        return true
-    }
-}
-
 public class NRBaseViewController: FTBaseViewController {
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -42,9 +36,4 @@ public class NRBaseViewController: FTBaseViewController {
         self.tabBarController?.tabBar.isHidden = isHidden
     }
 
-
-    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.prepareSegue(segue, sender: sender)
-    }
-    
 }
