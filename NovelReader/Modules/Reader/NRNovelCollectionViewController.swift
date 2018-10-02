@@ -12,7 +12,9 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
 
     // Collection Content Type
     var novelCollectionType: NRNovelCollectionType = .recentNovel {
-        didSet { self.fetchNovelList() }
+        didSet {
+            self.fetchNovelList()
+        }
     }
 
     lazy var novel: NRNovels? = NRNovels()
@@ -26,10 +28,9 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
     // View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = kNovelReaderTitle
         self.novelCollectionType = .recentNovel
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: NRGoogleAuth.signInButton())
+        self.setupNavigationbar(title: kNovelReaderTitle, leftCustomView: NRGoogleAuth.signInButton())
+        setRightButton(buttonType: .search)
     }
 
     // Updates novelCollectionType, which interns fetchNovelList from backend
@@ -37,32 +38,6 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
         novelCollectionType = NRNovelCollectionType(rawValue: segmentControl.selectedSegmentIndex)!
     }
 
-    // get-Novels from backend
-    func fetchNovelList() {
-        switch novelCollectionType {
-        case .recentNovel:
-            NRServiceProvider.fetchRecentUpdateList() { [weak self] (novelList) in
-                if let novelList = novelList {
-                    self?.currentNovelList = novelList
-                } else {
-                    self?.showRetryAlert()
-                }
-            }
-        case .topNovel:
-            NRServiceProvider.fetchNovelList(novel: self.novel) { [weak self] (novelList) in
-                self?.currentNovelList = self?.novel?.novelList
-            }
-        }
-    }
-
-    func showRetryAlert() {
-        let alert = UIAlertController(title: kServiceFailureAlertTitle, message: kServiceFailureAlertMessage, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: kRetryString, style: .default, handler: { [weak self] action in
-            self?.fetchNovelList()
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     // MARK: SetUp UICollectionView
     override func configureColletionView() {
         super.configureColletionView()
@@ -88,7 +63,41 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
             return self.sampleTopNovelCell
         }
     }
+
+    override func rightButtonAction() {
+        performSegue(withIdentifier: kSearchStoryboardID, sender: nil)
+    }
     
+}
+
+// MARK: Fetch - Novels from backend
+extension NRNovelCollectionViewController {
+
+    func fetchNovelList() {
+        switch novelCollectionType {
+        case .recentNovel:
+            NRServiceProvider.fetchRecentUpdateList() { [weak self] (novelList) in
+                if let novelList = novelList {
+                    self?.currentNovelList = novelList
+                } else {
+                    self?.showRetryAlert()
+                }
+            }
+        case .topNovel:
+            NRServiceProvider.fetchNovelList(novel: self.novel) { [weak self] (novelList) in
+                self?.currentNovelList = self?.novel?.novelList
+            }
+        }
+    }
+
+    func showRetryAlert() {
+        let alert = UIAlertController(title: kServiceFailureAlertTitle, message: kServiceFailureAlertMessage, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: kRetryString, style: .default, handler: { [weak self] action in
+            self?.fetchNovelList()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+
 }
 
 // MARK: UICollectionView delegates
@@ -155,6 +164,7 @@ class NRNovelCollectionHeaderView: UICollectionReusableView {
     }
 
     func setupSegmentView() {
+        
         self.theme = ThemeStyle.defaultStyle
 
         segmentedControl = FTSegmentedControl(items: [ kRecentUpdateString, kTopViews ]) { (segment) in

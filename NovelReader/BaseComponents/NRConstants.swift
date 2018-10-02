@@ -11,6 +11,8 @@ import Foundation
 // MARK: Application Theme
 let kThemeFileName = "Themes.json"
 let kNavigationBarColor = "#DF6E6E".hexColor()!
+let kBarColor = "#de6161".hexColor()!
+
 let kReaderFontSize = 10
 let kReaderInitalFontSize = 140
 

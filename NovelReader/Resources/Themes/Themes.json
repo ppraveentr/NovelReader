@@ -67,6 +67,18 @@
 				"backgroundColor": "navBarRed"
 			}
 		},
+        "NRSearchCollectionHeaderView": {
+            "default": {
+                "backgroundColor": "navBarRed"
+            }
+        },
+        "FTSearchBar": {
+            "default": {
+                "textcolor": "white",
+                "tintColor": "white",
+                "barTintColor": "navBarRed"
+            }
+        },
 		"FTButton": {
 			"default": {
 				"textfont": "system14",

@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,15 +12,16 @@
         <!--Tab Bar Controller-->
         <scene sceneID="aPs-R4-d2B">
             <objects>
-                <tabBarController hidesBottomBarWhenPushed="YES" id="eMq-UV-HNp" customClass="NRTabBarController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PN7-E6-Seh">
+                <tabBarController storyboardIdentifier="NRTabBarController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eMq-UV-HNp" customClass="NRTabBarController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" shadowImage="NavigationBarDefault" id="PN7-E6-Seh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="CT6-qP-0F9" kind="relationship" relationship="viewControllers" id="vj1-xQ-7Fx"/>
-                        <segue destination="hZo-cS-o68" kind="relationship" relationship="viewControllers" id="e3n-Xs-271"/>
+                        <segue destination="CT6-qP-0F9" kind="relationship" relationship="viewControllers" id="EMT-NN-p8H"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JcD-SV-M7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -30,7 +32,7 @@
         <scene sceneID="YJ9-RE-pbd">
             <objects>
                 <viewControllerPlaceholder storyboardName="NovelReader" referencedIdentifier="kNovelReaderStroyboardID" id="CT6-qP-0F9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="bns-he-gSz"/>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="bns-he-gSz"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwN-vp-QJp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -40,11 +42,14 @@
         <scene sceneID="eMt-fs-ZZD">
             <objects>
                 <viewControllerPlaceholder storyboardName="SearchStoryboard" referencedIdentifier="kSearchStoryboardID" id="hZo-cS-o68" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="yhy-N1-hTd"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="yhy-N1-hTd"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqV-KP-gLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-575" y="-578"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NavigationBarDefault" width="60" height="44"/>
+    </resources>
 </document>

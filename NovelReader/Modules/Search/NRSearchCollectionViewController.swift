@@ -22,28 +22,14 @@ class NRSearchCollectionViewController: NRBaseCollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupToolBar()
-        self.searchNovelList()
+        self.configureColletionView()
     }
 
     // get-Novels from backend
-    func searchNovelList() {
+    func fetchNovelList() {
         NRServiceProvider.fetchNovelList(novel: nil) { (novelList) in
             self.currentNovelList = novelList?.novelList
         }
-    }
-
-    func setupToolBar() {
-
-        let searchBar = FTSearchBar(frame: CGRect(origin: .zero, size: CGSize(width: 200, height: 44)), textColor: .white)
-        searchBar.configure(barTintColor: "#de6161".hexColor()!, tintColor: .white)
-        searchBar.placeholder = "Search"
-        searchBar.autoresizingMask = [.flexibleRightMargin, .flexibleHeight]
-
-        self.navigationItem.titleView = searchBar
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: NRGoogleAuth.signInButton())
-
     }
     
     // MARK: configureColletionView
@@ -53,12 +39,15 @@ class NRSearchCollectionViewController: NRBaseCollectionViewController {
         // Register Cell
         collectionView.register(NRNovelCollectionViewCell.getNIBFile(),
                                 forCellWithReuseIdentifier: kNovelCellIdentifier)
+
+        // Collection Header: Segment Control
+        self.baseView?.topPinnedView = NRSearchCollectionHeaderView()
     }
     
 }
 
 extension NRSearchCollectionViewController: UICollectionViewDelegateFlowLayout {
-
+    
     // numberOfItemsInSection
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentNovelList?.count ?? 0
@@ -83,4 +72,34 @@ extension NRSearchCollectionViewController: UICollectionViewDelegateFlowLayout {
         self.performSegue(withIdentifier: "kShowNovelChapterList", sender: cur)
     }
     
+}
+
+// MARK: NRSearchCollectionHeaderView
+class NRSearchCollectionHeaderView: FTView {
+    var searchBar: FTSearchBar?
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setupSearchBar()
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.setupSearchBar()
+    }
+
+    func setupSearchBar() {
+
+        self.theme = ThemeStyle.defaultStyle
+
+        searchBar = FTSearchBar(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 44)), textColor: .white)
+        searchBar?.theme = ThemeStyle.defaultStyle
+
+        if let searchBar = searchBar {
+            searchBar.placeholder = "Search"
+            searchBar.autoresizingMask = .flexibleHeight
+            self.pin(view: searchBar, edgeOffsets: .zero)
+        }
+    }
+
 }
