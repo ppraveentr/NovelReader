@@ -11,6 +11,7 @@ import Foundation
 typealias NRSearchCollectionLifeCycleDelegate = (FTBaseViewController & NRSearchCollectionViewModelProtocal)
 
 protocol NRSearchCollectionViewModelProtocal {
+    func refreshCollectionView()
 }
 
 class NRSearchCollectionViewModel {
@@ -21,5 +22,19 @@ class NRSearchCollectionViewModel {
     init(delegate: NRSearchCollectionLifeCycleDelegate, modelStack: FTServiceModel? = nil) {
         self.lifeDelegate = delegate
         self.modelStack = modelStack
+    }
+
+    // Update collectionView when contentList changes
+    var currentNovelList: [NRNovel]? = []
+
+    // get-Novels from backend
+    func searchNovel(keywoard: String) {
+        guard keywoard.length > 0 else {
+            return
+        }
+
+        NRServiceProvider.searchNovel(keyword: keywoard) { (novelList) in
+            self.currentNovelList = novelList
+        }
     }
 }

@@ -62,12 +62,12 @@
 				"backgroundColor": "appWhite"
 			}
 		},
-		"NRNovelCollectionHeaderView": {
+		"NRSegmentCollectionHeaderView": {
 			"default": {
 				"backgroundColor": "navBarRed"
 			}
 		},
-        "NRSearchCollectionHeaderView": {
+        "NRSearchBarHeaderView": {
             "default": {
                 "backgroundColor": "navBarRed"
             }

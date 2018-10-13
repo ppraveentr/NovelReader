@@ -39,7 +39,7 @@ class NRBaseCollectionViewController: FTBaseCollectionViewController {
         return layout
     }
 
-    func setupColletionView() {
+    func configureColletionView() {
 
         // Relaod collectionView on exit
         defer {
