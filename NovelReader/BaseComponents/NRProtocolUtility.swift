@@ -23,42 +23,15 @@ extension NRConfigureNovelCellProtocol where Self: UIView {
 
 }
 
-public extension UICollectionViewFlowLayout {
+extension FTBaseViewController {
 
-    static var defaultSectionInset: UIEdgeInsets {
-        get {
-            return UIEdgeInsets(top: 15, left: 20, bottom: 10, right: 20)
-        }
+    open override var prefersStatusBarHidden: Bool {
+        return true
     }
 
-    static func defalutFlowLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.headerReferenceSize = CGSize(width:0, height:45)
-        layout.footerReferenceSize = .zero
-        layout.estimatedItemSize = CGSize(width: FTScreenWidth, height: 20)
-        layout.sectionInset = UICollectionViewFlowLayout.defaultSectionInset
-        layout.sectionHeadersPinToVisibleBounds = true
-        return layout
+    open override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.prepareSegue(segue, sender: sender)
     }
-
-}
-
-extension UICollectionViewCell {
-
-    override open func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes)
-        -> UICollectionViewLayoutAttributes {
-            
-        let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
-        var newFrame = layoutAttributes.frame
-        newFrame.size.width = ceil(FTScreenWidth) - (UICollectionViewFlowLayout.defaultSectionInset.left + UICollectionViewFlowLayout.defaultSectionInset.right)
-        newFrame.size.height = ceil(size.height)
-        layoutAttributes.frame = newFrame
-        return layoutAttributes
-    }
-
-}
-
-extension UIViewController {
 
     public func prepareSegue(_ segue: UIStoryboardSegue, sender: Any?) {
 

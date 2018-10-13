@@ -34,9 +34,9 @@ class NRServiceProvider {
 
             if let novelList = res?.response {
                 let novel = novel ?? NRNovels()
-                if(novel.novelList == nil) {
+//                if(novel.novelList == nil) {
                     novel.novelList = []
-                }
+//                }
                 novel.novelList?.append(contentsOf: novelList)
             }
             completionHandler(novel)
@@ -78,6 +78,23 @@ class NRServiceProvider {
             FTLoadingIndicator.hide()
 
             let res = response.status.responseModel as? NRServiceResponse_fetchChapter
+            completionHandler(res?.response)
+        }
+    }
+
+    // Serch Novel
+    static func searchNovel(keyword: String,
+                                completionHandler: @escaping (_ novels: [NRNovel]?) -> Swift.Void) {
+
+        FTLoadingIndicator.show()
+
+        let model = NRSearchModel()
+        model.keyword = keyword
+
+        FTServicesearchNovel.make(modelStack: model) { (response) in
+            FTLoadingIndicator.hide()
+
+            let res = response.status.responseModel as? NRServiceResponse_searchNovel
             completionHandler(res?.response)
         }
     }

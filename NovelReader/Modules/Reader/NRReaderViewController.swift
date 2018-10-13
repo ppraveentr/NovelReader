@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NRReaderViewController: FTBaseViewController {
+class NRReaderViewController: NRBaseViewController {
     
     var novelChapter: NRNovelChapter?
     var novel: NRNovel?
@@ -86,10 +86,6 @@ extension NRReaderViewController: FTFontPickerViewprotocol {
 }
 
 extension NRReaderViewController: UIPopoverPresentationControllerDelegate {
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.prepareSegue(segue, sender: sender)
-    }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none

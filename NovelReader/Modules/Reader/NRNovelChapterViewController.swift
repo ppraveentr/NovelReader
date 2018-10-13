@@ -87,10 +87,8 @@ extension NRNovelChapterViewController {
     func setupToolBar() {
 
 //        let searchBar = FTSearchBar(frame: CGRect(origin: .zero, size: CGSize(width: 300, height: 44)), textColor: .white)
-//        searchBar.configure(barTintColor: "#de6161".hexColor()!, tintColor: .white)
 //        searchBar.placeholder = "Search"
 //        searchBar.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        
 //        self.navigationItem.titleView = searchBar
 
         self.setupNavigationbar(title: "",

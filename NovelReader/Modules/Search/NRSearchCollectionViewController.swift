@@ -8,13 +8,12 @@
 
 import Foundation
 
-class NRSearchCollectionViewController: NRBaseViewController {
+class NRSearchCollectionViewController: NRBaseCollectionViewController {
 
-    lazy var collectionView: UICollectionView = self.getCollectionView()
     // Update collectionView when contentList changes
     var currentNovelList: [NRNovel]? = [] {
         didSet {
-            self.configureColletionView()
+            self.setupColletionView()
         }
     }
 
@@ -23,80 +22,57 @@ class NRSearchCollectionViewController: NRBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupToolBar()
-        self.searchNovelList()
+        self.configureColletionView()
     }
 
     // get-Novels from backend
-    func searchNovelList() {
-        NRServiceProvider.fetchNovelList(novel: nil) { (novelList) in
-            self.currentNovelList = novelList?.novelList
-        }
-    }
-
-    func setupToolBar() {
-
-        let searchBar = FTSearchBar(frame: CGRect(origin: .zero, size: CGSize(width: 200, height: 44)), textColor: .white)
-        searchBar.configure(barTintColor: "#de6161".hexColor()!, tintColor: .white)
-        searchBar.placeholder = "Search"
-        searchBar.autoresizingMask = [.flexibleRightMargin, .flexibleHeight]
-
-        self.navigationItem.titleView = searchBar
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: NRGoogleAuth.signInButton())
-
-    }
-    
-}
-
-extension NRSearchCollectionViewController {
-
-    func getCollectionView() -> UICollectionView {
-        let flow = UICollectionViewFlowLayout.defalutFlowLayout()
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flow)
-        collectionView.backgroundView?.backgroundColor = .clear
-        return collectionView
-    }
-
-    func configureColletionView() {
-
-        // Relaod collectionView on exit
-        defer {
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
-
-        // Only re-load collectionView if already present
-        guard collectionView.superview == nil else {
+    func searchNovel(keywoard: String) {
+        guard keywoard.length > 0 else {
             return
         }
-
-        // Setup collectionView, if not added in view.
+        
+        NRServiceProvider.searchNovel(keyword: keywoard) { (novelList) in
+            self.currentNovelList = novelList
+        }
+    }
+    
+    // MARK: configureColletionView
+    func configureColletionView() {
 
         // Register Cell
         collectionView.register(NRNovelCollectionViewCell.getNIBFile(),
                                 forCellWithReuseIdentifier: kNovelCellIdentifier)
 
-        // CollectionView delegate
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = .clear
-
-        self.mainView?.pin(view: collectionView)
+        // Collection Header: Segment Control
+        self.baseView?.topPinnedView = NRSearchCollectionHeaderView(delegate: self)
     }
     
 }
 
-extension NRSearchCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+extension NRSearchCollectionViewController: UISearchBarDelegate {
 
+    // Dismiss keyboard on tap of search. Will invoke `searchBarTextDidEndEditing`
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        endEditing()
+    }
+
+    public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if let searchText = searchBar.text {
+            self.searchNovel(keywoard: searchText)
+        }
+    }
+
+}
+
+extension NRSearchCollectionViewController: UICollectionViewDelegateFlowLayout {
+    
     // numberOfItemsInSection
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentNovelList?.count ?? 0
     }
 
     // cellForItem
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNovelCellIdentifier, for: indexPath)
 
@@ -114,4 +90,45 @@ extension NRSearchCollectionViewController: UICollectionViewDataSource, UICollec
         self.performSegue(withIdentifier: "kShowNovelChapterList", sender: cur)
     }
     
+}
+
+// MARK: NRSearchCollectionHeaderView
+class NRSearchCollectionHeaderView: FTView {
+    var searchBar: FTSearchBar?
+    weak var searchBarDelegate: UISearchBarDelegate?
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setupSearchBar()
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.setupSearchBar()
+    }
+
+    convenience init(delegate: UISearchBarDelegate) {
+        self.init()
+        searchBarDelegate = delegate
+        searchBar?.delegate = delegate
+    }
+
+    func setupSearchBar() {
+
+        self.theme = ThemeStyle.defaultStyle
+
+        searchBar = FTSearchBar(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 44)), textColor: .white)
+        searchBar?.theme = ThemeStyle.defaultStyle
+        searchBar?.delegate = searchBarDelegate
+
+        if let searchBar = searchBar {
+            searchBar.placeholder = "Search"
+            searchBar.autoresizingMask = .flexibleHeight
+            self.pin(view: searchBar, edgeOffsets: .zero)
+        }
+    }
+
+}
+
+extension NRSearchCollectionViewController: NRSearchCollectionViewModelProtocal {
 }
