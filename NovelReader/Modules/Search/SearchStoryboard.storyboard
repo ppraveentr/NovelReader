@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search Collection View Controller-->
+        <!--Search-->
         <scene sceneID="chX-YF-7gO">
             <objects>
                 <viewController id="29j-l3-Nca" customClass="NRSearchCollectionViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,10 +20,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9av-Hg-BIx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zgd-4J-68q">
+                    <navigationItem key="navigationItem" title="Search" id="zgd-4J-68q">
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="stop" id="UzY-Nb-2gJ">
                             <connections>
                                 <action selector="leftButtonAction" destination="29j-l3-Nca" id="Ut8-Nx-F24"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="filter" id="gxO-vV-cwh">
+                            <connections>
+                                <segue destination="v0b-jn-Awu" kind="show" id="rcY-c5-Cwo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -35,13 +40,28 @@
             </objects>
             <point key="canvasLocation" x="1604" y="-29.23538230884558"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="0Ls-xg-3pU">
+            <objects>
+                <viewController id="v0b-jn-Awu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fm1-Yj-8as">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4ij-b9-TS8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xlH-ED-SRv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2527" y="-29"/>
+        </scene>
         <!--NRNovelChapterViewController-->
         <scene sceneID="AEO-ib-W8q">
             <objects>
                 <viewControllerPlaceholder storyboardName="NovelReader" referencedIdentifier="NRNovelChapterViewController" id="SG6-mq-AhZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bhb-WW-b9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2348" y="-30"/>
+            <point key="canvasLocation" x="1604" y="486"/>
         </scene>
         <!--Base Navigation Controller-->
         <scene sceneID="Vpo-DY-lD7">
@@ -62,4 +82,7 @@
             <point key="canvasLocation" x="664.79999999999995" y="-29.23538230884558"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="filter" width="44" height="44"/>
+    </resources>
 </document>

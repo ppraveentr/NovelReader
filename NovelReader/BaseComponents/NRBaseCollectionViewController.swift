@@ -39,7 +39,7 @@ class NRBaseCollectionViewController: FTBaseCollectionViewController {
         return layout
     }
 
-    func configureColletionView() {
+    func setupColletionView() {
 
         // Relaod collectionView on exit
         defer {
@@ -48,7 +48,11 @@ class NRBaseCollectionViewController: FTBaseCollectionViewController {
             }
         }
 
-        // Setup collectionView, if not added in view.
+        // Setup collectionView once
+        guard self.delegate == nil else {
+            return
+        }
+
         collectionView.backgroundColor = .clear
         collectionView.backgroundView?.backgroundColor = .clear
 

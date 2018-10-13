@@ -29,9 +29,6 @@
         "super": "NovelBase",
         "type": "GET",
         "path": "novel/chapters-list",
-        "requestQuery": {
-            "id": "identifier"
-        },
         "responseType": {
             "bindAs": "NRNovel"
         }
@@ -40,11 +37,16 @@
         "super": "NovelBase",
         "type": "GET",
         "path": "novel/chapter",
-        "requestQuery": {
-            "id": "identifier"
-        },
         "responseType": {
             "bindAs": "NRNovelChapter"
+        }
+    },
+    "searchNovel": {
+        "super": "NovelBase",
+        "type": "POST",
+        "path": "novel/search",
+        "responseType": {
+            "bindAs": "NRServiceResponse_searchNovel"
         }
     }
 }

@@ -21,7 +21,7 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
     // Update collectionView when contentList changes
     var currentNovelList: [NRNovel]? = [] {
         didSet {
-            self.configureColletionView()
+            self.setupColletionView()
         }
     }
 
@@ -30,7 +30,9 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
         super.viewDidLoad()
         self.novelCollectionType = .recentNovel
         self.setupNavigationbar(title: kNovelReaderTitle, leftCustomView: NRGoogleAuth.signInButton())
-        setRightButton(buttonType: .search)
+        rightNavigationBarButton(buttonType: .search)
+
+        configureColletionView()
     }
 
     // Updates novelCollectionType, which interns fetchNovelList from backend
@@ -39,9 +41,8 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
     }
 
     // MARK: SetUp UICollectionView
-    override func configureColletionView() {
-        super.configureColletionView()
-
+    func configureColletionView() {
+        
         // Register Cell
         NRNovelCollectionType.topNovel.registerCell(collectionView)
         NRNovelCollectionType.recentNovel.registerCell(collectionView)
@@ -168,7 +169,7 @@ class NRNovelCollectionHeaderView: UICollectionReusableView {
         self.theme = ThemeStyle.defaultStyle
 
         segmentedControl = FTSegmentedControl(items: [ kRecentUpdateString, kTopViews ]) { (segment) in
-            print(segment)
+            FTLog(segment)
         };
 
         self.pin(view: segmentedControl!, edgeOffsets: FTEdgeOffsets(10))

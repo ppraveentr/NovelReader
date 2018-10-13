@@ -13,7 +13,7 @@ class NRSearchCollectionViewController: NRBaseCollectionViewController {
     // Update collectionView when contentList changes
     var currentNovelList: [NRNovel]? = [] {
         didSet {
-            self.configureColletionView()
+            self.setupColletionView()
         }
     }
 
@@ -26,24 +26,42 @@ class NRSearchCollectionViewController: NRBaseCollectionViewController {
     }
 
     // get-Novels from backend
-    func fetchNovelList() {
-        NRServiceProvider.fetchNovelList(novel: nil) { (novelList) in
-            self.currentNovelList = novelList?.novelList
+    func searchNovel(keywoard: String) {
+        guard keywoard.length > 0 else {
+            return
+        }
+        
+        NRServiceProvider.searchNovel(keyword: keywoard) { (novelList) in
+            self.currentNovelList = novelList
         }
     }
     
     // MARK: configureColletionView
-    override func configureColletionView() {
-        super.configureColletionView()
+    func configureColletionView() {
 
         // Register Cell
         collectionView.register(NRNovelCollectionViewCell.getNIBFile(),
                                 forCellWithReuseIdentifier: kNovelCellIdentifier)
 
         // Collection Header: Segment Control
-        self.baseView?.topPinnedView = NRSearchCollectionHeaderView()
+        self.baseView?.topPinnedView = NRSearchCollectionHeaderView(delegate: self)
     }
     
+}
+
+extension NRSearchCollectionViewController: UISearchBarDelegate {
+
+    // Dismiss keyboard on tap of search. Will invoke `searchBarTextDidEndEditing`
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        endEditing()
+    }
+
+    public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if let searchText = searchBar.text {
+            self.searchNovel(keywoard: searchText)
+        }
+    }
+
 }
 
 extension NRSearchCollectionViewController: UICollectionViewDelegateFlowLayout {
@@ -77,6 +95,7 @@ extension NRSearchCollectionViewController: UICollectionViewDelegateFlowLayout {
 // MARK: NRSearchCollectionHeaderView
 class NRSearchCollectionHeaderView: FTView {
     var searchBar: FTSearchBar?
+    weak var searchBarDelegate: UISearchBarDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -88,12 +107,19 @@ class NRSearchCollectionHeaderView: FTView {
         self.setupSearchBar()
     }
 
+    convenience init(delegate: UISearchBarDelegate) {
+        self.init()
+        searchBarDelegate = delegate
+        searchBar?.delegate = delegate
+    }
+
     func setupSearchBar() {
 
         self.theme = ThemeStyle.defaultStyle
 
         searchBar = FTSearchBar(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 44)), textColor: .white)
         searchBar?.theme = ThemeStyle.defaultStyle
+        searchBar?.delegate = searchBarDelegate
 
         if let searchBar = searchBar {
             searchBar.placeholder = "Search"
@@ -102,4 +128,7 @@ class NRSearchCollectionHeaderView: FTView {
         }
     }
 
+}
+
+extension NRSearchCollectionViewController: NRSearchCollectionViewModelProtocal {
 }
