@@ -25,7 +25,11 @@ class NRSearchCollectionViewModel {
     }
 
     // Update collectionView when contentList changes
-    var currentNovelList: [NRNovel]? = []
+    var currentNovelList: [NRNovel]? = [] {
+        didSet{
+            lifeDelegate?.refreshCollectionView()
+        }
+    }
 
     // get-Novels from backend
     func searchNovel(keywoard: String) {
@@ -37,4 +41,5 @@ class NRSearchCollectionViewModel {
             self.currentNovelList = novelList
         }
     }
+    
 }

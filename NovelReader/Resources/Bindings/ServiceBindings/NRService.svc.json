@@ -48,5 +48,13 @@
         "responseType": {
             "bindAs": "NRServiceResponse_searchNovel"
         }
+    },
+    "searchFilter": {
+        "super": "NovelBase",
+        "type": "GET",
+        "path": "novel/search-filter",
+        "responseType": {
+            "bindAs": "NRServiceResponse_searchFilter"
+        }
     }
 }

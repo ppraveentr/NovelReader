@@ -13,3 +13,4 @@ typealias FTServicefetchNovelList = NRService_fetchNovelList
 typealias FTServicefetchNovelChapters = NRService_fetchNovelChapters
 typealias FTServicefetchChapter = NRService_fetchChapter
 typealias FTServicesearchNovel = NRService_searchNovel
+typealias FTServicesearchFilter = NRService_searchFilter

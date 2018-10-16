@@ -25,6 +25,12 @@
 		DE38347B2172545300DD4B27 /* NRSegmentCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38347A2172545300DD4B27 /* NRSegmentCollectionHeaderView.swift */; };
 		DE38347C2172547300DD4B27 /* NRSegmentCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38347A2172545300DD4B27 /* NRSegmentCollectionHeaderView.swift */; };
 		DE38347D217257CC00DD4B27 /* NRNovelCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4FAC9A21635B18006EF94B /* NRNovelCollectionViewModel.swift */; };
+		DE38347F217265A000DD4B27 /* NRSearchFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38347E217265A000DD4B27 /* NRSearchFilterViewController.swift */; };
+		DE3834812172666C00DD4B27 /* NRService_searchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3834802172666C00DD4B27 /* NRService_searchFilter.swift */; };
+		DE3834822172666C00DD4B27 /* NRService_searchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3834802172666C00DD4B27 /* NRService_searchFilter.swift */; };
+		DE383484217266C000DD4B27 /* NRSearchFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE383483217266C000DD4B27 /* NRSearchFilterModel.swift */; };
+		DE383485217266C000DD4B27 /* NRSearchFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE383483217266C000DD4B27 /* NRSearchFilterModel.swift */; };
+		DE383486217267AA00DD4B27 /* NRSearchFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38347E217265A000DD4B27 /* NRSearchFilterViewController.swift */; };
 		DE4EBE662067B6F5008AC70B /* NRService_fetchNovelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EBE652067B6F5008AC70B /* NRService_fetchNovelList.swift */; };
 		DE4EBE672067B6F5008AC70B /* NRService_fetchNovelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EBE652067B6F5008AC70B /* NRService_fetchNovelList.swift */; };
 		DE4FAC9B21635B18006EF94B /* NRNovelCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4FAC9A21635B18006EF94B /* NRNovelCollectionViewModel.swift */; };
@@ -34,9 +40,7 @@
 		DE818246208356BA001316E5 /* NRService_fetchRecentUpdatesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE818242208356BA001316E5 /* NRService_fetchRecentUpdatesList.swift */; };
 		DE818247208356BA001316E5 /* NRService_fetchRecentUpdatesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE818242208356BA001316E5 /* NRService_fetchRecentUpdatesList.swift */; };
 		DE8182542084F912001316E5 /* FTNovelReaderMockBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE81824C2084F8F6001316E5 /* FTNovelReaderMockBundle.bundle */; };
-		DE8182582085020A001316E5 /* EmperorsDomination.html in Resources */ = {isa = PBXBuildFile; fileRef = DE8182552085020A001316E5 /* EmperorsDomination.html */; };
 		DE8182592085020A001316E5 /* fetchRecentUpdatesList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE8182562085020A001316E5 /* fetchRecentUpdatesList.json */; };
-		DE81825A2085020A001316E5 /* EmperorDominationChapter.html in Resources */ = {isa = PBXBuildFile; fileRef = DE8182572085020A001316E5 /* EmperorDominationChapter.html */; };
 		DE84280A20558FE8006605C0 /* NRNovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280520558FE7006605C0 /* NRNovel.swift */; };
 		DE84280B20558FE8006605C0 /* NRNovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280520558FE7006605C0 /* NRNovel.swift */; };
 		DE84280C20558FE8006605C0 /* NovelChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280620558FE7006605C0 /* NovelChapter.swift */; };
@@ -55,8 +59,8 @@
 		DEAD34202058263C0064C46A /* Themes.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAD34162058263C0064C46A /* Themes.json */; };
 		DEAD3422205826660064C46A /* Bindings in Resources */ = {isa = PBXBuildFile; fileRef = DEAD3421205826660064C46A /* Bindings */; };
 		DEAD3423205826660064C46A /* Bindings in Resources */ = {isa = PBXBuildFile; fileRef = DEAD3421205826660064C46A /* Bindings */; };
-		DEBC650620970CB50057F649 /* NRProtocolUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650520970CB50057F649 /* NRProtocolUtility.swift */; };
-		DEBC650720970CB50057F649 /* NRProtocolUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650520970CB50057F649 /* NRProtocolUtility.swift */; };
+		DEBC650620970CB50057F649 /* NRBaseViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650520970CB50057F649 /* NRBaseViewController+Utility.swift */; };
+		DEBC650720970CB50057F649 /* NRBaseViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650520970CB50057F649 /* NRBaseViewController+Utility.swift */; };
 		DEBC650E20970E1E0057F649 /* NRGoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */; };
 		DEBC650F20970E1E0057F649 /* NRGoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */; };
 		DEBC65142097601A0057F649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC65132097601A0057F649 /* Main.storyboard */; };
@@ -242,6 +246,9 @@
 		DE28567B20946CC2003153C6 /* fetchNovelList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetchNovelList.json; sourceTree = "<group>"; };
 		DE383477217253B100DD4B27 /* NRSearchBarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRSearchBarHeaderView.swift; sourceTree = "<group>"; };
 		DE38347A2172545300DD4B27 /* NRSegmentCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRSegmentCollectionHeaderView.swift; sourceTree = "<group>"; };
+		DE38347E217265A000DD4B27 /* NRSearchFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRSearchFilterViewController.swift; sourceTree = "<group>"; };
+		DE3834802172666C00DD4B27 /* NRService_searchFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRService_searchFilter.swift; sourceTree = "<group>"; };
+		DE383483217266C000DD4B27 /* NRSearchFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRSearchFilterModel.swift; sourceTree = "<group>"; };
 		DE4EBE652067B6F5008AC70B /* NRService_fetchNovelList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRService_fetchNovelList.swift; sourceTree = "<group>"; };
 		DE4FAC9A21635B18006EF94B /* NRNovelCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRNovelCollectionViewModel.swift; sourceTree = "<group>"; };
 		DE5082312167D21400F3B26F /* NRService_searchNovel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRService_searchNovel.swift; sourceTree = "<group>"; };
@@ -249,9 +256,7 @@
 		DE818242208356BA001316E5 /* NRService_fetchRecentUpdatesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRService_fetchRecentUpdatesList.swift; sourceTree = "<group>"; };
 		DE81824C2084F8F6001316E5 /* FTNovelReaderMockBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FTNovelReaderMockBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE81824E2084F8F6001316E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE8182552085020A001316E5 /* EmperorsDomination.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = EmperorsDomination.html; sourceTree = "<group>"; };
 		DE8182562085020A001316E5 /* fetchRecentUpdatesList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetchRecentUpdatesList.json; sourceTree = "<group>"; };
-		DE8182572085020A001316E5 /* EmperorDominationChapter.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = EmperorDominationChapter.html; sourceTree = "<group>"; };
 		DE84280520558FE7006605C0 /* NRNovel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRNovel.swift; sourceTree = "<group>"; };
 		DE84280620558FE7006605C0 /* NovelChapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovelChapter.swift; sourceTree = "<group>"; };
 		DEA45C94205513CF008FA401 /* FTCoreUtility.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FTCoreUtility.xcodeproj; path = ../../MobileCore/FTCoreUtility/FTCoreUtility.xcodeproj; sourceTree = "<group>"; };
@@ -275,7 +280,7 @@
 		DEA7E1B61F49A67F0002C148 /* NRAppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRAppManager.swift; sourceTree = "<group>"; };
 		DEAD34162058263C0064C46A /* Themes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Themes.json; sourceTree = "<group>"; };
 		DEAD3421205826660064C46A /* Bindings */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Bindings; sourceTree = "<group>"; };
-		DEBC650520970CB50057F649 /* NRProtocolUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRProtocolUtility.swift; sourceTree = "<group>"; };
+		DEBC650520970CB50057F649 /* NRBaseViewController+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NRBaseViewController+Utility.swift"; sourceTree = "<group>"; };
 		DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRGoogleAuth.swift; sourceTree = "<group>"; };
 		DEBC65132097601A0057F649 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DEBC6520209764790057F649 /* NovelReader.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NovelReader.storyboard; sourceTree = "<group>"; };
@@ -381,6 +386,7 @@
 				DEF7648C208341DD00E6F614 /* NRService_fetchNovelChapters.swift */,
 				DE4EBE652067B6F5008AC70B /* NRService_fetchNovelList.swift */,
 				DE5082312167D21400F3B26F /* NRService_searchNovel.swift */,
+				DE3834802172666C00DD4B27 /* NRService_searchFilter.swift */,
 			);
 			path = ServiceModel;
 			sourceTree = "<group>";
@@ -388,8 +394,6 @@
 		DE81824D2084F8F6001316E5 /* FTNovelReaderMockBundle */ = {
 			isa = PBXGroup;
 			children = (
-				DE8182572085020A001316E5 /* EmperorDominationChapter.html */,
-				DE8182552085020A001316E5 /* EmperorsDomination.html */,
 				DE8182562085020A001316E5 /* fetchRecentUpdatesList.json */,
 				DE28567B20946CC2003153C6 /* fetchNovelList.json */,
 				DE81824E2084F8F6001316E5 /* Info.plist */,
@@ -404,6 +408,7 @@
 				DE84280520558FE7006605C0 /* NRNovel.swift */,
 				DE84280620558FE7006605C0 /* NovelChapter.swift */,
 				DEFB282F2171FEBB00B0E06B /* NRSearchModel.swift */,
+				DE383483217266C000DD4B27 /* NRSearchFilterModel.swift */,
 			);
 			path = ModelObjects;
 			sourceTree = "<group>";
@@ -514,10 +519,10 @@
 				DEF2411B215E6DE400F7B0C6 /* NRConstants.swift */,
 				DEA7E1B61F49A67F0002C148 /* NRAppManager.swift */,
 				DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */,
-				DEBC650520970CB50057F649 /* NRProtocolUtility.swift */,
-				DEA7E1AD1F4992030002C148 /* NRBaseTableViewController.swift */,
-				DEA7E1A01F497B5D0002C148 /* NRBaseViewController.swift */,
 				DEA7E1A11F497B5D0002C148 /* NRTabBarController.swift */,
+				DEBC650520970CB50057F649 /* NRBaseViewController+Utility.swift */,
+				DEA7E1A01F497B5D0002C148 /* NRBaseViewController.swift */,
+				DEA7E1AD1F4992030002C148 /* NRBaseTableViewController.swift */,
 				DE0173BC216148B7007F5546 /* NRBaseCollectionViewController.swift */,
 				DEA7E1A21F497B5D0002C148 /* Views */,
 			);
@@ -547,11 +552,11 @@
 		DEAD340C2058263C0064C46A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC0A2E2068BCC80013D84F /* NovelServiceRules.plist */,
 				DEBC65522097649B0057F649 /* plist */,
 				DEE935122094CDA000B10398 /* Assets.xcassets */,
 				DEAD3421205826660064C46A /* Bindings */,
 				DEAD34152058263C0064C46A /* Themes */,
-				DEDC0A2E2068BCC80013D84F /* NovelServiceRules.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -608,6 +613,7 @@
 				DEBC6531209764790057F649 /* SearchStoryboard.storyboard */,
 				DEBC65542097661F0057F649 /* NRSearchCollectionViewController.swift */,
 				DEFB28352171FF6C00B0E06B /* NRSearchCollectionViewModel.swift */,
+				DE38347E217265A000DD4B27 /* NRSearchFilterViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -873,10 +879,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE81825A2085020A001316E5 /* EmperorDominationChapter.html in Resources */,
 				DE28567C20946CC2003153C6 /* fetchNovelList.json in Resources */,
 				DE8182592085020A001316E5 /* fetchRecentUpdatesList.json in Resources */,
-				DE8182582085020A001316E5 /* EmperorsDomination.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1042,14 +1046,16 @@
 				DEBC650F20970E1E0057F649 /* NRGoogleAuth.swift in Sources */,
 				DEDE27212069522300E4C992 /* NRRules_fetchNovelList.swift in Sources */,
 				DE23237920551287004F1480 /* NRServiceProvider.swift in Sources */,
-				DEBC650720970CB50057F649 /* NRProtocolUtility.swift in Sources */,
+				DEBC650720970CB50057F649 /* NRBaseViewController+Utility.swift in Sources */,
 				DEBC6545209764790057F649 /* NRNovelTableViewCell.swift in Sources */,
+				DE383485217266C000DD4B27 /* NRSearchFilterModel.swift in Sources */,
 				DE23237B20551287004F1480 /* NRBaseTableViewController.swift in Sources */,
 				DEE9351720959E1D00B10398 /* NRService_fetchChapter.swift in Sources */,
 				DE23237D20551287004F1480 /* NRTabBarController.swift in Sources */,
 				DE23237E20551287004F1480 /* AppDelegate.swift in Sources */,
 				DE818247208356BA001316E5 /* NRService_fetchRecentUpdatesList.swift in Sources */,
 				DEBC654F209764790057F649 /* NRNovelChapterViewController.swift in Sources */,
+				DE383486217267AA00DD4B27 /* NRSearchFilterViewController.swift in Sources */,
 				DE4EBE672067B6F5008AC70B /* NRService_fetchNovelList.swift in Sources */,
 				DE38347C2172547300DD4B27 /* NRSegmentCollectionHeaderView.swift in Sources */,
 				DE23238220551287004F1480 /* NRBaseViewController.swift in Sources */,
@@ -1062,6 +1068,7 @@
 				DE3834792172543A00DD4B27 /* NRSearchBarHeaderView.swift in Sources */,
 				DE84280D20558FE8006605C0 /* NovelChapter.swift in Sources */,
 				DEF2411D215E6DE400F7B0C6 /* NRConstants.swift in Sources */,
+				DE3834822172666C00DD4B27 /* NRService_searchFilter.swift in Sources */,
 				DE0173C121614957007F5546 /* NRBaseCollectionViewController.swift in Sources */,
 				DEBC6547209764790057F649 /* NRNovelCollectionViewCell.swift in Sources */,
 				DE38347D217257CC00DD4B27 /* NRNovelCollectionViewModel.swift in Sources */,
@@ -1092,7 +1099,7 @@
 				DEBC650E20970E1E0057F649 /* NRGoogleAuth.swift in Sources */,
 				DEDE27202069522300E4C992 /* NRRules_fetchNovelList.swift in Sources */,
 				DEA7E1B11F4996A90002C148 /* NRServiceProvider.swift in Sources */,
-				DEBC650620970CB50057F649 /* NRProtocolUtility.swift in Sources */,
+				DEBC650620970CB50057F649 /* NRBaseViewController+Utility.swift in Sources */,
 				DEBC6544209764790057F649 /* NRNovelTableViewCell.swift in Sources */,
 				DEA7E1AE1F4992030002C148 /* NRBaseTableViewController.swift in Sources */,
 				DEE9351620959E1D00B10398 /* NRService_fetchChapter.swift in Sources */,
@@ -1109,6 +1116,7 @@
 				DEBC6536209764790057F649 /* NRNovelCollectionViewController.swift in Sources */,
 				DEF8D593206783B5001AFEC2 /* NRNovels.swift in Sources */,
 				DE84280C20558FE8006605C0 /* NovelChapter.swift in Sources */,
+				DE383484217266C000DD4B27 /* NRSearchFilterModel.swift in Sources */,
 				DEFB28302171FEBB00B0E06B /* NRSearchModel.swift in Sources */,
 				DE38347B2172545300DD4B27 /* NRSegmentCollectionHeaderView.swift in Sources */,
 				DEF2411C215E6DE400F7B0C6 /* NRConstants.swift in Sources */,
@@ -1120,6 +1128,8 @@
 				DEA7E1A61F497B6C0002C148 /* NRBaseView.swift in Sources */,
 				DE5A775D204AB8D5008B19ED /* NRServiceConstants.swift in Sources */,
 				DEF76490208341DD00E6F614 /* NRService_fetchNovelChapters.swift in Sources */,
+				DE3834812172666C00DD4B27 /* NRService_searchFilter.swift in Sources */,
+				DE38347F217265A000DD4B27 /* NRSearchFilterViewController.swift in Sources */,
 				DE383478217253B100DD4B27 /* NRSearchBarHeaderView.swift in Sources */,
 				DEBC6540209764790057F649 /* NRNovelDescriptionView.swift in Sources */,
 				DEDE27222069522300E4C992 /* NRRules_defaults.swift in Sources */,

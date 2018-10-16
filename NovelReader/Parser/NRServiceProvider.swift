@@ -98,5 +98,18 @@ class NRServiceProvider {
             completionHandler(res?.response)
         }
     }
+
+    // Serch Novel
+    static func searchFilter(completionHandler: @escaping (_ novels: NRSearchFilterModel?) -> Swift.Void) {
+
+        FTLoadingIndicator.show()
+
+        FTServicesearchFilter.make(modelStack: nil) { (response) in
+            FTLoadingIndicator.hide()
+
+            let res = response.status.responseModel as? NRServiceResponse_searchFilter
+            completionHandler(res?.response)
+        }
+    }
     
 }

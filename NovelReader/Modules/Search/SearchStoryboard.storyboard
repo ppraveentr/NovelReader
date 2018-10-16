@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="1604" y="-29.23538230884558"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Filter View Controller-->
         <scene sceneID="0Ls-xg-3pU">
             <objects>
-                <viewController id="v0b-jn-Awu" sceneMemberID="viewController">
+                <viewController id="v0b-jn-Awu" customClass="NRSearchFilterViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fm1-Yj-8as">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
