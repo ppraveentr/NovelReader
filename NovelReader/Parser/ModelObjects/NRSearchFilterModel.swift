@@ -20,4 +20,6 @@ final class NRSearchFilterModel: FTServiceModel {
     var language: [NRFilterModel]? = nil
     var genres: [NRFilterModel]? = nil
     var completed: [NRFilterModel]? = nil
+
+    var response: NRSearchFilterModel?
 }

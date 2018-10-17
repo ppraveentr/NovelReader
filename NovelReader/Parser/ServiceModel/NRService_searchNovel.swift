@@ -8,14 +8,11 @@
 
 import Foundation
 
-final class NRServiceResponse_searchNovel: FTServiceModel {
-    var response: [NRNovel]?
-}
-
+typealias FTServicesearchNovel = NRService_searchNovel
 final class NRService_searchNovel: FTServiceClient {
     var inputStack: NRSearchModel?
     var serviceName = "searchNovel"
-    var responseModelType: Any? = NRServiceResponse_searchNovel.self
+    var responseStackType: Any? = NRNovels.self
 
     init(inputStack: FTServiceModel?) {
         self.inputStack = inputStack as? NRSearchModel

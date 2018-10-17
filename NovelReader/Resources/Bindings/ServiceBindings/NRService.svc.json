@@ -8,7 +8,7 @@
         "type": "GET",
         "path": "novel/recentupdates",
         "responseType": {
-            "bindAs": "NRService_fetchRecentUpdatesListResponse"
+            "bindAs": "NRNovels"
         }
     },
     "fetchNovelList": {
@@ -22,7 +22,7 @@
             "page": "page"
         },
         "responseType": {
-            "arrayOf": "NRNovel"
+            "bindAs": "NRNovels"
         }
     },
     "fetchNovelChapters": {
@@ -46,7 +46,7 @@
         "type": "POST",
         "path": "novel/search",
         "responseType": {
-            "bindAs": "NRServiceResponse_searchNovel"
+            "bindAs": "NRNovels"
         }
     },
     "searchFilter": {
@@ -54,7 +54,7 @@
         "type": "GET",
         "path": "novel/search-filter",
         "responseType": {
-            "bindAs": "NRServiceResponse_searchFilter"
+            "bindAs": "NRSearchFilterModel"
         }
     }
 }

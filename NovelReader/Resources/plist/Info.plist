@@ -31,6 +31,8 @@
 	<string>1</string>
 	<key>EndpointURL</key>
 	<string>https://novelreader-online.herokuapp.com/</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.entertainment</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

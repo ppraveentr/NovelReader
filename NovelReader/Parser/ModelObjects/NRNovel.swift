@@ -15,6 +15,8 @@ final class NRNovel: FTServiceModel {
     var title: String? = nil
     var novelType: String? = nil
 
+    var response: NRNovel? = nil
+    
     /* Coding Keys */
     enum CodingKeys: String, CodingKey  {
         case identifier
@@ -32,7 +34,7 @@ final class NRNovel: FTServiceModel {
         case views
         case title = "name"
         case novelType = "type"
-
+        case response
     }
     
 }

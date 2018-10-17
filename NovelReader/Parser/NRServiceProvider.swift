@@ -18,7 +18,7 @@ class NRServiceProvider {
         FTServicefetchRecentUpdatesList.make { (response) in
             FTLoadingIndicator.hide()
 
-            let response = response.status.responseModel as? NRServiceResponse_fetchRecentUpdatesList
+            let response = response.status.responseModel as? NRNovels
             completionHandler(response?.response)
         }
     }
@@ -30,7 +30,7 @@ class NRServiceProvider {
         FTServicefetchNovelList.make(modelStack: nil) { (response) in
             FTLoadingIndicator.hide()
 
-            let res = response.status.responseModel as? NRServiceResponse_fetchNovelList
+            let res = response.status.responseModel as? NRNovels
 
             if let novelList = res?.response {
                 let novel = novel ?? NRNovels()
@@ -61,7 +61,7 @@ class NRServiceProvider {
         FTServicefetchNovelChapters.make(modelStack: model) { (response) in
             FTLoadingIndicator.hide()
 
-            let res = response.status.responseModel as? NRServiceResponse_fetchNovelChapters
+            let res = response.status.responseModel as? NRNovel
             completionHandler(res?.response)
         }
     }
@@ -77,7 +77,7 @@ class NRServiceProvider {
         FTServicefetchChapter.make(modelStack: model) { (response) in
             FTLoadingIndicator.hide()
 
-            let res = response.status.responseModel as? NRServiceResponse_fetchChapter
+            let res = response.status.responseModel as? NRNovelChapter
             completionHandler(res?.response)
         }
     }
@@ -94,7 +94,7 @@ class NRServiceProvider {
         FTServicesearchNovel.make(modelStack: model) { (response) in
             FTLoadingIndicator.hide()
 
-            let res = response.status.responseModel as? NRServiceResponse_searchNovel
+            let res = response.status.responseModel as? NRNovels
             completionHandler(res?.response)
         }
     }
@@ -107,7 +107,7 @@ class NRServiceProvider {
         FTServicesearchFilter.make(modelStack: nil) { (response) in
             FTLoadingIndicator.hide()
 
-            let res = response.status.responseModel as? NRServiceResponse_searchFilter
+            let res = response.status.responseModel as? NRSearchFilterModel
             completionHandler(res?.response)
         }
     }

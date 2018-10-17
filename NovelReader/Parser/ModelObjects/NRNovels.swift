@@ -10,20 +10,10 @@ final class NRNovels: FTServiceModel {
     // TODO: Yet to setup model creator for Static data
     var state: String? = nil
     var novelList: [NRNovel]? = nil
-    var page: String? = "1"
+    var page: String? = nil
     var totalItems: String? = nil
     var type: String? = nil
     var category: String? = nil
 
-    /* Coding Keys */
-    enum CodingKeys: String, CodingKey  {
-        case state
-        case novelList
-        case page
-        case totalItems
-        case type
-        case category
-
-    }
-    
+     var response: [NRNovel]? = nil
 }

@@ -43,8 +43,8 @@
 		DE8182592085020A001316E5 /* fetchRecentUpdatesList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE8182562085020A001316E5 /* fetchRecentUpdatesList.json */; };
 		DE84280A20558FE8006605C0 /* NRNovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280520558FE7006605C0 /* NRNovel.swift */; };
 		DE84280B20558FE8006605C0 /* NRNovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280520558FE7006605C0 /* NRNovel.swift */; };
-		DE84280C20558FE8006605C0 /* NovelChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280620558FE7006605C0 /* NovelChapter.swift */; };
-		DE84280D20558FE8006605C0 /* NovelChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280620558FE7006605C0 /* NovelChapter.swift */; };
+		DE84280C20558FE8006605C0 /* NRNovelChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280620558FE7006605C0 /* NRNovelChapter.swift */; };
+		DE84280D20558FE8006605C0 /* NRNovelChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280620558FE7006605C0 /* NRNovelChapter.swift */; };
 		DEA7E1441F496BAB0002C148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1431F496BAB0002C148 /* AppDelegate.swift */; };
 		DEA7E1501F496BAB0002C148 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA7E14E1F496BAB0002C148 /* LaunchScreen.storyboard */; };
 		DEA7E15B1F496BAB0002C148 /* NovelReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E15A1F496BAB0002C148 /* NovelReaderTests.swift */; };
@@ -93,6 +93,10 @@
 		DEBC6551209764790057F649 /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6531209764790057F649 /* SearchStoryboard.storyboard */; };
 		DEBC65552097661F0057F649 /* NRSearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC65542097661F0057F649 /* NRSearchCollectionViewController.swift */; };
 		DEBC65562097661F0057F649 /* NRSearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC65542097661F0057F649 /* NRSearchCollectionViewController.swift */; };
+		DEC7B5312176549C004DB077 /* FTMobileCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA45CB0205513E7008FA401 /* FTMobileCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEC7B532217654A0004DB077 /* FTCoreUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA45C9A205513CF008FA401 /* FTCoreUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEC7B533217654B8004DB077 /* FTMobileCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA45CA6205513E3008FA401 /* FTMobileCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEC7B534217654BF004DB077 /* Pods_NovelReaderDemo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 89900C8A827DDB8F2CA3DAC4 /* Pods_NovelReaderDemo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEDC0A2F2068BCC80013D84F /* NovelServiceRules.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDC0A2E2068BCC80013D84F /* NovelServiceRules.plist */; };
 		DEDC0A302068BCC80013D84F /* NovelServiceRules.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDC0A2E2068BCC80013D84F /* NovelServiceRules.plist */; };
 		DEDE27202069522300E4C992 /* NRRules_fetchNovelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE271B2069522300E4C992 /* NRRules_fetchNovelList.swift */; };
@@ -216,6 +220,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				DEC7B534217654BF004DB077 /* Pods_NovelReaderDemo.framework in Embed Frameworks */,
+				DEC7B533217654B8004DB077 /* FTMobileCore.framework in Embed Frameworks */,
+				DEC7B5312176549C004DB077 /* FTMobileCoreUI.framework in Embed Frameworks */,
+				DEC7B532217654A0004DB077 /* FTCoreUtility.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,7 +266,7 @@
 		DE81824E2084F8F6001316E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE8182562085020A001316E5 /* fetchRecentUpdatesList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetchRecentUpdatesList.json; sourceTree = "<group>"; };
 		DE84280520558FE7006605C0 /* NRNovel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRNovel.swift; sourceTree = "<group>"; };
-		DE84280620558FE7006605C0 /* NovelChapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovelChapter.swift; sourceTree = "<group>"; };
+		DE84280620558FE7006605C0 /* NRNovelChapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRNovelChapter.swift; sourceTree = "<group>"; };
 		DEA45C94205513CF008FA401 /* FTCoreUtility.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FTCoreUtility.xcodeproj; path = ../../MobileCore/FTCoreUtility/FTCoreUtility.xcodeproj; sourceTree = "<group>"; };
 		DEA45C9F205513E3008FA401 /* FTMobileCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FTMobileCore.xcodeproj; path = ../../MobileCore/FTMobileCore/FTMobileCore.xcodeproj; sourceTree = "<group>"; };
 		DEA45CA9205513E7008FA401 /* FTMobileCoreUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FTMobileCoreUI.xcodeproj; path = ../../MobileCore/FTMobileCoreUI/FTMobileCoreUI.xcodeproj; sourceTree = "<group>"; };
@@ -406,7 +414,7 @@
 			children = (
 				DEF8D58E20678310001AFEC2 /* NRNovels.swift */,
 				DE84280520558FE7006605C0 /* NRNovel.swift */,
-				DE84280620558FE7006605C0 /* NovelChapter.swift */,
+				DE84280620558FE7006605C0 /* NRNovelChapter.swift */,
 				DEFB282F2171FEBB00B0E06B /* NRSearchModel.swift */,
 				DE383483217266C000DD4B27 /* NRSearchFilterModel.swift */,
 			);
@@ -1066,7 +1074,7 @@
 				DEBC6537209764790057F649 /* NRNovelCollectionViewController.swift in Sources */,
 				DEF8D594206783B6001AFEC2 /* NRNovels.swift in Sources */,
 				DE3834792172543A00DD4B27 /* NRSearchBarHeaderView.swift in Sources */,
-				DE84280D20558FE8006605C0 /* NovelChapter.swift in Sources */,
+				DE84280D20558FE8006605C0 /* NRNovelChapter.swift in Sources */,
 				DEF2411D215E6DE400F7B0C6 /* NRConstants.swift in Sources */,
 				DE3834822172666C00DD4B27 /* NRService_searchFilter.swift in Sources */,
 				DE0173C121614957007F5546 /* NRBaseCollectionViewController.swift in Sources */,
@@ -1115,7 +1123,7 @@
 				DEBC65552097661F0057F649 /* NRSearchCollectionViewController.swift in Sources */,
 				DEBC6536209764790057F649 /* NRNovelCollectionViewController.swift in Sources */,
 				DEF8D593206783B5001AFEC2 /* NRNovels.swift in Sources */,
-				DE84280C20558FE8006605C0 /* NovelChapter.swift in Sources */,
+				DE84280C20558FE8006605C0 /* NRNovelChapter.swift in Sources */,
 				DE383484217266C000DD4B27 /* NRSearchFilterModel.swift in Sources */,
 				DEFB28302171FEBB00B0E06B /* NRSearchModel.swift in Sources */,
 				DE38347B2172545300DD4B27 /* NRSegmentCollectionHeaderView.swift in Sources */,
@@ -1206,6 +1214,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
@@ -1219,6 +1228,7 @@
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -1229,6 +1239,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
@@ -1241,6 +1252,7 @@
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

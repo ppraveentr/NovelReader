@@ -8,14 +8,11 @@
 
 import Foundation
 
-final class NRServiceResponse_searchFilter: FTServiceModel {
-    var response: NRSearchFilterModel?
-}
-
+typealias FTServicesearchFilter = NRService_searchFilter
 final class NRService_searchFilter: FTServiceClient {
     var inputStack: NRSearchModel?
     var serviceName = "searchFilter"
-    var responseModelType: Any? = NRServiceResponse_searchFilter.self
+    var responseStackType: Any? = NRSearchFilterModel.self
 
     init(inputStack: FTServiceModel?) {
         self.inputStack = inputStack as? NRSearchModel
