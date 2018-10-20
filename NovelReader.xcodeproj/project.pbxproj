@@ -59,6 +59,10 @@
 		DEAD34202058263C0064C46A /* Themes.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAD34162058263C0064C46A /* Themes.json */; };
 		DEAD3422205826660064C46A /* Bindings in Resources */ = {isa = PBXBuildFile; fileRef = DEAD3421205826660064C46A /* Bindings */; };
 		DEAD3423205826660064C46A /* Bindings in Resources */ = {isa = PBXBuildFile; fileRef = DEAD3421205826660064C46A /* Bindings */; };
+		DEB91E11217975A000D9FFB9 /* FTMobileCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA45CB0205513E7008FA401 /* FTMobileCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEB91E12217975A300D9FFB9 /* FTCoreUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA45C9A205513CF008FA401 /* FTCoreUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEB91E13217975AA00D9FFB9 /* FTMobileCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA45CA6205513E3008FA401 /* FTMobileCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEB91E15217976DE00D9FFB9 /* FTNovelReaderMockBundle.bundle in Copy Resources */ = {isa = PBXBuildFile; fileRef = DE81824C2084F8F6001316E5 /* FTNovelReaderMockBundle.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEBC650620970CB50057F649 /* NRBaseViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650520970CB50057F649 /* NRBaseViewController+Utility.swift */; };
 		DEBC650720970CB50057F649 /* NRBaseViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650520970CB50057F649 /* NRBaseViewController+Utility.swift */; };
 		DEBC650E20970E1E0057F649 /* NRGoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */; };
@@ -93,10 +97,6 @@
 		DEBC6551209764790057F649 /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6531209764790057F649 /* SearchStoryboard.storyboard */; };
 		DEBC65552097661F0057F649 /* NRSearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC65542097661F0057F649 /* NRSearchCollectionViewController.swift */; };
 		DEBC65562097661F0057F649 /* NRSearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC65542097661F0057F649 /* NRSearchCollectionViewController.swift */; };
-		DEC7B5312176549C004DB077 /* FTMobileCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA45CB0205513E7008FA401 /* FTMobileCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DEC7B532217654A0004DB077 /* FTCoreUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA45C9A205513CF008FA401 /* FTCoreUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DEC7B533217654B8004DB077 /* FTMobileCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA45CA6205513E3008FA401 /* FTMobileCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DEC7B534217654BF004DB077 /* Pods_NovelReaderDemo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 89900C8A827DDB8F2CA3DAC4 /* Pods_NovelReaderDemo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEDC0A2F2068BCC80013D84F /* NovelServiceRules.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDC0A2E2068BCC80013D84F /* NovelServiceRules.plist */; };
 		DEDC0A302068BCC80013D84F /* NovelServiceRules.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDC0A2E2068BCC80013D84F /* NovelServiceRules.plist */; };
 		DEDE27202069522300E4C992 /* NRRules_fetchNovelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE271B2069522300E4C992 /* NRRules_fetchNovelList.swift */; };
@@ -220,10 +220,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DEC7B534217654BF004DB077 /* Pods_NovelReaderDemo.framework in Embed Frameworks */,
-				DEC7B533217654B8004DB077 /* FTMobileCore.framework in Embed Frameworks */,
-				DEC7B5312176549C004DB077 /* FTMobileCoreUI.framework in Embed Frameworks */,
-				DEC7B532217654A0004DB077 /* FTCoreUtility.framework in Embed Frameworks */,
+				DEB91E13217975AA00D9FFB9 /* FTMobileCore.framework in Embed Frameworks */,
+				DEB91E12217975A300D9FFB9 /* FTCoreUtility.framework in Embed Frameworks */,
+				DEB91E11217975A000D9FFB9 /* FTMobileCoreUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +238,17 @@
 				DEEA25FB20A204AB0015CCC0 /* FTMobileCoreUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEB91E14217976C700D9FFB9 /* Copy Resources */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				DEB91E15217976DE00D9FFB9 /* FTNovelReaderMockBundle.bundle in Copy Resources */,
+			);
+			name = "Copy Resources";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -699,6 +709,7 @@
 				DEA7E19B1F4970400002C148 /* Embed Frameworks */,
 				5226665313E4689E4DAE9BC8 /* [CP] Embed Pods Frameworks */,
 				3B40B5E9049E6B5CB415DFEB /* [CP] Copy Pods Resources */,
+				DEB91E14217976C700D9FFB9 /* Copy Resources */,
 			);
 			buildRules = (
 			);
@@ -757,7 +768,6 @@
 				TargetAttributes = {
 					DE81824B2084F8F6001316E5 = {
 						CreatedOnToolsVersion = 9.3;
-						DevelopmentTeam = W6W48SVQX7;
 						ProvisioningStyle = Automatic;
 					};
 					DEA7E13F1F496BAB0002C148 = {
@@ -1262,10 +1272,10 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W6W48SVQX7;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = FTNovelReaderMockBundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
@@ -1286,10 +1296,10 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W6W48SVQX7;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = FTNovelReaderMockBundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";

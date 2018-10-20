@@ -81,7 +81,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RC7-Jv-W4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <barButtonItem image="fontSize" width="45" style="plain" id="bdI-Le-MFg">
+                <barButtonItem image="filter" width="45" style="plain" id="bdI-Le-MFg">
                     <connections>
                         <segue destination="afr-kd-Wru" kind="popoverPresentation" identifier="kShowFontPicker" popoverAnchorBarButtonItem="bdI-Le-MFg" id="iz1-PS-4L4">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -164,7 +164,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fontSize" width="1.537731409072876" height="1.537731409072876"/>
+        <image name="filter" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fSp-SM-qua"/>

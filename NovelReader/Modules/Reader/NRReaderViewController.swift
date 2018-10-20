@@ -21,9 +21,19 @@ class NRReaderViewController: NRBaseViewController {
 //        }
 //    }
 
-    var textSize: Int = kReaderInitalFontSize
     let contentView = FTContentView()
-    
+
+    var fontPicker: FTFontPickerModel? {
+        set {
+            if let fontPicker = newValue {
+                FTUserCache.setCacheObject(fontPicker, forType: FTFontPickerModel.self)
+            }
+        }
+        get {
+            return FTUserCache.getCachedObject(forType: FTFontPickerModel.self) as? FTFontPickerModel
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // setup view content
@@ -58,6 +68,14 @@ class NRReaderViewController: NRBaseViewController {
                 }
             }
         }
+
+        // FTFontPickerViewprotocol
+        if let fontPicker = fontPicker {
+            fontSize(fontPicker.fontSize)
+            pickerColor(textColor: fontPicker.fontColor, backgroundColor: fontPicker.backgroundColor)
+            fontFamily(fontPicker.fontFamily)
+        }
+
     }
     
     func loadWebContent(contnet: String) {
@@ -68,9 +86,8 @@ class NRReaderViewController: NRBaseViewController {
 
 extension NRReaderViewController: FTFontPickerViewprotocol {
 
-    func fontSize(_ size: FontSizePicker) {
-        textSize += (size == .increment) ? kReaderFontSize : -kReaderFontSize;
-        contentView.webView.setContentFontSize(textSize)
+    func fontSize(_ size: Float) {
+        contentView.webView.setContentFontSize(size)
     }
     
     func pickerColor(textColor: UIColor, backgroundColor: UIColor) {
@@ -88,6 +105,13 @@ extension NRReaderViewController: FTFontPickerViewprotocol {
 extension NRReaderViewController: UIPopoverPresentationControllerDelegate {
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        if let fontPickerController = controller.presentedViewController as? FTFontPickerViewController {
+            if self.fontPicker == nil {
+                self.fontPicker = fontPickerController.fontPickerModel
+            } else {
+                fontPickerController.fontPickerModel = self.fontPicker
+            }
+        }
         return .none
     }
 
