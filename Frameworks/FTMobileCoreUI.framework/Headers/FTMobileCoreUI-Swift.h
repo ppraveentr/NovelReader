@@ -186,25 +186,29 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 @class FTBaseView;
-@class NSBundle;
+@class FTView;
 @class NSCoder;
+@class NSBundle;
 
 SWIFT_CLASS("_TtC14FTMobileCoreUI20FTBaseViewController")
 @interface FTBaseViewController : UIViewController
 @property (nonatomic, strong) IBOutlet FTBaseView * _Nullable baseView;
+@property (nonatomic, copy) NSString * _Nonnull baseViewTheme;
+@property (nonatomic, strong) IBOutlet FTView * _Nullable topPinnedButtonView;
+@property (nonatomic, strong) IBOutlet FTView * _Nullable bottomPinnedButtonView;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)loadView;
 - (IBAction)leftButtonAction;
 - (IBAction)rightButtonAction;
 - (void)endEditing;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
 
 SWIFT_CLASS("_TtC14FTMobileCoreUI30FTBaseCollectionViewController")
 @interface FTBaseCollectionViewController : FTBaseViewController
+@property (nonatomic, copy) NSString * _Nullable collectionViewTheme;
 - (void)loadView;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -227,11 +231,12 @@ SWIFT_CLASS("_TtC14FTMobileCoreUI26FTBaseNavigationController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class FTScrollView;
 
 SWIFT_CLASS("_TtC14FTMobileCoreUI26FTBaseScrollViewController")
 @interface FTBaseScrollViewController : FTBaseViewController
+@property (nonatomic, strong) IBOutlet FTScrollView * _Null_unspecified scrollView;
 - (void)loadView;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -249,7 +254,6 @@ SWIFT_CLASS("_TtC14FTMobileCoreUI25FTBaseTableViewController")
 @interface FTBaseTableViewController : FTBaseViewController
 - (void)loadView;
 - (void)viewDidLayoutSubviews;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -281,8 +285,11 @@ SWIFT_CLASS("_TtC14FTMobileCoreUI6FTView")
 
 SWIFT_CLASS("_TtC14FTMobileCoreUI10FTBaseView")
 @interface FTBaseView : FTView
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, strong) IBOutlet FTView * _Nullable topPinnedView;
+@property (nonatomic, strong) IBOutlet FTView * _Null_unspecified mainPinnedView;
+@property (nonatomic, strong) IBOutlet FTView * _Nullable bottomPinnedView;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class UIView;
@@ -314,7 +321,7 @@ SWIFT_CLASS("_TtC14FTMobileCoreUI8FTButton")
 @class UICollectionViewLayout;
 
 SWIFT_CLASS("_TtC14FTMobileCoreUI16FTCollectionView")
-@interface FTCollectionView : UICollectionView
+@interface FTCollectionView : FTUICollectionView
 - (nonnull instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout * _Nonnull)layout OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -322,6 +329,7 @@ SWIFT_CLASS("_TtC14FTMobileCoreUI16FTCollectionView")
 
 SWIFT_CLASS("_TtC14FTMobileCoreUI12FTScrollView")
 @interface FTScrollView : UIScrollView
+@property (nonatomic, strong) IBOutlet FTView * _Null_unspecified contentView;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -367,7 +375,6 @@ SWIFT_CLASS("_TtC14FTMobileCoreUI16FTFontPickerView")
 
 
 @interface FTFontPickerView (SWIFT_EXTENSION(FTMobileCoreUI)) <UITableViewDataSource, UITableViewDelegate>
-- (CGFloat)tableView:(UITableView * _Nonnull)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
@@ -378,7 +385,6 @@ SWIFT_CLASS("_TtC14FTMobileCoreUI16FTFontPickerView")
 SWIFT_CLASS("_TtC14FTMobileCoreUI26FTFontPickerViewController")
 @interface FTFontPickerViewController : FTBaseViewController
 - (void)loadView;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 

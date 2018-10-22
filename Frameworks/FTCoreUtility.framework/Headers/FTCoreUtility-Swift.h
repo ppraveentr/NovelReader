@@ -205,6 +205,14 @@ SWIFT_CLASS("_TtC13FTCoreUtility10FTUIButton")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UICollectionViewLayout;
+
+SWIFT_CLASS("_TtC13FTCoreUtility18FTUICollectionView")
+@interface FTUICollectionView : UICollectionView
+- (nonnull instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout * _Nonnull)layout OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC13FTCoreUtility13FTUISearchBar")
 @interface FTUISearchBar : UISearchBar
@@ -265,6 +273,8 @@ SWIFT_CLASS("_TtC13FTCoreUtility8FTUIView")
 @interface UITabBar (SWIFT_EXTENSION(FTCoreUtility))
 + (void)setBackgroundImage:(id _Nonnull)image;
 @end
+
+
 
 
 
