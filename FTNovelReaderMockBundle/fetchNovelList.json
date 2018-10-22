@@ -1,410 +1,304 @@
 {
-    "response":
-    [
+    "response": [
         {
-            "url": "http://onlinenovelreader.com/bungaku-shoujo",
-            "name": "“Bungaku Shoujo”",
-            "image": "http://onlinenovelreader.com/uploads/posters/bungaku-shoujo.jpg",
-            "summary": "For Tohko Amano, a third-year high-school student and self-styled “book girl,” being the head of the literary club is more than just an extracurricular activity. It’s her bread and butter…literally! Tohko is actually a literature-gobbling demon, who can be found at all hours of the day munching on t...",
-            "views": "14072",
-            "type": "Light Novel",
-            "rating": "4.2"
-        },
-        {
-            "url": "http://onlinenovelreader.com/um-sorry-ive-been-reincarnated",
-            "name": "(Um, Sorry) I’ve Been Reincarnated!",
-            "image": "http://onlinenovelreader.com/uploads/posters/1465933732.jpg",
-            "summary": "After a god screws up and accidentally takes high schooler Shou&rsquo;s life, he offers him reincarnation with a gift to make up for it. Shou asks to retain all his old memories for the new life. Shou is reborn as Will, a noble&rsquo;s son in a world where magic use is common and involves knowledge ...",
-            "views": "339103",
-            "type": "Web Novel",
-            "rating": "6.4"
-        },
-        {
-            "url": "http://onlinenovelreader.com/-hackai-buster",
-            "name": ".hack//AI Buster",
-            "image": "http://onlinenovelreader.com/uploads/posters/-hackai-buster.jpg",
-            "summary": "AI buster, the prequel to .hack//SIGN, is the story of Albireo,a debugger, who used to play ‘Fragments,’ the beta version of ‘The World.’ Albireo encounters Lycoris, whom he assumes is an event NPC (an AI character) but she’s actually a failed version of Aura. She is blind, deaf, and mute, because A...",
-            "views": "8046",
-            "type": "Light Novel",
-            "rating": "5.8"
-        },
-        {
-            "url": "http://onlinenovelreader.com/-hackcell",
-            "name": ".hack//Cell",
-            "image": "http://onlinenovelreader.com/uploads/posters/-hackcell.jpg",
-            "summary": ".hack//CELL is a novel series written by Ryo Suzukaze, serialized in the magazine .hack//G.U.: The World, and published in paperback format by Kadokawa Shoten as a chapter in the .hack universe. It follows the experiences of a female Edge Punisher, Midori, as she hires herself out to players who wan...",
-            "views": "7579",
-            "type": "Light Novel",
-            "rating": "7.8"
-        },
-        {
-            "url": "http://onlinenovelreader.com/-hackg-u-",
-            "name": ".hack//G.U.",
-            "image": "http://onlinenovelreader.com/uploads/posters/-hackg-u-.jpg",
-            "summary": "“The World” is a massively multiplayer online game played by more than twelve million people across the globe. Within this virtual world Haseo, a PPK (Player Killer Killer), continues an endless fight. Everything he does is for the sake of the girl Shino, who back in the real world, is h...",
-            "views": "7335",
-            "type": "Light Novel",
-            "rating": "4.6"
-        },
-        {
-            "url": "http://onlinenovelreader.com/10-nen-goshi-no-hikiniito-o-yamete-gaishutsushitara-jitaku-goto-isekai-ni-tenishiteta",
-            "name": "10 nen goshi no HikiNiito o Yamete Gaishutsushitara Jitaku goto Isekai ni Ten’ishiteta",
-            "image": "http://onlinenovelreader.com/uploads/posters/10-nen-goshi-no-hikiniito-o-yamete-gaishutsushitara-jitaku-goto-isekai-ni-tenishiteta.jpg",
-            "summary": "Houjou Yuuji, 30 years old, jobless, hikkomori for 10 years. Using his parents’ death as the impetus, he decided to ridding his hikikomori self, and leave the house. However, what he saw was another world with creatures strutting about that he didn’t recognize. This was a story about a young man wh...",
-            "views": "99005",
-            "type": "Web Novel",
-            "rating": "6.5"
-        },
-        {
-            "url": "http://onlinenovelreader.com/1000-nin-no-homunkurusu-no-shoujo-tachi-ni-kakomarete-isekai-kenkoku",
-            "name": "1000 nin no Homunkurusu no Shoujo tachi ni Kakomarete Isekai Kenkoku",
-            "image": "http://onlinenovelreader.com/uploads/posters/1000-nin-no-homunkurusu-no-shoujo-tachi-ni-kakomarete-isekai-kenkoku.jpg",
-            "summary": "Dragged by the ritual for the revival of the evil god of a different world, an ordinary senior high school student Furutera Isshi meets 1000 Homunculus girls that were created for the sake of sacrifice. Hearing about the horrible treatment of them being just tools for the humans, he decided to found...",
-            "views": "76406",
-            "type": "Web Novel",
-            "rating": "3.4"
-        },
-        {
-            "url": "http://onlinenovelreader.com/108-maidens-of-destiny",
-            "name": "108 Maidens of Destiny",
-            "image": "http://onlinenovelreader.com/uploads/posters/1460741201.png",
-            "summary": "&ldquo;Your servant is Majestic Star &lsquo;Panther Head&rsquo; Lin Chong, from this day forward I am your woman!&rdquo; When the beautiful and heroic young girl in front of him shouted those heaven shattering words, Shu Jing was overwhelmed with shock. And so the tale of the 108 maidens of destiny ...",
-            "views": "107189",
+            "name": "Martial God Asura",
+            "identifier": "bWFydGlhbC1nb2QtYXN1cmE=",
+            "image": "http://onlinenovelreader.com/uploads/posters/martial-god-asura.jpg",
+            "author": " Kindhearted Bee ",
+            "artist": " Kindhearted Bee ",
+            "status": "Ongoing",
             "type": "Chinese Novel",
-            "rating": "6.2"
+            "genres": [
+                "  Xianxia Supernatural Seinen Romance Mature Martial Arts Harem Fantasy Ecchi Adventure Action  "
+            ]
         },
         {
-            "url": "http://onlinenovelreader.com/11-ways-to-forget-your-ex-boyfriend",
-            "name": "11 Ways to Forget Your Ex-Boyfriend",
-            "image": "http://onlinenovelreader.com/uploads/posters/1491599877.png",
-            "summary": "Moving on can&rsquo;t be done alone and Sena just found help from a mysterious sender. But who is it that gives her ways to forget her ex? 1.Put away all remnants that remind you of your ex. 2.Make his name a bad word. 3.Do new things that will keep yourself busy. 4.Indulge yourself. 5.Meet new peop...",
-            "views": "6146",
-            "type": "Filipino Novel",
-            "rating": "5.2"
+            "name": "True Martial World",
+            "identifier": "dHJ1ZS1tYXJ0aWFsLXdvcmxk",
+            "image": "http://onlinenovelreader.com/uploads/posters/true-martial-world.jpg",
+            "author": " 齐成琨 ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Web Novel",
+            "genres": [
+                "  Xianxia Martial Arts Adventure   "
+            ]
         },
         {
-            "url": "http://onlinenovelreader.com/143-kaorus-cake-house",
-            "name": "143 Kaoru’s Cake House",
-            "image": "http://onlinenovelreader.com/uploads/posters/143-kaorus-cake-house.jpg",
-            "summary": "Jasmine lives with her mother after the death of her father. They move to a new place to start life afresh and to their surprise, a bright new life indeed awaits them. Jasmine spends her day surrounded by the flowers in her mom’s shop and enjoying the delicious cakes from Kaoru’s Cake House. Life be...",
-            "views": "10701",
+            "name": "Martial World",
+            "identifier": "bWFydGlhbC13b3JsZA==",
+            "image": "http://onlinenovelreader.com/uploads/posters/martial-world.jpg",
+            "author": " 齐成琨 ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Web Novel",
+            "genres": [
+                "  Xianxia Martial Arts Action  "
+            ]
+        },
+        {
+            "name": "Against the Gods",
+            "identifier": "YWdhaW5zdC10aGUtZ29kcw==",
+            "image": "http://onlinenovelreader.com/uploads/posters/against-the-gods.jpg",
+            "author": " Mars Gravity ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Web Novel",
+            "genres": [
+                "  Xianxia Seinen Romance Mature Martial Arts Harem Fantasy Adventure  Action  "
+            ]
+        },
+        {
+            "name": "Dragon-Marked War God",
+            "identifier": "ZHJhZ29uLW1hcmtlZC13YXItZ29k",
+            "image": "http://onlinenovelreader.com/uploads/posters/1461362147.jpg",
+            "author": " N/A",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Chinese Novel",
+            "genres": [
+                "  Seinen Romance Martial Arts Fantasy Comedy Adventure Action  "
+            ]
+        },
+        {
+            "name": "Ancient Strengthening Technique",
+            "identifier": "YW5jaWVudC1zdHJlbmd0aGVuaW5nLXRlY2huaXF1ZQ==",
+            "image": "http://onlinenovelreader.com/uploads/posters/ancient-strengthening-technique.jpg",
+            "author": " I Am A Waste ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Chinese Novel",
+            "genres": [
+                "  Xianxia Seinen Romance Mature Martial Arts Harem Ecchi Adventure Action  "
+            ]
+        },
+        {
+            "name": "Peerless Martial God",
+            "identifier": "cGVlcmxlc3MtbWFydGlhbC1nb2Q=",
+            "image": "http://onlinenovelreader.com/uploads/posters/peerless-martial-god.jpg",
+            "author": " Jing Wu Hen ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Web Novel",
+            "genres": [
+                "  Action Fantasy Harem Martial Arts Romance Seinen Tragedy Xianxia  "
+            ]
+        },
+        {
+            "name": "I Shall Seal the Heavens",
+            "identifier": "aS1zaGFsbC1zZWFsLXRoZS1oZWF2ZW5z",
+            "image": "http://onlinenovelreader.com/uploads/posters/i-shall-seal-the-heavens.jpg",
+            "author": " Er Gen ",
+            "artist": " Er Gen ",
+            "status": "Ongoing",
+            "type": "Chinese Novel",
+            "genres": [
+                "  Xianxia Romance Mature Martial Arts Fantasy Comedy Adventure Action  "
+            ]
+        },
+        {
+            "name": "Genius Doctor: Black Belly Miss",
+            "identifier": "Z2VuaXVzLWRvY3Rvci1ibGFjay1iZWxseS1taXNz",
+            "image": "http://onlinenovelreader.com/uploads/posters/1465484285.jpg",
+            "author": " ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Chinese Novel",
+            "genres": [
+                "  Shoujo Romance Josei Historical Fantasy Action  "
+            ]
+        },
+        {
+            "name": "Tales of Demons and Gods",
+            "identifier": "dGFsZXMtb2YtZGVtb25zLWFuZC1nb2Rz",
+            "image": "http://onlinenovelreader.com/uploads/posters/tales-of-demons-and-gods.jpg",
+            "author": " Mad Snail ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Chinese Novel",
+            "genres": [
+                "  Xianxia Romance Martial Arts Harem Fantasy Adventure Action  "
+            ]
+        },
+        {
+            "name": "The Desolate Era",
+            "identifier": "dGhlLWRlc29sYXRlLWVyYQ==",
+            "image": "http://onlinenovelreader.com/uploads/posters/the-desolate-era.jpg",
+            "author": " I Eat Tomatoes ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Chinese Novel",
+            "genres": [
+                "  Xianxia Tragedy Seinen Martial Arts Fantasy Drama Adventure Action  "
+            ]
+        },
+        {
+            "name": "Long Live Summons!",
+            "identifier": "bG9uZy1saXZlLXN1bW1vbnM=",
+            "image": "http://onlinenovelreader.com/uploads/posters/long-live-summons.jpg",
+            "author": " Xia Fei Shuang Jia ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Chinese Novel",
+            "genres": [
+                "  Romance Martial Arts Harem Fantasy Ecchi Comedy Adventure Action  "
+            ]
+        },
+        {
+            "name": "Chaotic Sword God",
+            "identifier": "Y2hhb3RpYy1zd29yZC1nb2Q=",
+            "image": "http://onlinenovelreader.com/uploads/posters/chaotic-sword-god.jpg",
+            "author": " Xin Xing Xiao Yao ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Web Novel",
+            "genres": [
+                "  Xianxia Mature Martial Arts Fantasy Adventure Action  "
+            ]
+        },
+        {
+            "name": "Warlock of the Magus World",
+            "identifier": "d2FybG9jay1vZi10aGUtbWFndXMtd29ybGQ=",
+            "image": "http://onlinenovelreader.com/uploads/posters/warlock-of-the-magus-world.jpg",
+            "author": " 齐成琨 ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Web Novel",
+            "genres": [
+                "  Xianxia Supernatural Seinen Sci-fi Fantasy Ecchi Adventure Action  "
+            ]
+        },
+        {
+            "name": "Emperor’s Domination",
+            "identifier": "ZW1wZXJvcnMtZG9taW5hdGlvbg==",
+            "image": "http://onlinenovelreader.com/uploads/posters/1464452267.jpg",
+            "author": " N/A",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Chinese Novel",
+            "genres": [
+                "  Xianxia Supernatural Romance Mature Martial Arts Harem Fantasy Adventure Action  "
+            ]
+        },
+        {
+            "name": "Wu Dong Qian Kun",
+            "identifier": "d3UtZG9uZy1xaWFuLWt1bg==",
+            "image": "http://onlinenovelreader.com/uploads/posters/wu-dong-qian-kun.jpg",
+            "author": " Tian Can Tu Dou ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Chinese Novel",
+            "genres": [
+                "  Xianxia Martial Arts Harem Fantasy Adventure Action  "
+            ]
+        },
+        {
+            "name": "God and Devil World",
+            "identifier": "Z29kLWFuZC1kZXZpbC13b3JsZA==",
+            "image": "http://onlinenovelreader.com/uploads/posters/god-and-devil-world.jpg",
+            "author": " Zi Chan Bao Zeng ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Web Novel",
+            "genres": [
+                "  Supernatural Mature Martial Arts Horror Harem Fantasy Adventure  Action  "
+            ]
+        },
+        {
+            "name": "Zhan Long",
+            "identifier": "emhhbi1sb25n",
+            "image": "http://onlinenovelreader.com/uploads/posters/zhan-long.jpg",
+            "author": " Shi Luo Ye ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Web Novel",
+            "genres": [
+                "  Wuxia Shounen Sci-fi School Life Romance Martial Arts Fantasy Comedy Adventure Action  "
+            ]
+        },
+        {
+            "name": "Ancient Godly Monarch",
+            "identifier": "YW5jaWVudC1nb2RseS1tb25hcmNo",
+            "image": "http://onlinenovelreader.com/uploads/posters/1460586430.jpg",
+            "author": " N/A",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Chinese Novel",
+            "genres": [
+                "  Romance Mature Martial Arts Fantasy Drama Adventure Action  "
+            ]
+        },
+        {
+            "name": "Battle Through the Heavens",
+            "identifier": "YmF0dGxlLXRocm91Z2gtdGhlLWhlYXZlbnM=",
+            "image": "http://onlinenovelreader.com/uploads/posters/battle-through-the-heavens.jpg",
+            "author": " Tian Can Tu Dou ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Web Novel",
+            "genres": [
+                "  Xianxia Seinen Romance Martial Arts Harem Fantasy Comedy Adventure Action  "
+            ]
+        },
+        {
+            "name": "Everyone Else is a Returnee",
+            "identifier": "ZXZlcnlvbmUtZWxzZS1pcy1hLXJldHVybmVl",
+            "image": "http://onlinenovelreader.com/uploads/posters/1472106212.jpeg",
+            "author": " N/A",
+            "artist": " N/A",
+            "status": "Ongoing",
             "type": "Korean Novel",
-            "rating": "7.5"
+            "genres": [
+                "  Adventure  "
+            ]
         },
         {
-            "url": "http://onlinenovelreader.com/21st-century-archmage",
-            "name": "21st Century Archmage",
-            "image": "http://onlinenovelreader.com/uploads/posters/21st-century-archmage.jpg",
-            "summary": "While on a school field trip in the Czech Republic, Kang Hyuk happens to stumble into a shop called “Archmage.” To his disbelief, the shop is actually owned by an archmage… from another world! Forced to become the Archmage’s disciple, thus begins Kang Hyuk’s journey ...",
-            "views": "26125",
-            "type": "Korean Novel",
-            "rating": "6.1"
+            "name": "World Defying Dan God",
+            "identifier": "cHJpZGVmdWwtbWVkaWNpbmUtZ29k",
+            "image": "http://onlinenovelreader.com/uploads/posters/1469774033.jpeg",
+            "author": " Ji Xiao Zei (寂小賊) ",
+            "artist": " N/A",
+            "status": "Ongoing",
+            "type": "Chinese Novel",
+            "genres": [
+                "  Romance Mature Martial Arts Harem Fantasy Ecchi Drama Comedy Adventure Action  "
+            ]
         },
         {
-            "url": "http://onlinenovelreader.com/29-years-old-bachelor-was-bought-to-a-different-world-to-live-freely-",
-            "name": "29-years-old bachelor Was… bought to a different world to live freely.",
-            "image": "http://onlinenovelreader.com/uploads/posters/1501753074.jpg",
-            "summary": "A 29 years old guy living single, transported to a new world to live freely... at least he wanted to.２９歳独身は異世界で自由に生きた&hellip;かった。...",
-            "views": "2445",
+            "name": "Coiling Dragon",
+            "identifier": "Y29pbGluZy1kcmFnb24=",
+            "image": "http://onlinenovelreader.com/uploads/posters/coiling-dragon.jpg",
+            "author": " I Eat Tomatoes ",
+            "artist": " N/A",
+            "status": "Completed",
             "type": "Web Novel",
-            "rating": "6.3"
+            "genres": [
+                "  Action Adventure Fantasy Martial Arts Romance Seinen Xianxia  "
+            ]
         },
         {
-            "url": "http://onlinenovelreader.com/3-minutes-boy-meets-girl",
-            "name": "3 Minutes Boy Meets Girl",
-            "image": "http://onlinenovelreader.com/uploads/posters/3-minutes-boy-meets-girl.jpg",
-            "summary": "‘3 Minutes Boy Meets Girl’ is an anthology of short stories produced by the authors working at Famitsu Bunko. There are 19 chapters from 19 different authors. ...",
-            "views": "8558",
-            "type": "Light Novel",
-            "rating": "1.3"
-        },
-        {
-            "url": "http://onlinenovelreader.com/37c",
-            "name": "37&deg;C",
-            "image": "http://onlinenovelreader.com/uploads/posters/37c.jpg",
-            "summary": "Noda has never wanted to be a source of disappointment or shame to his family. Raised in a pious, conservative household, he knew he had certain expectations to meet. Get a job, find a wife, have children- these were to be his destiny. But Noda has a secret. 10 years ago, he had a torrid sexual affa...",
-            "views": "7954",
-            "type": "Light Novel",
-            "rating": "6.7"
-        },
-        {
-            "url": "http://onlinenovelreader.com/39-the-legend-of-sun-knight",
-            "name": "39 – The Legend of Sun Knight",
-            "image": "http://onlinenovelreader.com/uploads/posters/39-the-legend-of-sun-knight.jpg",
-            "summary": "I am a holy knight. To be precise, I am the Church of the God of Light’s Sun Knight…in training. The Church of the God of Light worships and serves the God of Light, and theirs is one of the three largest religions on this continent. As the whole continent knows, the Church of the God of Light has t...",
-            "views": "11936",
-            "type": "Chinese Novel",
-            "rating": "7.6"
-        },
-        {
-            "url": "http://onlinenovelreader.com/39-the-legend-of-sun-knight-1",
-            "name": "39 – The Legend of Sun Knight",
-            "image": "http://onlinenovelreader.com/uploads/posters/1475144111.png",
-            "summary": "I am a holy knight. To be precise, I am the Church of the God of Light&rsquo;s Sun Knight&hellip;in training. The Church of the God of Light worships and serves the God of Light, and theirs is one of the three largest religions on this continent. As the whole continent knows, the Church of the God o...",
-            "views": "10447",
-            "type": "Chinese Novel",
-            "rating": "5.0"
-        },
-        {
-            "url": "http://onlinenovelreader.com/4-gatsu-sore-wa",
-            "name": "4-gatsu, Sore wa…",
-            "image": "http://onlinenovelreader.com/uploads/posters/4-gatsu-sore-wa.jpg",
-            "summary": "There are twenty independent stories written by twenty different authors, sharing the common theme of “April”. An anthology that is considered a rare item as it has never hit the shelves as a standalone book. There is no ISBN and it is an unbuyable except in online auctions. The antholo...",
-            "views": "6439",
-            "type": "Light Novel",
-            "rating": "0.0"
-        },
-        {
-            "url": "http://onlinenovelreader.com/4-6-billion-year-symphony-of-evolution",
-            "name": "4.6 Billion Year Symphony of Evolution",
-            "image": "http://onlinenovelreader.com/uploads/posters/1481234871.jpg",
-            "summary": "A cell that was born at the beginning of the life of a planet will see the rise and decline of countless civilizations, the speciation and extinction of organisms. Under the endless calamities of the world, nothing remains unchanging. Only by continuously changing oneself and evolving in the face of...",
-            "views": "16238",
-            "type": "Chinese Novel",
-            "rating": "6.0"
-        },
-        {
-            "url": "http://onlinenovelreader.com/400-years-old-virgin-demon-king",
-            "name": "400 Years Old Virgin Demon King",
-            "image": "http://onlinenovelreader.com/assets/images/noimage.jpg",
-            "summary": "A man who trusted a legend, believes that he could become a demon king by not breaking the taboo with a female for 400 years finally gained a mighty magical power and have termendous strength to be titled as the demon king. So the Demon proceeded to conquer the world with enormous power to make his ...",
-            "views": "8677",
+            "name": "In Different World with Naruto System",
+            "identifier": "aW4tZGlmZmVyZW50LXdvcmxkLXdpdGgtbmFydXRvLXN5c3RlbQ==",
+            "image": "http://onlinenovelreader.com/uploads/posters/1466032964.jpg",
+            "author": " N/A",
+            "artist": " N/A",
+            "status": "Ongoing",
             "type": "Web Novel",
-            "rating": "7.1"
+            "genres": [
+                "  Martial Arts Fantasy Comedy Action  "
+            ]
         },
         {
-            "url": "http://onlinenovelreader.com/7-days",
-            "name": "7 Days",
-            "image": "http://onlinenovelreader.com/uploads/posters/1484016694.png",
-            "summary": "The second young master of Shen Zhuang Jia, Shen Heng, during the time he was sent to take care of the stable, he encountered a flower thief falling from the sky. The flower thief is very dedicated, very serious and very beautiful During seven days, what methods does he have to used to deal with the...",
-            "views": "5008",
+            "name": "Heavenly Jewel Change",
+            "identifier": "aGVhdmVubHktamV3ZWwtY2hhbmdl",
+            "image": "http://onlinenovelreader.com/uploads/posters/heavenly-jewel-change.jpg",
+            "author": " Tang Jia San Shao ",
+            "artist": " N/A",
+            "status": "Ongoing",
             "type": "Chinese Novel",
-            "rating": "2.0"
-        },
-        {
-            "url": "http://onlinenovelreader.com/7-killers",
-            "name": "7 Killers",
-            "image": "http://onlinenovelreader.com/uploads/posters/7-killers.jpg",
-            "summary": "Dragon 5th is a powerful lord with incredible martial arts, and yet is wasting away from a fatal disease. The only medicine which can cure his sickness lies in the clutches of his venemous ex-wife, Madam Lovesickness, and is guarded by 7 dangerous killers, fugitives of the martial world. To retrieve...",
-            "views": "8049",
-            "type": "Chinese Novel",
-            "rating": "7.4"
-        },
-        {
-            "url": "http://onlinenovelreader.com/9-coffins-of-the-immortals",
-            "name": "9 Coffins of the Immortals",
-            "image": "http://onlinenovelreader.com/uploads/posters/1482711634.jpg",
-            "summary": "Authors Synopsis: &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash; Some say he is like a bad apple in a bunch, rotting all that around him with disgrace and corruption. Some say he is the biggest scum in Nan-Zhan, colluding with the dark sects, cheating, stealing, and committed to all...",
-            "views": "15183",
-            "type": "Chinese Novel",
-            "rating": "5.6"
-        },
-        {
-            "url": "http://onlinenovelreader.com/9-heavenly-thunder-manual",
-            "name": "9 Heavenly Thunder Manual",
-            "image": "http://onlinenovelreader.com/uploads/posters/9-heavenly-thunder-manual.jpg",
-            "summary": "The main character Lei Yu does not have the ability to practice his family&rsquo;s martial arts. He gets stepped on and tossed around like typical Xian Xia novel themes. Due to certain reasons, he leaves the family, coincidentally gains an ability, and makes his own path to becoming an immortal....",
-            "views": "469455",
-            "type": "Web Novel",
-            "rating": "6.0"
-        },
-        {
-            "url": "http://onlinenovelreader.com/99th-vampire-princess-the-last-vampire",
-            "name": "99th vampire princess ~The last vampire~",
-            "image": "http://onlinenovelreader.com/assets/images/noimage.jpg",
-            "summary": "&ldquo;Lores&rdquo;&mdash; substantial forms born out of urban legends. And high-schooler Tsukumo Jin, who had accidentally released the strongest and most well-known &ldquo;lore of the vampire&rdquo;, was now the butler (and lover) of Sylvia, the vampire princess who chooses to take on the form of ...",
-            "views": "5845",
-            "type": "Light Novel",
-            "rating": "6.3"
-        },
-        {
-            "url": "http://onlinenovelreader.com/9s",
-            "name": "9S",
-            "image": "http://onlinenovelreader.com/uploads/posters/9s.jpg",
-            "summary": "The Security System that Seals the Savage Science Smartly by its Supreme Sagacity and Strength 9S is set in an age of science, but in a too distant future. The Mad Scientist, Mineshima Yujiro, disappeared several years previous to where the story begins. The inheritance he left behind, the technolog...",
-            "views": "8053",
-            "type": "Light Novel",
-            "rating": "7.4"
-        },
-        {
-            "url": "http://onlinenovelreader.com/-prince",
-            "name": "½ Prince",
-            "image": "http://onlinenovelreader.com/uploads/posters/-prince.jpg",
-            "summary": "During one of our arguments, my younger brother taunted me, claiming that I only knew how to depend on guys to get me through MMOs. In a fit of anger, I was spurred on by his words and decided to defeat my brother without depending on anyone else. By some coincidence, a new game called “Second Life”...",
-            "views": "42835",
-            "type": "Chinese Novel",
-            "rating": "4.3"
-        },
-        {
-            "url": "http://onlinenovelreader.com/bokuchu-us-vs-the-police-700-day-war",
-            "name": "“Bokuchu” Us vs the Police: 700-Day War",
-            "image": "http://onlinenovelreader.com/uploads/posters/bokuchu-us-vs-the-police-700-day-war.jpg",
-            "summary": "The setting for this story is a country town in 1970’s Japan. One day, Saijo-kun, one of the biggest trouble makers of our school, was caught speeding on his scooter. As his friends, “we” commenced our counterattack on the local resident police officer. Our opponent was a newly appointed, motivated,...",
-            "views": "7206",
-            "type": "Web Novel",
-            "rating": "7.2"
-        },
-        {
-            "url": "http://onlinenovelreader.com/shirayukihime-to-7-nin-no-koibitoto-iu-18-kin-otomege-heroin-ni-tenseishiteshimatta-ore-ga-zenryoku-de-oujitachi-kara-nigeru-hanashi",
-            "name": "『Shirayukihime to 7 Nin no Koibito』to iu 18 kin Otomege Heroin ni Tenseishiteshimatta Ore ga Zenryoku de Oujitachi kara Nigeru Hanashi",
-            "image": "http://onlinenovelreader.com/uploads/posters/1483747768.jpg",
-            "summary": "【Main story completion】After being assaulted by a tentacle monster and its conveniently aphrodisiac mucus, I remembered my past life. It was then I realized that this was the world of a 18 restricted otome game. It seems that I&rsquo;ve reincarnated into the game『Snow White and the Seven Lovers』as t...",
-            "views": "30820",
-            "type": "Web Novel",
-            "rating": "7.1"
-        },
-        {
-            "url": "http://onlinenovelreader.com/infinite-dendrogram",
-            "name": "＜Infinite Dendrogram＞",
-            "image": "http://onlinenovelreader.com/uploads/posters/1478454632.jpg",
-            "summary": "July 15, 2043. On that day, a Full Dive VRMMO was released, its unique system called ＜Embryo＞ allowing each player to follow an extremely varied&mdash;or rather, an &ldquo;infinitely&rdquo; varied pattern of evolution. That game&rsquo;s name? ＜Infinite Dendrogram＞ Possessing an element that, until n...",
-            "views": "33044",
-            "type": "Web Novel",
-            "rating": "6.7"
-        },
-        {
-            "url": "http://onlinenovelreader.com/10-trillion-wife-buy-one-get-one-free",
-            "name": "￥1 Trillion Wife, Buy One Get One Free",
-            "image": "http://onlinenovelreader.com/uploads/posters/1481480170.jpg",
-            "summary": "Seven years ago, she freely and easily abandoned ￥100 and ran away, carrying her unborn son with her. Seven years later, she returned with the lady killer&rsquo;s genius son, never expecting that her darling son would sell her out to MBS International. Unexpectedly, her immediate superior was the Mr...",
-            "views": "34539",
-            "type": "Chinese Novel",
-            "rating": "6.5"
-        },
-        {
-            "url": "http://onlinenovelreader.com/a-book-dedicated-to-our-youth",
-            "name": "A Book Dedicated to Our Youth",
-            "image": "http://onlinenovelreader.com/uploads/posters/a-book-dedicated-to-our-youth.jpg",
-            "summary": "There are always moments far in the past that remain forever engraved in our memory. The last decade of the 2000’s was chock full of unique memories – memories of The Little Tigers, The Bund, and the Four Heavenly Kings that brought us great emotions now rest with the dust-covered journals of our yo...",
-            "views": "12037",
-            "type": "Chinese Novel",
-            "rating": "7.2"
-        },
-        {
-            "url": "http://onlinenovelreader.com/a-certain-middle-aged-mans-vrmmo-activity-log",
-            "name": "A Certain Middle-Aged Man’s VRMMO Activity Log",
-            "image": "http://onlinenovelreader.com/uploads/posters/a-certain-middle-aged-mans-vrmmo-activity-log.jpg",
-            "summary": "38-year-old Tanaka Daichi&rsquo;s childhood dream of playing a VRMMO has finally come to life. As he creates his character, he decides to choose skills that are considered useless by others, since&nbsp;he has no interest in playing like a&nbsp;main character. Follow the adventures of Daichi as he st...",
-            "views": "187810",
-            "type": "Web Novel",
-            "rating": "5.1"
-        },
-        {
-            "url": "http://onlinenovelreader.com/a-cruel-romance",
-            "name": "A Cruel Romance",
-            "image": "http://onlinenovelreader.com/uploads/posters/a-cruel-romance.jpg",
-            "summary": "This is the story of a lonely young man. This particular young man was born into wealth and power, well-endowed in both looks and temperament, a warlord by profession, and has no unhealthy avocations. In the opening of the romance, he is in the course of serving in a valley in the middle of nowhere,...",
-            "views": "21528",
-            "type": "Chinese Novel",
-            "rating": "7.1"
-        },
-        {
-            "url": "http://onlinenovelreader.com/a-deadly-secret",
-            "name": "A Deadly Secret",
-            "image": "http://onlinenovelreader.com/uploads/posters/a-deadly-secret.jpg",
-            "summary": "A Deadly Secret, also translated as Requiem of Ling Sing and Secret of the Linked Cities, is a wuxia novel by Jin Yong (Louis Cha). It was first published in the magazine Southeast Asia Weekly (東南亞周刊) and the Hong Kong newspaper Ming Pao in 1963. Its original Chinese title was Su Xin Jian before Jin...",
-            "views": "13175",
-            "type": "Chinese Novel",
-            "rating": "7.3"
-        },
-        {
-            "url": "http://onlinenovelreader.com/a-lifetime-of-longing",
-            "name": "A Lifetime of Longing",
-            "image": "http://onlinenovelreader.com/uploads/posters/a-lifetime-of-longing.jpg",
-            "summary": "Princess Xue Xi Shi is the only girl in the huge Royal Family of the Xue Nong Kingdom, an oasis in the middle of the desert. A kingdom that is coveted by the powerful Ming Kingdom. Led by the Crown Prince Ren Yu of the Ming, the Imperial Armies attack the peaceful kingdom of Xue Nong. To defend the ...",
-            "views": "8329",
-            "type": "Korean Novel",
-            "rating": "2.7"
-        },
-        {
-            "url": "http://onlinenovelreader.com/a-martial-odyssey",
-            "name": "A Martial Odyssey",
-            "image": "http://onlinenovelreader.com/uploads/posters/a-martial-odyssey.jpg",
-            "summary": "“It is said that when a martial exponent reached the highest state of divinity of their arts, they be able to transcend into Celestials, overcoming the limitation of life and death. And as Celestials, they have to overcome seven celestial divinity, Genesis, Enlighten, Emotion, Transverse, Seve...",
-            "views": "118530",
-            "type": "Web Novel",
-            "rating": "6.0"
-        },
-        {
-            "url": "http://onlinenovelreader.com/a-match-made-in-heaven",
-            "name": "A Match Made in Heaven",
-            "image": "http://onlinenovelreader.com/uploads/posters/a-match-made-in-heaven.jpg",
-            "summary": "This is an era where demons run rampant. The brave maiden has embarked on her journey… It is said that a wife can be bought with money; then a husband can also be purchased. Xin Mei has nothing but money. She wants to buy herself a good-looking and useful husband… ...",
-            "views": "9172",
-            "type": "Chinese Novel",
-            "rating": "1.3"
-        },
-        {
-            "url": "http://onlinenovelreader.com/a-messed-up-wuxia-world",
-            "name": "A Messed-Up Wuxia World",
-            "image": "http://onlinenovelreader.com/uploads/posters/1471472724.jpg",
-            "summary": "I am just an ordinary high school student, yet I crossed over to a wuxia world. Originally I should have lived days where I &lsquo;rise from the ashes&rsquo;, trampling on baddies while creating a harem, but&hellip; Where&rsquo;s the promised revolution of the trash? Where&rsquo;s the promised cheat...",
-            "views": "14750",
-            "type": "Chinese Novel",
-            "rating": "7.2"
-        },
-        {
-            "url": "http://onlinenovelreader.com/a-mistaken-marriage-match-a-generation-of-military-counselor",
-            "name": "A Mistaken Marriage Match – A Generation of Military Counselor",
-            "image": "http://onlinenovelreader.com/uploads/posters/a-mistaken-marriage-match-a-generation-of-military-counselor.jpg",
-            "summary": "She is an honorably retired SWAT officer with meritorious deeds and a dashing detective who solve cases like a god. One day, a strange golden board with eight divinatory trigrams brings her to a different world, where she is a “gift” to a general’s manor. He is a grim god of war whose power overwhel...",
-            "views": "81071",
-            "type": "Chinese Novel",
-            "rating": "5.6"
-        },
-        {
-            "url": "http://onlinenovelreader.com/a-mistaken-marriage-match-the-pirates-daughter",
-            "name": "A Mistaken Marriage Match – The Pirate’s Daughter",
-            "image": "http://onlinenovelreader.com/uploads/posters/1494326384.jpg",
-            "summary": "For generations, the Su family has only boys. So when there is finally, finally, a girl born into the family, how can she not be the precious pearl in 10,000 eyes? If you guard her with your palm, what if she gets squashed? If you put her in your mouth, what if she melts? What nonsense! Her father G...",
-            "views": "9454",
-            "type": "Chinese Novel",
-            "rating": "7.7"
-        },
-        {
-            "url": "http://onlinenovelreader.com/a-mistaken-marriage-match-pursuit-of-murderer-in-liao-yue",
-            "name": "A Mistaken Marriage Match: Pursuit of Murderer in Liao Yue",
-            "image": "http://onlinenovelreader.com/uploads/posters/1498051980.jpg",
-            "summary": "What do you get when you put a thick-skinned, acting-dumb constable and the aloof, genius daughter of the Premier in the same town? For the sake of winning a bet, Lou Chen left her home and crossed into neighboring Liao Yue for some sight-seeing and treasure-hunting. But barely a few days into her t...",
-            "views": "3250",
-            "type": "Chinese Novel",
-            "rating": "6.0"
-        },
-        {
-            "url": "http://onlinenovelreader.com/a-mistaken-marriage-match-record-of-washed-grievances",
-            "name": "A Mistaken Marriage Match: Record of Washed Grievances",
-            "image": "http://onlinenovelreader.com/uploads/posters/a-mistaken-marriage-match-record-of-washed-grievances.jpg",
-            "summary": "She is intelligent, beautiful, calm, and professional. As the youngest chief forensic investigator for the past few years, her future was very bright. All of this, however, changed with a bizarre time-travel. Her face was now destroyed. All right. But unexpectedly she was also a &ldquo;gift&rdquo; f...",
-            "views": "81781",
-            "type": "Chinese Novel",
-            "rating": "7.0"
-        },
-        {
-            "url": "http://onlinenovelreader.com/a-naive-short-tempered-girl",
-            "name": "A Naive Short-tempered Girl",
-            "image": "http://onlinenovelreader.com/uploads/posters/a-naive-short-tempered-girl.jpg",
-            "summary": "One night she gets drunk and mistakes the most well-known Mafia boss for a Host* and intends to sleep with him. Oh my! What should I do? Best to run away! After two years, she is working as an elevator lady who works in one of the biggest companies in China. She often gets harassed by handsome colle...",
-            "views": "510148",
-            "type": "Web Novel",
-            "rating": "6.2"
-        },
-        {
-            "url": "http://onlinenovelreader.com/a-record-of-a-mortals-journey-to-immortality",
-            "name": "A Record of a Mortal’s Journey to Immortality",
-            "image": "http://onlinenovelreader.com/uploads/posters/a-record-of-a-mortals-journey-to-immortality.jpg",
-            "summary": "A regular boy from the village who had accidentally entered a small hermit sect and became a secret disciple. With a status like that and with such mediocre aptitude, he joined the ranks of the cultivators within his sect, and ever since then has begun to stand triumphant in the three realms! A Re...",
-            "views": "383576",
-            "type": "Web Novel",
-            "rating": "6.0"
-        },
-        {
-            "url": "http://onlinenovelreader.com/a-second-time-for-an-otherworld-summoning",
-            "name": "A Second Time for an Otherworld Summoning",
-            "image": "http://onlinenovelreader.com/uploads/posters/1486974711.jpg",
-            "summary": "As the world of 〈Eclair〉is in danger as the war between the Human, Beastman and Demon race waged war, a man was summoned to save the world, and he indeed save the world according to his mission, and returns to the Human Country. However, what was waiting for him was the trap of the Human King, who w...",
-            "views": "15083",
-            "type": "Web Novel",
-            "rating": "7.1"
+            "genres": [
+                "  Xianxia Romance Martial Arts Harem Fantasy Comedy Action  "
+            ]
         }
     ]
 }

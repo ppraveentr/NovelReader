@@ -8,16 +8,6 @@
 
 import Foundation
 
-let kShowNovelChapterList = "kShowNovelChapterList"
-let kShowFontPicker = "kShowFontPicker"
-let kShowNovelReaderView = "kShowNovelReaderView"
-
-let kNovelCellIdentifier = "kNovelCellIdentifier"
-let kRecentNovelCellIdentifier = "kRecentNovelCellIdentifier"
-
-// StoryboardID
-let kSearchStoryboardID = "kSearchStoryboardID"
-
 public class NRBaseViewController: FTBaseViewController {
 
     public override func viewWillAppear(_ animated: Bool) {

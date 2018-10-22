@@ -1,0 +1,193 @@
+{
+    "response": {
+        "name": "",
+        "novelType": [
+            {
+                "data": "Web Novel",
+                "type": "Web Novel"
+            },
+            {
+                "data": "Light Novel",
+                "type": "Light Novel"
+            },
+            {
+                "data": "Chinese Novel",
+                "type": "Chinese Novel"
+            },
+            {
+                "data": "Korean Novel",
+                "type": "Korean Novel"
+            }
+        ],
+        "language": [
+            {
+                "data": "Chinese",
+                "type": "Chinese"
+            },
+            {
+                "data": "Japanese",
+                "type": "Japanese"
+            },
+            {
+                "data": "Korean",
+                "type": "Korean"
+            }
+        ],
+        "genres": [
+            {
+                "data": "4",
+                "type": "Action"
+            },
+            {
+                "data": "1",
+                "type": "Adventure"
+            },
+            {
+                "data": "39",
+                "type": "Celebrity"
+            },
+            {
+                "data": "12",
+                "type": "Comedy"
+            },
+            {
+                "data": "6",
+                "type": "Drama"
+            },
+            {
+                "data": "26",
+                "type": "Ecchi"
+            },
+            {
+                "data": "2",
+                "type": "Fantasy"
+            },
+            {
+                "data": "14",
+                "type": "Gender Bender"
+            },
+            {
+                "data": "15",
+                "type": "Harem"
+            },
+            {
+                "data": "22",
+                "type": "Historical"
+            },
+            {
+                "data": "31",
+                "type": "Horror"
+            },
+            {
+                "data": "21",
+                "type": "Josei"
+            },
+            {
+                "data": "18",
+                "type": "Martial Arts"
+            },
+            {
+                "data": "19",
+                "type": "Mature"
+            },
+            {
+                "data": "30",
+                "type": "Mecha"
+            },
+            {
+                "data": "7",
+                "type": "Mystery"
+            },
+            {
+                "data": "8",
+                "type": "Psychological"
+            },
+            {
+                "data": "9",
+                "type": "Romance"
+            },
+            {
+                "data": "10",
+                "type": "School Life"
+            },
+            {
+                "data": "3",
+                "type": "Sci-fi"
+            },
+            {
+                "data": "23",
+                "type": "Seinen"
+            },
+            {
+                "data": "35",
+                "type": "Shotacon"
+            },
+            {
+                "data": "11",
+                "type": "Shoujo"
+            },
+            {
+                "data": "34",
+                "type": "Shoujo Ai"
+            },
+            {
+                "data": "5",
+                "type": "Shounen"
+            },
+            {
+                "data": "32",
+                "type": "Shounen Ai"
+            },
+            {
+                "data": "13",
+                "type": "Slice of Life"
+            },
+            {
+                "data": "29",
+                "type": "Smut"
+            },
+            {
+                "data": "33",
+                "type": "Sports"
+            },
+            {
+                "data": "25",
+                "type": "Supernatural"
+            },
+            {
+                "data": "24",
+                "type": "Tragedy"
+            },
+            {
+                "data": "17",
+                "type": "Wuxia"
+            },
+            {
+                "data": "20",
+                "type": "Xianxia"
+            },
+            {
+                "data": "38",
+                "type": "Xuanhuan"
+            },
+            {
+                "data": "16",
+                "type": "Yaoi"
+            },
+            {
+                "data": "27",
+                "type": "Yuri"
+            }
+        ],
+        "completed": [
+            {
+                "data": "yes",
+                "type": "Yes"
+            },
+            {
+                "data": "no",
+                "type": "No"
+            }
+        ]
+    }
+}

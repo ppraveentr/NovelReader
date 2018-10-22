@@ -30,10 +30,10 @@ class NRSearchBarHeaderView: FTView {
 
     func setupSearchBar() {
 
-        self.theme = ThemeStyle.defaultStyle
+        self.theme = FTThemeStyle.defaultStyle
 
         searchBar = FTSearchBar(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 44)), textColor: .white)
-        searchBar?.theme = ThemeStyle.defaultStyle
+        searchBar?.theme = FTThemeStyle.defaultStyle
         searchBar?.delegate = searchBarDelegate
 
         if let searchBar = searchBar {

@@ -74,7 +74,7 @@ class NRAppManager {
 
         if
             let theme = Bundle.main.path(forResource: kThemeFileName, ofType: nil),
-            let themeContent: FTThemeDic = try! theme.jsonContentAtPath() {
+            let themeContent: FTThemeModel = try! theme.jsonContentAtPath() {
 
             FTThemesManager.setupThemes(themes: themeContent, imageSourceBundle: [Bundle(for: NRAppDelegate.self)])
         }

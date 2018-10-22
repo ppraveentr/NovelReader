@@ -26,7 +26,7 @@ class NRSegmentCollectionHeaderView: UICollectionReusableView {
         // Remove previous segment
         segmentedControl?.removeSubviews()
 
-        self.theme = ThemeStyle.defaultStyle
+        self.theme = FTThemeStyle.defaultStyle
 
         segmentedControl = FTSegmentedControl(items: items) { (segment) in
             FTLog(segment)

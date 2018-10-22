@@ -8,6 +8,7 @@
 
 import Foundation
 
+// default collectionView SectionInset
 fileprivate var defaultSectionInset: UIEdgeInsets {
     get {
         return UIEdgeInsets(top: 15, left: 20, bottom: 10, right: 20)
@@ -16,8 +17,14 @@ fileprivate var defaultSectionInset: UIEdgeInsets {
 
 class NRBaseCollectionViewController: FTBaseCollectionViewController {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    // MARK: Show/Hide Tabbar, View lifecycle
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.hidesBottomBarWhenPushed = false
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.hidesBottomBarWhenPushed = true
     }
 
@@ -27,7 +34,7 @@ class NRBaseCollectionViewController: FTBaseCollectionViewController {
     }
 
     func estimatedItemSize() -> CGSize {
-        return CGSize(width: FTScreenWidth, height: 20)
+        return CGSize(width: FTScreenWidth - (sectionInset().left + sectionInset().right), height: 20)
     }
 
     override func flowLayout() -> UICollectionViewFlowLayout {
@@ -53,8 +60,7 @@ class NRBaseCollectionViewController: FTBaseCollectionViewController {
             return
         }
 
-        collectionView.backgroundColor = .clear
-        collectionView.backgroundView?.backgroundColor = .clear
+        collectionView.theme = FTThemeStyle.defaultStyle
 
         // Collection delegates
         self.dataSource = self

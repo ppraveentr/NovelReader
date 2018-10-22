@@ -8,6 +8,7 @@
 		"appRed": "#DD6060",
 		"navBarRed": "#DF6E6E",
 		"appWhite": "#F7F3F0",
+        "halfBlack": "#9A9A9A99",
 		"blue": "#1059ce",
 		"green": "#10ce1a",
 		"yellow": "#cecb10",
@@ -19,6 +20,10 @@
 			"name": "system",
 			"size": "13.0"
 		},
+        "bold": {
+            "name": "boldSystem",
+            "size": "17.0"
+        },
 		"system14": {
 			"_super": "default",
 			"size": "14.0"
@@ -26,7 +31,11 @@
 		"system17": {
 			"_super": "default",
 			"size": "17.0"
-		}
+		},
+        "bold17": {
+            "name": "boldSystem",
+            "size": "17.0"
+        }
 	},
 	"appearance": {
 		"UIStatusBar": {
@@ -60,8 +69,23 @@
 		"FTView": {
 			"default": {
 				"backgroundColor": "appWhite"
-			}
+			},
+            "clearView": {
+                "backgroundColor": "clear"
+            },
+            "halfView": {
+                "backgroundColor": "halfBlack"
+            }
 		},
+        "FTCollectionView": {
+            "default": {
+                "backgroundColor": "clear"
+            },
+            "halfView": {
+                "backgroundColor": "appWhite",
+                "backgroundViewTheme": "default"
+            }
+        },
 		"NRSegmentCollectionHeaderView": {
 			"default": {
 				"backgroundColor": "navBarRed"
@@ -97,6 +121,11 @@
 				"_super": "default",
 				"textcolor": "yellow"
 			},
+            "buttonR17bW": {
+                "textfont": "bold17",
+                "textcolor": "white",
+                "backgroundColor": "appRed"
+            },
 			"googleButton": {
 				"_super": "default",
 				"image": "@google",

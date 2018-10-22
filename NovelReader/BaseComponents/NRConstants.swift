@@ -43,3 +43,16 @@ let kTopViews = "Top Views"
 
 // MARK: Title
 let kNovelReaderTitle = "Novel Reader"
+
+// MARK: StoryboardID
+let kSearchStoryboardID = "kSearchStoryboardID"
+
+// MARK: SegueID
+let kShowNovelChapterList = "kShowNovelChapterList"
+let kShowFontPicker = "kShowFontPicker"
+let kShowNovelReaderView = "kShowNovelReaderView"
+
+// MARK: Cell Identifier
+let kNovelCellIdentifier = "kNovelCellIdentifier"
+let kRecentNovelCellIdentifier = "kRecentNovelCellIdentifier"
+
