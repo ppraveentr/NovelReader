@@ -71,7 +71,7 @@ extension NRSearchCollectionViewController: UICollectionViewDelegateFlowLayout {
 
         if let cur = viewModel.currentNovelList?[indexPath.row] {
             if let cell = cell as? NRConfigureNovelCellProtocol {
-                cell.configureContent(novel: cur, view: collectionView, indexPath: indexPath)
+                cell.configureContent(content: cur, view: collectionView, indexPath: indexPath)
             }
         }
 

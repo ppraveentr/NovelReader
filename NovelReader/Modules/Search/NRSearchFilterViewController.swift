@@ -32,9 +32,8 @@ class NRSearchFilterViewController: NRBaseCollectionViewController {
     func setupColletionView() {
 
         // Register Cell
-        collectionView.register(NRNovelCollectionViewCell.getNIBFile(),
-                                forCellWithReuseIdentifier: kNovelCellIdentifier)
-        
+        collectionView.register(NRSelectionCollectionViewCell.getNIBFile(),
+                                forCellWithReuseIdentifier: kSearchFilterCellIdentifier)
     }
 
 }
@@ -44,5 +43,35 @@ extension NRSearchFilterViewController: NRSearchFilterViewModelProtocal {
     func refreshCollectionView() {
         self.configureColletionView()
     }
+
+}
+
+extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout {
+
+    // numberOfItemsInSection
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.sectionItems.count
+    }
+
+    // cellForItem
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kSearchFilterCellIdentifier, for: indexPath)
+
+        let filterItem = viewModel.sectionItems[indexPath.section]
+        let cur = filterItem.content[indexPath.row]
+        if  !cur.data.isNilOrEmpty {
+            if let cell = cell as? NRConfigureNovelCellProtocol {
+                cell.configureContent(content: cur)
+            }
+        }
+
+        return cell
+    }
+
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let cur = viewModel.currentNovelList?[indexPath.row]
+//        self.performSegue(withIdentifier: "kShowNovelChapterList", sender: cur)
+//    }
 
 }

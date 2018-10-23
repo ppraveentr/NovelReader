@@ -70,8 +70,11 @@ class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProto
         self.addBorder()
     }
     
-    func configureContent(novel: NRNovel, view: UICollectionView? = nil, indexPath: IndexPath? = nil) {
-
+    func configureContent(content: AnyObject, view: UICollectionView? = nil, indexPath: IndexPath? = nil) {
+        guard let novel = content as? NRNovel else {
+            return
+        }
+        
         //Reset image,
         self.contentImageView?.image = nil
         if let url = novel.imageURL {

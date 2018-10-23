@@ -26,14 +26,16 @@ class NRNovelChapterViewController: NRBaseTableViewController {
                 return
             }
             self.novel?.merge(data: novelResponse!)
-            self.configureContent(novel: self.novel!)
+            self.configureContent(content: self.novel!)
         })
     }
     
-    func configureContent(novel: NRNovel) {
-        self.novelDescView?.configureContent(novel: self.novel!)
-        self.tableView.setTableHeaderView(view: self.novelDescView)
-        self.tableView.reloadData()
+    func configureContent(content: AnyObject) {
+        if let content = content as? NRNovel {
+            self.novelDescView?.configureContent(content: content)
+            self.tableView.setTableHeaderView(view: self.novelDescView)
+            self.tableView.reloadData()
+        }
     }
     
 }
@@ -63,7 +65,7 @@ extension NRNovelChapterViewController {
         if
             let cell = cell as? NRNovelTableViewCell,
             let cur = novel?.chapterList?[indexPath.row] {
-            cell.configureContent(novel: cur)
+            cell.configureContent(content: cur)
         }
         
         return cell

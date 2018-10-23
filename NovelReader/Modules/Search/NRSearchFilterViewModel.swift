@@ -14,6 +14,15 @@ protocol NRSearchFilterViewModelProtocal {
     func refreshCollectionView()
 }
 
+enum NRSearchFilterType {
+    case novelType, genres, language, completed
+}
+
+struct NRSearchFilterCellContent {
+    var type: NRSearchFilterType
+    var content: [NRFilterModel]
+}
+
 class NRSearchFilterViewModel {
 
     weak var lifeDelegate: NRSearchFilterCollectionLifeCycleDelegate?
@@ -34,6 +43,29 @@ class NRSearchFilterViewModel {
             print(filter ?? "")
             self?.modelStack = filter
         }
+    }
+
+    var sectionItems: [NRSearchFilterCellContent] {
+        var items = [NRSearchFilterCellContent]()
+
+        if  let type = modelStack?.novelType, type.count > 0 {
+            let item = NRSearchFilterCellContent(type: .novelType, content: type)
+            items.append(item)
+        }
+        if  let type = modelStack?.genres, type.count > 0 {
+            let item = NRSearchFilterCellContent(type: .genres, content: type)
+            items.append(item)
+        }
+        if  let type = modelStack?.language, type.count > 0 {
+            let item = NRSearchFilterCellContent(type: .language, content: type)
+            items.append(item)
+        }
+        if  let type = modelStack?.completed, type.count > 0 {
+            let item = NRSearchFilterCellContent(type: .completed, content: type)
+            items.append(item)
+        }
+
+        return items
     }
 
 }

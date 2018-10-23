@@ -8,21 +8,23 @@
 
 import Foundation
 
+// MARK: Novel Cell protocol
 protocol NRConfigureNovelCellProtocol {
-    func configureContent(novel: NRNovel)
-    func configureContent(novel: NRNovel, view: UICollectionView?, indexPath: IndexPath?)
+    func configureContent(content: AnyObject)
+    func configureContent(content: AnyObject, view: UICollectionView?, indexPath: IndexPath?)
 }
 
 extension NRConfigureNovelCellProtocol where Self: UIView {
 
-    func configureContent(novel: NRNovel) {
+    func configureContent(content: AnyObject) {
     }
 
-    func configureContent(novel: NRNovel, view: UICollectionView?, indexPath: IndexPath?) {
+    func configureContent(content: AnyObject, view: UICollectionView?, indexPath: IndexPath?) {
     }
 
 }
 
+// MARK: BaseView Controller utility
 extension FTBaseViewController {
 
     open override var prefersStatusBarHidden: Bool {

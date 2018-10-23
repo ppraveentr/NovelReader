@@ -43,7 +43,7 @@
         <!--Search Filter-->
         <scene sceneID="0Ls-xg-3pU">
             <objects>
-                <viewController title="Search Filter" id="v0b-jn-Awu" customClass="NRBaseCollectionViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Search Filter" id="v0b-jn-Awu" customClass="NRSearchFilterViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fm1-Yj-8as" userLabel="BaseView" customClass="FTBaseView" customModule="FTMobileCoreUI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

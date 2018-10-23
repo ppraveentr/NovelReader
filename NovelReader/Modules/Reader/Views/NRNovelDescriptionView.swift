@@ -18,7 +18,11 @@ class NRNovelDescriptionView: FTView {
     @IBOutlet var lastUpdateLabel: FTLabel?
     @IBOutlet var viewsButton: FTButton?
     
-    func configureContent(novel: NRNovel) {
+    func configureContent(content: AnyObject) {
+        guard let novel = content as? NRNovel else {
+            return
+        }
+
         if let url = novel.imageURL {
             self.contentImageView?.downloadedFrom(link: url )
         }

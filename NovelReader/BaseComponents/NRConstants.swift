@@ -55,4 +55,4 @@ let kShowNovelReaderView = "kShowNovelReaderView"
 // MARK: Cell Identifier
 let kNovelCellIdentifier = "kNovelCellIdentifier"
 let kRecentNovelCellIdentifier = "kRecentNovelCellIdentifier"
-
+let kSearchFilterCellIdentifier = "kSearchFilterCellIdentifier"

@@ -18,8 +18,10 @@ class NRNovelTableViewCell: UITableViewCell {
 //        self.addBorder()
 //    }
     
-    func configureContent(novel: NRNovelChapter) {
-        
+    func configureContent(content: AnyObject) {
+        guard let novel = content as? NRNovelChapter else {
+            return
+        }
         self.titleLabel?.text = novel.shortTitle ?? novel.title
         self.chapterDate?.text = novel.releaseDate 
     }

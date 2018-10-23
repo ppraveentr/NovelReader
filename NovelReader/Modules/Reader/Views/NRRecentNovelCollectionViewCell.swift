@@ -17,7 +17,11 @@ class NRRecentNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCel
     var indexPath: IndexPath? = nil
     var novelItem: NRNovel? = nil
 
-    func configureContent(novel: NRNovel, view: UICollectionView? = nil, indexPath: IndexPath? = nil) {
+    func configureContent(content: AnyObject, view: UICollectionView? = nil, indexPath: IndexPath? = nil) {
+        guard let novel = content as? NRNovel else {
+            return
+        }
+        
         novelTitle?.text = novel.title
         // novelTitle?.isLinkUnderLineEnabled = true
 
