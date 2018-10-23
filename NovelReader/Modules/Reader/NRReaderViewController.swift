@@ -40,7 +40,7 @@ class NRReaderViewController: NRBaseViewController {
         self.setupViewContent()
     }
 
-    override func shouldSetSafeAreaLayoutGuide() -> Bool {
+    override func topSafeAreaLayoutGuide() -> Bool {
         return false
     }
 

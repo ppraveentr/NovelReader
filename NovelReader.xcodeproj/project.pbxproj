@@ -10,6 +10,8 @@
 		4DF54C61831F19E908183153 /* Pods_NovelReaderDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89900C8A827DDB8F2CA3DAC4 /* Pods_NovelReaderDemo.framework */; };
 		DE0173BD216148B7007F5546 /* NRBaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0173BC216148B7007F5546 /* NRBaseCollectionViewController.swift */; };
 		DE0173C121614957007F5546 /* NRBaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0173BC216148B7007F5546 /* NRBaseCollectionViewController.swift */; };
+		DE19ADC9217F80C400F58321 /* fetchChapter.json in Resources */ = {isa = PBXBuildFile; fileRef = DE19ADC7217F80C400F58321 /* fetchChapter.json */; };
+		DE19ADCA217F80C400F58321 /* fetchNovelChapters.json in Resources */ = {isa = PBXBuildFile; fileRef = DE19ADC8217F80C400F58321 /* fetchNovelChapters.json */; };
 		DE23237920551287004F1480 /* NRServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1B01F4996A90002C148 /* NRServiceProvider.swift */; };
 		DE23237B20551287004F1480 /* NRBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1AD1F4992030002C148 /* NRBaseTableViewController.swift */; };
 		DE23237D20551287004F1480 /* NRTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1A11F497B5D0002C148 /* NRTabBarController.swift */; };
@@ -63,7 +65,6 @@
 		DEB91E11217975A000D9FFB9 /* FTMobileCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA45CB0205513E7008FA401 /* FTMobileCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEB91E12217975A300D9FFB9 /* FTCoreUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA45C9A205513CF008FA401 /* FTCoreUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEB91E13217975AA00D9FFB9 /* FTMobileCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA45CA6205513E3008FA401 /* FTMobileCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DEB91E15217976DE00D9FFB9 /* FTNovelReaderMockBundle.bundle in Copy Resources */ = {isa = PBXBuildFile; fileRef = DE81824C2084F8F6001316E5 /* FTNovelReaderMockBundle.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEBC650620970CB50057F649 /* NRBaseViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650520970CB50057F649 /* NRBaseViewController+Utility.swift */; };
 		DEBC650720970CB50057F649 /* NRBaseViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650520970CB50057F649 /* NRBaseViewController+Utility.swift */; };
 		DEBC650E20970E1E0057F649 /* NRGoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */; };
@@ -245,17 +246,6 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DEB91E14217976C700D9FFB9 /* Copy Resources */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-				DEB91E15217976DE00D9FFB9 /* FTNovelReaderMockBundle.bundle in Copy Resources */,
-			);
-			name = "Copy Resources";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -265,6 +255,8 @@
 		A38A0428150D994F048C60EF /* Pods-NovelReaderDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NovelReaderDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-NovelReaderDemo/Pods-NovelReaderDemo.release.xcconfig"; sourceTree = "<group>"; };
 		A680179A183DD1D3D78732CB /* Pods_NovelReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NovelReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0173BC216148B7007F5546 /* NRBaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRBaseCollectionViewController.swift; sourceTree = "<group>"; };
+		DE19ADC7217F80C400F58321 /* fetchChapter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetchChapter.json; sourceTree = "<group>"; };
+		DE19ADC8217F80C400F58321 /* fetchNovelChapters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetchNovelChapters.json; sourceTree = "<group>"; };
 		DE2323A220551287004F1480 /* NovelReaderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NovelReaderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE28567B20946CC2003153C6 /* fetchNovelList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetchNovelList.json; sourceTree = "<group>"; };
 		DE383477217253B100DD4B27 /* NRSearchBarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRSearchBarHeaderView.swift; sourceTree = "<group>"; };
@@ -420,6 +412,8 @@
 		DE81824D2084F8F6001316E5 /* FTNovelReaderMockBundle */ = {
 			isa = PBXGroup;
 			children = (
+				DE19ADC7217F80C400F58321 /* fetchChapter.json */,
+				DE19ADC8217F80C400F58321 /* fetchNovelChapters.json */,
 				DE8182562085020A001316E5 /* fetchRecentUpdatesList.json */,
 				DE28567B20946CC2003153C6 /* fetchNovelList.json */,
 				DEA13C93217CBF5500C572E1 /* searchFilter.json */,
@@ -720,7 +714,6 @@
 				DEA7E19B1F4970400002C148 /* Embed Frameworks */,
 				5226665313E4689E4DAE9BC8 /* [CP] Embed Pods Frameworks */,
 				3B40B5E9049E6B5CB415DFEB /* [CP] Copy Pods Resources */,
-				DEB91E14217976C700D9FFB9 /* Copy Resources */,
 			);
 			buildRules = (
 			);
@@ -909,7 +902,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEA13C94217CBF5500C572E1 /* searchFilter.json in Resources */,
+				DE19ADCA217F80C400F58321 /* fetchNovelChapters.json in Resources */,
 				DE28567C20946CC2003153C6 /* fetchNovelList.json in Resources */,
+				DE19ADC9217F80C400F58321 /* fetchChapter.json in Resources */,
 				DE8182592085020A001316E5 /* fetchRecentUpdatesList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
