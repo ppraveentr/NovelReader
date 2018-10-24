@@ -13,7 +13,7 @@
         <!--Search-->
         <scene sceneID="chX-YF-7gO">
             <objects>
-                <viewController id="29j-l3-Nca" customClass="NRSearchCollectionViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Search" id="29j-l3-Nca" customClass="NRSearchCollectionViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mjV-aU-BQa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,17 +21,18 @@
                         <viewLayoutGuide key="safeArea" id="9av-Hg-BIx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="zgd-4J-68q">
-                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="stop" id="UzY-Nb-2gJ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="UzY-Nb-2gJ">
                             <connections>
                                 <action selector="leftButtonAction" destination="29j-l3-Nca" id="Ut8-Nx-F24"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="filter" id="gxO-vV-cwh">
+                        <barButtonItem key="rightBarButtonItem" image="filter" id="gxO-vV-cwh">
                             <connections>
-                                <segue destination="v0b-jn-Awu" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="rcY-c5-Cwo"/>
+                                <segue destination="v0b-jn-Awu" kind="show" id="rcY-c5-Cwo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <segue destination="SG6-mq-AhZ" kind="show" identifier="kShowNovelChapterList" id="goq-dh-h6f"/>
                     </connections>
@@ -45,7 +46,7 @@
             <objects>
                 <viewController title="Search Filter" id="v0b-jn-Awu" customClass="NRSearchFilterViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fm1-Yj-8as" userLabel="BaseView" customClass="FTBaseView" customModule="FTMobileCoreUI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4ij-b9-TS8"/>
@@ -57,76 +58,60 @@
                                 <action selector="leftButtonAction" destination="v0b-jn-Awu" id="qes-Qb-B1h"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="Hoj-lE-0mf">
-                            <connections>
-                                <action selector="rightButtonAction" destination="v0b-jn-Awu" id="dcO-st-wtC"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <size key="freeformSize" width="600" height="900"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="baseViewTheme" value="halfView"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="collectionViewTheme" value="halfView"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="bottomPinnedButtonView" destination="b8q-NK-ho5" id="zdS-QU-bx9"/>
-                        <outlet property="topPinnedButtonView" destination="UIa-mj-cwB" id="Gap-Hu-xQG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlH-ED-SRv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="UIa-mj-cwB" customClass="FTView" customModule="FTMobileCoreUI">
-                    <rect key="frame" x="0.0" y="0.0" width="297" height="130"/>
+                <view contentMode="scaleToFill" id="b8q-NK-ho5" customClass="FTView" customModule="FTMobileCoreUI">
+                    <rect key="frame" x="0.0" y="0.0" width="252" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAt-8l-7Jg" userLabel="FTView" customClass="FTView" customModule="FTMobileCoreUI">
-                            <rect key="frame" x="0.0" y="0.0" width="297" height="130"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLY-eQ-qKN">
+                            <rect key="frame" x="0.0" y="0.0" width="252" height="45"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FVm-52-2cT">
+                                    <rect key="frame" x="5" y="5" width="242" height="35"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z67-R9-6yx" customClass="FTButton" customModule="FTMobileCoreUI">
+                                            <rect key="frame" x="0.0" y="0.0" width="116" height="35"/>
+                                            <state key="normal" title="ResetAll"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="theme" value="buttonR17bW"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93F-RF-tCO" customClass="FTButton" customModule="FTMobileCoreUI">
+                                            <rect key="frame" x="126" y="0.0" width="116" height="35"/>
+                                            <state key="normal" title="Apply"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="theme" value="buttonR17bW"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="leftButtonAction" destination="v0b-jn-Awu" eventType="touchUpInside" id="McN-34-PhJ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="130" id="MdJ-Gz-QAC"/>
+                                <constraint firstAttribute="height" constant="45" id="2Hl-TE-rXQ"/>
+                                <constraint firstAttribute="trailing" secondItem="FVm-52-2cT" secondAttribute="trailing" constant="5" id="Ecx-0N-Jqy"/>
+                                <constraint firstItem="FVm-52-2cT" firstAttribute="top" secondItem="vLY-eQ-qKN" secondAttribute="top" constant="5" id="kuS-aM-Lt7"/>
+                                <constraint firstAttribute="bottom" secondItem="FVm-52-2cT" secondAttribute="bottom" constant="5" id="mg7-H9-jK8"/>
+                                <constraint firstItem="FVm-52-2cT" firstAttribute="leading" secondItem="vLY-eQ-qKN" secondAttribute="leading" constant="5" id="oAD-Ze-se9"/>
                             </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="theme" value="halfBlack"/>
-                            </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="OAt-8l-7Jg" secondAttribute="bottom" id="7U7-Qd-3cS"/>
-                        <constraint firstItem="Bf5-zR-aAi" firstAttribute="trailing" secondItem="OAt-8l-7Jg" secondAttribute="trailing" id="HLq-i8-eqg"/>
-                        <constraint firstItem="OAt-8l-7Jg" firstAttribute="leading" secondItem="Bf5-zR-aAi" secondAttribute="leading" id="gGI-xk-c6b"/>
-                        <constraint firstItem="OAt-8l-7Jg" firstAttribute="top" secondItem="UIa-mj-cwB" secondAttribute="top" id="qgR-pq-DkK"/>
-                    </constraints>
-                    <viewLayoutGuide key="safeArea" id="Bf5-zR-aAi"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="theme" value="clearView"/>
-                    </userDefinedRuntimeAttributes>
-                </view>
-                <view contentMode="scaleToFill" id="b8q-NK-ho5" customClass="FTView" customModule="FTMobileCoreUI">
-                    <rect key="frame" x="0.0" y="0.0" width="252" height="57"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93F-RF-tCO" customClass="FTButton" customModule="FTMobileCoreUI">
-                            <rect key="frame" x="0.0" y="0.0" width="252" height="57"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="57" id="7Mt-la-fz4"/>
-                            </constraints>
-                            <state key="normal" title="Apply"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="theme" value="buttonR17bW"/>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="leftButtonAction" destination="v0b-jn-Awu" eventType="touchUpInside" id="McN-34-PhJ"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="93F-RF-tCO" firstAttribute="top" secondItem="SMu-Lm-1yG" secondAttribute="top" id="NRm-MN-esa"/>
-                        <constraint firstItem="SMu-Lm-1yG" firstAttribute="bottom" secondItem="93F-RF-tCO" secondAttribute="bottom" id="egt-FE-yzG"/>
-                        <constraint firstItem="SMu-Lm-1yG" firstAttribute="trailing" secondItem="93F-RF-tCO" secondAttribute="trailing" id="rIW-99-eYj"/>
-                        <constraint firstItem="93F-RF-tCO" firstAttribute="leading" secondItem="SMu-Lm-1yG" secondAttribute="leading" id="vt4-P0-wzR"/>
+                        <constraint firstItem="vLY-eQ-qKN" firstAttribute="leading" secondItem="b8q-NK-ho5" secondAttribute="leading" id="H8E-YC-07m"/>
+                        <constraint firstItem="SMu-Lm-1yG" firstAttribute="bottom" secondItem="vLY-eQ-qKN" secondAttribute="bottom" id="Vh8-Q0-hKF"/>
+                        <constraint firstItem="SMu-Lm-1yG" firstAttribute="trailing" secondItem="vLY-eQ-qKN" secondAttribute="trailing" id="dAa-0t-w1c"/>
+                        <constraint firstItem="vLY-eQ-qKN" firstAttribute="top" secondItem="b8q-NK-ho5" secondAttribute="top" id="qHQ-1q-cAL"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="SMu-Lm-1yG"/>
                 </view>

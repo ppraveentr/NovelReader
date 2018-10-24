@@ -40,6 +40,9 @@ class NRBaseCollectionViewController: FTBaseCollectionViewController {
     override func flowLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = estimatedItemSize()
+        if #available(iOS 10.0, *) {
+            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        } 
         layout.sectionInset = sectionInset()
         layout.headerReferenceSize = CGSize(width:0, height:45)
         layout.sectionHeadersPinToVisibleBounds = true

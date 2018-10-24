@@ -51,6 +51,12 @@
 		DE84280B20558FE8006605C0 /* NRNovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280520558FE7006605C0 /* NRNovel.swift */; };
 		DE84280C20558FE8006605C0 /* NRNovelChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280620558FE7006605C0 /* NRNovelChapter.swift */; };
 		DE84280D20558FE8006605C0 /* NRNovelChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280620558FE7006605C0 /* NRNovelChapter.swift */; };
+		DE88E7252180BC7A009433B8 /* NRUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88E7242180BC7A009433B8 /* NRUtility.swift */; };
+		DE88E7262180BC7A009433B8 /* NRUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88E7242180BC7A009433B8 /* NRUtility.swift */; };
+		DE88E7282180C2D7009433B8 /* NRSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88E7272180C2D7009433B8 /* NRSectionHeaderView.swift */; };
+		DE88E7292180C2D7009433B8 /* NRSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88E7272180C2D7009433B8 /* NRSectionHeaderView.swift */; };
+		DE88E72B2180C549009433B8 /* NRSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE88E72A2180C549009433B8 /* NRSectionHeaderView.xib */; };
+		DE88E72C2180C549009433B8 /* NRSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE88E72A2180C549009433B8 /* NRSectionHeaderView.xib */; };
 		DEA13C94217CBF5500C572E1 /* searchFilter.json in Resources */ = {isa = PBXBuildFile; fileRef = DEA13C93217CBF5500C572E1 /* searchFilter.json */; };
 		DEA7E1441F496BAB0002C148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1431F496BAB0002C148 /* AppDelegate.swift */; };
 		DEA7E1501F496BAB0002C148 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA7E14E1F496BAB0002C148 /* LaunchScreen.storyboard */; };
@@ -280,6 +286,9 @@
 		DE8182562085020A001316E5 /* fetchRecentUpdatesList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetchRecentUpdatesList.json; sourceTree = "<group>"; };
 		DE84280520558FE7006605C0 /* NRNovel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRNovel.swift; sourceTree = "<group>"; };
 		DE84280620558FE7006605C0 /* NRNovelChapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRNovelChapter.swift; sourceTree = "<group>"; };
+		DE88E7242180BC7A009433B8 /* NRUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRUtility.swift; sourceTree = "<group>"; };
+		DE88E7272180C2D7009433B8 /* NRSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRSectionHeaderView.swift; sourceTree = "<group>"; };
+		DE88E72A2180C549009433B8 /* NRSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NRSectionHeaderView.xib; sourceTree = "<group>"; };
 		DEA13C93217CBF5500C572E1 /* searchFilter.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = searchFilter.json; sourceTree = "<group>"; };
 		DEA45C94205513CF008FA401 /* FTCoreUtility.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FTCoreUtility.xcodeproj; path = ../../MobileCore/FTCoreUtility/FTCoreUtility.xcodeproj; sourceTree = "<group>"; };
 		DEA45C9F205513E3008FA401 /* FTMobileCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FTMobileCore.xcodeproj; path = ../../MobileCore/FTMobileCore/FTMobileCore.xcodeproj; sourceTree = "<group>"; };
@@ -442,6 +451,14 @@
 			path = ModelObjects;
 			sourceTree = "<group>";
 		};
+		DE88E7202180BC5D009433B8 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				DE88E7242180BC7A009433B8 /* NRUtility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		DEA45C95205513CF008FA401 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,6 +518,7 @@
 				DEA7E1431F496BAB0002C148 /* AppDelegate.swift */,
 				DEBC65132097601A0057F649 /* Main.storyboard */,
 				DEA7E14E1F496BAB0002C148 /* LaunchScreen.storyboard */,
+				DE88E7202180BC5D009433B8 /* Utility */,
 				DEA7E19F1F497B5D0002C148 /* BaseComponents */,
 				DEBC651E209764790057F649 /* Modules */,
 				DEAD340C2058263C0064C46A /* Resources */,
@@ -563,6 +581,8 @@
 			isa = PBXGroup;
 			children = (
 				DEA7E1A51F497B6C0002C148 /* NRBaseView.swift */,
+				DE88E7272180C2D7009433B8 /* NRSectionHeaderView.swift */,
+				DE88E72A2180C549009433B8 /* NRSectionHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -896,6 +916,7 @@
 				DEBC654B209764790057F649 /* NRNovelTableViewCell.xib in Resources */,
 				DEDC0A302068BCC80013D84F /* NovelServiceRules.plist in Resources */,
 				DEBC653B209764790057F649 /* NRRecentNovelCollectionViewCell.xib in Resources */,
+				DE88E72C2180C549009433B8 /* NRSectionHeaderView.xib in Resources */,
 				DEBC6551209764790057F649 /* SearchStoryboard.storyboard in Resources */,
 				DEBC6533209764790057F649 /* NovelReader.storyboard in Resources */,
 				DE19ADD0217F864500F58321 /* NRSelectionCollectionViewCell.xib in Resources */,
@@ -935,6 +956,7 @@
 				DEBC65142097601A0057F649 /* Main.storyboard in Resources */,
 				DEBC6532209764790057F649 /* NovelReader.storyboard in Resources */,
 				DEAD341F2058263C0064C46A /* Themes.json in Resources */,
+				DE88E72B2180C549009433B8 /* NRSectionHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1092,6 +1114,7 @@
 				DE818247208356BA001316E5 /* NRService_fetchRecentUpdatesList.swift in Sources */,
 				DEBC654F209764790057F649 /* NRNovelChapterViewController.swift in Sources */,
 				DE383486217267AA00DD4B27 /* NRSearchFilterViewController.swift in Sources */,
+				DE88E7262180BC7A009433B8 /* NRUtility.swift in Sources */,
 				DE4EBE672067B6F5008AC70B /* NRService_fetchNovelList.swift in Sources */,
 				DE38347C2172547300DD4B27 /* NRSegmentCollectionHeaderView.swift in Sources */,
 				DE23238220551287004F1480 /* NRBaseViewController.swift in Sources */,
@@ -1119,6 +1142,7 @@
 				DEBC6541209764790057F649 /* NRNovelDescriptionView.swift in Sources */,
 				DEFB28372171FFBD00B0E06B /* NRSearchCollectionViewModel.swift in Sources */,
 				DEDE27232069522300E4C992 /* NRRules_defaults.swift in Sources */,
+				DE88E7292180C2D7009433B8 /* NRSectionHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1147,6 +1171,7 @@
 				DE818246208356BA001316E5 /* NRService_fetchRecentUpdatesList.swift in Sources */,
 				DEBC654E209764790057F649 /* NRNovelChapterViewController.swift in Sources */,
 				DE4EBE662067B6F5008AC70B /* NRService_fetchNovelList.swift in Sources */,
+				DE88E7252180BC7A009433B8 /* NRUtility.swift in Sources */,
 				DEA7E1A31F497B5D0002C148 /* NRBaseViewController.swift in Sources */,
 				DEA7E1B71F49A67F0002C148 /* NRAppManager.swift in Sources */,
 				DE84280A20558FE8006605C0 /* NRNovel.swift in Sources */,
@@ -1174,6 +1199,7 @@
 				DE383478217253B100DD4B27 /* NRSearchBarHeaderView.swift in Sources */,
 				DEBC6540209764790057F649 /* NRNovelDescriptionView.swift in Sources */,
 				DEDE27222069522300E4C992 /* NRRules_defaults.swift in Sources */,
+				DE88E7282180C2D7009433B8 /* NRSectionHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

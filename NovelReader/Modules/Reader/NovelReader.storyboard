@@ -27,7 +27,7 @@
                     <connections>
                         <segue destination="tP7-z7-4Ne" kind="show" identifier="kShowNovelChapterList" id="WkK-Ij-5Tn"/>
                         <segue destination="4eN-BC-EyU" kind="presentation" identifier="kShowNovelReaderView" id="fSp-SM-qua"/>
-                        <segue destination="80R-PJ-s8a" kind="presentation" identifier="kSearchStoryboardID" modalPresentationStyle="pageSheet" id="bMb-2j-5H3"/>
+                        <segue destination="80R-PJ-s8a" kind="presentation" identifier="kSearchStoryboardID" modalPresentationStyle="fullScreen" id="bMb-2j-5H3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -171,6 +171,6 @@
         <image name="filter" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fSp-SM-qua"/>
+        <segue reference="N08-mK-hS3"/>
     </inferredMetricsTieBreakers>
 </document>

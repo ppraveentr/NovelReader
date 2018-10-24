@@ -20,14 +20,24 @@ class NRSelectionCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellP
 
     override var isSelected: Bool {
         didSet {
+            self.titleLabel?.isEnabled = isSelected
             checkMarkImage?.isHidden = !isSelected
+
+            if isSelected {
+                self.layer.borderColor = kNavigationBarColor.cgColor
+            } else {
+                self.layer.borderColor = UIColor.gray.cgColor
+            }
         }
     }
 
     func configureContent(content: AnyObject) {
         if let searchFilter = content as? NRFilterModel {
-            self.titleLabel?.text = searchFilter.data
+            self.titleLabel?.text = searchFilter.type
         }
+
+        setNeedsLayout()
+        layoutIfNeeded()
     }
 
     func addBorder() {
@@ -44,4 +54,16 @@ class NRSelectionCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellP
         self.layer.shadowOffset = CGSize(width: 3, height: 3)
     }
 
+    override open func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes)
+        -> UICollectionViewLayoutAttributes {
+            setNeedsLayout()
+            layoutIfNeeded()
+
+            let size = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+            var newFrame = layoutAttributes.frame
+            newFrame.size.width = ceil(size.width)
+            newFrame.size.height = ceil(size.height)
+            layoutAttributes.frame = newFrame
+            return layoutAttributes
+    }
 }

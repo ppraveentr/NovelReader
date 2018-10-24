@@ -29,7 +29,9 @@ class NRSearchCollectionViewController: NRBaseCollectionViewController {
                                 forCellWithReuseIdentifier: kNovelCellIdentifier)
 
         // Collection Header: Segment Control
-        self.baseView?.topPinnedView = NRSearchBarHeaderView(delegate: self)
+        self.topPinnedButtonView = NRSearchBarHeaderView(delegate: self)
+
+        refreshCollectionView()
     }
     
 }

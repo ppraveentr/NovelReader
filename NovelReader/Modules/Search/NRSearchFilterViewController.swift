@@ -19,13 +19,16 @@ class NRSearchFilterViewController: NRBaseCollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupColletionView()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
+        
         // update-filter-details
         viewModel.updateSearchFilter()
+    }
+
+    override func flowLayout() -> UICollectionViewFlowLayout {
+        let layout = super.flowLayout()
+        layout.sectionHeadersPinToVisibleBounds = false
+
+        return layout
     }
 
     // MARK: setupColletionView
@@ -34,6 +37,66 @@ class NRSearchFilterViewController: NRBaseCollectionViewController {
         // Register Cell
         collectionView.register(NRSelectionCollectionViewCell.getNIBFile(),
                                 forCellWithReuseIdentifier: kSearchFilterCellIdentifier)
+
+        // Collection Header: Segment Control
+        collectionView.register(NRSectionHeaderView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: "headerCell")
+    }
+
+    @IBAction
+    func resetSelection(_ sender: Any) {
+        viewModel.resetSelection()
+    }
+
+}
+
+extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout {
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return viewModel.numberOfSections
+    }
+
+    // numberOfItemsInSection
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfItemsInSection(section)
+    }
+
+    // viewForSupplementaryElement
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell", for: indexPath) as! NRSectionHeaderView
+
+        headerView.setSectionHeader(title: viewModel.sectionTitleAt(indexPath), image: nil)
+        headerView.setRightButton(title: nil, image: #imageLiteral(resourceName: "close-circle")) { [weak self] (_,_) in
+            self?.viewModel.resetSelection(indexPath)
+        }
+
+        return headerView
+    }
+
+    // cellForItem
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kSearchFilterCellIdentifier, for: indexPath)
+
+        // CheckMark
+        cell.isSelected = viewModel.isSelected(indexPath).found
+
+        // Config content
+        if
+            let cell = cell as? NRConfigureNovelCellProtocol,
+            let cur = viewModel.cellForItemAt(indexPath) {
+            cell.configureContent(content: cur)
+        }
+
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        // Update User selection
+        viewModel.updateSelection(indexPath)
     }
 
 }
@@ -43,35 +106,5 @@ extension NRSearchFilterViewController: NRSearchFilterViewModelProtocal {
     func refreshCollectionView() {
         self.configureColletionView()
     }
-
-}
-
-extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout {
-
-    // numberOfItemsInSection
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.sectionItems.count
-    }
-
-    // cellForItem
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kSearchFilterCellIdentifier, for: indexPath)
-
-        let filterItem = viewModel.sectionItems[indexPath.section]
-        let cur = filterItem.content[indexPath.row]
-        if  !cur.data.isNilOrEmpty {
-            if let cell = cell as? NRConfigureNovelCellProtocol {
-                cell.configureContent(content: cur)
-            }
-        }
-
-        return cell
-    }
-
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cur = viewModel.currentNovelList?[indexPath.row]
-//        self.performSegue(withIdentifier: "kShowNovelChapterList", sender: cur)
-//    }
 
 }

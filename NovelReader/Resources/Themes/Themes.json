@@ -77,6 +77,11 @@
                 "backgroundColor": "halfBlack"
             }
 		},
+        "NRSectionHeaderView": {
+            "default": {
+                "backgroundColor": "appWhite"
+            }
+        },
         "FTCollectionView": {
             "default": {
                 "backgroundColor": "clear"
@@ -147,31 +152,20 @@
 				"_super": "default",
 				"textcolor": "gray"
 			},
-			"system14R": {
-				"_super": "default",
-				"textcolor": "appRed"
-			},
 			"system17R": {
 				"_super": "default",
 				"textfont": "system17",
 				"textcolor": "appRed"
 			},
-			"system14B": {
+			"selectionCell": {
 				"_super": "default",
-				"textcolor": "blue"
+                "textfont": "system17",
+				"textcolor": "appRed"
 			},
-			"system14G": {
-				"_super": "default",
-				"textcolor": "green"
-			},
-			"system14Y": {
-				"_super": "default",
-				"textcolor": "yellow"
-			},
-			"system14AA": {
-				"_super": "default",
-				"textcolor": "AA"
-			}
+            "selectionCell:disabled": {
+                "_super": "default",
+                "textcolor": "gray"
+            }
 		}
 	}
 }
