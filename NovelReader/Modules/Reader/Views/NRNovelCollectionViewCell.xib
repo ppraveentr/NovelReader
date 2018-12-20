@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -67,7 +68,7 @@
                             <constraint firstAttribute="height" constant="20" id="gMO-Xq-vsl"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Wmw-dh-qwQ">
+                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Wmw-dh-qwQ">
                         <rect key="frame" x="10" y="163" width="357" height="29"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjo-zg-ln4" userLabel="boderLine">
@@ -110,6 +111,7 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Wmw-dh-qwQ" secondAttribute="bottom" constant="4" id="Gf2-Zz-KEh"/>
                 <constraint firstAttribute="trailing" secondItem="Wmw-dh-qwQ" secondAttribute="trailing" constant="10" id="GtC-7B-Fbm"/>
+                <constraint firstAttribute="bottom" secondItem="0os-PF-sTO" secondAttribute="bottom" priority="999" id="IsL-2f-Qeg"/>
                 <constraint firstItem="Wmw-dh-qwQ" firstAttribute="leading" secondItem="tVl-ci-X2h" secondAttribute="leading" constant="10" id="LWc-6W-qb7"/>
                 <constraint firstItem="0os-PF-sTO" firstAttribute="leading" secondItem="tVl-ci-X2h" secondAttribute="leading" constant="10" id="ZQx-Rq-fIH"/>
                 <constraint firstAttribute="trailing" secondItem="9NO-IZ-FN3" secondAttribute="trailing" constant="10" id="ZTd-QR-OD0"/>

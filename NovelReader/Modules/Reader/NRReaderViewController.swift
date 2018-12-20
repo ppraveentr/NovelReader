@@ -39,11 +39,7 @@ class NRReaderViewController: NRBaseViewController {
         // setup view content
         self.setupViewContent()
     }
-
-    override func topSafeAreaLayoutGuide() -> Bool {
-        return false
-    }
-
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }

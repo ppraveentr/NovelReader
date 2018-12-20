@@ -61,6 +61,8 @@ class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProto
  
     @IBOutlet var titleLabel: FTLabel?
     @IBOutlet var contentImageView: FTImageView?
+    var imageViewCompletionHandler: FTUIImageViewComletionHandler?
+
     @IBOutlet var chapterLabel: FTLabel?
     @IBOutlet var lastUpdateLabel: FTLabel?
     @IBOutlet var viewsButton: FTButton?
@@ -69,18 +71,24 @@ class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProto
         super.awakeFromNib()
         self.addBorder()
     }
+
+    override func prepareForReuse() {
+        // Reset image
+        self.contentImageView?.image = nil
+        self.imageViewCompletionHandler = nil
+    }
     
     func configureContent(content: AnyObject, view: UICollectionView? = nil, indexPath: IndexPath? = nil) {
         guard let novel = content as? NRNovel else {
             return
         }
         
-        //Reset image,
-        self.contentImageView?.image = nil
+        // Reset image
+        self.imageViewCompletionHandler = { (image) in
+            self.contentImageView?.image = image
+        }
         if let url = novel.imageURL {
-            self.contentImageView?.downloadedFrom(link: url) { (image) in
-                self.contentImageView?.image = image
-            }
+            self.contentImageView?.downloadedFrom(link: url, comletionHandler: self.imageViewCompletionHandler)
         }
 
         self.titleLabel?.text = novel.title

@@ -61,7 +61,7 @@ enum NRSearchFilterType: String {
 
 struct NRSearchFilterCellContent {
     var type: NRSearchFilterType
-    var content: [NRFilterModel]
+    var contentArray: [NRFilterModel]
 }
 
 extension NRSearchFilterViewModel {
@@ -71,19 +71,19 @@ extension NRSearchFilterViewModel {
         var items = [NRSearchFilterCellContent]()
 
         if  let type = modelStack?.novelType, type.count > 0 {
-            let item = NRSearchFilterCellContent(type: .novelType, content: type)
+            let item = NRSearchFilterCellContent(type: .novelType, contentArray: type)
             items.append(item)
         }
         if  let type = modelStack?.genres, type.count > 0 {
-            let item = NRSearchFilterCellContent(type: .genres, content: type)
+            let item = NRSearchFilterCellContent(type: .genres, contentArray: type)
             items.append(item)
         }
         if  let type = modelStack?.language, type.count > 0 {
-            let item = NRSearchFilterCellContent(type: .language, content: type)
+            let item = NRSearchFilterCellContent(type: .language, contentArray: type)
             items.append(item)
         }
         if  let type = modelStack?.completed, type.count > 0 {
-            let item = NRSearchFilterCellContent(type: .completed, content: type)
+            let item = NRSearchFilterCellContent(type: .completed, contentArray: type)
             items.append(item)
         }
 
@@ -96,7 +96,7 @@ extension NRSearchFilterViewModel {
     }
 
     func numberOfItemsInSection(_ section: Int) -> Int {
-        return sectionItems[section].content.count
+        return sectionItems[section].contentArray.count
     }
 
     func sectionTitleAt(_ indexPath: IndexPath) -> String {
@@ -106,7 +106,7 @@ extension NRSearchFilterViewModel {
     func cellForItemAt(_ indexPath: IndexPath) -> NRFilterModel? {
 
         let filterItem = sectionItems[indexPath.section]
-        let cur = filterItem.content[indexPath.row]
+        let cur = filterItem.contentArray[indexPath.row]
         if  !cur.data.isNilOrEmpty {
             return cur
         }
@@ -139,8 +139,23 @@ extension NRSearchFilterViewModel {
     }
 
     func resetSelection(_ indexPath: IndexPath? = nil) {
-        selectedIndexPath.removeAll()
+        removeObjects(forSection: indexPath?.section)
         lifeDelegate?.refreshCollectionView()
+    }
+
+}
+
+extension NRSearchFilterViewModel {
+    
+    func removeObjects(forSection section: Int?) {
+        if let section = section {
+            selectedIndexPath.removeAll { (localIndex) -> Bool in
+                return section == localIndex.section
+            }
+        }
+        else {
+            selectedIndexPath.removeAll()
+        }
     }
 
 }
