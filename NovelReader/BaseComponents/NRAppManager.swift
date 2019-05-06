@@ -50,14 +50,14 @@ class NRAppManager {
     // Config
     static func configDebug() {
         #if DEBUG
-        //Console Loggin
-//        FTLogger.enableConsoleLogging = true
+        // Console Loggin
+        FTLogger.enableConsoleLogging = true
         // Debug-Postman
 //        FTMobileConfig.appBaseURL = kPostmanURL
         // Debug-only code
-//        FTMobileConfig.appBaseURL = kMockServerURL
-//        FTMobileConfig.mockBundleResource = kMockBundleResource
-//        FTMobileConfig.isMockData = kMockDataEnabled
+        FTMobileConfig.appBaseURL = kMockServerURL
+        FTMobileConfig.mockBundleResource = kMockBundleResource
+        FTMobileConfig.isMockData = kMockDataEnabled
         #endif
     }
 

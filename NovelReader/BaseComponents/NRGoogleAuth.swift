@@ -12,8 +12,8 @@ import GoogleSignIn
 // Notification constans name
 public extension Notification.Name {
     //  FTAuthentication - Google
-    public static let FTAuthentication_GoogleSignIn_SignedIn = Notification.Name("FTAuthentication_GoogleSignIn_SignedIn")
-    public static let FTAuthentication_GoogleSignIn_SignedOut = Notification.Name("FTAuthentication_GoogleSignIn_SignedOut")
+    static let FTAuthentication_GoogleSignIn_SignedIn = Notification.Name("FTAuthentication_GoogleSignIn_SignedIn")
+    static let FTAuthentication_GoogleSignIn_SignedOut = Notification.Name("FTAuthentication_GoogleSignIn_SignedOut")
 
 }
 
