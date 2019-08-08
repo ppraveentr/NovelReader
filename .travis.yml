@@ -5,8 +5,7 @@ osx_image: xcode10.2
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone X
 xcode_scheme: NovelReader
 script:
-- xcodebuild -workspace "NovelReader.xcworkspace" -scheme NovelReader -arch x86_64
-  -arch i386 -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO build | xcpretty -c
+- xcodebuild -workspace "NovelReader.xcworkspace" -scheme NovelReader -arch x86_64 -arch i386 -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO build | xcpretty -c
 - sonar-scanner -X
 #SECURE_TOKEN
 env:
