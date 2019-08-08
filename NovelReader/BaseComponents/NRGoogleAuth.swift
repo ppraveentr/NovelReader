@@ -12,9 +12,8 @@ import GoogleSignIn
 // Notification constans name
 public extension Notification.Name {
     //  FTAuthentication - Google
-    static let FTAuthentication_GoogleSignIn_SignedIn = Notification.Name("FTAuthentication_GoogleSignIn_SignedIn")
-    static let FTAuthentication_GoogleSignIn_SignedOut = Notification.Name("FTAuthentication_GoogleSignIn_SignedOut")
-
+    static let kFTAuthenticationGoogleSignInSignedIn = Notification.Name("kFTAuthentication.GoogleSignIn.SignedIn")
+    static let kFTAuthenticationGoogleSignInSignedOut = Notification.Name("kFTAuthentication.GoogleSignIn.SignedOut")
 }
 
 class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
@@ -42,29 +41,28 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
 
         // Update with User Profile
         if let profile = GIDSignIn.sharedInstance().currentUser?.profile {
-            profile.imageURL(withDimension: 44).downloadedImage { (image) in
-                signButtton.setImage(image, for: .normal)
+            profile.imageURL(withDimension: 44).downloadedImage {
+                signButtton.setImage($0, for: .normal)
             }
         }
 
         // Update with User Profile after SignIn
-        NotificationCenter.default.addObserver(forName: .FTAuthentication_GoogleSignIn_SignedIn, object: nil, queue: nil) { (notificationn) in
-
-            if let userObject = notificationn.object as? GIDGoogleUser {
-                userObject.profile.imageURL(withDimension: 44).downloadedImage { (image) in
+        _ = NotificationCenter.default.addObserver(forName: .kFTAuthenticationGoogleSignInSignedIn, object: nil, queue: nil) { (notification: Notification) in
+            if let userObject = notification.object as? GIDGoogleUser {
+                userObject.profile.imageURL(withDimension: 44).downloadedImage { (image: UIImage?) in
                     signButtton.setImage(image, for: .normal)
                 }
             }
         }
 
         // Remove User Profile
-        NotificationCenter.default.addObserver(forName: .FTAuthentication_GoogleSignIn_SignedOut, object: nil, queue: nil) { (nnnot) in
+        _ = NotificationCenter.default.addObserver(forName: .kFTAuthenticationGoogleSignInSignedOut, object: nil, queue: nil) { _ in
             signButtton.theme = "googleButton"
         }
 
         // SignIn Button Tap Action
         signButtton.addTapActionBlock {
-            if ((GIDSignIn.sharedInstance().uiDelegate != nil) || (GIDSignIn.sharedInstance().delegate != nil)) {
+            if ((GIDSignIn.sharedInstance()?.uiDelegate) != nil) || ((GIDSignIn.sharedInstance()?.delegate) != nil) {
                 GIDSignIn.sharedInstance().signIn()
             }
         }
@@ -77,16 +75,18 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
 
         if let error = error {
             print("\(error.localizedDescription)")
-        } else {
-            NotificationCenter.default.post(name: .FTAuthentication_GoogleSignIn_SignedIn, object: user)
+        }
+        else {
+            NotificationCenter.default.post(name: .kFTAuthenticationGoogleSignInSignedIn, object: user)
         }
     }
 
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
             print("\(error.localizedDescription)")
-        } else {
-            NotificationCenter.default.post(name: .FTAuthentication_GoogleSignIn_SignedOut, object: user)
+        }
+        else {
+            NotificationCenter.default.post(name: .kFTAuthenticationGoogleSignInSignedOut, object: user)
         }
     }
 
@@ -96,28 +96,29 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
     // Present a view that prompts the user to sign in with Google
     func sign(_ signIn: GIDSignIn!,
               present viewController: UIViewController!) {
-        NRAppDelegate.getRootController().present(viewController, animated: true, completion: nil)
+        NRAppDelegate.getRootController()?.present(viewController, animated: true, completion: nil)
     }
 
     // Dismiss the "Sign in with Google" view
     func sign(_ signIn: GIDSignIn!,
               dismiss viewController: UIViewController!) {
-        NRAppDelegate.getRootController().dismiss(animated: true, completion: nil)
+        NRAppDelegate.getRootController()?.dismiss(animated: true, completion: nil)
     }
-    
 }
 
 extension NRAppDelegate {
 
-    static func getRootController() -> UIViewController {
-        let appDelegate = UIApplication.shared.delegate as! NRAppDelegate
-        return appDelegate.window!.rootViewController!
+    static func getRootController() -> UIViewController? {
+        if let appDelegate = UIApplication.shared.delegate as? NRAppDelegate {
+            return appDelegate.window?.rootViewController
+        }
+        return UIApplication.shared.delegate?.window??.rootViewController
     }
 
-    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any])
         -> Bool {
-            return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-                                                     annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+            let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String
+            let annotation = options[UIApplication.OpenURLOptionsKey.annotation]
+            return GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation)
     }
-    
 }

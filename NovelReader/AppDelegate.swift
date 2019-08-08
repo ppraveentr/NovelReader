@@ -11,7 +11,7 @@ import UIKit
 @UIApplicationMain
 class NRAppDelegate: FTAppDelegate {
 
-    open override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
+    override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
       NRAppManager.setupApplication()
         
@@ -29,7 +29,6 @@ class NRAppDelegate: FTAppDelegate {
         // 
         //        self.performSegue(withIdentifier: "kShowNovelReaderView", sender: novels)
 
-
         //        NotificationCenter.default.addObserver(forName: .FTMobileCoreUI_ViewController_DidAppear, object: self, queue: nil) { (not) in
         // 
         //        }
@@ -38,5 +37,4 @@ class NRAppDelegate: FTAppDelegate {
         // 
         //        }
     }
-    
 }

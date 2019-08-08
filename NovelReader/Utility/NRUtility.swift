@@ -13,3 +13,9 @@ extension IndexPath {
         return lhs.row == rhs.row && lhs.section == rhs.section
     }
 }
+
+extension Optional {
+    var forceUnwrapped: Wrapped! {
+        return self
+    }
+}

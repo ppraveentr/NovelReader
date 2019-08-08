@@ -4,7 +4,7 @@
 <dict>
 	<key>default</key>
 	<array>
-		<string>NRRules_defaults</string>
+		<string>NRRulesDefaults</string>
 	</array>
 	<key>fetchNovelList</key>
 	<array>

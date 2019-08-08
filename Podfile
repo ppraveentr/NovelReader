@@ -3,10 +3,10 @@ use_frameworks!
 
 target 'NovelReader' do
  pod 'GoogleSignIn'
- pod 'AppCenter'
+ pod 'SwiftLint'
 end
 
 target 'NovelReaderDemo' do
  pod 'GoogleSignIn'
- pod 'AppCenter'
+ pod 'SwiftLint'
 end

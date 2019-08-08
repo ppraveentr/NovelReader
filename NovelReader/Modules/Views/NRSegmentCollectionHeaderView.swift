@@ -9,15 +9,15 @@
 import Foundation
 
 class NRSegmentCollectionHeaderView: UICollectionReusableView {
-    var segmentedControl: FTSegmentedControl? = nil
+    var segmentedControl: FTSegmentedControl?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupSegmentView()
     }
 
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         self.setupSegmentView()
     }
 
@@ -28,11 +28,12 @@ class NRSegmentCollectionHeaderView: UICollectionReusableView {
 
         self.theme = FTThemeStyle.defaultStyle
 
-        segmentedControl = FTSegmentedControl(items: items) { (segment) in
+        segmentedControl = FTSegmentedControl(items: items) { segment in
             FTLog(segment)
-        };
+        }
 
-        self.pin(view: segmentedControl!, edgeOffsets: FTEdgeOffsets(10))
+        if let segment = segmentedControl {
+            self.pin(view: segment, edgeOffsets: FTEdgeOffsets(10))
+        }
     }
-
 }

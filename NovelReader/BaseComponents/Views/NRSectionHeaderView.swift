@@ -10,18 +10,18 @@ import Foundation
 
 class NRSectionHeaderView: UICollectionReusableView {
 
-    var titleString: String? = nil
+    var titleString: String?
+    var tapAction: FTAppBaseCompletionBlock?
 
     // Left Button
     @IBOutlet
-    fileprivate var leftButton_: FTButton? = nil
+    fileprivate var buttonLeft: FTButton?
     @IBOutlet
-    fileprivate var titleLabel: FTLabel? = nil
+    fileprivate var titleLabel: FTLabel?
     // Right Button
     @IBOutlet
-    fileprivate var rightButton_: FTButton? = nil
-    var tapAction: FTAppBaseCompletionBlock? = nil
-    fileprivate var contentXIBView: UIView? = nil
+    fileprivate var buttonRight: FTButton?
+    fileprivate var contentXIBView: UIView?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,10 +42,11 @@ class NRSectionHeaderView: UICollectionReusableView {
         self.titleString = title
 
         if let image = image {
-            self.leftButton_?.isHidden = false
-            self.leftButton_?.setImage(image, for: .normal)
-        } else {
-            self.leftButton_?.removeSubviews()
+            self.buttonLeft?.isHidden = false
+            self.buttonLeft?.setImage(image, for: .normal)
+        }
+        else {
+            self.buttonLeft?.removeSubviews()
         }
 
         // Left Button
@@ -54,18 +55,19 @@ class NRSectionHeaderView: UICollectionReusableView {
 
     func setRightButton(title: String? = nil, image: UIImage? = nil, tapAction: FTAppBaseCompletionBlock? = nil) {
         // Right Button
-        self.rightButton_?.isHidden = false
+        self.buttonRight?.isHidden = false
         if !title.isNilOrEmpty {
-            self.rightButton_?.setTitle(title, for: .normal)
-            self.rightButton_?.setImage(image, for: .normal)
-        } else {
-            self.rightButton_?.setBackgroundImage(image, for: .normal)
+            self.buttonRight?.setTitle(title, for: .normal)
+            self.buttonRight?.setImage(image, for: .normal)
+        }
+        else {
+            self.buttonRight?.setBackgroundImage(image, for: .normal)
         }
 
         // Button ACtion
         if tapAction != nil {
             self.tapAction = tapAction
-            self.rightButton_?.addTapActionBlock {
+            self.buttonRight?.addTapActionBlock {
                 self.tapAction?(true, nil)
             }
         }
@@ -73,7 +75,6 @@ class NRSectionHeaderView: UICollectionReusableView {
 
     // MARK: Customise View
     var rightButton: FTButton? {
-        return rightButton_
+        return buttonRight
     }
-
 }

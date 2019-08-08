@@ -18,9 +18,9 @@ protocol NRNovelCollectionViewModelProtocal {
 class NRNovelCollectionViewModel {
 
     weak var lifeDelegate: NRNovelCollectionLifeCycleDelegate?
-    var modelStack: FTServiceModel? = nil
+    var modelStack: FTServiceModel?
 
-    init(delegate: NRNovelCollectionLifeCycleDelegate, modelStack: FTServiceModel? = nil) {
+    init(delegate: NRNovelCollectionLifeCycleDelegate, modelStack: FTServiceModel?) {
         self.lifeDelegate = delegate
         self.modelStack = modelStack
     }
@@ -45,20 +45,20 @@ class NRNovelCollectionViewModel {
 
         switch novelCollectionType {
         case .recentNovel:
-            NRServiceProvider.fetchRecentUpdateList() { [weak self] (novelList) in
+            NRServiceProvider.fetchRecentUpdateList { [weak self] novelList in
                 if let novelList = novelList {
                     self?.currentNovelList = novelList
-                } else {
+                }
+                else {
                     self?.lifeDelegate?.showRetryAlert()
                 }
             }
         case .topNovel:
-            NRServiceProvider.fetchNovelList(novel: self.novel) { [weak self] (novelList) in
+            NRServiceProvider.fetchNovelList(novel: self.novel) { [weak self] novelList in
                 self?.currentNovelList = self?.novel?.novelList
             }
         }
     }
-
 }
 
 // MARK: NRNovelCollectionType
@@ -78,11 +78,15 @@ enum NRNovelCollectionType: Int {
     func registerCell(_ collectionView: UICollectionView) {
         switch self {
         case .recentNovel:
-            collectionView.register(NRRecentNovelCollectionViewCell.getNIBFile(),
-                                    forCellWithReuseIdentifier: self.cellIdentifier)
+            collectionView.register(
+                NRRecentNovelCollectionViewCell.getNIBFile(),
+                forCellWithReuseIdentifier: self.cellIdentifier
+            )
         case .topNovel:
-            collectionView.register(NRNovelCollectionViewCell.getNIBFile(),
-                                    forCellWithReuseIdentifier: self.cellIdentifier)
+            collectionView.register(
+                NRNovelCollectionViewCell.getNIBFile(),
+                forCellWithReuseIdentifier: self.cellIdentifier
+            )
         }
     }
 
@@ -94,5 +98,4 @@ enum NRNovelCollectionType: Int {
             return NRNovelCollectionViewCell.fromNib() as? NRNovelCollectionViewCell
         }
     }
-
 }

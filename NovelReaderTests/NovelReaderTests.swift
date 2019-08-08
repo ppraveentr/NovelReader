@@ -7,7 +7,8 @@
 //
 
 import XCTest
-@testable import NovelReader
+@testable
+import NovelReader
 
 class NovelReaderTests: XCTestCase {
     
@@ -22,14 +23,6 @@ class NovelReaderTests: XCTestCase {
     }
     
     func testExample() {
-       
+        XCTAssert(true)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

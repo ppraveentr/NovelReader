@@ -9,5 +9,5 @@
 import Foundation
 
 final class NRSearchModel: FTServiceModel {
-    var keyword: String? = nil
+    var keyword: String?
 }

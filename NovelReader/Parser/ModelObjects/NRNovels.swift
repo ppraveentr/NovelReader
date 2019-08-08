@@ -8,12 +8,11 @@
 
 final class NRNovels: FTServiceModel {
     // TODO: Yet to setup model creator for Static data
-    var state: String? = nil
-    var novelList: [NRNovel]? = nil
-    var page: String? = nil
-    var totalItems: String? = nil
-    var type: String? = nil
-    var category: String? = nil
-
-     var response: [NRNovel]? = nil
+    var state: String?
+    var novelList: [NRNovel]?
+    var page: String?
+    var totalItems: String?
+    var type: String?
+    var category: String?
+    var response: [NRNovel]?
 }

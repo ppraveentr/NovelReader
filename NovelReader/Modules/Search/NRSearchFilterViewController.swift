@@ -12,7 +12,7 @@ class NRSearchFilterViewController: NRBaseCollectionViewController {
 
     // View Model
     lazy var viewModel = {
-        return NRSearchFilterViewModel(delegate: self, modelStack: self.modelStack as? NRSearchFilterModel)
+        NRSearchFilterViewModel(delegate: self, modelStack: self.modelStack as? NRSearchFilterModel)
     }()
 
     // MARK: Life Cycle
@@ -35,20 +35,23 @@ class NRSearchFilterViewController: NRBaseCollectionViewController {
     func setupColletionView() {
 
         // Register Cell
-        collectionView.register(NRSelectionCollectionViewCell.getNIBFile(),
-                                forCellWithReuseIdentifier: kSearchFilterCellIdentifier)
+        collectionView.register(
+            NRSelectionCollectionViewCell.getNIBFile(),
+            forCellWithReuseIdentifier: kSearchFilterCellIdentifier
+        )
 
         // Collection Header: Segment Control
-        collectionView.register(NRSectionHeaderView.self,
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: "headerCell")
+        collectionView.register(
+            NRSectionHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: "headerCell"
+        )
     }
 
     @IBAction
-    func resetSelection(_ sender: Any) {
+    private func resetSelection(_ sender: Any) {
         viewModel.resetSelection()
     }
-
 }
 
 extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout {
@@ -65,13 +68,19 @@ extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout {
     // viewForSupplementaryElement
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell", for: indexPath) as! NRSectionHeaderView
+        let headerView = collectionView.dequeueReusableSupplementaryView(
+            ofKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: "headerCell",
+            for: indexPath
+        )
 
-        headerView.setSectionHeader(title: viewModel.sectionTitleAt(indexPath), image: nil)
-        headerView.setRightButton(title: nil, image: #imageLiteral(resourceName: "close-circle")) { [weak self] (_,_) in
-            self?.viewModel.resetSelection(indexPath)
+        if let headerView = headerView as? NRSectionHeaderView {
+            headerView.setSectionHeader(title: viewModel.sectionTitleAt(indexPath), image: nil)
+            headerView.setRightButton(title: nil, image: #imageLiteral(resourceName: "close-circle")) { [weak self] _, _ in
+                self?.viewModel.resetSelection(indexPath)
+            }
         }
-
+        
         return headerView
     }
 
@@ -98,13 +107,10 @@ extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout {
         // Update User selection
         viewModel.updateSelection(indexPath)
     }
-
 }
 
 extension NRSearchFilterViewController: NRSearchFilterViewModelProtocal {
-
     func refreshCollectionView() {
         self.configureColletionView()
     }
-
 }

@@ -12,7 +12,7 @@ class NRSearchCollectionViewController: NRBaseCollectionViewController {
 
     // View Model
     lazy var viewModel = {
-        return NRSearchCollectionViewModel(delegate: self, modelStack: self.modelStack as? FTServiceModel)
+        NRSearchCollectionViewModel(delegate: self, modelStack: self.modelStack as? FTServiceModel)
     }()
 
     // MARK: Life Cycle
@@ -25,15 +25,16 @@ class NRSearchCollectionViewController: NRBaseCollectionViewController {
     func setupColletionView() {
 
         // Register Cell
-        collectionView.register(NRNovelCollectionViewCell.getNIBFile(),
-                                forCellWithReuseIdentifier: kNovelCellIdentifier)
+        collectionView.register(
+            NRNovelCollectionViewCell.getNIBFile(),
+            forCellWithReuseIdentifier: kNovelCellIdentifier
+        )
 
         // Collection Header: Segment Control
         self.topPinnedButtonView = NRSearchBarHeaderView(delegate: self)
 
         refreshCollectionView()
     }
-    
 }
 
 extension NRSearchCollectionViewController: NRSearchCollectionViewModelProtocal {
@@ -41,7 +42,6 @@ extension NRSearchCollectionViewController: NRSearchCollectionViewModelProtocal 
     func refreshCollectionView() {
         self.configureColletionView()
     }
-
 }
 
 extension NRSearchCollectionViewController: UISearchBarDelegate {
@@ -56,7 +56,6 @@ extension NRSearchCollectionViewController: UISearchBarDelegate {
             viewModel.searchNovel(keywoard: searchText)
         }
     }
-
 }
 
 extension NRSearchCollectionViewController: UICollectionViewDelegateFlowLayout {
@@ -84,5 +83,4 @@ extension NRSearchCollectionViewController: UICollectionViewDelegateFlowLayout {
         let cur = viewModel.currentNovelList?[indexPath.row]
         self.performSegue(withIdentifier: "kShowNovelChapterList", sender: cur)
     }
-    
 }

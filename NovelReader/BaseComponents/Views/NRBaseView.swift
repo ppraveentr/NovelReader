@@ -10,4 +10,3 @@ import Foundation
 
 class NRBaseView: FTBaseView {
 }
-

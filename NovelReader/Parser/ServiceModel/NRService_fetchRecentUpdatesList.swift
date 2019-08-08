@@ -8,8 +8,7 @@
 
 import Foundation
 
-typealias FTServicefetchRecentUpdatesList = NRService_fetchRecentUpdatesList
-final class NRService_fetchRecentUpdatesList: FTServiceClient {
+final class FTServicefetchRecentUpdatesList: FTServiceClient {
     var inputStack: FTServiceModel?
     var serviceName = "fetchRecentUpdatesList"
     var responseStackType: Any? = NRNovels.self
@@ -17,5 +16,4 @@ final class NRService_fetchRecentUpdatesList: FTServiceClient {
     init(inputStack: FTServiceModel?) {
         self.inputStack = inputStack
     }
-    
 }

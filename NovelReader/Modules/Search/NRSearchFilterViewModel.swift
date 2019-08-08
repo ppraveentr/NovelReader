@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias NRSearchFilterCollectionLifeCycleDelegate = (FTBaseViewController & NRSearchFilterViewModelProtocal)
+typealias NRSearchFilterLifeCycleDelegate = (FTBaseViewController & NRSearchFilterViewModelProtocal)
 
 protocol NRSearchFilterViewModelProtocal {
     func refreshCollectionView()
@@ -16,14 +16,14 @@ protocol NRSearchFilterViewModelProtocal {
 
 class NRSearchFilterViewModel {
 
-    weak var lifeDelegate: NRSearchFilterCollectionLifeCycleDelegate?
+    weak var lifeDelegate: NRSearchFilterLifeCycleDelegate?
     var modelStack: NRSearchFilterModel? = nil {
         didSet {
             lifeDelegate?.refreshCollectionView()
         }
     }
 
-    init(delegate: NRSearchFilterCollectionLifeCycleDelegate, modelStack: NRSearchFilterModel? = nil) {
+    init(delegate: NRSearchFilterLifeCycleDelegate, modelStack: NRSearchFilterModel? = nil) {
         self.lifeDelegate = delegate
         self.modelStack = modelStack
     }
@@ -33,12 +33,10 @@ class NRSearchFilterViewModel {
 
     // get-filter from backend
     func updateSearchFilter() {
-        NRServiceProvider.searchFilter { [weak self] (filter) in
-            print(filter ?? "")
+        NRServiceProvider.searchFilter { [weak self] filter in
             self?.modelStack = filter
         }
     }
-
 }
 
 // MARK: Search Filter Cell Content
@@ -70,19 +68,19 @@ extension NRSearchFilterViewModel {
     var sectionItems: [NRSearchFilterCellContent] {
         var items = [NRSearchFilterCellContent]()
 
-        if  let type = modelStack?.novelType, type.count > 0 {
+        if  let type = modelStack?.novelType, type.isEmpty {
             let item = NRSearchFilterCellContent(type: .novelType, contentArray: type)
             items.append(item)
         }
-        if  let type = modelStack?.genres, type.count > 0 {
+        if  let type = modelStack?.genres, type.isEmpty {
             let item = NRSearchFilterCellContent(type: .genres, contentArray: type)
             items.append(item)
         }
-        if  let type = modelStack?.language, type.count > 0 {
+        if  let type = modelStack?.language, type.isEmpty {
             let item = NRSearchFilterCellContent(type: .language, contentArray: type)
             items.append(item)
         }
-        if  let type = modelStack?.completed, type.count > 0 {
+        if  let type = modelStack?.completed, type.isEmpty {
             let item = NRSearchFilterCellContent(type: .completed, contentArray: type)
             items.append(item)
         }
@@ -116,8 +114,8 @@ extension NRSearchFilterViewModel {
     // MARK: User Selection
     func isSelected(_ indexPath: IndexPath) -> (found: Bool, index: Int) {
 
-        let indexArray = selectedIndexPath.filter { (index) -> Bool in
-            return index == indexPath
+        let indexArray = selectedIndexPath.filter { index -> Bool in
+            index == indexPath
         }
 
         if let filterIndex = indexArray.first, let index = selectedIndexPath.firstIndex(of: filterIndex) {
@@ -131,7 +129,8 @@ extension NRSearchFilterViewModel {
         let index = isSelected(indexPath)
         if index.found {
             selectedIndexPath.remove(at: index.index)
-        } else {
+        }
+        else {
             selectedIndexPath.append(indexPath)
         }
 
@@ -142,20 +141,18 @@ extension NRSearchFilterViewModel {
         removeObjects(forSection: indexPath?.section)
         lifeDelegate?.refreshCollectionView()
     }
-
 }
 
 extension NRSearchFilterViewModel {
     
     func removeObjects(forSection section: Int?) {
         if let section = section {
-            selectedIndexPath.removeAll { (localIndex) -> Bool in
-                return section == localIndex.section
+            selectedIndexPath.removeAll { localIndex -> Bool in
+                section == localIndex.section
             }
         }
         else {
             selectedIndexPath.removeAll()
         }
     }
-
 }

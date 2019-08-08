@@ -12,7 +12,7 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
 
     // View Model
     lazy var viewModel = {
-        return NRNovelCollectionViewModel(delegate: self, modelStack: self.modelStack as? FTServiceModel)
+        NRNovelCollectionViewModel(delegate: self, modelStack: self.modelStack as? FTServiceModel)
     }()
 
     // View lifecycle
@@ -38,16 +38,17 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
         NRNovelCollectionType.recentNovel.registerCell(collectionView)
 
         // Collection Header: Segment Control
-        collectionView.register(NRSegmentCollectionHeaderView.self,
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: "headerCell")
+        collectionView.register(
+            NRSegmentCollectionHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: "headerCell"
+        )
     }
 
     // Navigation bar Button action
     override func rightButtonAction() {
         performSegue(withIdentifier: kSearchStoryboardID, sender: nil)
     }
-    
 }
 
 // MARK: Fetch - Novels from backend
@@ -55,17 +56,17 @@ extension NRNovelCollectionViewController: NRNovelCollectionViewModelProtocal {
 
     func showRetryAlert() {
         let alert = UIAlertController(title: kServiceFailureAlertTitle, message: kServiceFailureAlertMessage, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: kRetryString, style: .default, handler: { [weak self] action in
+        let action = UIAlertAction(title: kRetryString, style: .default) { [weak self] _ in
             self?.viewModel.fetchNovelList()
-        }))
+        }
+        alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
 
     // Updates novelCollectionType, which interns fetchNovelList from backend
     func updateNovelSegment(segmentControl: FTSegmentedControl) {
-        viewModel.novelCollectionType = NRNovelCollectionType(rawValue: segmentControl.selectedSegmentIndex)!
+        viewModel.novelCollectionType = NRNovelCollectionType(rawValue: segmentControl.selectedSegmentIndex) ?? .recentNovel
     }
-
 }
 
 // MARK: UICollectionView delegates
@@ -74,11 +75,17 @@ extension NRNovelCollectionViewController: UICollectionViewDelegateFlowLayout {
     // viewForSupplementaryElement
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell", for: indexPath) as! NRSegmentCollectionHeaderView
+        let headerView = collectionView.dequeueReusableSupplementaryView(
+            ofKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: "headerCell",
+            for: indexPath
+        )
 
-        headerView.segmentedControl?.handler = { [unowned self] (sender) in
-            if let segment = headerView.segmentedControl {
-                self.updateNovelSegment(segmentControl: segment)
+        if let headerView = headerView as? NRSegmentCollectionHeaderView {
+            headerView.segmentedControl?.handler = { [unowned self] _ in
+                if let segment = headerView.segmentedControl {
+                    self.updateNovelSegment(segmentControl: segment)
+                }
             }
         }
 
@@ -93,7 +100,7 @@ extension NRNovelCollectionViewController: UICollectionViewDelegateFlowLayout {
     // cellForItem
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cellIdentifier =  viewModel.novelCollectionType.cellIdentifier
+        let cellIdentifier = viewModel.novelCollectionType.cellIdentifier
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
 
         if let cur = viewModel.currentNovelList?[indexPath.row] {
@@ -110,9 +117,9 @@ extension NRNovelCollectionViewController: UICollectionViewDelegateFlowLayout {
 
         if viewModel.novelCollectionType == .recentNovel {
             self.performSegue(withIdentifier: kShowNovelReaderView, sender: cur)
-        } else {
+        }
+        else {
             self.performSegue(withIdentifier: kShowNovelChapterList, sender: cur)
         }
     }
-    
 }
