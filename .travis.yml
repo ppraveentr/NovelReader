@@ -1,10 +1,19 @@
-language: objective-c
-xcode_workspace: NovelReader.xcworkspace # path to your xcodeproj folder
-osx_image: xcode10.0
+dist: trusty
+language: swift
+xcode_workspace: NovelReader.xcworkspace
+osx_image: xcode10.2
+xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone X
 xcode_scheme: NovelReader
 script:
- #- xcodebuild -scheme NovelReader  -sdk "iphonesimulator" -configuration Release -arch x86_64 -arch i386 only_active_arch=no defines_module=yes
- #- xcodebuild -workspace "FTMobileCoreSampleWorkspace.xcworkspace" -scheme FTMobileCoreSample -sdk "iphoneos" -configuration Release -arch arm64 -arch armv7 -arch armv7s only_active_arch=no defines_module=yes
- #Without pod dependency 
- #- xcodebuild -project NovelReader.xcodeproj -scheme NovelReader -arch x86_64 -arch i386 -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO build | xcpretty -c
- - xcodebuild -workspace "NovelReader.xcworkspace" -scheme NovelReader -arch x86_64 -arch i386 -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO build | xcpretty -c
+- xcodebuild -workspace "NovelReader.xcworkspace" -scheme NovelReader -arch x86_64
+  -arch i386 -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO build | xcpretty -c
+- sonar-scanner -X
+#SECURE_TOKEN
+env:
+  global:
+  - secure: c4k/CBUkTS4qVqte8V6mMZAJHQHr8orklOVdMUCICCdt6atz0AHVJLL4wnc9zn4YUTqh08q/mYG+3uANiYIap1nV4GVAxuPvr2++AoEsujONH8wZO2gAKYWS+mdlSQgOXwV8nSMzwx7pRjCs6hAw+JfzsM5XSvRv/Q3awmxF8zKWqjB7IHm6tPppSEP1jDJwwVedXVkEmPnjV7EuL69lz9Neqlj+QtE8yuzejrjTZxEYlucpsYySLMe3hW8oHW2m8Jcujvbec76yrPp0277Ekv1TEirPWipMruDP6VyyRhL9gVGQkOfXuUEJrAeMR2aDisi4Vo+vr/sNIzFqxxxETTbayk+RFKIFRijGWRC+r2bliYg+v6R0Cak1yU/lf57bkJI8eXnAvqQ+Ys6iCEK4DhdlbnDGo11/Qcp3cB+C/rYUkK1A3UXRugpZBwUZgX9poV+KY+G8r4pcFXW3sS3qBCwObfoizoa/35TFLTHcTDqRZNEruTd02SRS7V3eGergloWSKCBV2yOxrnoxv0wk8PxnDggS5wU4D3wsGcWdVEoFpEBHT9oThcTLGG3XVIermmtYtAE3rfFg42l1LIUXT+8erHr4Ww3BmEm0lgxlHyx13JRMiuHcU0oo6U/QPkz7b0F0FxYIxyFcvHGa7nJVZOTrZM/XKP/5fuD+msgrWqU=
+addons:
+  sonarcloud:
+    organization: ppraveentr-github
+    token:
+      secure: c4k/CBUkTS4qVqte8V6mMZAJHQHr8orklOVdMUCICCdt6atz0AHVJLL4wnc9zn4YUTqh08q/mYG+3uANiYIap1nV4GVAxuPvr2++AoEsujONH8wZO2gAKYWS+mdlSQgOXwV8nSMzwx7pRjCs6hAw+JfzsM5XSvRv/Q3awmxF8zKWqjB7IHm6tPppSEP1jDJwwVedXVkEmPnjV7EuL69lz9Neqlj+QtE8yuzejrjTZxEYlucpsYySLMe3hW8oHW2m8Jcujvbec76yrPp0277Ekv1TEirPWipMruDP6VyyRhL9gVGQkOfXuUEJrAeMR2aDisi4Vo+vr/sNIzFqxxxETTbayk+RFKIFRijGWRC+r2bliYg+v6R0Cak1yU/lf57bkJI8eXnAvqQ+Ys6iCEK4DhdlbnDGo11/Qcp3cB+C/rYUkK1A3UXRugpZBwUZgX9poV+KY+G8r4pcFXW3sS3qBCwObfoizoa/35TFLTHcTDqRZNEruTd02SRS7V3eGergloWSKCBV2yOxrnoxv0wk8PxnDggS5wU4D3wsGcWdVEoFpEBHT9oThcTLGG3XVIermmtYtAE3rfFg42l1LIUXT+8erHr4Ww3BmEm0lgxlHyx13JRMiuHcU0oo6U/QPkz7b0F0FxYIxyFcvHGa7nJVZOTrZM/XKP/5fuD+msgrWqU=
