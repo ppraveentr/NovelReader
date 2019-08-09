@@ -123,9 +123,6 @@
 		DEE935142094CDA000B10398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEE935122094CDA000B10398 /* Assets.xcassets */; };
 		DEE9351620959E1D00B10398 /* NRService_fetchChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9351520959E1C00B10398 /* NRService_fetchChapter.swift */; };
 		DEE9351720959E1D00B10398 /* NRService_fetchChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9351520959E1C00B10398 /* NRService_fetchChapter.swift */; };
-		DEEA25F620A204A20015CCC0 /* FTMobileCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA25F320A204A20015CCC0 /* FTMobileCore.framework */; };
-		DEEA25F720A204A20015CCC0 /* FTMobileCoreUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA25F420A204A20015CCC0 /* FTMobileCoreUI.framework */; };
-		DEEA25F820A204A20015CCC0 /* FTCoreUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA25F520A204A20015CCC0 /* FTCoreUtility.framework */; };
 		DEEA25F920A204AB0015CCC0 /* FTCoreUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA25F520A204A20015CCC0 /* FTCoreUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEEA25FA20A204AB0015CCC0 /* FTMobileCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA25F320A204A20015CCC0 /* FTMobileCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEEA25FB20A204AB0015CCC0 /* FTMobileCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA25F420A204A20015CCC0 /* FTMobileCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -245,7 +242,7 @@
 		};
 		DEA7E19B1F4970400002C148 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
@@ -254,7 +251,7 @@
 				DEEA25FB20A204AB0015CCC0 /* FTMobileCoreUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -368,9 +365,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D94274DD536B93166A55D1 /* Pods_NovelReader.framework in Frameworks */,
-				DEEA25F620A204A20015CCC0 /* FTMobileCore.framework in Frameworks */,
-				DEEA25F820A204A20015CCC0 /* FTCoreUtility.framework in Frameworks */,
-				DEEA25F720A204A20015CCC0 /* FTMobileCoreUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
