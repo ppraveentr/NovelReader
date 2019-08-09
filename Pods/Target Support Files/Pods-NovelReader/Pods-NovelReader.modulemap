@@ -1,6 +1,0 @@
-framework module Pods_NovelReader {
-  umbrella header "Pods-NovelReader-umbrella.h"
-
-  export *
-  module * { export * }
-}
