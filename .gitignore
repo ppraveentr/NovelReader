@@ -60,8 +60,6 @@ fastlane/screenshots
 fastlane/test_output
 
 Frameworks/
-*/*.xcworkspace/xcshareddata/
-*/xcshareddata/
 
 .DS_Store
 
