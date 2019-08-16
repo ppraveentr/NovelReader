@@ -4,8 +4,8 @@ xcode_destination: platform=iOS Simulator,name=iPhone X
 xcode_scheme: NovelReader
 xcode_workspace: NovelReader.xcworkspace
 script:
- - pod repo update
- - pod install --repo-update
+#- pod repo update
+#- pod install --repo-update
 #- xcodebuild -project NovelReader.xcodeproj -scheme NovelReader -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO build | xcpretty -c
  - xcodebuild -scheme NovelReader -workspace "NovelReader.xcworkspace" -sdk iphonesimulator build test | xcpretty -c
 after_success:
