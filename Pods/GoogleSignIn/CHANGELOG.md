@@ -1,3 +1,43 @@
+# 2019-8-14 -- v5.0.0
+- Changes to GIDSignIn
+    - `uiDelegate` has been replaced with `presentingViewController`.
+    - `hasAuthInKeychain` has been replaced with `hasPreviousSignIn`.
+    - `signInSilently` has been replaced with `restorePreviousSignIn`.
+    - Removed deprecated `kGIDSignInErrorCodeNoSignInHandlersInstalled` error code.
+- Changes to GIDAuthentication
+    - Removed deprecated methods `getAccessTokenWithHandler:` and `refreshAccessTokenWithHandler:`.
+- Changes to GIDGoogleUser
+    - Removed deprecated property `accessibleScopes`, use `grantedScopes` instead.
+- Adds dependencies on AppAuth and GTMAppAuth.
+- Removes the dependency on GoogleToolboxForMac.
+- Drops support for iOS 7.
+
+# 2018-11-26 -- v4.4.0
+- Removes the dependency on GTM OAuth 2.
+
+# 2018-10-1 -- v4.3.0
+- Supports Google's Enterprise Mobile Management.
+
+# 2018-8-10 -- v4.2.0
+- Adds `grantedScopes` to `GIDGoogleUser`, allowing confirmation of which scopes
+  have been granted after a successful sign-in.
+- Deprecates `accessibleScopes` in `GIDGoogleUser`, use `grantedScopes` instead.
+- Localizes `GIDSignInButton` for hi (Hindi) and fr-CA (French (Canada)).
+- Adds dependency to the system `LocalAuthentication` framework.
+
+# 2018-1-8 -- v4.1.2
+- Add `pod try` support for the GoogleSignIn CocoaPod.
+
+# 2017-10-17 -- v4.1.1
+- Fixes an issue that `GIDSignInUIDelegate`'s `signInWillDispatch:error:` was
+  not called on iOS 11. Please note that it is intended that neither
+  `signIn:presentViewController:` nor `signIn:dismissViewController:` is called
+  on iOS 11 because SFAuthenticationSession is not presented by the app's view
+  controller.
+
+# 2017-09-13 -- v4.1.0
+- Uses SFAuthenticationSession on iOS 11.
+
 # 2017-02-06 -- v4.0.2
 - No longer depends on GoogleAppUtilities.
 

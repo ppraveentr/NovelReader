@@ -1,8 +1,12 @@
-#import <Foundation/Foundation.h>
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 
-#import "MSLogWithProperties.h"
+#import "MSLogWithNameAndProperties.h"
 
-@interface MSEventLog : MSLogWithProperties
+@class MSEventProperties;
+@class MSMetadataExtension;
+
+@interface MSEventLog : MSLogWithNameAndProperties
 
 /**
  * Unique identifier for this event.
@@ -10,8 +14,8 @@
 @property(nonatomic, copy) NSString *eventId;
 
 /**
- * Name of the event.
+ * Event properties.
  */
-@property(nonatomic, copy) NSString *name;
+@property(nonatomic, strong) MSEventProperties *typedProperties;
 
 @end

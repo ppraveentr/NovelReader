@@ -1,52 +1,56 @@
 PODS:
-  - AppCenter (1.6.0):
-    - AppCenter/Analytics (= 1.6.0)
-    - AppCenter/Crashes (= 1.6.0)
-  - AppCenter/Analytics (1.6.0):
+  - AppAuth (1.1.0):
+    - AppAuth/Core (= 1.1.0)
+    - AppAuth/ExternalUserAgent (= 1.1.0)
+  - AppAuth/Core (1.1.0)
+  - AppAuth/ExternalUserAgent (1.1.0)
+  - AppCenter (2.3.0):
+    - AppCenter/Analytics (= 2.3.0)
+    - AppCenter/Crashes (= 2.3.0)
+  - AppCenter/Analytics (2.3.0):
     - AppCenter/Core
-  - AppCenter/Core (1.6.0)
-  - AppCenter/Crashes (1.6.0):
+  - AppCenter/Core (2.3.0)
+  - AppCenter/Crashes (2.3.0):
     - AppCenter/Core
-  - GoogleSignIn (4.0.2):
-    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
-    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
-    - GTMOAuth2 (~> 1.0)
+  - GoogleSignIn (5.0.0):
+    - AppAuth (~> 1.1)
+    - GTMAppAuth (~> 1.0)
     - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleToolboxForMac/DebugUtils (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
-  - GoogleToolboxForMac/Defines (2.1.1)
-  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1)":
-    - GoogleToolboxForMac/DebugUtils (= 2.1.1)
-    - GoogleToolboxForMac/Defines (= 2.1.1)
-    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)"
-  - "GoogleToolboxForMac/NSString+URLArguments (2.1.1)"
-  - GTMOAuth2 (1.1.4):
+  - GTMAppAuth (1.0.0):
+    - AppAuth/Core (~> 1.0)
     - GTMSessionFetcher (~> 1.1)
-  - GTMSessionFetcher (1.1.11):
-    - GTMSessionFetcher/Full (= 1.1.11)
-  - GTMSessionFetcher/Core (1.1.11)
-  - GTMSessionFetcher/Full (1.1.11):
-    - GTMSessionFetcher/Core (= 1.1.11)
+  - GTMSessionFetcher (1.2.2):
+    - GTMSessionFetcher/Full (= 1.2.2)
+  - GTMSessionFetcher/Core (1.2.2)
+  - GTMSessionFetcher/Full (1.2.2):
+    - GTMSessionFetcher/Core (= 1.2.2)
+  - MobileCore (0.0.4.4)
 
 DEPENDENCIES:
   - AppCenter
   - GoogleSignIn
+  - MobileCore (from `~/xCodeProject/MobileCore`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
+    - AppAuth
     - AppCenter
     - GoogleSignIn
-    - GoogleToolboxForMac
-    - GTMOAuth2
+    - GTMAppAuth
     - GTMSessionFetcher
 
+EXTERNAL SOURCES:
+  MobileCore:
+    :path: "~/xCodeProject/MobileCore"
+
 SPEC CHECKSUMS:
-  AppCenter: 05e11ff99d3224131363abb61830172f5f28e53e
-  GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
-  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
-  GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
+  AppAuth: a08c77b389d259e1dd343010352dde2c0c5df689
+  AppCenter: 9784d2fc998c9bd0b8fbaf4fb9ed69526d12ce1a
+  GoogleSignIn: a62edd0516721d2a3db1259a5681b91f9b41c06a
+  GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
+  GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
+  MobileCore: 5939120c5e65821387adf24d74608ec444ea344d
 
-PODFILE CHECKSUM: e25d5d74fabaec015398cdf505f11fe30e458950
+PODFILE CHECKSUM: f9c206c54b29ddd0c0b277ddedd715b64ab06b38
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.7.1

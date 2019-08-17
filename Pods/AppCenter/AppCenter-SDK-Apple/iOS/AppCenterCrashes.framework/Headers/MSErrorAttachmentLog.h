@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 #import <Foundation/Foundation.h>
 
 #import "MSAbstractLog.h"
@@ -31,9 +34,7 @@
  *
  * @return An instance of `MSErrorAttachmentLog`.
  */
-- (instancetype)initWithFilename:(NSString *)filename
-                attachmentBinary:(NSData *)data
-                     contentType:(NSString *)contentType;
+- (instancetype)initWithFilename:(NSString *)filename attachmentBinary:(NSData *)data contentType:(NSString *)contentType;
 
 /**
  * Initialize an attachment with a given filename and text.

@@ -1,8 +1,10 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GTMOAuth2" "${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac" "${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/iOS" "${PODS_ROOT}/GoogleSignIn/Frameworks"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 $(inherited) GTM_OAUTH2_USE_FRAMEWORK_IMPORTS=1
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AppAuth" "${PODS_CONFIGURATION_BUILD_DIR}/GTMAppAuth" "${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher" "${PODS_CONFIGURATION_BUILD_DIR}/MobileCore" "${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/iOS" "${PODS_ROOT}/GoogleSignIn/Frameworks"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AppAuth/AppAuth.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GTMAppAuth/GTMAppAuth.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/MobileCore/MobileCore.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/GTMOAuth2/GTMOAuth2.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"sqlite3" -l"z" -framework "AppCenter" -framework "AppCenterAnalytics" -framework "AppCenterCrashes" -framework "CoreTelephony" -framework "CoreText" -framework "Foundation" -framework "GTMOAuth2" -framework "GTMSessionFetcher" -framework "GoogleSignIn" -framework "GoogleToolboxForMac" -framework "SafariServices" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"sqlite3" -l"z" -framework "AppAuth" -framework "AppCenter" -framework "AppCenterAnalytics" -framework "AppCenterCrashes" -framework "CoreGraphics" -framework "CoreTelephony" -framework "CoreText" -framework "Foundation" -framework "GTMAppAuth" -framework "GTMSessionFetcher" -framework "GoogleSignIn" -framework "LocalAuthentication" -framework "MobileCore" -framework "SafariServices" -framework "Security" -framework "SystemConfiguration" -framework "UIKit" -weak_framework "AuthenticationServices"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
