@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D49F49272308121D0062455A /* FTNovelReaderMockBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE81824C2084F8F6001316E5 /* FTNovelReaderMockBundle.bundle */; };
 		DE0173BD216148B7007F5546 /* NRBaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0173BC216148B7007F5546 /* NRBaseCollectionViewController.swift */; };
 		DE19ADC9217F80C400F58321 /* fetchChapter.json in Resources */ = {isa = PBXBuildFile; fileRef = DE19ADC7217F80C400F58321 /* fetchChapter.json */; };
 		DE19ADCA217F80C400F58321 /* fetchNovelChapters.json in Resources */ = {isa = PBXBuildFile; fileRef = DE19ADC8217F80C400F58321 /* fetchNovelChapters.json */; };
@@ -75,13 +74,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D49F4928230819C50062455A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DEA7E1381F496BAB0002C148 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DE81824B2084F8F6001316E5;
-			remoteInfo = FTNovelReaderMockBundle;
-		};
 		DEA7E1571F496BAB0002C148 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DEA7E1381F496BAB0002C148 /* Project object */;
@@ -522,7 +514,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D49F4929230819C50062455A /* PBXTargetDependency */,
 			);
 			name = NovelReader;
 			productName = NovelReader;
@@ -638,7 +629,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D49F49272308121D0062455A /* FTNovelReaderMockBundle.bundle in Resources */,
 				DEA7E1501F496BAB0002C148 /* LaunchScreen.storyboard in Resources */,
 				DEBC6538209764790057F649 /* NRNovelCollectionViewCell.xib in Resources */,
 				DE19ADCF217F864500F58321 /* NRSelectionCollectionViewCell.xib in Resources */,
@@ -811,11 +801,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D49F4929230819C50062455A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE81824B2084F8F6001316E5 /* FTNovelReaderMockBundle */;
-			targetProxy = D49F4928230819C50062455A /* PBXContainerItemProxy */;
-		};
 		DEA7E1581F496BAB0002C148 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DEA7E13F1F496BAB0002C148 /* NovelReader */;
