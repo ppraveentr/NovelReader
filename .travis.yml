@@ -6,12 +6,12 @@ osx_image: xcode10.2
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone X
 xcode_scheme: NovelReader
 before_install:
-    - pod --version
-    - pod setup --silent > /dev/null
-    - pod repo update --silent
-    - xcpretty --version
-    - xcodebuild -version
-    - xcodebuild -showsdks
+- pod --version
+- pod setup --silent > /dev/null
+- pod repo update --silent
+- xcpretty --version
+- xcodebuild -version
+- xcodebuild -showsdks
 script:
 - xcodebuild clean build -workspace "NovelReader.xcworkspace" -scheme "NovelReader" -configuration Release -sdk iphonesimulator | xcpretty -c
 - sonar-scanner -X
@@ -19,9 +19,9 @@ addons:
   sonarcloud:
     organization: ppraveentr-github
     token:
-      secure: bugUsvHJpY2EFbJmRAI+GG/VAuFu9F6fNxIbOZIAVwWtYAr06/lyTnOzD5Jdj26g/uZ/xyCvjsnR5STtdIvK7DSyC7gcjdMFYPgZCQoKHVQ2JiNa8TLKh/3iNiwt09B6zuF5m+wP0DiCE3j4x60psvFAdhFUQRxBgrI0Kjxe9X3KZrKtkbf1xtjC9u/728RgDbf8D3APp8zlos6AJw9JirGzaYxYTU6bTYfdzX5ZsNUHKfC32wv3XmHE+o11YitD0IVYYyHgQQtDUPN3W/kC5v47C6JF2m8LNldg50YdYTpGQ9wu6TEyztyUOf3sogDY9U9REV3hrMSu5+lNBVMQwUx5u6JMGfkLwlRFwaQgFAJwdt7HZxs/F7XD+9HPp+hhxsD+smxrE42AlNyUzPk/261hvCJLQ5b3Ad5Rsrl1e/T0pQVM4rSt/0mrTzNT8Ebs4p4qMPInxES4dcUEKYNdr/zQQcqmbQ7XSgXtr8vfGJVXJDQlejrdFAZ0T6+/j3uW1DGhWY3N6XL38MvkmbZmmnmHz2VDrCOyJAc57wHlWPPKzixk+mDUrZtDAhlA8/zrP5wM8cdNKmnP24W6KLgSmignzeGWaIPD1xG1G7RwlMpP2Ix5Q9m24wWm9lJHLKP1v8hc0ujIkaGz66I9N4Y6dbJQ1tOQmlLVS4E69QjwsfA=
+      secure: jIWNRFBlFJIXWwo8i7IuJmV7ASB0B0RyqGzZJAMx9Zp8ZcTBeScu1MH9QjsU6UTwkyg/mfrH99BrDhzcPhStY1Su0Q9zMu150bQwLDSL98VznyBc7vUL/DfxEy6yZNfc9JzZ9fsBlP6BKGs5dlRzyk2Fc4CkbdKWLUUPA6mqu/GECsAG3aDAc6xAgkWUo/spif8dTw1YwQsj8df/O6IIoZ/PAibIseYgndlMQr9w2tRIeY+zrQiZ9wtd/Dpmt66Y3/qDZ9YEMooFpdIYLRWKrNEvXa3Z+7Swq4rtPlJkF+5COP16uEzKJtOR6uNdTjHgxQ/AGmJj4GJqk2aHsAPowLJKFWqQdcw4brCOVeNf9ZZMWK5PhwqxFa7wcYAaMQQ6AzFP/iJNk4lYlOZNYF5eOoqY3UCqnsPPNBbcamt8tEWOpHRmB1HmDlpRa3cg3WRLpc+YopM8k9lLaHuL6scKuahA9oVkvJfxShTauIqlsIQJxkdOmF99kHAQZZ00gg5xlaNMZ9CI+DI2f7vy0AwvKLlpGsNJ/dxrjPh+urE9V+VHP50rbFgQ6KZGAm6J4NwMhdI1mZZErOAxSk20Z6NFliqQpztCoOl3EoKTAG+adY9RoOcnAp3sHbl5UdA13634HNspOyFf5Ewn7LI7FaMMtdn7aKtZyyjeFhUmGIr65wE=
 env:
   global:
-    secure: bugUsvHJpY2EFbJmRAI+GG/VAuFu9F6fNxIbOZIAVwWtYAr06/lyTnOzD5Jdj26g/uZ/xyCvjsnR5STtdIvK7DSyC7gcjdMFYPgZCQoKHVQ2JiNa8TLKh/3iNiwt09B6zuF5m+wP0DiCE3j4x60psvFAdhFUQRxBgrI0Kjxe9X3KZrKtkbf1xtjC9u/728RgDbf8D3APp8zlos6AJw9JirGzaYxYTU6bTYfdzX5ZsNUHKfC32wv3XmHE+o11YitD0IVYYyHgQQtDUPN3W/kC5v47C6JF2m8LNldg50YdYTpGQ9wu6TEyztyUOf3sogDY9U9REV3hrMSu5+lNBVMQwUx5u6JMGfkLwlRFwaQgFAJwdt7HZxs/F7XD+9HPp+hhxsD+smxrE42AlNyUzPk/261hvCJLQ5b3Ad5Rsrl1e/T0pQVM4rSt/0mrTzNT8Ebs4p4qMPInxES4dcUEKYNdr/zQQcqmbQ7XSgXtr8vfGJVXJDQlejrdFAZ0T6+/j3uW1DGhWY3N6XL38MvkmbZmmnmHz2VDrCOyJAc57wHlWPPKzixk+mDUrZtDAhlA8/zrP5wM8cdNKmnP24W6KLgSmignzeGWaIPD1xG1G7RwlMpP2Ix5Q9m24wWm9lJHLKP1v8hc0ujIkaGz66I9N4Y6dbJQ1tOQmlLVS4E69QjwsfA=
+  - secure: jIWNRFBlFJIXWwo8i7IuJmV7ASB0B0RyqGzZJAMx9Zp8ZcTBeScu1MH9QjsU6UTwkyg/mfrH99BrDhzcPhStY1Su0Q9zMu150bQwLDSL98VznyBc7vUL/DfxEy6yZNfc9JzZ9fsBlP6BKGs5dlRzyk2Fc4CkbdKWLUUPA6mqu/GECsAG3aDAc6xAgkWUo/spif8dTw1YwQsj8df/O6IIoZ/PAibIseYgndlMQr9w2tRIeY+zrQiZ9wtd/Dpmt66Y3/qDZ9YEMooFpdIYLRWKrNEvXa3Z+7Swq4rtPlJkF+5COP16uEzKJtOR6uNdTjHgxQ/AGmJj4GJqk2aHsAPowLJKFWqQdcw4brCOVeNf9ZZMWK5PhwqxFa7wcYAaMQQ6AzFP/iJNk4lYlOZNYF5eOoqY3UCqnsPPNBbcamt8tEWOpHRmB1HmDlpRa3cg3WRLpc+YopM8k9lLaHuL6scKuahA9oVkvJfxShTauIqlsIQJxkdOmF99kHAQZZ00gg5xlaNMZ9CI+DI2f7vy0AwvKLlpGsNJ/dxrjPh+urE9V+VHP50rbFgQ6KZGAm6J4NwMhdI1mZZErOAxSk20Z6NFliqQpztCoOl3EoKTAG+adY9RoOcnAp3sHbl5UdA13634HNspOyFf5Ewn7LI7FaMMtdn7aKtZyyjeFhUmGIr65wE=
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash)
