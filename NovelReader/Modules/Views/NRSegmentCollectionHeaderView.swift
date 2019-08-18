@@ -9,7 +9,7 @@
 import Foundation
 
 class NRSegmentCollectionHeaderView: UICollectionReusableView {
-    var segmentedControl: FTSegmentedControl? = nil
+    var segmentedControl: UISegmentedControl? = nil
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,7 +28,7 @@ class NRSegmentCollectionHeaderView: UICollectionReusableView {
 
         self.theme = FTThemeStyle.defaultStyle
 
-        segmentedControl = FTSegmentedControl(items: items) { (segment) in
+        segmentedControl = UISegmentedControl(items: items) { (segment) in
             FTLog(segment)
         };
 
