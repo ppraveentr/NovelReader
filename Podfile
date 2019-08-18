@@ -4,9 +4,5 @@ use_frameworks!
 target 'NovelReader' do
  pod 'GoogleSignIn'
  pod 'SwiftLint'
-end
-
-target 'NovelReaderDemo' do
- pod 'GoogleSignIn'
- pod 'SwiftLint'
+ pod 'MobileCore'
 end

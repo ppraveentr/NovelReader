@@ -57,7 +57,7 @@ class NRReaderViewController: NRBaseViewController {
         self.mainView?.pin(view: contentView)
 
         if let url = novelChapter?.identifier ?? novel?.identifier {
-            NRServiceProvider.getNovelChapter(url) { chapter in
+            NRServiceProvider.getNovelChapter(url) { [unowned self] (chapter) in
 
                 if let content = chapter?.shortTitle {
                     self.title = content

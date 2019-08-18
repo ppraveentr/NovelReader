@@ -23,7 +23,7 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
         viewModel.novelCollectionType = .recentNovel
 
         // View Title
-        self.setupNavigationbar(title: kNovelReaderTitle, leftCustomView: NRGoogleAuth.signInButton())
+        //self.setupNavigationbar(title: kNovelReaderTitle, leftCustomView: NRGoogleAuth.signInButton())
         rightNavigationBarButton(buttonType: .search)
 
         // Collection View
@@ -64,7 +64,7 @@ extension NRNovelCollectionViewController: NRNovelCollectionViewModelProtocal {
     }
 
     // Updates novelCollectionType, which interns fetchNovelList from backend
-    func updateNovelSegment(segmentControl: FTSegmentedControl) {
+    func updateNovelSegment(segmentControl: UISegmentedControl) {
         viewModel.novelCollectionType = NRNovelCollectionType(rawValue: segmentControl.selectedSegmentIndex) ?? .recentNovel
     }
 }

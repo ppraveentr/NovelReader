@@ -8,8 +8,8 @@
 
 import Foundation
 
-#if canImport(AppCenter)
 //MSAppCenter
+#if canImport(AppCenter)
 import AppCenter
 import AppCenterAnalytics
 import AppCenterCrashes
@@ -28,12 +28,7 @@ final class NRAppManager {
     static func setupApplication() {
         NRAppManager.sharedInstance.configureAppBase()
         NRAppManager.sharedInstance.configureAppTheme()
-        //GoogleSignIn
-        #if canImport(GoogleSignIn)
-        NRAppManager.sharedInstance.configureGoogleAuth()
-        #endif
-        //MSAppCenter
-        NRAppManager.sharedInstance.configureAppCenter()
+        //NRGoogleAuth.setupGoogleAuth()
     }
 
     // MARK: Model Binding
@@ -57,13 +52,13 @@ final class NRAppManager {
     func configDebug() {
         #if DEBUG
         // Console Loggin
-        FTLogger.enableConsoleLogging = true
+//        FTLogger.enableConsoleLogging = true
         // Debug-Postman
 //        FTMobileConfig.appBaseURL = kPostmanURL
         // Debug-only code
 //        FTMobileConfig.appBaseURL = kMockServerURL
-        FTMobileConfig.mockBundleResource = kMockBundleResource
-        FTMobileConfig.isMockData = kMockDataEnabled
+//        FTMobileConfig.mockBundleResource = kMockBundleResource
+//        FTMobileConfig.isMockData = kMockDataEnabled
         #endif
     }
     
@@ -78,7 +73,7 @@ final class NRAppManager {
     
     func configureGoogleAuth() {
         #if canImport(GoogleSignIn)
-        NRGoogleAuth.setupGoogleAuth()
+//        NRGoogleAuth.setupGoogleAuth()
         #endif
     }
 

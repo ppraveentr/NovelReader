@@ -8,5 +8,6 @@
 
 import Foundation
 
-class NRTabBarController: FTBaseTabBarController {
+class NRTabBarController: UITabBarController {
+
 }

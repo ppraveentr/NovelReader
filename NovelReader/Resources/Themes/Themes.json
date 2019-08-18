@@ -82,7 +82,7 @@
                 "backgroundColor": "appWhite"
             }
         },
-        "FTCollectionView": {
+        "UICollectionView": {
             "default": {
                 "backgroundColor": "clear"
             },
