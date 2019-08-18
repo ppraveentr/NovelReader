@@ -17,7 +17,7 @@ protocol NRSearchCollectionViewModelProtocal {
 class NRSearchCollectionViewModel {
 
     weak var lifeDelegate: NRSearchCollectionLifeCycleDelegate?
-    var modelStack: FTServiceModel? = nil
+    var modelStack: FTServiceModel?
 
     init(delegate: NRSearchCollectionLifeCycleDelegate, modelStack: FTServiceModel? = nil) {
         self.lifeDelegate = delegate
@@ -26,7 +26,7 @@ class NRSearchCollectionViewModel {
 
     // Update collectionView when contentList changes
     var currentNovelList: [NRNovel]? = [] {
-        didSet{
+        didSet {
             lifeDelegate?.refreshCollectionView()
         }
     }
@@ -37,9 +37,8 @@ class NRSearchCollectionViewModel {
             return
         }
 
-        NRServiceProvider.searchNovel(keyword: keywoard) { (novelList) in
+        NRServiceProvider.searchNovel(keyword: keywoard) { novelList in
             self.currentNovelList = novelList
         }
     }
-    
 }

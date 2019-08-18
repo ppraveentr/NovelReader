@@ -10,8 +10,10 @@ import Foundation
 
 class NRSelectionCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProtocol {
 
-    @IBOutlet var titleLabel: FTLabel?
-    @IBOutlet var checkMarkImage: UIImageView?
+    @IBOutlet
+    private var titleLabel: FTLabel?
+    @IBOutlet
+    private var checkMarkImage: UIImageView?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +27,8 @@ class NRSelectionCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellP
 
             if isSelected {
                 self.layer.borderColor = kNavigationBarColor.cgColor
-            } else {
+            }
+            else {
                 self.layer.borderColor = UIColor.gray.cgColor
             }
         }
@@ -54,7 +57,7 @@ class NRSelectionCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellP
         self.layer.shadowOffset = CGSize(width: 3, height: 3)
     }
 
-    override open func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes)
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes)
         -> UICollectionViewLayoutAttributes {
             setNeedsLayout()
             layoutIfNeeded()

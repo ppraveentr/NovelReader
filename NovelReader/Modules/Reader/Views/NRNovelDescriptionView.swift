@@ -10,13 +10,19 @@ import Foundation
 
 class NRNovelDescriptionView: FTView {
     
-    @IBOutlet var titleLabel: FTLabel?
-    @IBOutlet var descriptionLabel: FTLabel?
-    @IBOutlet var contentImageView: UIImageView?
+    @IBOutlet
+    private var titleLabel: FTLabel?
+    @IBOutlet
+    private var descriptionLabel: FTLabel?
+    @IBOutlet
+    private var contentImageView: UIImageView?
     
-    @IBOutlet var chapterLabel: FTLabel?
-    @IBOutlet var lastUpdateLabel: FTLabel?
-    @IBOutlet var viewsButton: FTButton?
+    @IBOutlet
+    private var chapterLabel: FTLabel?
+    @IBOutlet
+    private var lastUpdateLabel: FTLabel?
+    @IBOutlet
+    private var viewsButton: FTButton?
     
     func configureContent(content: AnyObject) {
         guard let novel = content as? NRNovel else {
@@ -36,5 +42,4 @@ class NRNovelDescriptionView: FTView {
         setNeedsLayout()
         layoutIfNeeded()
     }
-    
 }

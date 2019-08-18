@@ -1,17 +1,17 @@
 final class NRNovelChapter: FTServiceModel {
 
     // Request Model
-    var identifier: String? = nil
-    var shortTitle: String? = nil
-    var title: String? = nil
-    var content: String? = nil
-    var releaseDate: String? = nil
+    var identifier: String?
+    var shortTitle: String?
+    var title: String?
+    var content: String?
+    var releaseDate: String?
 
     // Response Model
-    var response: NRNovelChapter? = nil
+    var response: NRNovelChapter?
 
     /* Coding Keys */
-    enum CodingKeys: String, CodingKey  {
+    enum CodingKeys: String, CodingKey {
         case identifier
         case shortTitle
         case title = "name"
@@ -19,6 +19,4 @@ final class NRNovelChapter: FTServiceModel {
         case releaseDate
         case response
     }
-    
 }
-

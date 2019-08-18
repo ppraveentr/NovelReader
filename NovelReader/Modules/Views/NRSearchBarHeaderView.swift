@@ -17,8 +17,8 @@ class NRSearchBarHeaderView: FTView {
         self.setupSearchBar()
     }
 
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         self.setupSearchBar()
     }
 
@@ -42,5 +42,4 @@ class NRSearchBarHeaderView: FTView {
             self.pin(view: searchBar, edgeOffsets: .zero)
         }
     }
-    
 }

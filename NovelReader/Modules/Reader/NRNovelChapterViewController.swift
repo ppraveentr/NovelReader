@@ -21,13 +21,15 @@ class NRNovelChapterViewController: NRBaseTableViewController {
         tableView.backgroundColor = .clear
         tableView.register(NRNovelTableViewCell.getNIBFile(), forCellReuseIdentifier: kNovelCellIdentifier)
         
-        NRServiceProvider.getNovelChaptersList(novel!, completionHandler: { (novelResponse: NRNovel?) in
-            guard (novelResponse != nil) else {
+        NRServiceProvider.getNovelChaptersList(novel.forceUnwrapped) { [weak self] novelResponse in
+            guard novelResponse != nil, let self = self else {
                 return
             }
-            self.novel?.merge(data: novelResponse!)
-            self.configureContent(content: self.novel!)
-        })
+            if let novelResponse = novelResponse {
+                self.novel?.merge(data: novelResponse)
+            }
+            self.configureContent(content: self.novel.forceUnwrapped)
+        }
     }
     
     func configureContent(content: AnyObject) {
@@ -37,7 +39,6 @@ class NRNovelChapterViewController: NRBaseTableViewController {
             self.tableView.reloadData()
         }
     }
-    
 }
 
 extension NRNovelChapterViewController {
@@ -70,7 +71,6 @@ extension NRNovelChapterViewController {
         
         return cell
     }
-    
 }
 
 extension NRNovelChapterViewController {
@@ -81,7 +81,6 @@ extension NRNovelChapterViewController {
             self.performSegue(withIdentifier: kShowNovelReaderView, sender: cur)
         }
     }
-    
 }
 
 extension NRNovelChapterViewController {
@@ -93,9 +92,11 @@ extension NRNovelChapterViewController {
 //        searchBar.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 //        self.navigationItem.titleView = searchBar
 
-        self.setupNavigationbar(title: "",
-                                leftButton: self.navigationBarButton(buttonType: .stop),
-                                rightButton: self.navigationBarButton(buttonType: .bookmarks))
+        self.setupNavigationbar(
+            title: "",
+            leftButton: self.navigationBarButton(buttonType: .stop),
+            rightButton: self.navigationBarButton(buttonType: .bookmarks)
+        )
     }
     
     //     func setupToolBar() {

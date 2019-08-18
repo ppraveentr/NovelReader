@@ -9,17 +9,17 @@
 import Foundation
 
 final class NRFilterModel: FTServiceModel {
-    var data: String? = nil
-    var type: String? = nil
+    var data: String?
+    var type: String?
 }
 
 final class NRSearchFilterModel: FTServiceModel {
-    var keyword: String? = nil
+    var keyword: String?
 
-    var novelType: [NRFilterModel]? = nil
-    var language: [NRFilterModel]? = nil
-    var genres: [NRFilterModel]? = nil
-    var completed: [NRFilterModel]? = nil
+    var novelType: [NRFilterModel]?
+    var language: [NRFilterModel]?
+    var genres: [NRFilterModel]?
+    var completed: [NRFilterModel]?
 
     var response: NRSearchFilterModel?
 }

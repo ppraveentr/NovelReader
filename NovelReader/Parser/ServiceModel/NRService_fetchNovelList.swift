@@ -8,8 +8,7 @@
 
 import Foundation
 
-typealias FTServicefetchNovelList = NRService_fetchNovelList
-final class NRService_fetchNovelList: FTServiceClient {
+final class FTServicefetchNovelList: FTServiceClient {
 
     var serviceName = "fetchNovelList"
     var inputStack: NRNovels?
@@ -18,5 +17,4 @@ final class NRService_fetchNovelList: FTServiceClient {
     init(inputStack: FTServiceModel?) {
         self.inputStack = inputStack as? NRNovels
     }
-    
 }

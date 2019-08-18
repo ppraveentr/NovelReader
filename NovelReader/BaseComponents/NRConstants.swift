@@ -10,8 +10,12 @@ import Foundation
 
 // MARK: Application Theme
 let kThemeFileName = "Themes.json"
-let kNavigationBarColor = "#DF6E6E".hexColor()!
-let kBarColor = "#de6161".hexColor()!
+var kNavigationBarColor: UIColor {
+    return "#DF6E6E".hexColor() ?? UIColor.white
+}
+var kBarColor: UIColor {
+     return "#de6161".hexColor() ?? UIColor.black
+}
 
 let kReaderFontSize = 10
 let kReaderInitalFontSize = 140
@@ -30,7 +34,6 @@ let kPostmanURL = "https://9b5d34ef-b082-479b-87cb-a845d678b371.mock.pstmn.io"
 let kMockServerURL = "http://127.0.0.1:3000"
 let kMockBundleResource = "FTNovelReaderMockBundle.bundle".bundleURL()
 let kMockDataEnabled = true
-
 
 // MARK: Constantss
 let kServiceFailureAlertTitle = "Service Error!"

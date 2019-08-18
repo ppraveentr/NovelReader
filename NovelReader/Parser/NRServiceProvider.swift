@@ -8,14 +8,14 @@
 
 import Foundation
 
-class NRServiceProvider {
+enum NRServiceProvider {
 
     // Get list of all Novels
     static func fetchRecentUpdateList(_ completionHandler: @escaping (_ novelsList: [NRNovel]?) -> Swift.Void) {
 
         FTLoadingIndicator.show()
 
-        FTServicefetchRecentUpdatesList.make { (response) in
+        FTServicefetchRecentUpdatesList.make { response in
             FTLoadingIndicator.hide()
 
             let response = response.status.responseModel as? NRNovels
@@ -27,7 +27,7 @@ class NRServiceProvider {
     static func fetchNovelList(novel: NRNovels?, _ completionHandler: @escaping (_ novelsList: NRNovels?) -> Swift.Void) {
 
         FTLoadingIndicator.show()
-        FTServicefetchNovelList.make(modelStack: nil) { (response) in
+        FTServicefetchNovelList.make(modelStack: nil) { response in
             FTLoadingIndicator.hide()
 
             let res = response.status.responseModel as? NRNovels
@@ -51,14 +51,17 @@ class NRServiceProvider {
     }
     
     // Get list of all chapters from a single NRNovelObject
-    static func getNovelChaptersList(_ novel: NRNovel, getChapters: Bool = true,
-                                completionHandler: @escaping (_ novel: NRNovel?) -> Swift.Void) {
+    static func getNovelChaptersList(
+        _ novel: NRNovel,
+        getChapters: Bool = true,
+        completionHandler: @escaping (_ novel: NRNovel?) -> Swift.Void
+        ) {
 
         FTLoadingIndicator.show()
 
         let model: FTServiceModel = ["id": novel.identifier]
 
-        FTServicefetchNovelChapters.make(modelStack: model) { (response) in
+        FTServicefetchNovelChapters.make(modelStack: model) { response in
             FTLoadingIndicator.hide()
 
             let res = response.status.responseModel as? NRNovel
@@ -74,7 +77,7 @@ class NRServiceProvider {
 
         let model: FTServiceModel = ["id": identifier]
 
-        FTServicefetchChapter.make(modelStack: model) { (response) in
+        FTServicefetchChapter.make(modelStack: model) { response in
             FTLoadingIndicator.hide()
 
             let res = response.status.responseModel as? NRNovelChapter
@@ -83,15 +86,17 @@ class NRServiceProvider {
     }
 
     // Serch Novel
-    static func searchNovel(keyword: String,
-                                completionHandler: @escaping (_ novels: [NRNovel]?) -> Swift.Void) {
+    static func searchNovel(
+        keyword: String,
+        completionHandler: @escaping (_ novels: [NRNovel]?) -> Swift.Void
+        ) {
 
         FTLoadingIndicator.show()
 
         let model = NRSearchModel()
         model.keyword = keyword
 
-        FTServicesearchNovel.make(modelStack: model) { (response) in
+        FTServicesearchNovel.make(modelStack: model) { response in
             FTLoadingIndicator.hide()
 
             let res = response.status.responseModel as? NRNovels
@@ -104,12 +109,11 @@ class NRServiceProvider {
 
         FTLoadingIndicator.show()
 
-        FTServicesearchFilter.make(modelStack: nil) { (response) in
+        FTServicesearchFilter.make(modelStack: nil) { response in
             FTLoadingIndicator.hide()
 
             let res = response.status.responseModel as? NRSearchFilterModel
             completionHandler(res?.response)
         }
     }
-    
 }

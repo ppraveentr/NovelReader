@@ -510,6 +510,7 @@
 				DEA7E19B1F4970400002C148 /* Embed Frameworks */,
 				5226665313E4689E4DAE9BC8 /* [CP] Embed Pods Frameworks */,
 				3B40B5E9049E6B5CB415DFEB /* [CP] Copy Pods Resources */,
+				D4E36AF522FC258800985581 /* Run Script - swiftlint */,
 			);
 			buildRules = (
 			);
@@ -566,26 +567,29 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Praveen Prabhakar";
 				TargetAttributes = {
+					DE23237720551287004F1480 = {
+						LastSwiftMigration = 1030;
+					};
 					DE81824B2084F8F6001316E5 = {
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
 					};
 					DEA7E13F1F496BAB0002C148 = {
 						CreatedOnToolsVersion = 8.3.2;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 					};
 					DEA7E1551F496BAB0002C148 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = W6W48SVQX7;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DEA7E13F1F496BAB0002C148;
 					};
 					DEA7E1601F496BAB0002C148 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = W6W48SVQX7;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DEA7E13F1F496BAB0002C148;
 					};
