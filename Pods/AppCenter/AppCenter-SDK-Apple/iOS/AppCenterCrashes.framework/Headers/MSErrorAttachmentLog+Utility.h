@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 #import "MSErrorAttachmentLog.h"
 
 // Exporting symbols for category.
@@ -16,7 +19,7 @@ extern NSString *MSMSErrorLogAttachmentLogUtilityCategory;
 + (MSErrorAttachmentLog *)attachmentWithText:(NSString *)text filename:(NSString *)filename;
 
 /**
- * Create an attachement with a given filename and `NSData` object.
+ * Create an attachment with a given filename and `NSData` object.
  *
  * @param filename The filename the attachment should get. If nil will get an automatically generated filename.
  * @param data The attachment data as NSData.
@@ -24,8 +27,6 @@ extern NSString *MSMSErrorLogAttachmentLogUtilityCategory;
  *
  * @return An instance of `MSErrorAttachmentLog`.
  */
-+ (MSErrorAttachmentLog *)attachmentWithBinary:(NSData *)data
-                                      filename:(NSString *)filename
-                                   contentType:(NSString *)contentType;
++ (MSErrorAttachmentLog *)attachmentWithBinary:(NSData *)data filename:(NSString *)filename contentType:(NSString *)contentType;
 
 @end

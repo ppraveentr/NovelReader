@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import GoogleSignIn
+//import GoogleSignIn
 
 // Notification constans name
 public extension Notification.Name {
@@ -17,7 +17,7 @@ public extension Notification.Name {
 
 }
 
-class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
+class NRGoogleAuth: NSObject, GIDSignInDelegate {
 
     static let sharedInstance = NRGoogleAuth()
 
@@ -64,9 +64,9 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
 
         // SignIn Button Tap Action
         signButtton.addTapActionBlock {
-            if ((GIDSignIn.sharedInstance().uiDelegate != nil) || (GIDSignIn.sharedInstance().delegate != nil)) {
-                GIDSignIn.sharedInstance().signIn()
-            }
+//            if ((GIDSignIn.sharedInstance().uiDelegate != nil) || (GIDSignIn.sharedInstance().delegate != nil)) {
+//                GIDSignIn.sharedInstance().signIn()
+//            }
         }
 
         return signButtton
@@ -114,10 +114,10 @@ extension NRAppDelegate {
         return appDelegate.window!.rootViewController!
     }
 
-    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
-        -> Bool {
-            return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-                                                     annotation: options[UIApplication.OpenURLOptionsKey.annotation])
-    }
+//    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
+//        -> Bool {
+//            return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+//                                                     annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+//    }
     
 }

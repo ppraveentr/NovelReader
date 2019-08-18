@@ -7,56 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4DF54C61831F19E908183153 /* Pods_NovelReaderDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89900C8A827DDB8F2CA3DAC4 /* Pods_NovelReaderDemo.framework */; };
 		DE0173BD216148B7007F5546 /* NRBaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0173BC216148B7007F5546 /* NRBaseCollectionViewController.swift */; };
-		DE0173C121614957007F5546 /* NRBaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0173BC216148B7007F5546 /* NRBaseCollectionViewController.swift */; };
 		DE19ADC9217F80C400F58321 /* fetchChapter.json in Resources */ = {isa = PBXBuildFile; fileRef = DE19ADC7217F80C400F58321 /* fetchChapter.json */; };
 		DE19ADCA217F80C400F58321 /* fetchNovelChapters.json in Resources */ = {isa = PBXBuildFile; fileRef = DE19ADC8217F80C400F58321 /* fetchNovelChapters.json */; };
 		DE19ADCC217F837800F58321 /* NRSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19ADCB217F837800F58321 /* NRSelectionCollectionViewCell.swift */; };
-		DE19ADCD217F837800F58321 /* NRSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19ADCB217F837800F58321 /* NRSelectionCollectionViewCell.swift */; };
 		DE19ADCF217F864500F58321 /* NRSelectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE19ADCE217F864500F58321 /* NRSelectionCollectionViewCell.xib */; };
-		DE19ADD0217F864500F58321 /* NRSelectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE19ADCE217F864500F58321 /* NRSelectionCollectionViewCell.xib */; };
-		DE23237920551287004F1480 /* NRServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1B01F4996A90002C148 /* NRServiceProvider.swift */; };
-		DE23237B20551287004F1480 /* NRBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1AD1F4992030002C148 /* NRBaseTableViewController.swift */; };
-		DE23237D20551287004F1480 /* NRTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1A11F497B5D0002C148 /* NRTabBarController.swift */; };
-		DE23237E20551287004F1480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1431F496BAB0002C148 /* AppDelegate.swift */; };
-		DE23238220551287004F1480 /* NRBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1A01F497B5D0002C148 /* NRBaseViewController.swift */; };
-		DE23238620551287004F1480 /* NRAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1B61F49A67F0002C148 /* NRAppManager.swift */; };
-		DE23238820551287004F1480 /* NRBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1A51F497B6C0002C148 /* NRBaseView.swift */; };
-		DE23238920551287004F1480 /* NRServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A775C204AB8D5008B19ED /* NRServiceConstants.swift */; };
-		DE23239320551287004F1480 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA7E14E1F496BAB0002C148 /* LaunchScreen.storyboard */; };
 		DE28567C20946CC2003153C6 /* fetchNovelList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE28567B20946CC2003153C6 /* fetchNovelList.json */; };
 		DE383478217253B100DD4B27 /* NRSearchBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE383477217253B100DD4B27 /* NRSearchBarHeaderView.swift */; };
-		DE3834792172543A00DD4B27 /* NRSearchBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE383477217253B100DD4B27 /* NRSearchBarHeaderView.swift */; };
 		DE38347B2172545300DD4B27 /* NRSegmentCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38347A2172545300DD4B27 /* NRSegmentCollectionHeaderView.swift */; };
-		DE38347C2172547300DD4B27 /* NRSegmentCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38347A2172545300DD4B27 /* NRSegmentCollectionHeaderView.swift */; };
-		DE38347D217257CC00DD4B27 /* NRNovelCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4FAC9A21635B18006EF94B /* NRNovelCollectionViewModel.swift */; };
 		DE38347F217265A000DD4B27 /* NRSearchFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38347E217265A000DD4B27 /* NRSearchFilterViewController.swift */; };
 		DE3834812172666C00DD4B27 /* NRService_searchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3834802172666C00DD4B27 /* NRService_searchFilter.swift */; };
-		DE3834822172666C00DD4B27 /* NRService_searchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3834802172666C00DD4B27 /* NRService_searchFilter.swift */; };
 		DE383484217266C000DD4B27 /* NRSearchFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE383483217266C000DD4B27 /* NRSearchFilterModel.swift */; };
-		DE383485217266C000DD4B27 /* NRSearchFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE383483217266C000DD4B27 /* NRSearchFilterModel.swift */; };
-		DE383486217267AA00DD4B27 /* NRSearchFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38347E217265A000DD4B27 /* NRSearchFilterViewController.swift */; };
 		DE4EBE662067B6F5008AC70B /* NRService_fetchNovelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EBE652067B6F5008AC70B /* NRService_fetchNovelList.swift */; };
-		DE4EBE672067B6F5008AC70B /* NRService_fetchNovelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EBE652067B6F5008AC70B /* NRService_fetchNovelList.swift */; };
 		DE4FAC9B21635B18006EF94B /* NRNovelCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4FAC9A21635B18006EF94B /* NRNovelCollectionViewModel.swift */; };
 		DE5082322167D21400F3B26F /* NRService_searchNovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5082312167D21400F3B26F /* NRService_searchNovel.swift */; };
-		DE5082362167D28100F3B26F /* NRService_searchNovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5082312167D21400F3B26F /* NRService_searchNovel.swift */; };
 		DE5A775D204AB8D5008B19ED /* NRServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A775C204AB8D5008B19ED /* NRServiceConstants.swift */; };
 		DE818246208356BA001316E5 /* NRService_fetchRecentUpdatesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE818242208356BA001316E5 /* NRService_fetchRecentUpdatesList.swift */; };
-		DE818247208356BA001316E5 /* NRService_fetchRecentUpdatesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE818242208356BA001316E5 /* NRService_fetchRecentUpdatesList.swift */; };
-		DE8182542084F912001316E5 /* FTNovelReaderMockBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE81824C2084F8F6001316E5 /* FTNovelReaderMockBundle.bundle */; };
 		DE8182592085020A001316E5 /* fetchRecentUpdatesList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE8182562085020A001316E5 /* fetchRecentUpdatesList.json */; };
 		DE84280A20558FE8006605C0 /* NRNovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280520558FE7006605C0 /* NRNovel.swift */; };
-		DE84280B20558FE8006605C0 /* NRNovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280520558FE7006605C0 /* NRNovel.swift */; };
 		DE84280C20558FE8006605C0 /* NRNovelChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280620558FE7006605C0 /* NRNovelChapter.swift */; };
-		DE84280D20558FE8006605C0 /* NRNovelChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280620558FE7006605C0 /* NRNovelChapter.swift */; };
 		DE88E7252180BC7A009433B8 /* NRUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88E7242180BC7A009433B8 /* NRUtility.swift */; };
-		DE88E7262180BC7A009433B8 /* NRUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88E7242180BC7A009433B8 /* NRUtility.swift */; };
 		DE88E7282180C2D7009433B8 /* NRSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88E7272180C2D7009433B8 /* NRSectionHeaderView.swift */; };
-		DE88E7292180C2D7009433B8 /* NRSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88E7272180C2D7009433B8 /* NRSectionHeaderView.swift */; };
 		DE88E72B2180C549009433B8 /* NRSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE88E72A2180C549009433B8 /* NRSectionHeaderView.xib */; };
-		DE88E72C2180C549009433B8 /* NRSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE88E72A2180C549009433B8 /* NRSectionHeaderView.xib */; };
 		DEA13C94217CBF5500C572E1 /* searchFilter.json in Resources */ = {isa = PBXBuildFile; fileRef = DEA13C93217CBF5500C572E1 /* searchFilter.json */; };
 		DEA7E1441F496BAB0002C148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1431F496BAB0002C148 /* AppDelegate.swift */; };
 		DEA7E1501F496BAB0002C148 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA7E14E1F496BAB0002C148 /* LaunchScreen.storyboard */; };
@@ -69,150 +41,39 @@
 		DEA7E1B11F4996A90002C148 /* NRServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1B01F4996A90002C148 /* NRServiceProvider.swift */; };
 		DEA7E1B71F49A67F0002C148 /* NRAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1B61F49A67F0002C148 /* NRAppManager.swift */; };
 		DEAD341F2058263C0064C46A /* Themes.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAD34162058263C0064C46A /* Themes.json */; };
-		DEAD34202058263C0064C46A /* Themes.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAD34162058263C0064C46A /* Themes.json */; };
 		DEAD3422205826660064C46A /* Bindings in Resources */ = {isa = PBXBuildFile; fileRef = DEAD3421205826660064C46A /* Bindings */; };
-		DEAD3423205826660064C46A /* Bindings in Resources */ = {isa = PBXBuildFile; fileRef = DEAD3421205826660064C46A /* Bindings */; };
-		DEB91E11217975A000D9FFB9 /* FTMobileCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA45CB0205513E7008FA401 /* FTMobileCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DEB91E12217975A300D9FFB9 /* FTCoreUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA45C9A205513CF008FA401 /* FTCoreUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DEB91E13217975AA00D9FFB9 /* FTMobileCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA45CA6205513E3008FA401 /* FTMobileCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEBC650620970CB50057F649 /* NRBaseViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650520970CB50057F649 /* NRBaseViewController+Utility.swift */; };
-		DEBC650720970CB50057F649 /* NRBaseViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650520970CB50057F649 /* NRBaseViewController+Utility.swift */; };
-		DEBC650E20970E1E0057F649 /* NRGoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */; };
-		DEBC650F20970E1E0057F649 /* NRGoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */; };
 		DEBC65142097601A0057F649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC65132097601A0057F649 /* Main.storyboard */; };
-		DEBC65152097601A0057F649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC65132097601A0057F649 /* Main.storyboard */; };
 		DEBC6532209764790057F649 /* NovelReader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6520209764790057F649 /* NovelReader.storyboard */; };
-		DEBC6533209764790057F649 /* NovelReader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6520209764790057F649 /* NovelReader.storyboard */; };
 		DEBC6534209764790057F649 /* NRReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC6521209764790057F649 /* NRReaderViewController.swift */; };
-		DEBC6535209764790057F649 /* NRReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC6521209764790057F649 /* NRReaderViewController.swift */; };
 		DEBC6536209764790057F649 /* NRNovelCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC6522209764790057F649 /* NRNovelCollectionViewController.swift */; };
-		DEBC6537209764790057F649 /* NRNovelCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC6522209764790057F649 /* NRNovelCollectionViewController.swift */; };
 		DEBC6538209764790057F649 /* NRNovelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6524209764790057F649 /* NRNovelCollectionViewCell.xib */; };
-		DEBC6539209764790057F649 /* NRNovelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6524209764790057F649 /* NRNovelCollectionViewCell.xib */; };
 		DEBC653A209764790057F649 /* NRRecentNovelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6525209764790057F649 /* NRRecentNovelCollectionViewCell.xib */; };
-		DEBC653B209764790057F649 /* NRRecentNovelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6525209764790057F649 /* NRRecentNovelCollectionViewCell.xib */; };
 		DEBC6540209764790057F649 /* NRNovelDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC6528209764790057F649 /* NRNovelDescriptionView.swift */; };
-		DEBC6541209764790057F649 /* NRNovelDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC6528209764790057F649 /* NRNovelDescriptionView.swift */; };
 		DEBC6542209764790057F649 /* NRNovelDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6529209764790057F649 /* NRNovelDescriptionView.xib */; };
-		DEBC6543209764790057F649 /* NRNovelDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6529209764790057F649 /* NRNovelDescriptionView.xib */; };
 		DEBC6544209764790057F649 /* NRNovelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC652A209764790057F649 /* NRNovelTableViewCell.swift */; };
-		DEBC6545209764790057F649 /* NRNovelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC652A209764790057F649 /* NRNovelTableViewCell.swift */; };
 		DEBC6546209764790057F649 /* NRNovelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC652B209764790057F649 /* NRNovelCollectionViewCell.swift */; };
-		DEBC6547209764790057F649 /* NRNovelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC652B209764790057F649 /* NRNovelCollectionViewCell.swift */; };
 		DEBC654A209764790057F649 /* NRNovelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBC652D209764790057F649 /* NRNovelTableViewCell.xib */; };
-		DEBC654B209764790057F649 /* NRNovelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBC652D209764790057F649 /* NRNovelTableViewCell.xib */; };
 		DEBC654C209764790057F649 /* NRRecentNovelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC652E209764790057F649 /* NRRecentNovelCollectionViewCell.swift */; };
-		DEBC654D209764790057F649 /* NRRecentNovelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC652E209764790057F649 /* NRRecentNovelCollectionViewCell.swift */; };
 		DEBC654E209764790057F649 /* NRNovelChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC652F209764790057F649 /* NRNovelChapterViewController.swift */; };
-		DEBC654F209764790057F649 /* NRNovelChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC652F209764790057F649 /* NRNovelChapterViewController.swift */; };
 		DEBC6550209764790057F649 /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6531209764790057F649 /* SearchStoryboard.storyboard */; };
-		DEBC6551209764790057F649 /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6531209764790057F649 /* SearchStoryboard.storyboard */; };
 		DEBC65552097661F0057F649 /* NRSearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC65542097661F0057F649 /* NRSearchCollectionViewController.swift */; };
-		DEBC65562097661F0057F649 /* NRSearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC65542097661F0057F649 /* NRSearchCollectionViewController.swift */; };
 		DED799F8217DB2290021116A /* NRBaseScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED799F7217DB2290021116A /* NRBaseScrollViewController.swift */; };
-		DED799FC217DB27C0021116A /* NRBaseScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED799F7217DB2290021116A /* NRBaseScrollViewController.swift */; };
 		DED79A00217DD6740021116A /* NRSearchFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED799FF217DD6740021116A /* NRSearchFilterViewModel.swift */; };
-		DED79A01217DD6740021116A /* NRSearchFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED799FF217DD6740021116A /* NRSearchFilterViewModel.swift */; };
 		DEDC0A2F2068BCC80013D84F /* NovelServiceRules.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDC0A2E2068BCC80013D84F /* NovelServiceRules.plist */; };
-		DEDC0A302068BCC80013D84F /* NovelServiceRules.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDC0A2E2068BCC80013D84F /* NovelServiceRules.plist */; };
 		DEDE27202069522300E4C992 /* NRRules_fetchNovelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE271B2069522300E4C992 /* NRRules_fetchNovelList.swift */; };
-		DEDE27212069522300E4C992 /* NRRules_fetchNovelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE271B2069522300E4C992 /* NRRules_fetchNovelList.swift */; };
 		DEDE27222069522300E4C992 /* NRRules_defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE271C2069522300E4C992 /* NRRules_defaults.swift */; };
-		DEDE27232069522300E4C992 /* NRRules_defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE271C2069522300E4C992 /* NRRules_defaults.swift */; };
 		DEE935132094CDA000B10398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEE935122094CDA000B10398 /* Assets.xcassets */; };
-		DEE935142094CDA000B10398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEE935122094CDA000B10398 /* Assets.xcassets */; };
 		DEE9351620959E1D00B10398 /* NRService_fetchChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9351520959E1C00B10398 /* NRService_fetchChapter.swift */; };
-		DEE9351720959E1D00B10398 /* NRService_fetchChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9351520959E1C00B10398 /* NRService_fetchChapter.swift */; };
-		DEEA25F620A204A20015CCC0 /* FTMobileCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA25F320A204A20015CCC0 /* FTMobileCore.framework */; };
-		DEEA25F720A204A20015CCC0 /* FTMobileCoreUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA25F420A204A20015CCC0 /* FTMobileCoreUI.framework */; };
-		DEEA25F820A204A20015CCC0 /* FTCoreUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA25F520A204A20015CCC0 /* FTCoreUtility.framework */; };
-		DEEA25F920A204AB0015CCC0 /* FTCoreUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA25F520A204A20015CCC0 /* FTCoreUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DEEA25FA20A204AB0015CCC0 /* FTMobileCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA25F320A204A20015CCC0 /* FTMobileCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DEEA25FB20A204AB0015CCC0 /* FTMobileCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA25F420A204A20015CCC0 /* FTMobileCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEF2411C215E6DE400F7B0C6 /* NRConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF2411B215E6DE400F7B0C6 /* NRConstants.swift */; };
-		DEF2411D215E6DE400F7B0C6 /* NRConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF2411B215E6DE400F7B0C6 /* NRConstants.swift */; };
 		DEF76490208341DD00E6F614 /* NRService_fetchNovelChapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7648C208341DD00E6F614 /* NRService_fetchNovelChapters.swift */; };
-		DEF76491208341DD00E6F614 /* NRService_fetchNovelChapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7648C208341DD00E6F614 /* NRService_fetchNovelChapters.swift */; };
 		DEF8D593206783B5001AFEC2 /* NRNovels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF8D58E20678310001AFEC2 /* NRNovels.swift */; };
-		DEF8D594206783B6001AFEC2 /* NRNovels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF8D58E20678310001AFEC2 /* NRNovels.swift */; };
 		DEFB28302171FEBB00B0E06B /* NRSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFB282F2171FEBB00B0E06B /* NRSearchModel.swift */; };
-		DEFB28342171FF2B00B0E06B /* NRSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFB282F2171FEBB00B0E06B /* NRSearchModel.swift */; };
 		DEFB28362171FF6C00B0E06B /* NRSearchCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFB28352171FF6C00B0E06B /* NRSearchCollectionViewModel.swift */; };
-		DEFB28372171FFBD00B0E06B /* NRSearchCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFB28352171FF6C00B0E06B /* NRSearchCollectionViewModel.swift */; };
 		F8D94274DD536B93166A55D1 /* Pods_NovelReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A680179A183DD1D3D78732CB /* Pods_NovelReader.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DE81825B20850375001316E5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DEA7E1381F496BAB0002C148 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DE81824B2084F8F6001316E5;
-			remoteInfo = FTNovelReaderMockBundle;
-		};
-		DEA45C99205513CF008FA401 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DEA45C94205513CF008FA401 /* FTCoreUtility.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DE680B131F2BBD9500A9F68C;
-			remoteInfo = FTCoreUtility;
-		};
-		DEA45C9B205513CF008FA401 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DEA45C94205513CF008FA401 /* FTCoreUtility.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DE680B1C1F2BBD9500A9F68C;
-			remoteInfo = FTCoreUtilityTests;
-		};
-		DEA45C9D205513DE008FA401 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DEA45C94205513CF008FA401 /* FTCoreUtility.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DE680B121F2BBD9500A9F68C;
-			remoteInfo = FTCoreUtility;
-		};
-		DEA45CA5205513E3008FA401 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DEA45C9F205513E3008FA401 /* FTMobileCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DE9221A61EF28C9B000C8FC7;
-			remoteInfo = FTMobileCore;
-		};
-		DEA45CA7205513E3008FA401 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DEA45C9F205513E3008FA401 /* FTMobileCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DE9221AF1EF28C9C000C8FC7;
-			remoteInfo = FTMobileCoreTests;
-		};
-		DEA45CAF205513E7008FA401 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DEA45CA9205513E7008FA401 /* FTMobileCoreUI.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DE1485161F10B13600A250A6;
-			remoteInfo = FTMobileCoreUI;
-		};
-		DEA45CB1205513E7008FA401 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DEA45CA9205513E7008FA401 /* FTMobileCoreUI.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DEB569771F17DC2600B5F187;
-			remoteInfo = FTMobileCoreUITests;
-		};
-		DEA45CB3205513ED008FA401 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DEA45C9F205513E3008FA401 /* FTMobileCore.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DE9221A51EF28C9B000C8FC7;
-			remoteInfo = FTMobileCore;
-		};
-		DEA45CB5205513F0008FA401 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DEA45CA9205513E7008FA401 /* FTMobileCoreUI.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DE1485151F10B13600A250A6;
-			remoteInfo = FTMobileCoreUI;
-		};
 		DEA7E1571F496BAB0002C148 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DEA7E1381F496BAB0002C148 /* Project object */;
@@ -230,31 +91,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		DE23239B20551287004F1480 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				DEB91E13217975AA00D9FFB9 /* FTMobileCore.framework in Embed Frameworks */,
-				DEB91E12217975A300D9FFB9 /* FTCoreUtility.framework in Embed Frameworks */,
-				DEB91E11217975A000D9FFB9 /* FTMobileCoreUI.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DEA7E19B1F4970400002C148 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DEEA25F920A204AB0015CCC0 /* FTCoreUtility.framework in Embed Frameworks */,
-				DEEA25FA20A204AB0015CCC0 /* FTMobileCore.framework in Embed Frameworks */,
-				DEEA25FB20A204AB0015CCC0 /* FTMobileCoreUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -269,7 +114,6 @@
 		DE19ADC8217F80C400F58321 /* fetchNovelChapters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetchNovelChapters.json; sourceTree = "<group>"; };
 		DE19ADCB217F837800F58321 /* NRSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE19ADCE217F864500F58321 /* NRSelectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NRSelectionCollectionViewCell.xib; sourceTree = "<group>"; };
-		DE2323A220551287004F1480 /* NovelReaderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NovelReaderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE28567B20946CC2003153C6 /* fetchNovelList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetchNovelList.json; sourceTree = "<group>"; };
 		DE383477217253B100DD4B27 /* NRSearchBarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRSearchBarHeaderView.swift; sourceTree = "<group>"; };
 		DE38347A2172545300DD4B27 /* NRSegmentCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRSegmentCollectionHeaderView.swift; sourceTree = "<group>"; };
@@ -290,9 +134,6 @@
 		DE88E7272180C2D7009433B8 /* NRSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRSectionHeaderView.swift; sourceTree = "<group>"; };
 		DE88E72A2180C549009433B8 /* NRSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NRSectionHeaderView.xib; sourceTree = "<group>"; };
 		DEA13C93217CBF5500C572E1 /* searchFilter.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = searchFilter.json; sourceTree = "<group>"; };
-		DEA45C94205513CF008FA401 /* FTCoreUtility.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FTCoreUtility.xcodeproj; path = ../../MobileCore/FTCoreUtility/FTCoreUtility.xcodeproj; sourceTree = "<group>"; };
-		DEA45C9F205513E3008FA401 /* FTMobileCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FTMobileCore.xcodeproj; path = ../../MobileCore/FTMobileCore/FTMobileCore.xcodeproj; sourceTree = "<group>"; };
-		DEA45CA9205513E7008FA401 /* FTMobileCoreUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FTMobileCoreUI.xcodeproj; path = ../../MobileCore/FTMobileCoreUI/FTMobileCoreUI.xcodeproj; sourceTree = "<group>"; };
 		DEA7E1401F496BAB0002C148 /* NovelReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NovelReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA7E1431F496BAB0002C148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEA7E14F1F496BAB0002C148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -336,9 +177,6 @@
 		DEDE271C2069522300E4C992 /* NRRules_defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRRules_defaults.swift; sourceTree = "<group>"; };
 		DEE935122094CDA000B10398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEE9351520959E1C00B10398 /* NRService_fetchChapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRService_fetchChapter.swift; sourceTree = "<group>"; };
-		DEEA25F320A204A20015CCC0 /* FTMobileCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FTMobileCore.framework; sourceTree = "<group>"; };
-		DEEA25F420A204A20015CCC0 /* FTMobileCoreUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FTMobileCoreUI.framework; sourceTree = "<group>"; };
-		DEEA25F520A204A20015CCC0 /* FTCoreUtility.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FTCoreUtility.framework; sourceTree = "<group>"; };
 		DEF2411B215E6DE400F7B0C6 /* NRConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRConstants.swift; sourceTree = "<group>"; };
 		DEF7648C208341DD00E6F614 /* NRService_fetchNovelChapters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRService_fetchNovelChapters.swift; sourceTree = "<group>"; };
 		DEF8D58E20678310001AFEC2 /* NRNovels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRNovels.swift; sourceTree = "<group>"; };
@@ -348,14 +186,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DE23238A20551287004F1480 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4DF54C61831F19E908183153 /* Pods_NovelReaderDemo.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DE8182492084F8F6001316E5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -368,9 +198,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D94274DD536B93166A55D1 /* Pods_NovelReader.framework in Frameworks */,
-				DEEA25F620A204A20015CCC0 /* FTMobileCore.framework in Frameworks */,
-				DEEA25F820A204A20015CCC0 /* FTCoreUtility.framework in Frameworks */,
-				DEEA25F720A204A20015CCC0 /* FTMobileCoreUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,33 +286,6 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		DEA45C95205513CF008FA401 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DEA45C9A205513CF008FA401 /* FTCoreUtility.framework */,
-				DEA45C9C205513CF008FA401 /* FTCoreUtilityTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DEA45CA0205513E3008FA401 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DEA45CA6205513E3008FA401 /* FTMobileCore.framework */,
-				DEA45CA8205513E3008FA401 /* FTMobileCoreTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DEA45CAA205513E7008FA401 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DEA45CB0205513E7008FA401 /* FTMobileCoreUI.framework */,
-				DEA45CB2205513E7008FA401 /* FTMobileCoreUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		DEA7E1371F496BAB0002C148 = {
 			isa = PBXGroup;
 			children = (
@@ -505,7 +305,6 @@
 				DEA7E1401F496BAB0002C148 /* NovelReader.app */,
 				DEA7E1561F496BAB0002C148 /* NovelReaderTests.xctest */,
 				DEA7E1611F496BAB0002C148 /* NovelReaderUITests.xctest */,
-				DE2323A220551287004F1480 /* NovelReaderDemo.app */,
 				DE81824C2084F8F6001316E5 /* FTNovelReaderMockBundle.bundle */,
 			);
 			name = Products;
@@ -548,12 +347,6 @@
 		DEA7E1831F496D950002C148 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DEEA25F520A204A20015CCC0 /* FTCoreUtility.framework */,
-				DEEA25F320A204A20015CCC0 /* FTMobileCore.framework */,
-				DEEA25F420A204A20015CCC0 /* FTMobileCoreUI.framework */,
-				DEA45CA9205513E7008FA401 /* FTMobileCoreUI.xcodeproj */,
-				DEA45C9F205513E3008FA401 /* FTMobileCore.xcodeproj */,
-				DEA45C94205513CF008FA401 /* FTCoreUtility.xcodeproj */,
 				A680179A183DD1D3D78732CB /* Pods_NovelReader.framework */,
 				89900C8A827DDB8F2CA3DAC4 /* Pods_NovelReaderDemo.framework */,
 			);
@@ -689,31 +482,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DE23237720551287004F1480 /* NovelReaderDemo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE23239F20551287004F1480 /* Build configuration list for PBXNativeTarget "NovelReaderDemo" */;
-			buildPhases = (
-				810E16F089087BE60285965A /* [CP] Check Pods Manifest.lock */,
-				DE23237820551287004F1480 /* Sources */,
-				DE23238A20551287004F1480 /* Frameworks */,
-				DE23238E20551287004F1480 /* Resources */,
-				DE23239B20551287004F1480 /* Embed Frameworks */,
-				E83B24A414A425C09676EC88 /* [CP] Embed Pods Frameworks */,
-				1E0241702F80F4887ED17F93 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DE81825C20850375001316E5 /* PBXTargetDependency */,
-				DEA45CB6205513F0008FA401 /* PBXTargetDependency */,
-				DEA45CB4205513ED008FA401 /* PBXTargetDependency */,
-				DEA45C9E205513DE008FA401 /* PBXTargetDependency */,
-			);
-			name = NovelReaderDemo;
-			productName = NovelReader;
-			productReference = DE2323A220551287004F1480 /* NovelReaderDemo.app */;
-			productType = "com.apple.product-type.application";
-		};
 		DE81824B2084F8F6001316E5 /* FTNovelReaderMockBundle */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE81824F2084F8F6001316E5 /* Build configuration list for PBXNativeTarget "FTNovelReaderMockBundle" */;
@@ -834,24 +602,9 @@
 			mainGroup = DEA7E1371F496BAB0002C148;
 			productRefGroup = DEA7E1411F496BAB0002C148 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = DEA45C95205513CF008FA401 /* Products */;
-					ProjectRef = DEA45C94205513CF008FA401 /* FTCoreUtility.xcodeproj */;
-				},
-				{
-					ProductGroup = DEA45CA0205513E3008FA401 /* Products */;
-					ProjectRef = DEA45C9F205513E3008FA401 /* FTMobileCore.xcodeproj */;
-				},
-				{
-					ProductGroup = DEA45CAA205513E7008FA401 /* Products */;
-					ProjectRef = DEA45CA9205513E7008FA401 /* FTMobileCoreUI.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				DEA7E13F1F496BAB0002C148 /* NovelReader */,
-				DE23237720551287004F1480 /* NovelReaderDemo */,
 				DEA7E1551F496BAB0002C148 /* NovelReaderTests */,
 				DEA7E1601F496BAB0002C148 /* NovelReaderUITests */,
 				DE81824B2084F8F6001316E5 /* FTNovelReaderMockBundle */,
@@ -859,74 +612,7 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		DEA45C9A205513CF008FA401 /* FTCoreUtility.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FTCoreUtility.framework;
-			remoteRef = DEA45C99205513CF008FA401 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DEA45C9C205513CF008FA401 /* FTCoreUtilityTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = FTCoreUtilityTests.xctest;
-			remoteRef = DEA45C9B205513CF008FA401 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DEA45CA6205513E3008FA401 /* FTMobileCore.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FTMobileCore.framework;
-			remoteRef = DEA45CA5205513E3008FA401 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DEA45CA8205513E3008FA401 /* FTMobileCoreTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = FTMobileCoreTests.xctest;
-			remoteRef = DEA45CA7205513E3008FA401 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DEA45CB0205513E7008FA401 /* FTMobileCoreUI.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FTMobileCoreUI.framework;
-			remoteRef = DEA45CAF205513E7008FA401 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DEA45CB2205513E7008FA401 /* FTMobileCoreUITests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = FTMobileCoreUITests.xctest;
-			remoteRef = DEA45CB1205513E7008FA401 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
-		DE23238E20551287004F1480 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE8182542084F912001316E5 /* FTNovelReaderMockBundle.bundle in Resources */,
-				DE23239320551287004F1480 /* LaunchScreen.storyboard in Resources */,
-				DEBC6543209764790057F649 /* NRNovelDescriptionView.xib in Resources */,
-				DEAD3423205826660064C46A /* Bindings in Resources */,
-				DEBC654B209764790057F649 /* NRNovelTableViewCell.xib in Resources */,
-				DEDC0A302068BCC80013D84F /* NovelServiceRules.plist in Resources */,
-				DEBC653B209764790057F649 /* NRRecentNovelCollectionViewCell.xib in Resources */,
-				DE88E72C2180C549009433B8 /* NRSectionHeaderView.xib in Resources */,
-				DEBC6551209764790057F649 /* SearchStoryboard.storyboard in Resources */,
-				DEBC6533209764790057F649 /* NovelReader.storyboard in Resources */,
-				DE19ADD0217F864500F58321 /* NRSelectionCollectionViewCell.xib in Resources */,
-				DEAD34202058263C0064C46A /* Themes.json in Resources */,
-				DEE935142094CDA000B10398 /* Assets.xcassets in Resources */,
-				DEBC6539209764790057F649 /* NRNovelCollectionViewCell.xib in Resources */,
-				DEBC65152097601A0057F649 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DE81824A2084F8F6001316E5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -995,31 +681,13 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1E0241702F80F4887ED17F93 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-NovelReaderDemo/Pods-NovelReaderDemo-resources.sh",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NovelReaderDemo/Pods-NovelReaderDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3B40B5E9049E6B5CB415DFEB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-NovelReader/Pods-NovelReader-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-NovelReader/Pods-NovelReader-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -1028,7 +696,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NovelReader/Pods-NovelReader-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NovelReader/Pods-NovelReader-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5226665313E4689E4DAE9BC8 /* [CP] Embed Pods Frameworks */ = {
@@ -1037,115 +705,27 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-NovelReader/Pods-NovelReader-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-NovelReader/Pods-NovelReader-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MobileCore/MobileCore.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MobileCore.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NovelReader/Pods-NovelReader-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		810E16F089087BE60285965A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NovelReaderDemo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E83B24A414A425C09676EC88 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-NovelReaderDemo/Pods-NovelReaderDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NovelReaderDemo/Pods-NovelReaderDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NovelReader/Pods-NovelReader-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DE23237820551287004F1480 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DEBC650F20970E1E0057F649 /* NRGoogleAuth.swift in Sources */,
-				DEDE27212069522300E4C992 /* NRRules_fetchNovelList.swift in Sources */,
-				DE23237920551287004F1480 /* NRServiceProvider.swift in Sources */,
-				DEBC650720970CB50057F649 /* NRBaseViewController+Utility.swift in Sources */,
-				DEBC6545209764790057F649 /* NRNovelTableViewCell.swift in Sources */,
-				DE383485217266C000DD4B27 /* NRSearchFilterModel.swift in Sources */,
-				DE23237B20551287004F1480 /* NRBaseTableViewController.swift in Sources */,
-				DEE9351720959E1D00B10398 /* NRService_fetchChapter.swift in Sources */,
-				DE23237D20551287004F1480 /* NRTabBarController.swift in Sources */,
-				DED799FC217DB27C0021116A /* NRBaseScrollViewController.swift in Sources */,
-				DE23237E20551287004F1480 /* AppDelegate.swift in Sources */,
-				DE818247208356BA001316E5 /* NRService_fetchRecentUpdatesList.swift in Sources */,
-				DEBC654F209764790057F649 /* NRNovelChapterViewController.swift in Sources */,
-				DE383486217267AA00DD4B27 /* NRSearchFilterViewController.swift in Sources */,
-				DE88E7262180BC7A009433B8 /* NRUtility.swift in Sources */,
-				DE4EBE672067B6F5008AC70B /* NRService_fetchNovelList.swift in Sources */,
-				DE38347C2172547300DD4B27 /* NRSegmentCollectionHeaderView.swift in Sources */,
-				DE23238220551287004F1480 /* NRBaseViewController.swift in Sources */,
-				DE23238620551287004F1480 /* NRAppManager.swift in Sources */,
-				DE84280B20558FE8006605C0 /* NRNovel.swift in Sources */,
-				DEBC6535209764790057F649 /* NRReaderViewController.swift in Sources */,
-				DEBC65562097661F0057F649 /* NRSearchCollectionViewController.swift in Sources */,
-				DEBC6537209764790057F649 /* NRNovelCollectionViewController.swift in Sources */,
-				DEF8D594206783B6001AFEC2 /* NRNovels.swift in Sources */,
-				DE3834792172543A00DD4B27 /* NRSearchBarHeaderView.swift in Sources */,
-				DED79A01217DD6740021116A /* NRSearchFilterViewModel.swift in Sources */,
-				DE84280D20558FE8006605C0 /* NRNovelChapter.swift in Sources */,
-				DEF2411D215E6DE400F7B0C6 /* NRConstants.swift in Sources */,
-				DE3834822172666C00DD4B27 /* NRService_searchFilter.swift in Sources */,
-				DE0173C121614957007F5546 /* NRBaseCollectionViewController.swift in Sources */,
-				DEBC6547209764790057F649 /* NRNovelCollectionViewCell.swift in Sources */,
-				DE38347D217257CC00DD4B27 /* NRNovelCollectionViewModel.swift in Sources */,
-				DE19ADCD217F837800F58321 /* NRSelectionCollectionViewCell.swift in Sources */,
-				DEBC654D209764790057F649 /* NRRecentNovelCollectionViewCell.swift in Sources */,
-				DE5082362167D28100F3B26F /* NRService_searchNovel.swift in Sources */,
-				DE23238820551287004F1480 /* NRBaseView.swift in Sources */,
-				DEFB28342171FF2B00B0E06B /* NRSearchModel.swift in Sources */,
-				DE23238920551287004F1480 /* NRServiceConstants.swift in Sources */,
-				DEF76491208341DD00E6F614 /* NRService_fetchNovelChapters.swift in Sources */,
-				DEBC6541209764790057F649 /* NRNovelDescriptionView.swift in Sources */,
-				DEFB28372171FFBD00B0E06B /* NRSearchCollectionViewModel.swift in Sources */,
-				DEDE27232069522300E4C992 /* NRRules_defaults.swift in Sources */,
-				DE88E7292180C2D7009433B8 /* NRSectionHeaderView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DE8182482084F8F6001316E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1158,7 +738,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE4FAC9B21635B18006EF94B /* NRNovelCollectionViewModel.swift in Sources */,
-				DEBC650E20970E1E0057F649 /* NRGoogleAuth.swift in Sources */,
 				DEDE27202069522300E4C992 /* NRRules_fetchNovelList.swift in Sources */,
 				DEA7E1B11F4996A90002C148 /* NRServiceProvider.swift in Sources */,
 				DEBC650620970CB50057F649 /* NRBaseViewController+Utility.swift in Sources */,
@@ -1222,26 +801,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DE81825C20850375001316E5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE81824B2084F8F6001316E5 /* FTNovelReaderMockBundle */;
-			targetProxy = DE81825B20850375001316E5 /* PBXContainerItemProxy */;
-		};
-		DEA45C9E205513DE008FA401 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FTCoreUtility;
-			targetProxy = DEA45C9D205513DE008FA401 /* PBXContainerItemProxy */;
-		};
-		DEA45CB4205513ED008FA401 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FTMobileCore;
-			targetProxy = DEA45CB3205513ED008FA401 /* PBXContainerItemProxy */;
-		};
-		DEA45CB6205513F0008FA401 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FTMobileCoreUI;
-			targetProxy = DEA45CB5205513F0008FA401 /* PBXContainerItemProxy */;
-		};
 		DEA7E1581F496BAB0002C148 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DEA7E13F1F496BAB0002C148 /* NovelReader */;
@@ -1266,55 +825,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		DE2323A020551287004F1480 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 097F0E9BB63395D857FC2973 /* Pods-NovelReaderDemo.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
-				INFOPLIST_FILE = "$(SRCROOT)/NovelReader/Resources/plist/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ft.NovelReader;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "NovelReader/NovelReader-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Debug;
-		};
-		DE2323A120551287004F1480 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A38A0428150D994F048C60EF /* Pods-NovelReaderDemo.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
-				INFOPLIST_FILE = "$(SRCROOT)/NovelReader/Resources/plist/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ft.NovelReader;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "NovelReader/NovelReader-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Release;
-		};
 		DE8182502084F8F6001316E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1325,6 +835,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Frameworks",
+					"$(inherited)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = FTNovelReaderMockBundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
@@ -1334,7 +848,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -1349,6 +862,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Frameworks",
+					"$(inherited)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = FTNovelReaderMockBundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
@@ -1358,7 +875,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -1399,7 +915,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1423,7 +939,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1464,7 +980,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
@@ -1480,7 +996,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1495,7 +1011,10 @@
 				CODE_SIGN_IDENTITY = "";
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/NovelReader/Resources/plist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1505,8 +1024,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "NovelReader/NovelReader-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.2;
-				VALID_ARCHS = "arm64 armv7 armv7s";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1520,7 +1038,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/NovelReader/Resources/plist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1529,8 +1050,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NovelReader/NovelReader-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.2;
-				VALID_ARCHS = "arm64 armv7 armv7s";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1540,12 +1060,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = W6W48SVQX7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Frameworks",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = NovelReaderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ft.NovelReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NovelReader.app/NovelReader";
 			};
 			name = Debug;
@@ -1556,12 +1080,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = W6W48SVQX7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Frameworks",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = NovelReaderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ft.NovelReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NovelReader.app/NovelReader";
 			};
 			name = Release;
@@ -1571,12 +1099,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = W6W48SVQX7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Frameworks",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = NovelReaderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ft.NovelReaderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = NovelReader;
 			};
 			name = Debug;
@@ -1586,12 +1118,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = W6W48SVQX7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Frameworks",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = NovelReaderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ft.NovelReaderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = NovelReader;
 			};
 			name = Release;
@@ -1599,15 +1135,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DE23239F20551287004F1480 /* Build configuration list for PBXNativeTarget "NovelReaderDemo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE2323A020551287004F1480 /* Debug */,
-				DE2323A120551287004F1480 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		DE81824F2084F8F6001316E5 /* Build configuration list for PBXNativeTarget "FTNovelReaderMockBundle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

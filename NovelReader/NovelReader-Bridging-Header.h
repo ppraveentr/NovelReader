@@ -2,7 +2,6 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
-#pragma mark - FTMobile Core
+#pragma mark - Mobile Core
 
-#import <FTMobileCore/FTMobileCore.h>
-#import <FTMobileCoreUI/FTMobileCoreUI.h>
+@import MobileCore;

@@ -17,7 +17,7 @@ class NRAppManager {
     static func setupApplication() {
         NRAppManager.configureAppBase()
         NRAppManager.configureAppTheme()
-        NRGoogleAuth.setupGoogleAuth()
+        //NRGoogleAuth.setupGoogleAuth()
     }
 
     // MARK: Model Binding
@@ -51,13 +51,13 @@ class NRAppManager {
     static func configDebug() {
         #if DEBUG
         // Console Loggin
-        FTLogger.enableConsoleLogging = true
+//        FTLogger.enableConsoleLogging = true
         // Debug-Postman
 //        FTMobileConfig.appBaseURL = kPostmanURL
         // Debug-only code
-        FTMobileConfig.appBaseURL = kMockServerURL
-        FTMobileConfig.mockBundleResource = kMockBundleResource
-        FTMobileConfig.isMockData = kMockDataEnabled
+//        FTMobileConfig.appBaseURL = kMockServerURL
+//        FTMobileConfig.mockBundleResource = kMockBundleResource
+//        FTMobileConfig.isMockData = kMockDataEnabled
         #endif
     }
 
