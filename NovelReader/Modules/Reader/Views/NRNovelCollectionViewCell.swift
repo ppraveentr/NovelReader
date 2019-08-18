@@ -10,7 +10,7 @@ import Foundation
 
 class FTImageView: UIImageView {
     
-    var grain: UIImage? = nil
+    var grain: UIImage?
 
 //    override var image: UIImage?{
 //        didSet {
@@ -26,7 +26,7 @@ class FTImageView: UIImageView {
 //        }
 //    }
     
-    func imageWithGradient(img:UIImage!) -> UIImage {
+    func imageWithGradient(img: UIImage!) -> UIImage {
         
         UIGraphicsBeginImageContext(img.size)
         let context = UIGraphicsGetCurrentContext()
@@ -34,7 +34,7 @@ class FTImageView: UIImageView {
         img.draw(at: CGPoint(x: 0, y: 0))
         
         let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let locations:[CGFloat] = [0.0, 1.0]
+        let locations: [CGFloat] = [0.0, 1.0]
         
         let bottom = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
         let top = UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor
@@ -43,29 +43,35 @@ class FTImageView: UIImageView {
         
         let gradient = CGGradient(colorsSpace: colorSpace, colors: colors, locations: locations)
         
-        let startPoint = CGPoint(x: img.size.width/2, y: 0)
-        let endPoint = CGPoint(x: img.size.width/2, y: img.size.height)
+        let startPoint = CGPoint(x: img.size.width / 2, y: 0)
+        let endPoint = CGPoint(x: img.size.width / 2, y: img.size.height)
         
-        context!.drawLinearGradient(gradient!, start: startPoint, end: endPoint, options: CGGradientDrawingOptions(rawValue: UInt32(0)))
+        if let context = context, let gradient = gradient {
+            context.drawLinearGradient(gradient, start: startPoint, end: endPoint, options: CGGradientDrawingOptions(rawValue: UInt32(0)))
+        }
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext()
         
-        return image!
+        return image.forceUnwrapped
     }
-    
 }
 
 class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProtocol {
  
-    @IBOutlet var titleLabel: FTLabel?
-    @IBOutlet var contentImageView: FTImageView?
+    @IBOutlet
+    private var titleLabel: FTLabel?
+    @IBOutlet
+    private var contentImageView: FTImageView?
     var imageViewCompletionHandler: FTUIImageViewComletionHandler?
 
-    @IBOutlet var chapterLabel: FTLabel?
-    @IBOutlet var lastUpdateLabel: FTLabel?
-    @IBOutlet var viewsButton: FTButton?
+    @IBOutlet
+    private var chapterLabel: FTLabel?
+    @IBOutlet
+    private var lastUpdateLabel: FTLabel?
+    @IBOutlet
+    private var viewsButton: FTButton?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -73,6 +79,7 @@ class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProto
     }
 
     override func prepareForReuse() {
+        super.prepareForReuse()
         // Reset image
         self.contentImageView?.image = nil
         self.imageViewCompletionHandler = nil
@@ -84,7 +91,7 @@ class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProto
         }
         
         // Reset image
-        self.imageViewCompletionHandler = { (image) in
+        self.imageViewCompletionHandler = { image in
             self.contentImageView?.image = image
         }
         if let url = novel.imageURL {
@@ -110,5 +117,4 @@ class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProto
         self.layer.shadowRadius = 2.0
         self.layer.shadowOffset = CGSize(width: 3, height: 3)
     }
-    
 }

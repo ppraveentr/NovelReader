@@ -7,21 +7,32 @@
 //
 
 import Foundation
+
+//MSAppCenter
+#if canImport(AppCenter)
 import AppCenter
 import AppCenterAnalytics
 import AppCenterCrashes
+#endif
 
-class NRAppManager {
+final class NRAppManager {
 
+    static let sharedInstance = NRAppManager()
+    
+    // plist Endpoint
+    static var endpointURL: String {
+        return Bundle.main.infoDictionary?[kEndpointURL] as? String ?? ""
+    }
+    
     // MARK: Setup
     static func setupApplication() {
-        NRAppManager.configureAppBase()
-        NRAppManager.configureAppTheme()
+        NRAppManager.sharedInstance.configureAppBase()
+        NRAppManager.sharedInstance.configureAppTheme()
         //NRGoogleAuth.setupGoogleAuth()
     }
 
     // MARK: Model Binding
-    static func configureAppBase() {
+    func configureAppBase() {
 
         // Register self's type as Bundle-Identifier for getting class name
         FTReflection.registerModuleIdentifier(NRAppDelegate.self)
@@ -31,24 +42,14 @@ class NRAppManager {
         FTMobileConfig.serviceBindingRulesName = kServiceBindingRulesName
 
         // App Config
-        FTMobileConfig.appBaseURL = NRAppManager.endpointURL()
+        FTMobileConfig.appBaseURL = NRAppManager.endpointURL
 
         // Debug-only code
         self.configDebug()
-
-        MSAppCenter.start(kMSAppCenter, withServices:[
-            MSAnalytics.self,
-            MSCrashes.self
-            ])
-    }
-
-    // plist Endpoint
-    static func endpointURL() -> String {
-        return Bundle.main.infoDictionary![kEndpointURL] as? String ?? ""
     }
 
     // Config
-    static func configDebug() {
+    func configDebug() {
         #if DEBUG
         // Console Loggin
 //        FTLogger.enableConsoleLogging = true
@@ -60,8 +61,23 @@ class NRAppManager {
 //        FTMobileConfig.isMockData = kMockDataEnabled
         #endif
     }
+    
+    func configureAppCenter() {
+        #if canImport(AppCenter)
+//        MSAppCenter.start(kMSAppCenter, withServices:[
+//            MSAnalytics.self,
+//            MSCrashes.self
+//            ])
+        #endif
+    }
+    
+    func configureGoogleAuth() {
+        #if canImport(GoogleSignIn)
+//        NRGoogleAuth.setupGoogleAuth()
+        #endif
+    }
 
-    static func generateModelBinding() {
+    func generateModelBinding() {
         // Model Binding Generator
         if let resourcePath = Bundle.main.resourceURL {
             FTModelCreator.configureSourcePath(path: resourcePath.appendingPathComponent(kModelBindingsName).path)
@@ -70,12 +86,11 @@ class NRAppManager {
     }
 
     // MARK: Theme
-    static func configureAppTheme() {
+    func configureAppTheme() {
 
         if
             let theme = Bundle.main.path(forResource: kThemeFileName, ofType: nil),
-            let themeContent: FTThemeModel = try! theme.jsonContentAtPath() {
-
+            let themeContent: FTThemeModel = try? theme.jsonContentAtPath() {
             FTThemesManager.setupThemes(themes: themeContent, imageSourceBundle: [Bundle(for: NRAppDelegate.self)])
         }
 
@@ -97,7 +112,7 @@ class NRAppManager {
     }
 
     // MARK: LoadingIndicator
-    static func setupLoadingIndicator() {
+    func setupLoadingIndicator() {
 
         var config: FTLoadingIndicator.Config = FTLoadingIndicator.Config()
         config.backgroundColor = UIColor.clear
@@ -110,5 +125,4 @@ class NRAppManager {
 
         FTLoadingIndicator.setConfig(config: config)
     }
-
 }

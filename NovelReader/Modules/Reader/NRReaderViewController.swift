@@ -13,7 +13,8 @@ class NRReaderViewController: NRBaseViewController {
     var novelChapter: NRNovelChapter?
     var novel: NRNovel?
 
-    @IBOutlet var fontPickerBarItem: UIBarButtonItem?
+    @IBOutlet
+    private var fontPickerBarItem: UIBarButtonItem?
 //    @IBOutlet var chapterToolBarItem: UIToolbar?
 //    var sortedToolBarItems: [UIBarButtonItem]? {
 //        get{
@@ -47,9 +48,11 @@ class NRReaderViewController: NRBaseViewController {
     func setupViewContent() {
         
         let title = novelChapter?.shortTitle ?? novelChapter?.title ?? novel?.title ?? ""
-        self.setupNavigationbar(title: title,
-                                leftButton: self.navigationBarButton(buttonType: .stop),
-                                rightButton: fontPickerBarItem)
+        self.setupNavigationbar(
+            title: title,
+            leftButton: self.navigationBarButton(buttonType: .stop),
+            rightButton: fontPickerBarItem
+        )
 
         self.mainView?.pin(view: contentView)
 
@@ -71,7 +74,6 @@ class NRReaderViewController: NRBaseViewController {
             pickerColor(textColor: fontPicker.fontColor, backgroundColor: fontPicker.backgroundColor)
             fontFamily(fontPicker.fontFamily)
         }
-
     }
     
     func loadWebContent(contnet: String) {
@@ -102,7 +104,8 @@ extension NRReaderViewController: UIPopoverPresentationControllerDelegate {
         if let fontPickerController = controller.presentedViewController as? FTFontPickerViewController {
             if self.fontPicker == nil {
                 self.fontPicker = fontPickerController.fontPickerModel
-            } else {
+            }
+            else {
                 fontPickerController.fontPickerModel = self.fontPicker
             }
         }

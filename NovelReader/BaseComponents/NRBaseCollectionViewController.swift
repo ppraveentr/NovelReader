@@ -9,10 +9,8 @@
 import Foundation
 
 // default collectionView SectionInset
-fileprivate var defaultSectionInset: UIEdgeInsets {
-    get {
-        return UIEdgeInsets(top: 15, left: 20, bottom: 10, right: 20)
-    }
+private var defaultSectionInset: UIEdgeInsets {
+    return UIEdgeInsets(top: 15, left: 20, bottom: 10, right: 20)
 }
 
 class NRBaseCollectionViewController: FTBaseCollectionViewController {
@@ -44,7 +42,7 @@ class NRBaseCollectionViewController: FTBaseCollectionViewController {
             layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         } 
         layout.sectionInset = sectionInset()
-        layout.headerReferenceSize = CGSize(width:0, height:45)
+        layout.headerReferenceSize = CGSize(width: 0, height: 45)
         layout.sectionHeadersPinToVisibleBounds = true
         return layout
     }
@@ -69,7 +67,6 @@ class NRBaseCollectionViewController: FTBaseCollectionViewController {
         self.dataSource = self
         self.delegate = self
     }
-
 }
 
 extension UICollectionViewCell {
@@ -84,5 +81,4 @@ extension UICollectionViewCell {
             layoutAttributes.frame = newFrame
             return layoutAttributes
     }
-
 }

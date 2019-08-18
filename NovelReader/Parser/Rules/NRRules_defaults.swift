@@ -8,6 +8,5 @@
 
 import Foundation
 
-final class NRRules_defaults {
-
+final class NRRulesDefaults {
 }

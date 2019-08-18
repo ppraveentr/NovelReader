@@ -37,7 +37,7 @@ Package.pins
 
 # CocoaPods
 Pods/
-Pods/**
+Pods/*
 Pods/**/*
 
 # Carthage

@@ -9,15 +9,18 @@
 import UIKit
 
 class NRRecentNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProtocol {
-    @IBOutlet weak var novelTitle: FTLabel?
-    @IBOutlet weak var lastUpdateTitleLabel: FTLabel?
-    @IBOutlet weak var lastUpdateTimeLabel: FTLabel?
+    @IBOutlet
+    private weak var novelTitle: FTLabel?
+    @IBOutlet
+    private weak var lastUpdateTitleLabel: FTLabel?
+    @IBOutlet
+    private weak var lastUpdateTimeLabel: FTLabel?
 
-    var collectionView: UICollectionView? = nil
-    var indexPath: IndexPath? = nil
-    var novelItem: NRNovel? = nil
+    var collectionView: UICollectionView?
+    var indexPath: IndexPath?
+    var novelItem: NRNovel?
 
-    func configureContent(content: AnyObject, view: UICollectionView? = nil, indexPath: IndexPath? = nil) {
+    func configureContent(content: AnyObject, view: UICollectionView?, indexPath: IndexPath?) {
         guard let novel = content as? NRNovel else {
             return
         }
@@ -32,5 +35,4 @@ class NRRecentNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCel
         self.collectionView = view
         self.indexPath = indexPath
     }
-    
 }

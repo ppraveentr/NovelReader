@@ -10,8 +10,10 @@ import Foundation
 
 class NRNovelTableViewCell: UITableViewCell {
     
-    @IBOutlet var chapterDate: FTLabel?
-    @IBOutlet var titleLabel: FTLabel?
+    @IBOutlet
+    private var chapterDate: FTLabel?
+    @IBOutlet
+    private var titleLabel: FTLabel?
     
 //    override func awakeFromNib() {
 //        super.awakeFromNib()

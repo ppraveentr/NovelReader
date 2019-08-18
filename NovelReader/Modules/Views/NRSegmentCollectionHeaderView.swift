@@ -16,8 +16,8 @@ class NRSegmentCollectionHeaderView: UICollectionReusableView {
         self.setupSegmentView()
     }
 
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         self.setupSegmentView()
     }
 
@@ -30,9 +30,10 @@ class NRSegmentCollectionHeaderView: UICollectionReusableView {
 
         segmentedControl = UISegmentedControl(items: items) { (segment) in
             FTLog(segment)
-        };
+        }
 
-        self.pin(view: segmentedControl!, edgeOffsets: FTEdgeOffsets(10))
+        if let segment = segmentedControl {
+            self.pin(view: segment, edgeOffsets: FTEdgeOffsets(10))
+        }
     }
-
 }

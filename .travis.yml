@@ -1,11 +1,18 @@
+dist: trusty
+sudo: required
 language: swift
-osx_image: xcode10.2
-xcode_destination: platform=iOS Simulator,name=iPhone X
-xcode_scheme: NovelReader
 xcode_workspace: NovelReader.xcworkspace
+osx_image: xcode10.2
+xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone X
+xcode_scheme: NovelReader
+before_install:
+- pod --version
+- pod setup --silent > /dev/null
+- pod repo update --silent
+- xcpretty --version
+- xcodebuild -version
+- xcodebuild -showsdks
 script:
- #- pod repo update
- #- pod install --repo-update
- #- xcodebuild -scheme NovelReader -workspace "NovelReader.xcworkspace" -sdk iphonesimulator clean build | xcpretty -c
+- xcodebuild clean build -workspace "NovelReader.xcworkspace" -scheme "NovelReader" -configuration Release -sdk iphonesimulator | xcpretty -c
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash)

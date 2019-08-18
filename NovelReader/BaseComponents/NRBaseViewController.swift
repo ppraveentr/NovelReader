@@ -10,17 +10,17 @@ import Foundation
 
 public class NRBaseViewController: FTBaseViewController {
 
-    public override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideBottomBar(false)
     }
     
-    public override func viewDidAppear(_ animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         hideBottomBar(false)
     }
 
-    public override func viewWillDisappear(_ animated: Bool) {
+    override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         hideBottomBar(true)
     }
@@ -28,5 +28,4 @@ public class NRBaseViewController: FTBaseViewController {
     func hideBottomBar(_ isHidden: Bool) {
         self.tabBarController?.tabBar.isHidden = isHidden
     }
-
 }
