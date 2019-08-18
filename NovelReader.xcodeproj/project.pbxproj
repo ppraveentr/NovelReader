@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D49F49272308121D0062455A /* FTNovelReaderMockBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE81824C2084F8F6001316E5 /* FTNovelReaderMockBundle.bundle */; };
 		DE0173BD216148B7007F5546 /* NRBaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0173BC216148B7007F5546 /* NRBaseCollectionViewController.swift */; };
 		DE19ADC9217F80C400F58321 /* fetchChapter.json in Resources */ = {isa = PBXBuildFile; fileRef = DE19ADC7217F80C400F58321 /* fetchChapter.json */; };
 		DE19ADCA217F80C400F58321 /* fetchNovelChapters.json in Resources */ = {isa = PBXBuildFile; fileRef = DE19ADC8217F80C400F58321 /* fetchNovelChapters.json */; };
@@ -43,7 +44,6 @@
 		DEAD341F2058263C0064C46A /* Themes.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAD34162058263C0064C46A /* Themes.json */; };
 		DEAD3422205826660064C46A /* Bindings in Resources */ = {isa = PBXBuildFile; fileRef = DEAD3421205826660064C46A /* Bindings */; };
 		DEBC650620970CB50057F649 /* NRBaseViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650520970CB50057F649 /* NRBaseViewController+Utility.swift */; };
-		DEBC650E20970E1E0057F649 /* NRGoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */; };
 		DEBC65142097601A0057F649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC65132097601A0057F649 /* Main.storyboard */; };
 		DEBC6532209764790057F649 /* NovelReader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6520209764790057F649 /* NovelReader.storyboard */; };
 		DEBC6534209764790057F649 /* NRReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC6521209764790057F649 /* NRReaderViewController.swift */; };
@@ -75,6 +75,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D49F4928230819C50062455A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEA7E1381F496BAB0002C148 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE81824B2084F8F6001316E5;
+			remoteInfo = FTNovelReaderMockBundle;
+		};
 		DEA7E1571F496BAB0002C148 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DEA7E1381F496BAB0002C148 /* Project object */;
@@ -515,6 +522,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D49F4929230819C50062455A /* PBXTargetDependency */,
 			);
 			name = NovelReader;
 			productName = NovelReader;
@@ -630,6 +638,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D49F49272308121D0062455A /* FTNovelReaderMockBundle.bundle in Resources */,
 				DEA7E1501F496BAB0002C148 /* LaunchScreen.storyboard in Resources */,
 				DEBC6538209764790057F649 /* NRNovelCollectionViewCell.xib in Resources */,
 				DE19ADCF217F864500F58321 /* NRSelectionCollectionViewCell.xib in Resources */,
@@ -739,7 +748,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE4FAC9B21635B18006EF94B /* NRNovelCollectionViewModel.swift in Sources */,
-				DEBC650E20970E1E0057F649 /* NRGoogleAuth.swift in Sources */,
 				DEDE27202069522300E4C992 /* NRRules_fetchNovelList.swift in Sources */,
 				DEA7E1B11F4996A90002C148 /* NRServiceProvider.swift in Sources */,
 				DEBC650620970CB50057F649 /* NRBaseViewController+Utility.swift in Sources */,
@@ -803,6 +811,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D49F4929230819C50062455A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE81824B2084F8F6001316E5 /* FTNovelReaderMockBundle */;
+			targetProxy = D49F4928230819C50062455A /* PBXContainerItemProxy */;
+		};
 		DEA7E1581F496BAB0002C148 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DEA7E13F1F496BAB0002C148 /* NovelReader */;

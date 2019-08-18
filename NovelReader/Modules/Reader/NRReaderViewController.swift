@@ -54,7 +54,7 @@ class NRReaderViewController: NRBaseViewController {
         self.mainView?.pin(view: contentView)
 
         if let url = novelChapter?.identifier ?? novel?.identifier {
-            NRServiceProvider.getNovelChapter(url) { (chapter) in
+            NRServiceProvider.getNovelChapter(url) { [unowned self] (chapter) in
 
                 if let content = chapter?.shortTitle {
                     self.title = content
@@ -77,7 +77,6 @@ class NRReaderViewController: NRBaseViewController {
     func loadWebContent(contnet: String) {
         contentView.webView.loadHTMLBody(contnet)
     }
-    
 }
 
 extension NRReaderViewController: FTFontPickerViewprotocol {
@@ -95,7 +94,6 @@ extension NRReaderViewController: FTFontPickerViewprotocol {
     func fontFamily(_ fontName: String?) {
         contentView.webView.setContentFontFamily(fontName)
     }
-    
 }
 
 extension NRReaderViewController: UIPopoverPresentationControllerDelegate {
@@ -110,5 +108,4 @@ extension NRReaderViewController: UIPopoverPresentationControllerDelegate {
         }
         return .none
     }
-
 }
