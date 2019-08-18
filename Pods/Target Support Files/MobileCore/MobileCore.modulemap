@@ -1,6 +1,0 @@
-framework module MobileCore {
-  umbrella header "MobileCore-umbrella.h"
-
-  export *
-  module * { export * }
-}
