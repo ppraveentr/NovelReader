@@ -137,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="2628" y="1157.2713643178411"/>
         </scene>
-        <!--Base Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="aaX-Aw-qtB">
             <objects>
-                <navigationController storyboardIdentifier="kNovelReaderStroyboardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b1N-KR-xHQ" customClass="FTBaseNavigationController" customModule="FTMobileCoreUI" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="kNovelReaderStroyboardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b1N-KR-xHQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="featured" id="tNg-m4-Q2z"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

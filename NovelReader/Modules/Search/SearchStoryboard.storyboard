@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -126,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="1604" y="486"/>
         </scene>
-        <!--Base Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="Vpo-DY-lD7">
             <objects>
-                <navigationController storyboardIdentifier="kSearchStoryboardID" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3NG-UJ-ZVB" customClass="FTBaseNavigationController" customModule="FTMobileCoreUI" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="kSearchStoryboardID" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3NG-UJ-ZVB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="nde-kH-3fT"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -148,6 +148,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="filter" width="44" height="44"/>
+        <image name="filter" width="22" height="22"/>
     </resources>
 </document>
