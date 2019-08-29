@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D45E3CF6230C0E6B005BD885 /* FTNovelReaderMockBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE81824C2084F8F6001316E5 /* FTNovelReaderMockBundle.bundle */; };
 		DE0173BD216148B7007F5546 /* NRBaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0173BC216148B7007F5546 /* NRBaseCollectionViewController.swift */; };
 		DE19ADC9217F80C400F58321 /* fetchChapter.json in Resources */ = {isa = PBXBuildFile; fileRef = DE19ADC7217F80C400F58321 /* fetchChapter.json */; };
 		DE19ADCA217F80C400F58321 /* fetchNovelChapters.json in Resources */ = {isa = PBXBuildFile; fileRef = DE19ADC8217F80C400F58321 /* fetchNovelChapters.json */; };
@@ -74,6 +75,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D45E3CF4230C0E64005BD885 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEA7E1381F496BAB0002C148 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE81824B2084F8F6001316E5;
+			remoteInfo = FTNovelReaderMockBundle;
+		};
 		DEA7E1571F496BAB0002C148 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DEA7E1381F496BAB0002C148 /* Project object */;
@@ -510,11 +518,11 @@
 				DEA7E19B1F4970400002C148 /* Embed Frameworks */,
 				5226665313E4689E4DAE9BC8 /* [CP] Embed Pods Frameworks */,
 				3B40B5E9049E6B5CB415DFEB /* [CP] Copy Pods Resources */,
-				D4E36AF522FC258800985581 /* Run Script - swiftlint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D45E3CF5230C0E64005BD885 /* PBXTargetDependency */,
 			);
 			name = NovelReader;
 			productName = NovelReader;
@@ -567,9 +575,6 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Praveen Prabhakar";
 				TargetAttributes = {
-					DE23237720551287004F1480 = {
-						LastSwiftMigration = 1030;
-					};
 					DE81824B2084F8F6001316E5 = {
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
@@ -633,6 +638,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D45E3CF6230C0E6B005BD885 /* FTNovelReaderMockBundle.bundle in Resources */,
 				DEA7E1501F496BAB0002C148 /* LaunchScreen.storyboard in Resources */,
 				DEBC6538209764790057F649 /* NRNovelCollectionViewCell.xib in Resources */,
 				DE19ADCF217F864500F58321 /* NRSelectionCollectionViewCell.xib in Resources */,
@@ -805,6 +811,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D45E3CF5230C0E64005BD885 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE81824B2084F8F6001316E5 /* FTNovelReaderMockBundle */;
+			targetProxy = D45E3CF4230C0E64005BD885 /* PBXContainerItemProxy */;
+		};
 		DEA7E1581F496BAB0002C148 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DEA7E13F1F496BAB0002C148 /* NovelReader */;

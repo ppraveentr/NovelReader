@@ -8,23 +8,7 @@
 
 import Foundation
 
-class FTImageView: UIImageView {
-    
-    var grain: UIImage?
-
-//    override var image: UIImage?{
-//        didSet {
-//            if grain == nil {
-//                
-//                    grain = self.imageWithGradient(img: image)
-//                self.image = grain
-//                
-//                if image != nil {
-//                    self.superview?.backgroundColor = image?.getColor( a: 25)
-//                }
-//            }
-//        }
-//    }
+public extension UIImageView {
     
     func imageWithGradient(img: UIImage!) -> UIImage {
         
@@ -63,7 +47,7 @@ class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProto
     @IBOutlet
     private var titleLabel: FTLabel?
     @IBOutlet
-    private var contentImageView: FTImageView?
+    private var contentImageView: UIImageView?
     var imageViewCompletionHandler: FTUIImageViewComletionHandler?
 
     @IBOutlet
