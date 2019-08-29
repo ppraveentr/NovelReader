@@ -50,7 +50,7 @@ class NRReaderViewController: NRBaseViewController {
         let title = novelChapter?.shortTitle ?? novelChapter?.title ?? novel?.title ?? ""
         self.setupNavigationbar(
             title: title,
-            leftButton: self.navigationBarButton(buttonType: .stop),
+            leftButton: UIBarButtonItem(itemType: .stop, sender: self),
             rightButton: fontPickerBarItem
         )
 

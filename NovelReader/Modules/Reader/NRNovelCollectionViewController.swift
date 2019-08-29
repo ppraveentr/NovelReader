@@ -23,8 +23,8 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
         viewModel.novelCollectionType = .recentNovel
 
         // View Title
-        //self.setupNavigationbar(title: kNovelReaderTitle, leftCustomView: NRGoogleAuth.signInButton())
-        rightNavigationBarButton(buttonType: .search)
+        let rightButtonItem = UIBarButtonItem(itemType: .search, sender: self)
+        self.setupNavigationbar(title: kNovelReaderTitle, rightButton: rightButtonItem)
 
         // Collection View
         setupColletionView()

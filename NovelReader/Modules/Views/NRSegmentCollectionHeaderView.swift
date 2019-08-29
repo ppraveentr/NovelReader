@@ -29,7 +29,7 @@ class NRSegmentCollectionHeaderView: UICollectionReusableView {
         self.theme = FTThemeStyle.defaultStyle
 
         segmentedControl = UISegmentedControl(items: items) { (segment) in
-            FTLog(segment)
+            ftLog(segment)
         }
 
         if let segment = segmentedControl {

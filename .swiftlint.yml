@@ -12,6 +12,8 @@ disabled_rules:
 - trailing_whitespace # IDE will handle it for us
 - vertical_whitespace_opening_braces # readability improves
 - override_in_extension
+- private_outlet
+- private_action
 
 opt_in_rules:
 - array_init
@@ -53,8 +55,6 @@ opt_in_rules:
 - overridden_super_call
 - override_in_extension
 - pattern_matching_keywords
-- private_outlet
-- private_action
 - prohibited_super_call
 - redundant_nil_coalescing
 - redundant_type_annotation
@@ -72,7 +72,7 @@ opt_in_rules:
 - xct_specific_matcher
 - yoda_condition
 
-large_tuple: 3
+large_tuple: 4
 function_body_length : 50
 function_parameter_count: 5
 warning_threshold: 1
@@ -80,7 +80,7 @@ closure_body_length: 16
 file_length: 750
 
 cyclomatic_complexity:
-  warning: 4
+  warning: 5
   ignores_case_statements: true
 
 line_length:

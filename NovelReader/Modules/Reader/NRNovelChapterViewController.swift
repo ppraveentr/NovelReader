@@ -94,8 +94,8 @@ extension NRNovelChapterViewController {
 
         self.setupNavigationbar(
             title: "",
-            leftButton: self.navigationBarButton(buttonType: .stop),
-            rightButton: self.navigationBarButton(buttonType: .bookmarks)
+            leftButton: UIBarButtonItem(itemType: .stop, sender: self),
+            rightButton: UIBarButtonItem(itemType: .bookmarks, sender: self)
         )
     }
     
