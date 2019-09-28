@@ -24,10 +24,9 @@ class NRSearchFilterViewController: NRBaseCollectionViewController {
         viewModel.updateSearchFilter()
     }
 
-    override func flowLayout() -> UICollectionViewFlowLayout {
-        let layout = super.flowLayout()
-        layout.sectionHeadersPinToVisibleBounds = false
-
+    override var flowLayout: NSObject {
+        let layout = super.flowLayout
+        (layout as? UICollectionViewFlowLayout)?.sectionHeadersPinToVisibleBounds = false
         return layout
     }
 
@@ -54,14 +53,14 @@ class NRSearchFilterViewController: NRBaseCollectionViewController {
     }
 }
 
-extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout {
+extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModel.numberOfSections
     }
 
     // numberOfItemsInSection
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItemsInSection(section)
     }
 
@@ -85,7 +84,7 @@ extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout {
     }
 
     // cellForItem
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kSearchFilterCellIdentifier, for: indexPath)
 

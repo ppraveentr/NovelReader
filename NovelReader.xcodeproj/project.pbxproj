@@ -38,7 +38,6 @@
 		DEA7E1A31F497B5D0002C148 /* NRBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1A01F497B5D0002C148 /* NRBaseViewController.swift */; };
 		DEA7E1A41F497B5D0002C148 /* NRTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1A11F497B5D0002C148 /* NRTabBarController.swift */; };
 		DEA7E1A61F497B6C0002C148 /* NRBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1A51F497B6C0002C148 /* NRBaseView.swift */; };
-		DEA7E1AE1F4992030002C148 /* NRBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1AD1F4992030002C148 /* NRBaseTableViewController.swift */; };
 		DEA7E1B11F4996A90002C148 /* NRServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1B01F4996A90002C148 /* NRServiceProvider.swift */; };
 		DEA7E1B71F49A67F0002C148 /* NRAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1B61F49A67F0002C148 /* NRAppManager.swift */; };
 		DEAD341F2058263C0064C46A /* Themes.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAD34162058263C0064C46A /* Themes.json */; };
@@ -59,7 +58,6 @@
 		DEBC654E209764790057F649 /* NRNovelChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC652F209764790057F649 /* NRNovelChapterViewController.swift */; };
 		DEBC6550209764790057F649 /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6531209764790057F649 /* SearchStoryboard.storyboard */; };
 		DEBC65552097661F0057F649 /* NRSearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC65542097661F0057F649 /* NRSearchCollectionViewController.swift */; };
-		DED799F8217DB2290021116A /* NRBaseScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED799F7217DB2290021116A /* NRBaseScrollViewController.swift */; };
 		DED79A00217DD6740021116A /* NRSearchFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED799FF217DD6740021116A /* NRSearchFilterViewModel.swift */; };
 		DEDC0A2F2068BCC80013D84F /* NovelServiceRules.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDC0A2E2068BCC80013D84F /* NovelServiceRules.plist */; };
 		DEDE27202069522300E4C992 /* NRRules_fetchNovelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE271B2069522300E4C992 /* NRRules_fetchNovelList.swift */; };
@@ -155,7 +153,6 @@
 		DEA7E1A01F497B5D0002C148 /* NRBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRBaseViewController.swift; sourceTree = "<group>"; };
 		DEA7E1A11F497B5D0002C148 /* NRTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRTabBarController.swift; sourceTree = "<group>"; };
 		DEA7E1A51F497B6C0002C148 /* NRBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRBaseView.swift; sourceTree = "<group>"; };
-		DEA7E1AD1F4992030002C148 /* NRBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRBaseTableViewController.swift; sourceTree = "<group>"; };
 		DEA7E1B01F4996A90002C148 /* NRServiceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRServiceProvider.swift; sourceTree = "<group>"; };
 		DEA7E1B61F49A67F0002C148 /* NRAppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRAppManager.swift; sourceTree = "<group>"; };
 		DEAD34162058263C0064C46A /* Themes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Themes.json; sourceTree = "<group>"; };
@@ -178,7 +175,6 @@
 		DEBC6531209764790057F649 /* SearchStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchStoryboard.storyboard; sourceTree = "<group>"; };
 		DEBC65532097649B0057F649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEBC65542097661F0057F649 /* NRSearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRSearchCollectionViewController.swift; sourceTree = "<group>"; };
-		DED799F7217DB2290021116A /* NRBaseScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRBaseScrollViewController.swift; sourceTree = "<group>"; };
 		DED799FF217DD6740021116A /* NRSearchFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRSearchFilterViewModel.swift; sourceTree = "<group>"; };
 		DEDC0A2E2068BCC80013D84F /* NovelServiceRules.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = NovelServiceRules.plist; sourceTree = "<group>"; };
 		DEDE271B2069522300E4C992 /* NRRules_fetchNovelList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRRules_fetchNovelList.swift; sourceTree = "<group>"; };
@@ -370,9 +366,7 @@
 				DEA7E1A11F497B5D0002C148 /* NRTabBarController.swift */,
 				DEA7E1A01F497B5D0002C148 /* NRBaseViewController.swift */,
 				DEBC650520970CB50057F649 /* NRBaseViewController+Utility.swift */,
-				DEA7E1AD1F4992030002C148 /* NRBaseTableViewController.swift */,
 				DE0173BC216148B7007F5546 /* NRBaseCollectionViewController.swift */,
-				DED799F7217DB2290021116A /* NRBaseScrollViewController.swift */,
 				DEA7E1A21F497B5D0002C148 /* Views */,
 			);
 			path = BaseComponents;
@@ -752,10 +746,8 @@
 				DEA7E1B11F4996A90002C148 /* NRServiceProvider.swift in Sources */,
 				DEBC650620970CB50057F649 /* NRBaseViewController+Utility.swift in Sources */,
 				DEBC6544209764790057F649 /* NRNovelTableViewCell.swift in Sources */,
-				DEA7E1AE1F4992030002C148 /* NRBaseTableViewController.swift in Sources */,
 				DEE9351620959E1D00B10398 /* NRService_fetchChapter.swift in Sources */,
 				DEA7E1A41F497B5D0002C148 /* NRTabBarController.swift in Sources */,
-				DED799F8217DB2290021116A /* NRBaseScrollViewController.swift in Sources */,
 				DEA7E1441F496BAB0002C148 /* AppDelegate.swift in Sources */,
 				DE818246208356BA001316E5 /* NRService_fetchRecentUpdatesList.swift in Sources */,
 				DEBC654E209764790057F649 /* NRNovelChapterViewController.swift in Sources */,

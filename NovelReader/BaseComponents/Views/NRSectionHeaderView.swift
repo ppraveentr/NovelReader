@@ -15,12 +15,12 @@ class NRSectionHeaderView: UICollectionReusableView {
 
     // Left Button
     @IBOutlet
-    fileprivate var buttonLeft: FTButton?
+    fileprivate var buttonLeft: UIButton?
     @IBOutlet
     fileprivate var titleLabel: FTLabel?
     // Right Button
     @IBOutlet
-    fileprivate var buttonRight: FTButton?
+    fileprivate var buttonRight: UIButton?
     fileprivate var contentXIBView: UIView?
 
     override init(frame: CGRect) {
@@ -74,7 +74,7 @@ class NRSectionHeaderView: UICollectionReusableView {
     }
 
     // MARK: Customise View
-    var rightButton: FTButton? {
+    var rightButton: UIButton? {
         return buttonRight
     }
 }

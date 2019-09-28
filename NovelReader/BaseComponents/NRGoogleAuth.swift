@@ -33,9 +33,9 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate {
 //       GIDSignIn.sharedInstance().signInSilently()
     }
 
-    static func signInButton() -> FTButton {
+    static func signInButton() -> UIButton {
 
-        let signButtton = FTButton(type: .custom)
+        let signButtton = UIButton(type: .custom)
         signButtton.theme = "googleButton"
         signButtton.addSizeConstraint(44, 44)
 

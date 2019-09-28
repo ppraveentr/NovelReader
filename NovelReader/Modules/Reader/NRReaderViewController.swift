@@ -65,19 +65,23 @@ class NRReaderViewController: NRBaseViewController {
                 if let content = chapter?.content {
                     self.loadWebContent(contnet: content)
                 }
+                
+                self.configureWebview()
             }
         }
-
+    }
+    
+    func loadWebContent(contnet: String) {
+        contentView.webView.loadHTMLBody(contnet)
+    }
+    
+    func configureWebview() {
         // FTFontPickerViewprotocol
         if let fontPicker = fontPicker {
             fontSize(fontPicker.fontSize)
             pickerColor(textColor: fontPicker.fontColor, backgroundColor: fontPicker.backgroundColor)
             fontFamily(fontPicker.fontFamily)
         }
-    }
-    
-    func loadWebContent(contnet: String) {
-        contentView.webView.loadHTMLBody(contnet)
     }
 }
 

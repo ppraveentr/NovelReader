@@ -108,7 +108,7 @@
                 "barTintColor": "navBarRed"
             }
         },
-		"FTButton": {
+		"UIButton": {
 			"default": {
 				"textfont": "system14",
 				"textcolor": "black",

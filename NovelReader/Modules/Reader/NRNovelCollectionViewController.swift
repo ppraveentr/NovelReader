@@ -32,7 +32,7 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
 
     // MARK: SetUp UICollectionView
     func setupColletionView() {
-        
+            
         // Register Cell
         NRNovelCollectionType.topNovel.registerCell(collectionView)
         NRNovelCollectionType.recentNovel.registerCell(collectionView)
@@ -53,7 +53,7 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
 
 // MARK: Fetch - Novels from backend
 extension NRNovelCollectionViewController: NRNovelCollectionViewModelProtocal {
-
+    
     func showRetryAlert() {
         let alert = UIAlertController(title: kServiceFailureAlertTitle, message: kServiceFailureAlertMessage, preferredStyle: UIAlertController.Style.alert)
         let action = UIAlertAction(title: kRetryString, style: .default) { [weak self] _ in
@@ -70,7 +70,7 @@ extension NRNovelCollectionViewController: NRNovelCollectionViewModelProtocal {
 }
 
 // MARK: UICollectionView delegates
-extension NRNovelCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension NRNovelCollectionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
 
     // viewForSupplementaryElement
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -93,12 +93,12 @@ extension NRNovelCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
 
     // numberOfItemsInSection
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.currentNovelList?.count ?? 0
     }
 
     // cellForItem
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cellIdentifier = viewModel.novelCollectionType.cellIdentifier
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
