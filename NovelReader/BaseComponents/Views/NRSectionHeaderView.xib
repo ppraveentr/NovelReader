@@ -28,7 +28,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xvT-8x-wdJ">
                     <rect key="frame" x="10" y="10" width="434" height="46"/>
                     <subviews>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="toO-En-fcy" customClass="FTButton" customModule="MobileCore">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="toO-En-fcy">
                             <rect key="frame" x="0.0" y="11" width="0.0" height="24"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         </button>
@@ -38,7 +38,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hNb-HZ-cNd" customClass="FTButton" customModule="MobileCore">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hNb-HZ-cNd">
                             <rect key="frame" x="434" y="12" width="0.0" height="22"/>
                             <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                             <state key="normal" backgroundImage="close-circle"/>

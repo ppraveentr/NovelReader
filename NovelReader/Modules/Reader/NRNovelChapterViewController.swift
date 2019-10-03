@@ -8,18 +8,17 @@
 
 import UIKit
 
-class NRNovelChapterViewController: NRBaseTableViewController {
+class NRNovelChapterViewController: FTBaseViewController, FTTableViewControllerProtocal {
+    
     var novel: NRNovel?
     lazy var novelDescView: NRNovelDescriptionView? = NRNovelDescriptionView.fromNib() as? NRNovelDescriptionView
     
-    override func tableStyle() -> UITableView.Style { return .grouped }
+    func tableStyle() -> UITableView.Style { return .grouped }
 //    override func tableViewEdgeOffsets() -> FTEdgeOffsets { return FTEdgeOffsets(10, 0, 10, 0) }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupToolBar()
-        tableView.backgroundColor = .clear
-        tableView.register(NRNovelTableViewCell.getNIBFile(), forCellReuseIdentifier: kNovelCellIdentifier)
+        configureTableView()
         
         NRServiceProvider.getNovelChaptersList(novel.forceUnwrapped) { [weak self] novelResponse in
             guard novelResponse != nil, let self = self else {
@@ -32,6 +31,15 @@ class NRNovelChapterViewController: NRBaseTableViewController {
         }
     }
     
+    func configureTableView() {
+        setupToolBar()
+
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = .clear
+        tableView.register(NRNovelTableViewCell.getNIBFile(), forCellReuseIdentifier: kNovelCellIdentifier)
+    }
+    
     func configureContent(content: AnyObject) {
         if let content = content as? NRNovel {
             self.novelDescView?.configureContent(content: content)
@@ -41,25 +49,25 @@ class NRNovelChapterViewController: NRBaseTableViewController {
     }
 }
 
-extension NRNovelChapterViewController {
+extension NRNovelChapterViewController: UITableViewDataSource, UITableViewDelegate {
     
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 20
     }
     
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 5.0
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 5.0
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return novel?.chapterList?.count ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: kNovelCellIdentifier, for: indexPath)
         
@@ -71,9 +79,6 @@ extension NRNovelChapterViewController {
         
         return cell
     }
-}
-
-extension NRNovelChapterViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         

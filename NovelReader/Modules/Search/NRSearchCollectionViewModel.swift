@@ -33,7 +33,7 @@ class NRSearchCollectionViewModel {
 
     // get-Novels from backend
     func searchNovel(keywoard: String) {
-        guard keywoard.length > 0 else {
+        guard keywoard.count > 0 else {
             return
         }
 

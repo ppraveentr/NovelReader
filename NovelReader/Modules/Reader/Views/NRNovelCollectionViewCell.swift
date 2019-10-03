@@ -55,7 +55,7 @@ class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProto
     @IBOutlet
     private var lastUpdateLabel: FTLabel?
     @IBOutlet
-    private var viewsButton: FTButton?
+    private var viewsButton: UIButton?
     
     override func awakeFromNib() {
         super.awakeFromNib()

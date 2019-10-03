@@ -22,7 +22,7 @@ class NRNovelDescriptionView: FTView {
     @IBOutlet
     private var lastUpdateLabel: FTLabel?
     @IBOutlet
-    private var viewsButton: FTButton?
+    private var viewsButton: UIButton?
     
     func configureContent(content: AnyObject) {
         guard let novel = content as? NRNovel else {

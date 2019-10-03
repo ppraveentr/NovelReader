@@ -8,11 +8,11 @@
 
 import Foundation
 
-typealias NRNovelCollectionLifeCycleDelegate = (FTBaseViewController & NRNovelCollectionViewModelProtocal)
+typealias NRNovelCollectionLifeCycleDelegate = (FTBaseViewController & NRNovelCollectionViewModelProtocal & UICollectionViewDelegate & UICollectionViewDataSource)
 
 protocol NRNovelCollectionViewModelProtocal {
     func showRetryAlert()
-    func configureColletionView()
+    func configureColletionView(_ delegate: UICollectionViewDelegate?, _ source: UICollectionViewDataSource?)
 }
 
 class NRNovelCollectionViewModel {
@@ -30,7 +30,7 @@ class NRNovelCollectionViewModel {
     // Update collectionView when contentList changes
     var currentNovelList: [NRNovel]? = [] {
         didSet {
-            lifeDelegate?.configureColletionView()
+            lifeDelegate?.configureColletionView(self.lifeDelegate, self.lifeDelegate)
         }
     }
 

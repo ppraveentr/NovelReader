@@ -15,26 +15,18 @@ protocol NRConfigureNovelCellProtocol {
 }
 
 extension NRConfigureNovelCellProtocol where Self: UIView {
-
     func configureContent(content: AnyObject) {
+        // Optional Protocal implementation: intentionally empty
     }
 
     func configureContent(content: AnyObject, view: UICollectionView?, indexPath: IndexPath?) {
+        // Optional Protocal implementation: intentionally empty
     }
 }
 
 // MARK: BaseView Controller utility
 extension FTBaseViewController {
-
-//    override open var prefersStatusBarHidden: Bool {
-//        return true
-//    }
-
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.prepareSegue(segue, sender: sender)
-    }
-
-    public func prepareSegue(_ segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == kShowNovelChapterList {
             configureShowNovelChapterList(segue, sender: sender)
         }

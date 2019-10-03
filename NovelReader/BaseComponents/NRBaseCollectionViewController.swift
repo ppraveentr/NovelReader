@@ -13,7 +13,7 @@ private var defaultSectionInset: UIEdgeInsets {
     return UIEdgeInsets(top: 15, left: 20, bottom: 10, right: 20)
 }
 
-class NRBaseCollectionViewController: FTBaseCollectionViewController {
+class NRBaseCollectionViewController: FTBaseViewController, FTCollectionViewControllerProtocol {
 
     // MARK: Show/Hide Tabbar, View lifecycle
     override func viewWillDisappear(_ animated: Bool) {
@@ -35,7 +35,7 @@ class NRBaseCollectionViewController: FTBaseCollectionViewController {
         return CGSize(width: FTScreenWidth - (sectionInset().left + sectionInset().right), height: 20)
     }
 
-    override func flowLayout() -> UICollectionViewFlowLayout {
+    var flowLayout: NSObject {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = estimatedItemSize()
         if #available(iOS 10.0, *) {
@@ -47,8 +47,7 @@ class NRBaseCollectionViewController: FTBaseCollectionViewController {
         return layout
     }
 
-    func configureColletionView() {
-
+    func configureColletionView(_ delegate: UICollectionViewDelegate? = nil, _ source: UICollectionViewDataSource? = nil) {
         // Relaod collectionView on exit
         defer {
             DispatchQueue.main.async {
@@ -57,15 +56,15 @@ class NRBaseCollectionViewController: FTBaseCollectionViewController {
         }
 
         // Setup collectionView once
-        guard self.delegate == nil else {
+        guard collectionView.delegate == nil else {
             return
         }
 
         collectionView.theme = FTThemeStyle.defaultStyle
 
         // Collection delegates
-        self.dataSource = self
-        self.delegate = self
+        collectionView.dataSource = source
+        collectionView.delegate = delegate
     }
 }
 
@@ -73,7 +72,6 @@ extension UICollectionViewCell {
 
     override open func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes)
         -> UICollectionViewLayoutAttributes {
-
             let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
             var newFrame = layoutAttributes.frame
             newFrame.size.width = ceil(FTScreenWidth) - (defaultSectionInset.left + defaultSectionInset.right)

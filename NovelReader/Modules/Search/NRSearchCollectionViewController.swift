@@ -40,7 +40,7 @@ class NRSearchCollectionViewController: NRBaseCollectionViewController {
 extension NRSearchCollectionViewController: NRSearchCollectionViewModelProtocal {
 
     func refreshCollectionView() {
-        self.configureColletionView()
+        self.configureColletionView(self, self)
     }
 }
 
@@ -58,15 +58,15 @@ extension NRSearchCollectionViewController: UISearchBarDelegate {
     }
 }
 
-extension NRSearchCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension NRSearchCollectionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     // numberOfItemsInSection
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.currentNovelList?.count ?? 0
     }
 
     // cellForItem
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNovelCellIdentifier, for: indexPath)
 
