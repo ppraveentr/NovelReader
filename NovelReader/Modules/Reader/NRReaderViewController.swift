@@ -50,7 +50,7 @@ class NRReaderViewController: NRBaseViewController {
         let title = novelChapter?.shortTitle ?? novelChapter?.title ?? novel?.title ?? ""
         self.setupNavigationbar(
             title: title,
-            leftButton: UIBarButtonItem(itemType: .stop, sender: self),
+            leftButton: UIBarButtonItem(itemType: .stop, target: self),
             rightButton: fontPickerBarItem
         )
 
@@ -59,8 +59,8 @@ class NRReaderViewController: NRBaseViewController {
         if let url = novelChapter?.identifier ?? novel?.identifier {
             NRServiceProvider.getNovelChapter(url) { [unowned self] (chapter) in
 
-                if let content = chapter?.shortTitle {
-                    self.title = content
+                if let shortTitle = chapter?.shortTitle {
+                    self.title = shortTitle
                 }
                 if let content = chapter?.content {
                     self.loadWebContent(contnet: content)

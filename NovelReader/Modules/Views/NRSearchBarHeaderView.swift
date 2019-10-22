@@ -8,8 +8,8 @@
 
 import Foundation
 
-class NRSearchBarHeaderView: FTView {
-    var searchBar: FTSearchBar?
+class NRSearchBarHeaderView: UIView {
+    var searchBar: UISearchBar?
     weak var searchBarDelegate: UISearchBarDelegate?
 
     override init(frame: CGRect) {
@@ -32,7 +32,8 @@ class NRSearchBarHeaderView: FTView {
 
         self.theme = FTThemeStyle.defaultStyle
 
-        searchBar = FTSearchBar(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 44)), textColor: .white)
+        searchBar = UISearchBar(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 44)))
+        //textColor: .white
         searchBar?.theme = FTThemeStyle.defaultStyle
         searchBar?.delegate = searchBarDelegate
 

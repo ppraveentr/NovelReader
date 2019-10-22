@@ -11,7 +11,7 @@ import Foundation
 class NRSectionHeaderView: UICollectionReusableView {
 
     var titleString: String?
-    var tapAction: FTAppBaseCompletionBlock?
+    var tapAction: FTViewControllerCompletionBlock?
 
     // Left Button
     @IBOutlet
@@ -53,7 +53,7 @@ class NRSectionHeaderView: UICollectionReusableView {
         titleLabel?.text = title
     }
 
-    func setRightButton(title: String? = nil, image: UIImage? = nil, tapAction: FTAppBaseCompletionBlock? = nil) {
+    func setRightButton(title: String? = nil, image: UIImage? = nil, tapAction: FTViewControllerCompletionBlock? = nil) {
         // Right Button
         self.buttonRight?.isHidden = false
         if !title.isNilOrEmpty {

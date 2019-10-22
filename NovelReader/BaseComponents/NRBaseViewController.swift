@@ -8,8 +8,13 @@
 
 import Foundation
 
-public class NRBaseViewController: FTBaseViewController {
+public class NRBaseViewController: UIViewController {
 
+    public override func loadView() {
+        super.loadView()
+        setupCoreView()
+    }
+    
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideBottomBar(false)

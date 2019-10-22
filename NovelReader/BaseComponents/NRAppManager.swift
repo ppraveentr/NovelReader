@@ -34,9 +34,6 @@ final class NRAppManager {
     // MARK: Model Binding
     func configureAppBase() {
 
-        // Register self's type as Bundle-Identifier for getting class name
-        FTReflection.registerModuleIdentifier(NRAppDelegate.self)
-
         // Service Binding
         FTMobileConfig.serviceBindingPath = kServiceBindingsName
         FTMobileConfig.serviceBindingRulesName = kServiceBindingRulesName
@@ -52,13 +49,13 @@ final class NRAppManager {
     func configDebug() {
         #if DEBUG
         // Console Loggin
-//        FTLogger.enableConsoleLogging = true
+        FTMobileConfig.enableConsoleLogging = true
         // Debug-Postman
 //        FTMobileConfig.appBaseURL = kPostmanURL
         // Debug-only code
-//        FTMobileConfig.appBaseURL = kMockServerURL
-//        FTMobileConfig.mockBundleResource = kMockBundleResource
-//        FTMobileConfig.isMockData = kMockDataEnabled
+        FTMobileConfig.appBaseURL = kMockServerURL
+        FTMobileConfig.mockBundleResource = kMockBundleResource
+        FTMobileConfig.isMockData = kMockDataEnabled
         #endif
     }
     
@@ -102,10 +99,7 @@ final class NRAppManager {
         //        textBarAppearance.tintColor = .blue
 
         //Status Bar 
-        FTThemesManager.setStatusBarBackgroundColor(kNavigationBarColor)
-
-        // WARNING :
-        // UIApplication.shared.statusBarStyle = .lightContent
+//        FTThemesManager.setStatusBarBackgroundColor(kNavigationBarColor)
 
         //Loading Indicator
         setupLoadingIndicator()

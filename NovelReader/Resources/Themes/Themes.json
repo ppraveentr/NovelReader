@@ -37,6 +37,16 @@
             "size": "17.0"
         }
 	},
+    "link": {
+        "url": {
+            "underlineColor": "blue",
+            "foregroundColor": "blue"
+        },
+        "hash": {
+            "underlineColor": "blue",
+            "foregroundColor": "blue"
+        }
+    },
 	"appearance": {
 		"UIStatusBar": {
 			"tintColor": "white"
@@ -101,7 +111,7 @@
                 "backgroundColor": "navBarRed"
             }
         },
-        "FTSearchBar": {
+        "UISearchBar": {
             "default": {
                 "textcolor": "white",
                 "tintColor": "white",

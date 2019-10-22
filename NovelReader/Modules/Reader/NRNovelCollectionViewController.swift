@@ -23,7 +23,7 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
         viewModel.novelCollectionType = .recentNovel
 
         // View Title
-        let rightButtonItem = UIBarButtonItem(itemType: .search, sender: self)
+        let rightButtonItem = UIBarButtonItem(itemType: .search, target: self)
         self.setupNavigationbar(title: kNovelReaderTitle, rightButton: rightButtonItem)
 
         // Collection View
@@ -52,7 +52,7 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
 }
 
 // MARK: Fetch - Novels from backend
-extension NRNovelCollectionViewController: NRNovelCollectionViewModelProtocal {
+extension NRNovelCollectionViewController: NRNovelCollectionViewModelProtocol {
     
     func showRetryAlert() {
         let alert = UIAlertController(title: kServiceFailureAlertTitle, message: kServiceFailureAlertMessage, preferredStyle: UIAlertController.Style.alert)
@@ -112,14 +112,14 @@ extension NRNovelCollectionViewController: UICollectionViewDelegateFlowLayout, U
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cur = viewModel.currentNovelList?[indexPath.row]
-
-        if viewModel.novelCollectionType == .recentNovel {
-            self.performSegue(withIdentifier: kShowNovelReaderView, sender: cur)
-        }
-        else {
-            self.performSegue(withIdentifier: kShowNovelChapterList, sender: cur)
-        }
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let cur = viewModel.currentNovelList?[indexPath.row]
+//
+//        if viewModel.novelCollectionType == .recentNovel {
+//            self.performSegue(withIdentifier: kShowNovelReaderView, sender: cur)
+//        }
+//        else {
+//            self.performSegue(withIdentifier: kShowNovelChapterList, sender: cur)
+//        }
+//    }
 }

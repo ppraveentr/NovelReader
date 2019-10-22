@@ -8,5 +8,5 @@
 
 import Foundation
 
-class NRBaseView: FTBaseView {
+class NRBaseView: FTView {
 }

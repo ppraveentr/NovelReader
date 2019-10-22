@@ -33,7 +33,6 @@
 		DEA13C94217CBF5500C572E1 /* searchFilter.json in Resources */ = {isa = PBXBuildFile; fileRef = DEA13C93217CBF5500C572E1 /* searchFilter.json */; };
 		DEA7E1441F496BAB0002C148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1431F496BAB0002C148 /* AppDelegate.swift */; };
 		DEA7E1501F496BAB0002C148 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA7E14E1F496BAB0002C148 /* LaunchScreen.storyboard */; };
-		DEA7E15B1F496BAB0002C148 /* NovelReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E15A1F496BAB0002C148 /* NovelReaderTests.swift */; };
 		DEA7E1661F496BAB0002C148 /* NovelReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1651F496BAB0002C148 /* NovelReaderUITests.swift */; };
 		DEA7E1A31F497B5D0002C148 /* NRBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1A01F497B5D0002C148 /* NRBaseViewController.swift */; };
 		DEA7E1A41F497B5D0002C148 /* NRTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7E1A11F497B5D0002C148 /* NRTabBarController.swift */; };
@@ -138,7 +137,6 @@
 		DEA7E1431F496BAB0002C148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEA7E14F1F496BAB0002C148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEA7E1561F496BAB0002C148 /* NovelReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NovelReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEA7E15A1F496BAB0002C148 /* NovelReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovelReaderTests.swift; sourceTree = "<group>"; };
 		DEA7E15C1F496BAB0002C148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEA7E1611F496BAB0002C148 /* NovelReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NovelReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA7E1651F496BAB0002C148 /* NovelReaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovelReaderUITests.swift; sourceTree = "<group>"; };
@@ -214,6 +212,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A92490C2DBD1530913693F6E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DE3834732172538F00DD4B27 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +285,7 @@
 				DEA7E1591F496BAB0002C148 /* NovelReaderTests */,
 				DEA7E1641F496BAB0002C148 /* NovelReaderUITests */,
 				DEA7E1411F496BAB0002C148 /* Products */,
+				A92490C2DBD1530913693F6E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -313,7 +319,6 @@
 		DEA7E1591F496BAB0002C148 /* NovelReaderTests */ = {
 			isa = PBXGroup;
 			children = (
-				DEA7E15A1F496BAB0002C148 /* NovelReaderTests.swift */,
 				DEA7E15C1F496BAB0002C148 /* Info.plist */,
 			);
 			path = NovelReaderTests;
@@ -550,6 +555,7 @@
 					};
 					DEA7E13F1F496BAB0002C148 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = W6W48SVQX7;
 						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 					};
@@ -562,7 +568,6 @@
 					};
 					DEA7E1601F496BAB0002C148 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = W6W48SVQX7;
 						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DEA7E13F1F496BAB0002C148;
@@ -700,7 +705,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEA7E15B1F496BAB0002C148 /* NovelReaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,7 +754,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
@@ -777,7 +781,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
@@ -926,8 +930,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W6W48SVQX7;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					"$(SDKROOT)/usr/include/libxml2",
@@ -939,10 +944,12 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ft.NovelReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NovelReader/NovelReader-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -951,9 +958,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W6W48SVQX7;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					"$(SDKROOT)/usr/include/libxml2",
@@ -965,17 +973,20 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ft.NovelReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NovelReader/NovelReader-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		DEA7E16E1F496BAB0002C148 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = W6W48SVQX7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Frameworks",
@@ -985,6 +996,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ft.NovelReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NovelReaderTests/NovelReaderTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NovelReader.app/NovelReader";
@@ -994,8 +1007,9 @@
 		DEA7E16F1F496BAB0002C148 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = W6W48SVQX7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Frameworks",
@@ -1005,6 +1019,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ft.NovelReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NovelReaderTests/NovelReaderTests-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NovelReader.app/NovelReader";
@@ -1015,7 +1030,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = W6W48SVQX7;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Frameworks",
 					"$(inherited)",
@@ -1034,7 +1049,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = W6W48SVQX7;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Frameworks",
 					"$(inherited)",

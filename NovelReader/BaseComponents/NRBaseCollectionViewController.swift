@@ -13,7 +13,7 @@ private var defaultSectionInset: UIEdgeInsets {
     return UIEdgeInsets(top: 15, left: 20, bottom: 10, right: 20)
 }
 
-class NRBaseCollectionViewController: FTBaseViewController, FTCollectionViewControllerProtocol {
+class NRBaseCollectionViewController: NRBaseViewController, FTCollectionViewControllerProtocol {
 
     // MARK: Show/Hide Tabbar, View lifecycle
     override func viewWillDisappear(_ animated: Bool) {

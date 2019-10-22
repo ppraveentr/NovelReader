@@ -25,9 +25,14 @@ class NRRecentNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCel
             return
         }
         
+        novelTitle?.isEnabled = true
         novelTitle?.text = novel.title
-        // novelTitle?.isLinkUnderLineEnabled = true
+        novelTitle?.text = "<p>Follow @krelborn or #visit <a href=\"www.W3Schools.1.com\">Visit W3Schools</a> #visit <a href=\"www.W3Schools.2.com\">Visit W3Schools</a> #visit <a href=\"www.W3Schools.3.com\">Visit W3Schools</a> #visit <a href=\"www.W3Schools.4.com\">Visit W3Schools</a></p>"
 
+        novelTitle?.linkHandler = { link in
+            print(link.linkURL)
+        }
+        
         lastUpdateTitleLabel?.text = "Last Update:"
         lastUpdateTimeLabel?.text = novel.lastUpdated
 

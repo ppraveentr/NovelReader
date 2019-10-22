@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NRNovelDescriptionView: FTView {
+class NRNovelDescriptionView: UITableViewHeaderFooterView {
     
     @IBOutlet
     private var titleLabel: FTLabel?
