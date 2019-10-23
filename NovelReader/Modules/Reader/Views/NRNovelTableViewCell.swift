@@ -11,9 +11,9 @@ import Foundation
 class NRNovelTableViewCell: UITableViewCell {
     
     @IBOutlet
-    private var chapterDate: FTLabel?
+    private var chapterDate: UILabel?
     @IBOutlet
-    private var titleLabel: FTLabel?
+    private var titleLabel: UILabel?
     
 //    override func awakeFromNib() {
 //        super.awakeFromNib()

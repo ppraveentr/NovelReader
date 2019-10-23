@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -27,8 +27,8 @@
                             <constraint firstAttribute="height" constant="20" id="iYl-BW-MXp"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="  " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhe-Uf-VP9" customClass="FTLabel" customModule="MobileCore">
-                        <rect key="frame" x="10" y="10" width="361" height="47"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="  " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhe-Uf-VP9">
+                        <rect key="frame" x="10" y="10" width="361" height="23"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,9 +37,9 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="B8i-VA-Mxq">
-                        <rect key="frame" x="10" y="67" width="361" height="16"/>
+                        <rect key="frame" x="10" y="43" width="361" height="16"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" text="Last Update: " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXk-Ac-Emq" customClass="FTLabel" customModule="MobileCore">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" text="Last Update: " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXk-Ac-Emq">
                                 <rect key="frame" x="0.0" y="0.0" width="81" height="16"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <nil key="textColor"/>
@@ -48,7 +48,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="theme" value="system13Gray"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text=" " textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ZZ-5I-57W" customClass="FTLabel" customModule="MobileCore">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text=" " textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ZZ-5I-57W">
                                 <rect key="frame" x="85" y="0.0" width="276" height="16"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <nil key="textColor"/>
@@ -67,7 +67,7 @@
                 <constraint firstItem="6Gh-98-tSv" firstAttribute="leading" secondItem="lhe-Uf-VP9" secondAttribute="trailing" constant="4" id="8Gm-Mq-DiZ"/>
                 <constraint firstItem="6Gh-98-tSv" firstAttribute="leading" secondItem="B8i-VA-Mxq" secondAttribute="trailing" constant="4" id="DM2-LH-FUo"/>
                 <constraint firstItem="B8i-VA-Mxq" firstAttribute="leadingMargin" secondItem="TsU-yb-VIy" secondAttribute="leading" constant="10" id="WlL-Wh-1Q4"/>
-                <constraint firstAttribute="bottomMargin" secondItem="B8i-VA-Mxq" secondAttribute="bottom" constant="10" id="Wv2-iN-Yxv"/>
+                <constraint firstAttribute="bottomMargin" secondItem="B8i-VA-Mxq" secondAttribute="bottom" id="Wv2-iN-Yxv"/>
                 <constraint firstItem="lhe-Uf-VP9" firstAttribute="top" secondItem="TsU-yb-VIy" secondAttribute="top" constant="10" id="Wwh-hI-gQK"/>
                 <constraint firstItem="B8i-VA-Mxq" firstAttribute="top" secondItem="lhe-Uf-VP9" secondAttribute="bottom" constant="10" id="cq2-77-6HS"/>
                 <constraint firstItem="lhe-Uf-VP9" firstAttribute="leading" secondItem="TsU-yb-VIy" secondAttribute="leading" constant="10" id="l1f-Fr-8oD"/>

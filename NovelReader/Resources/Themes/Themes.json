@@ -150,7 +150,7 @@
 				}
 			}
 		},
-		"FTLabel": {
+		"UILabel": {
 			"default": {
 				"textfont": "system14",
 				"textcolor": "black",

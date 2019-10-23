@@ -11,7 +11,7 @@ import Foundation
 class NRSelectionCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProtocol {
 
     @IBOutlet
-    private var titleLabel: FTLabel?
+    private var titleLabel: UILabel?
     @IBOutlet
     private var checkMarkImage: UIImageView?
 

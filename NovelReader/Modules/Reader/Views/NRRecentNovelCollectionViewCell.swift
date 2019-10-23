@@ -10,11 +10,11 @@ import UIKit
 
 class NRRecentNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProtocol {
     @IBOutlet
-    private weak var novelTitle: FTLabel?
+    private weak var novelTitle: UILabel?
     @IBOutlet
-    private weak var lastUpdateTitleLabel: FTLabel?
+    private weak var lastUpdateTitleLabel: UILabel?
     @IBOutlet
-    private weak var lastUpdateTimeLabel: FTLabel?
+    private weak var lastUpdateTimeLabel: UILabel?
 
     var collectionView: UICollectionView?
     var indexPath: IndexPath?
@@ -27,11 +27,6 @@ class NRRecentNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCel
         
         novelTitle?.isEnabled = true
         novelTitle?.text = novel.title
-        novelTitle?.text = "<p>Follow @krelborn or #visit <a href=\"www.W3Schools.1.com\">Visit W3Schools</a> #visit <a href=\"www.W3Schools.2.com\">Visit W3Schools</a> #visit <a href=\"www.W3Schools.3.com\">Visit W3Schools</a> #visit <a href=\"www.W3Schools.4.com\">Visit W3Schools</a></p>"
-
-        novelTitle?.linkHandler = { link in
-            print(link.linkURL)
-        }
         
         lastUpdateTitleLabel?.text = "Last Update:"
         lastUpdateTimeLabel?.text = novel.lastUpdated
@@ -39,5 +34,7 @@ class NRRecentNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCel
         novelItem = novel
         self.collectionView = view
         self.indexPath = indexPath
+        
+        novelTitle?.layoutView()
     }
 }

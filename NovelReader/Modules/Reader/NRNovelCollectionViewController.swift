@@ -112,14 +112,14 @@ extension NRNovelCollectionViewController: UICollectionViewDelegateFlowLayout, U
         return cell
     }
 
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cur = viewModel.currentNovelList?[indexPath.row]
-//
-//        if viewModel.novelCollectionType == .recentNovel {
-//            self.performSegue(withIdentifier: kShowNovelReaderView, sender: cur)
-//        }
-//        else {
-//            self.performSegue(withIdentifier: kShowNovelChapterList, sender: cur)
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cur = viewModel.currentNovelList?[indexPath.row]
+
+        if viewModel.novelCollectionType == .recentNovel {
+            self.performSegue(withIdentifier: kShowNovelReaderView, sender: cur)
+        }
+        else {
+            self.performSegue(withIdentifier: kShowNovelChapterList, sender: cur)
+        }
+    }
 }

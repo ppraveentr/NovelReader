@@ -17,7 +17,7 @@ class NRSectionHeaderView: UICollectionReusableView {
     @IBOutlet
     fileprivate var buttonLeft: UIButton?
     @IBOutlet
-    fileprivate var titleLabel: FTLabel?
+    fileprivate var titleLabel: UILabel?
     // Right Button
     @IBOutlet
     fileprivate var buttonRight: UIButton?
