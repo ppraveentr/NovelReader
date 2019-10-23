@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		551D4B59373680AF31DA7C54 /* Pods_NovelReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBB50C95D1065AD1D811225 /* Pods_NovelReaderTests.framework */; };
 		D45E3CF6230C0E6B005BD885 /* FTNovelReaderMockBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE81824C2084F8F6001316E5 /* FTNovelReaderMockBundle.bundle */; };
 		DE0173BD216148B7007F5546 /* NRBaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0173BC216148B7007F5546 /* NRBaseCollectionViewController.swift */; };
 		DE19ADC9217F80C400F58321 /* fetchChapter.json in Resources */ = {isa = PBXBuildFile; fileRef = DE19ADC7217F80C400F58321 /* fetchChapter.json */; };
@@ -68,6 +69,7 @@
 		DEF8D593206783B5001AFEC2 /* NRNovels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF8D58E20678310001AFEC2 /* NRNovels.swift */; };
 		DEFB28302171FEBB00B0E06B /* NRSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFB282F2171FEBB00B0E06B /* NRSearchModel.swift */; };
 		DEFB28362171FF6C00B0E06B /* NRSearchCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFB28352171FF6C00B0E06B /* NRSearchCollectionViewModel.swift */; };
+		F10A6A76D67001A76912FF07 /* Pods_NovelReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717E10BA598BE119435C74B0 /* Pods_NovelReader.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		38868DDF7155810A0880044A /* Pods-NovelReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NovelReaderTests.release.xcconfig"; path = "Target Support Files/Pods-NovelReaderTests/Pods-NovelReaderTests.release.xcconfig"; sourceTree = "<group>"; };
+		3BBB50C95D1065AD1D811225 /* Pods_NovelReaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NovelReaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F6100A04990C3C52EA3C01C /* Pods-NovelReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NovelReader.release.xcconfig"; path = "Target Support Files/Pods-NovelReader/Pods-NovelReader.release.xcconfig"; sourceTree = "<group>"; };
+		717E10BA598BE119435C74B0 /* Pods_NovelReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NovelReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74B82E02A32D88896A01A4D8 /* Pods-NovelReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NovelReader.debug.xcconfig"; path = "Target Support Files/Pods-NovelReader/Pods-NovelReader.debug.xcconfig"; sourceTree = "<group>"; };
+		D23FB7A0BF1CC7D7C773313D /* Pods-NovelReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NovelReaderTests.debug.xcconfig"; path = "Target Support Files/Pods-NovelReaderTests/Pods-NovelReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE0173BC216148B7007F5546 /* NRBaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRBaseCollectionViewController.swift; sourceTree = "<group>"; };
 		DE19ADC7217F80C400F58321 /* fetchChapter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetchChapter.json; sourceTree = "<group>"; };
 		DE19ADC8217F80C400F58321 /* fetchNovelChapters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetchNovelChapters.json; sourceTree = "<group>"; };
@@ -192,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F10A6A76D67001A76912FF07 /* Pods_NovelReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551D4B59373680AF31DA7C54 /* Pods_NovelReaderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +225,10 @@
 		A92490C2DBD1530913693F6E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				74B82E02A32D88896A01A4D8 /* Pods-NovelReader.debug.xcconfig */,
+				4F6100A04990C3C52EA3C01C /* Pods-NovelReader.release.xcconfig */,
+				D23FB7A0BF1CC7D7C773313D /* Pods-NovelReaderTests.debug.xcconfig */,
+				38868DDF7155810A0880044A /* Pods-NovelReaderTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -336,6 +350,8 @@
 		DEA7E1831F496D950002C148 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				717E10BA598BE119435C74B0 /* Pods_NovelReader.framework */,
+				3BBB50C95D1065AD1D811225 /* Pods_NovelReaderTests.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -488,10 +504,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEA7E16A1F496BAB0002C148 /* Build configuration list for PBXNativeTarget "NovelReader" */;
 			buildPhases = (
+				B94453DFE0674DC10374ECB4 /* [CP] Check Pods Manifest.lock */,
 				DEA7E13C1F496BAB0002C148 /* Sources */,
 				DEA7E13D1F496BAB0002C148 /* Frameworks */,
 				DEA7E13E1F496BAB0002C148 /* Resources */,
 				DEA7E19B1F4970400002C148 /* Embed Frameworks */,
+				24DCEB3AA1E6A7CCC054181E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -507,9 +525,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEA7E16D1F496BAB0002C148 /* Build configuration list for PBXNativeTarget "NovelReaderTests" */;
 			buildPhases = (
+				4BF6DD145CB13F625B1A45B7 /* [CP] Check Pods Manifest.lock */,
 				DEA7E1521F496BAB0002C148 /* Sources */,
 				DEA7E1531F496BAB0002C148 /* Frameworks */,
 				DEA7E1541F496BAB0002C148 /* Resources */,
+				87288D8B2A8006A1C13C7461 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -645,6 +665,89 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24DCEB3AA1E6A7CCC054181E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NovelReader/Pods-NovelReader-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MobileCore/MobileCore.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MobileCore.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NovelReader/Pods-NovelReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BF6DD145CB13F625B1A45B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NovelReaderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87288D8B2A8006A1C13C7461 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NovelReaderTests/Pods-NovelReaderTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MobileCore/MobileCore.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MobileCore.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NovelReaderTests/Pods-NovelReaderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B94453DFE0674DC10374ECB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NovelReader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DE8182482084F8F6001316E5 /* Sources */ = {
@@ -927,6 +1030,7 @@
 		};
 		DEA7E16B1F496BAB0002C148 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74B82E02A32D88896A01A4D8 /* Pods-NovelReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -955,6 +1059,7 @@
 		};
 		DEA7E16C1F496BAB0002C148 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F6100A04990C3C52EA3C01C /* Pods-NovelReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -983,6 +1088,7 @@
 		};
 		DEA7E16E1F496BAB0002C148 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D23FB7A0BF1CC7D7C773313D /* Pods-NovelReaderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1006,6 +1112,7 @@
 		};
 		DEA7E16F1F496BAB0002C148 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38868DDF7155810A0880044A /* Pods-NovelReaderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
