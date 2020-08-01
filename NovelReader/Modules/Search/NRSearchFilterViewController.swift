@@ -35,7 +35,7 @@ class NRSearchFilterViewController: NRBaseCollectionViewController {
 
         // Register Cell
         collectionView.register(
-            NRSelectionCollectionViewCell.getNIBFile(),
+            NRSelectionCollectionViewCell.nib,
             forCellWithReuseIdentifier: kSearchFilterCellIdentifier
         )
 
@@ -108,7 +108,7 @@ extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout, UICo
     }
 }
 
-extension NRSearchFilterViewController: NRSearchFilterViewModelProtocal {
+extension NRSearchFilterViewController: NRSearchFilterViewModelProtocol {
     func refreshCollectionView() {
         self.configureColletionView()
     }

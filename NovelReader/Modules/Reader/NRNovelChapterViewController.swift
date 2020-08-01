@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NRNovelChapterViewController: FTBaseViewController, FTTableViewControllerProtocal {
+class NRNovelChapterViewController: NRBaseViewController, FTTableViewControllerProtocol {
     
     var novel: NRNovel?
     lazy var novelDescView: NRNovelDescriptionView? = NRNovelDescriptionView.fromNib() as? NRNovelDescriptionView
@@ -37,7 +37,7 @@ class NRNovelChapterViewController: FTBaseViewController, FTTableViewControllerP
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
-        tableView.register(NRNovelTableViewCell.getNIBFile(), forCellReuseIdentifier: kNovelCellIdentifier)
+        tableView.register(NRNovelTableViewCell.nib, forCellReuseIdentifier: kNovelCellIdentifier)
     }
     
     func configureContent(content: AnyObject) {
@@ -99,8 +99,8 @@ extension NRNovelChapterViewController {
 
         self.setupNavigationbar(
             title: "",
-            leftButton: UIBarButtonItem(itemType: .stop, sender: self),
-            rightButton: UIBarButtonItem(itemType: .bookmarks, sender: self)
+            leftButton: UIBarButtonItem(itemType: .stop, target: self),
+            rightButton: UIBarButtonItem(itemType: .bookmarks, target: self)
         )
     }
     

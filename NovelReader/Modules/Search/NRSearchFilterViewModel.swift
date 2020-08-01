@@ -8,9 +8,9 @@
 
 import Foundation
 
-typealias NRSearchFilterLifeCycleDelegate = (FTBaseViewController & NRSearchFilterViewModelProtocal)
+typealias NRSearchFilterLifeCycleDelegate = (FTViewControllerProtocol & NRSearchFilterViewModelProtocol)
 
-protocol NRSearchFilterViewModelProtocal {
+protocol NRSearchFilterViewModelProtocol {
     func refreshCollectionView()
 }
 

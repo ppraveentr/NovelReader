@@ -8,19 +8,19 @@
 
 import Foundation
 
-class NRNovelDescriptionView: FTView {
+class NRNovelDescriptionView: UITableViewHeaderFooterView {
     
     @IBOutlet
-    private var titleLabel: FTLabel?
+    private var titleLabel: UILabel?
     @IBOutlet
-    private var descriptionLabel: FTLabel?
+    private var descriptionLabel: UILabel?
     @IBOutlet
     private var contentImageView: UIImageView?
     
     @IBOutlet
-    private var chapterLabel: FTLabel?
+    private var chapterLabel: UILabel?
     @IBOutlet
-    private var lastUpdateLabel: FTLabel?
+    private var lastUpdateLabel: UILabel?
     @IBOutlet
     private var viewsButton: UIButton?
     

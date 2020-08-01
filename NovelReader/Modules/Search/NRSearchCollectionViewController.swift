@@ -26,7 +26,7 @@ class NRSearchCollectionViewController: NRBaseCollectionViewController {
 
         // Register Cell
         collectionView.register(
-            NRNovelCollectionViewCell.getNIBFile(),
+            NRNovelCollectionViewCell.nib,
             forCellWithReuseIdentifier: kNovelCellIdentifier
         )
 
@@ -37,7 +37,7 @@ class NRSearchCollectionViewController: NRBaseCollectionViewController {
     }
 }
 
-extension NRSearchCollectionViewController: NRSearchCollectionViewModelProtocal {
+extension NRSearchCollectionViewController: NRSearchCollectionViewModelProtocol {
 
     func refreshCollectionView() {
         self.configureColletionView(self, self)

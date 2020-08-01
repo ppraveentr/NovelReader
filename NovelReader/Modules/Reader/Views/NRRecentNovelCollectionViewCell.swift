@@ -10,11 +10,11 @@ import UIKit
 
 class NRRecentNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProtocol {
     @IBOutlet
-    private weak var novelTitle: FTLabel?
+    private weak var novelTitle: UILabel?
     @IBOutlet
-    private weak var lastUpdateTitleLabel: FTLabel?
+    private weak var lastUpdateTitleLabel: UILabel?
     @IBOutlet
-    private weak var lastUpdateTimeLabel: FTLabel?
+    private weak var lastUpdateTimeLabel: UILabel?
 
     var collectionView: UICollectionView?
     var indexPath: IndexPath?
@@ -25,14 +25,16 @@ class NRRecentNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCel
             return
         }
         
+        novelTitle?.isEnabled = true
         novelTitle?.text = novel.title
-        // novelTitle?.isLinkUnderLineEnabled = true
-
+        
         lastUpdateTitleLabel?.text = "Last Update:"
         lastUpdateTimeLabel?.text = novel.lastUpdated
 
         novelItem = novel
         self.collectionView = view
         self.indexPath = indexPath
+        
+        novelTitle?.layoutView()
     }
 }

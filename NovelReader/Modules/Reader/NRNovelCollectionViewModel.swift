@@ -8,9 +8,9 @@
 
 import Foundation
 
-typealias NRNovelCollectionLifeCycleDelegate = (FTBaseViewController & NRNovelCollectionViewModelProtocal & UICollectionViewDelegate & UICollectionViewDataSource)
+typealias NRNovelCollectionLifeCycleDelegate = (FTViewControllerProtocol & NRNovelCollectionViewModelProtocol & UICollectionViewDelegate & UICollectionViewDataSource)
 
-protocol NRNovelCollectionViewModelProtocal {
+protocol NRNovelCollectionViewModelProtocol {
     func showRetryAlert()
     func configureColletionView(_ delegate: UICollectionViewDelegate?, _ source: UICollectionViewDataSource?)
 }
@@ -79,12 +79,12 @@ enum NRNovelCollectionType: Int {
         switch self {
         case .recentNovel:
             collectionView.register(
-                NRRecentNovelCollectionViewCell.getNIBFile(),
+                NRRecentNovelCollectionViewCell.nib,
                 forCellWithReuseIdentifier: self.cellIdentifier
             )
         case .topNovel:
             collectionView.register(
-                NRNovelCollectionViewCell.getNIBFile(),
+                NRNovelCollectionViewCell.nib,
                 forCellWithReuseIdentifier: self.cellIdentifier
             )
         }

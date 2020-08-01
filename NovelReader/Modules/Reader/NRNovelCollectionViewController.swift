@@ -23,7 +23,7 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
         viewModel.novelCollectionType = .recentNovel
 
         // View Title
-        let rightButtonItem = UIBarButtonItem(itemType: .search, sender: self)
+        let rightButtonItem = UIBarButtonItem(itemType: .search, target: self)
         self.setupNavigationbar(title: kNovelReaderTitle, rightButton: rightButtonItem)
 
         // Collection View
@@ -52,7 +52,7 @@ class NRNovelCollectionViewController: NRBaseCollectionViewController {
 }
 
 // MARK: Fetch - Novels from backend
-extension NRNovelCollectionViewController: NRNovelCollectionViewModelProtocal {
+extension NRNovelCollectionViewController: NRNovelCollectionViewModelProtocol {
     
     func showRetryAlert() {
         let alert = UIAlertController(title: kServiceFailureAlertTitle, message: kServiceFailureAlertMessage, preferredStyle: UIAlertController.Style.alert)

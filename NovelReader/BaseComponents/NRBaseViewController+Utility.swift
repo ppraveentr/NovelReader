@@ -16,17 +16,17 @@ protocol NRConfigureNovelCellProtocol {
 
 extension NRConfigureNovelCellProtocol where Self: UIView {
     func configureContent(content: AnyObject) {
-        // Optional Protocal implementation: intentionally empty
+        // Optional Protocol implementation: intentionally empty
     }
 
     func configureContent(content: AnyObject, view: UICollectionView?, indexPath: IndexPath?) {
-        // Optional Protocal implementation: intentionally empty
+        // Optional Protocol implementation: intentionally empty
     }
 }
 
 // MARK: BaseView Controller utility
-extension FTBaseViewController {
-    override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+extension NRBaseViewController {
+    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == kShowNovelChapterList {
             configureShowNovelChapterList(segue, sender: sender)
         }
@@ -41,7 +41,7 @@ extension FTBaseViewController {
 }
 
 // MARK: UIStoryboardSegue
-fileprivate extension UIViewController {
+fileprivate extension NRBaseViewController {
     
     func configureShowNovelChapterList(_ segue: UIStoryboardSegue, sender: Any?) {
         if let nextViewController = segue.destination as? NRNovelChapterViewController {
