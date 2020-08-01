@@ -67,12 +67,6 @@
 		"UIToolbar:UINavigationController": {
 			"barTintColor": "white",
 			"isTranslucent": true
-		},
-		"UISegmentedControl": {
-			"tintColor": "appRed"
-		},
-		"UISegmentedControl:UICollectionReusableView": {
-			"tintColor": "white"
 		}
 	},
 	"components": {
@@ -87,7 +81,7 @@
                 "backgroundColor": "halfBlack"
             }
 		},
-        "NRSectionHeaderView": {
+        "SectionHeaderView": {
             "default": {
                 "backgroundColor": "appWhite"
             }
@@ -101,12 +95,12 @@
                 "backgroundViewTheme": "default"
             }
         },
-		"NRSegmentCollectionHeaderView": {
+		"SegmentCollectionHeaderView": {
 			"default": {
 				"backgroundColor": "navBarRed"
 			}
 		},
-        "NRSearchBarHeaderView": {
+        "SearchBarHeaderView": {
             "default": {
                 "backgroundColor": "navBarRed"
             }
@@ -117,6 +111,16 @@
                 "tintColor": "white",
                 "barTintColor": "navBarRed"
             }
+        },
+        "UISegmentedControl": {
+           "default": {
+               "tintColor": "white",
+               "iOS12Style": true,
+               "ios_13": {
+                   "tintColor": "navBarRed",
+                   "textcolor": "white"
+               }
+           }
         },
 		"UIButton": {
 			"default": {
