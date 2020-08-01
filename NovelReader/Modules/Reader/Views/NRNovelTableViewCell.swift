@@ -21,7 +21,7 @@ class NRNovelTableViewCell: UITableViewCell {
 //    }
     
     func configureContent(content: AnyObject) {
-        guard let novel = content as? NRNovelChapter else {
+        guard let novel = content as? NovelChapterModel else {
             return
         }
         self.titleLabel?.text = novel.shortTitle ?? novel.title

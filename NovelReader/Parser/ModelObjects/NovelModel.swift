@@ -1,7 +1,7 @@
-final class NRNovel: FTServiceModel {
+final class NovelModel: ServiceModel {
     var identifier: String?
     var lastChapter: String?
-    var chapterList: [NRNovelChapter]?
+    var chapterList: [NovelChapterModel]?
     var searchString: String?
     var rating: String?
     var author: String?
@@ -15,7 +15,7 @@ final class NRNovel: FTServiceModel {
     var title: String?
     var novelType: String?
 
-    var response: NRNovel?
+    var response: NovelModel?
     
     /* Coding Keys */
     enum CodingKeys: String, CodingKey {

@@ -8,12 +8,12 @@
 
 import Foundation
 
-final class NRFilterModel: FTServiceModel {
+final class NRFilterModel: ServiceModel {
     var data: String?
     var type: String?
 }
 
-final class NRSearchFilterModel: FTServiceModel {
+final class NRSearchFilterModel: ServiceModel {
     var keyword: String?
 
     var novelType: [NRFilterModel]?

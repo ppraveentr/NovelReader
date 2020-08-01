@@ -8,13 +8,13 @@
 
 import Foundation
 
-final class FTServicefetchNovelList: FTServiceClient {
+final class FTServicefetchNovelList: ServiceClient {
 
     var serviceName = "fetchNovelList"
-    var inputStack: NRNovels?
-    var responseStackType: Any? = NRNovels.self
+    var inputStack: NovelListModel?
+    var responseStackType: Any? = NovelListModel.self
 
-    init(inputStack: FTServiceModel?) {
-        self.inputStack = inputStack as? NRNovels
+    init(inputStack: ServiceModel?) {
+        self.inputStack = inputStack as? NovelListModel
     }
 }

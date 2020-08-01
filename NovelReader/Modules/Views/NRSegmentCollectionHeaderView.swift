@@ -26,14 +26,14 @@ class NRSegmentCollectionHeaderView: UICollectionReusableView {
         // Remove previous segment
         segmentedControl?.removeSubviews()
 
-        self.theme = FTThemeStyle.defaultStyle
+        self.theme = ThemeStyle.defaultStyle
 
         segmentedControl = UISegmentedControl(items: items) { (segment) in
             ftLog(segment)
         }
 
         if let segment = segmentedControl {
-            self.pin(view: segment, edgeOffsets: FTEdgeOffsets(10))
+            self.pin(view: segment, edgeOffsets: UIEdgeInsets(10))
         }
     }
 }

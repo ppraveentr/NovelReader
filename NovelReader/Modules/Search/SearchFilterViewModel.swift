@@ -1,5 +1,5 @@
 //
-//  NRSearchFilterViewModel.swift
+//  SearchFilterViewModel.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 22/10/18.
@@ -33,7 +33,7 @@ class SearchFilterViewModel {
 
     // get-filter from backend
     func updateSearchFilter() {
-        NRServiceProvider.searchFilter { [weak self] filter in
+        NovelServiceProvider.searchFilter { [weak self] filter in
             self?.modelStack = filter
         }
     }

@@ -22,7 +22,7 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate {
 
     static func setupGoogleAuth() {
 
-        FTThemesManager.addImageSourceBundle(imageSource: "GoogleSignIn".bundle())
+        ThemesManager.addImageSourceBundle(imageSource: "GoogleSignIn".bundle())
 
         // Initialize sign-in
 //       GIDSignIn.sharedInstance().clientID = "769359482558-l9uifqdbpq49n1pjqk6vvb2qtekm0ktl.apps.googleusercontent.com"

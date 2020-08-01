@@ -12,7 +12,7 @@ class NovelCollectionViewController: UIViewController, CollectionViewControllerP
 
     // View Model
     lazy var viewModel = {
-        NRNovelCollectionViewModel(delegate: self, modelStack: self.modelStack as? ServiceModel)
+        NovelCollectionViewModel(delegate: self, modelStack: self.modelStack as? ServiceModel)
     }()
 
     // View lifecycle
@@ -34,8 +34,8 @@ class NovelCollectionViewController: UIViewController, CollectionViewControllerP
     func setupColletionView() {
             
         // Register Cell
-        NRNovelCollectionType.topNovel.registerCell(collectionView)
-        NRNovelCollectionType.recentNovel.registerCell(collectionView)
+        NovelCollectionType.topNovel.registerCell(collectionView)
+        NovelCollectionType.recentNovel.registerCell(collectionView)
 
         // Collection Header: Segment Control
         collectionView.register(
@@ -52,7 +52,7 @@ class NovelCollectionViewController: UIViewController, CollectionViewControllerP
 }
 
 // MARK: Fetch - Novels from backend
-extension NovelCollectionViewController: NRNovelCollectionViewModelProtocal {
+extension NovelCollectionViewController: NovelCollectionViewModelProtocal {
     
     func showRetryAlert() {
         let alert = UIAlertController(title: kServiceFailureAlertTitle, message: kServiceFailureAlertMessage, preferredStyle: UIAlertController.Style.alert)
@@ -65,7 +65,7 @@ extension NovelCollectionViewController: NRNovelCollectionViewModelProtocal {
 
     // Updates novelCollectionType, which interns fetchNovelList from backend
     func updateNovelSegment(segmentControl: UISegmentedControl) {
-        viewModel.novelCollectionType = NRNovelCollectionType(rawValue: segmentControl.selectedSegmentIndex) ?? .recentNovel
+        viewModel.novelCollectionType = NovelCollectionType(rawValue: segmentControl.selectedSegmentIndex) ?? .recentNovel
     }
 }
 
@@ -104,7 +104,7 @@ extension NovelCollectionViewController: UICollectionViewDelegateFlowLayout, UIC
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
 
         if let cur = viewModel.currentNovelList?[indexPath.row] {
-            if let cell = cell as? NRConfigureNovelCellProtocol {
+            if let cell = cell as? ConfigureNovelCellProtocol {
                 cell.configureContent(content: cur, view: collectionView, indexPath: indexPath)
             }
         }

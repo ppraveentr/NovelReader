@@ -13,29 +13,30 @@ private var defaultSectionInset: UIEdgeInsets {
     return UIEdgeInsets(top: 15, left: 20, bottom: 10, right: 20)
 }
 
-class NRBaseCollectionViewController: NRBaseViewController, FTCollectionViewControllerProtocol {
+extension UIViewController {
 
     // MARK: Show/Hide Tabbar, View lifecycle
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.hidesBottomBarWhenPushed = false
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.hidesBottomBarWhenPushed = true
-    }
+//    func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        self.hidesBottomBarWhenPushed = false
+//    }
+//
+//    func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.hidesBottomBarWhenPushed = true
+//    }
 
     // MARK: SetUp UICollectionView
-    func sectionInset() -> UIEdgeInsets {
+    public func sectionInset() -> UIEdgeInsets {
         return defaultSectionInset
     }
 
-    func estimatedItemSize() -> CGSize {
-        return CGSize(width: FTScreenWidth - (sectionInset().left + sectionInset().right), height: 20)
+    public func estimatedItemSize() -> CGSize {
+        return CGSize(width: screenWidth - (sectionInset().left + sectionInset().right), height: 20)
     }
 
-    var flowLayout: NSObject {
+    @objc
+    var flowLayout: UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = estimatedItemSize()
         if #available(iOS 10.0, *) {
@@ -48,6 +49,9 @@ class NRBaseCollectionViewController: NRBaseViewController, FTCollectionViewCont
     }
 
     func configureColletionView(_ delegate: UICollectionViewDelegate? = nil, _ source: UICollectionViewDataSource? = nil) {
+        guard let self = self as? CollectionViewControllerProtocol else {
+            return
+        }
         // Relaod collectionView on exit
         defer {
             DispatchQueue.main.async {
@@ -56,15 +60,15 @@ class NRBaseCollectionViewController: NRBaseViewController, FTCollectionViewCont
         }
 
         // Setup collectionView once
-        guard collectionView.delegate == nil else {
+        guard self.collectionView.delegate == nil else {
             return
         }
 
-        collectionView.theme = FTThemeStyle.defaultStyle
+        self.collectionView.theme = ThemeStyle.defaultStyle
 
         // Collection delegates
-        collectionView.dataSource = source
-        collectionView.delegate = delegate
+        self.collectionView.dataSource = source
+        self.collectionView.delegate = delegate
     }
 }
 
@@ -74,7 +78,7 @@ extension UICollectionViewCell {
         -> UICollectionViewLayoutAttributes {
             let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
             var newFrame = layoutAttributes.frame
-            newFrame.size.width = ceil(FTScreenWidth) - (defaultSectionInset.left + defaultSectionInset.right)
+            newFrame.size.width = ceil(screenWidth) - (defaultSectionInset.left + defaultSectionInset.right)
             newFrame.size.height = ceil(size.height)
             layoutAttributes.frame = newFrame
             return layoutAttributes

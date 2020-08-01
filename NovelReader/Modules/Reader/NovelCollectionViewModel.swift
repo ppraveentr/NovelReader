@@ -8,9 +8,9 @@
 
 import Foundation
 
-typealias NovelCollectionLifeCycleDelegate = (ViewControllerProtocol & NRNovelCollectionViewModelProtocal & UICollectionViewDelegate & UICollectionViewDataSource)
+typealias NovelCollectionLifeCycleDelegate = (ViewControllerProtocol & NovelCollectionViewModelProtocal & UICollectionViewDelegate & UICollectionViewDataSource)
 
-protocol NRNovelCollectionViewModelProtocal {
+protocol NovelCollectionViewModelProtocal {
     func showRetryAlert()
     func configureColletionView(_ delegate: UICollectionViewDelegate?, _ source: UICollectionViewDataSource?)
 }
@@ -25,17 +25,17 @@ class NovelCollectionViewModel {
         self.modelStack = modelStack
     }
 
-    lazy var novel: NRNovels? = NRNovels()
+    lazy var novel: NovelListModel? = NovelListModel()
 
     // Update collectionView when contentList changes
-    var currentNovelList: [NRNovel]? = [] {
+    var currentNovelList: [NovelModel]? = [] {
         didSet {
             lifeDelegate?.configureColletionView(self.lifeDelegate, self.lifeDelegate)
         }
     }
 
     // Collection Content Type
-    var novelCollectionType: NRNovelCollectionType = .recentNovel {
+    var novelCollectionType: NovelCollectionType = .recentNovel {
         didSet {
             self.fetchNovelList()
         }
@@ -45,7 +45,7 @@ class NovelCollectionViewModel {
 
         switch novelCollectionType {
         case .recentNovel:
-            NRServiceProvider.fetchRecentUpdateList { [weak self] novelList in
+            NovelServiceProvider.fetchRecentUpdateList { [weak self] novelList in
                 if let novelList = novelList {
                     self?.currentNovelList = novelList
                 }
@@ -54,15 +54,15 @@ class NovelCollectionViewModel {
                 }
             }
         case .topNovel:
-            NRServiceProvider.fetchNovelList(novel: self.novel) { [weak self] novelList in
+            NovelServiceProvider.fetchNovelList(novel: self.novel) { [weak self] novelList in
                 self?.currentNovelList = self?.novel?.novelList
             }
         }
     }
 }
 
-// MARK: NRNovelCollectionType
-enum NRNovelCollectionType: Int {
+// MARK: NovelCollectionType
+enum NovelCollectionType: Int {
     case recentNovel = 0
     case topNovel
 
@@ -79,7 +79,7 @@ enum NRNovelCollectionType: Int {
         switch self {
         case .recentNovel:
             collectionView.register(
-                NRRecentNovelCollectionViewCell.nib,
+                RecentNovelCollectionViewCell.nib,
                 forCellWithReuseIdentifier: self.cellIdentifier
             )
         case .topNovel:
@@ -90,10 +90,10 @@ enum NRNovelCollectionType: Int {
         }
     }
 
-    func getNib() -> (UICollectionViewCell & NRConfigureNovelCellProtocol)? {
+    func getNib() -> (UICollectionViewCell & ConfigureNovelCellProtocol)? {
         switch self {
         case .recentNovel:
-            return NRRecentNovelCollectionViewCell.fromNib() as? NRRecentNovelCollectionViewCell
+            return RecentNovelCollectionViewCell.fromNib() as? RecentNovelCollectionViewCell
         case .topNovel:
             return NRNovelCollectionViewCell.fromNib() as? NRNovelCollectionViewCell
         }

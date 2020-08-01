@@ -1,5 +1,5 @@
 //
-//  NRNovelDescriptionView.swift
+//  NovelDescriptionView.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 25/08/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NRNovelDescriptionView: UITableViewHeaderFooterView {
+class NovelDescriptionView: UITableViewHeaderFooterView {
     
     @IBOutlet
     private var titleLabel: UILabel?
@@ -25,7 +25,7 @@ class NRNovelDescriptionView: UITableViewHeaderFooterView {
     private var viewsButton: UIButton?
     
     func configureContent(content: AnyObject) {
-        guard let novel = content as? NRNovel else {
+        guard let novel = content as? NovelModel else {
             return
         }
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NRSelectionCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProtocol {
+class NRSelectionCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProtocol {
 
     @IBOutlet
     private var titleLabel: UILabel?

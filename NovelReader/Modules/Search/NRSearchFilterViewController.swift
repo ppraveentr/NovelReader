@@ -8,11 +8,11 @@
 
 import Foundation
 
-class NRSearchFilterViewController: NRBaseCollectionViewController {
+class NRSearchFilterViewController: UIViewController, CollectionViewControllerProtocol {
 
     // View Model
     lazy var viewModel = {
-        NRSearchFilterViewModel(delegate: self, modelStack: self.modelStack as? NRSearchFilterModel)
+        SearchFilterViewModel(delegate: self, modelStack: self.modelStack as? NRSearchFilterModel)
     }()
 
     // MARK: Life Cycle
@@ -24,7 +24,7 @@ class NRSearchFilterViewController: NRBaseCollectionViewController {
         viewModel.updateSearchFilter()
     }
 
-    override var flowLayout: NSObject {
+    public override var flowLayout: UICollectionViewLayout {
         let layout = super.flowLayout
         (layout as? UICollectionViewFlowLayout)?.sectionHeadersPinToVisibleBounds = false
         return layout
@@ -75,7 +75,7 @@ extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout, UICo
 
         if let headerView = headerView as? NRSectionHeaderView {
             headerView.setSectionHeader(title: viewModel.sectionTitleAt(indexPath), image: nil)
-            headerView.setRightButton(title: nil, image: #imageLiteral(resourceName: "close-circle")) { [weak self] _, _ in
+            headerView.setRightButton(title: nil, image: #imageLiteral(resourceName: "close-circle")) { [weak self] in
                 self?.viewModel.resetSelection(indexPath)
             }
         }
@@ -93,7 +93,7 @@ extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout, UICo
 
         // Config content
         if
-            let cell = cell as? NRConfigureNovelCellProtocol,
+            let cell = cell as? ConfigureNovelCellProtocol,
             let cur = viewModel.cellForItemAt(indexPath) {
             cell.configureContent(content: cur)
         }
@@ -108,7 +108,7 @@ extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout, UICo
     }
 }
 
-extension NRSearchFilterViewController: NRSearchFilterViewModelProtocol {
+extension NRSearchFilterViewController: SearchFilterViewModelProtocal {
     func refreshCollectionView() {
         self.configureColletionView()
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class NRAppDelegate: FTAppDelegate {
+class NRAppDelegate: AppDelegate {
 
     override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         

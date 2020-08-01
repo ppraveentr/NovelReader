@@ -1,5 +1,5 @@
 //
-//  NRBaseViewController.swift
+//  BaseViewController.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 20/08/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class NRBaseViewController: UIViewController {
+public class BaseViewController: UIViewController {
 
     public override func loadView() {
         super.loadView()

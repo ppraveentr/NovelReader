@@ -1,4 +1,4 @@
-final class NRNovelChapter: FTServiceModel {
+final class NovelChapterModel: ServiceModel {
 
     // Request Model
     var identifier: String?
@@ -8,7 +8,7 @@ final class NRNovelChapter: FTServiceModel {
     var releaseDate: String?
 
     // Response Model
-    var response: NRNovelChapter?
+    var response: NovelChapterModel?
 
     /* Coding Keys */
     enum CodingKeys: String, CodingKey {

@@ -1,5 +1,5 @@
 //
-//  NRBaseViewController+Utility.swift
+//  BaseViewController+Utility.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 30/04/18.
@@ -9,24 +9,24 @@
 import Foundation
 
 // MARK: Novel Cell protocol
-protocol NRConfigureNovelCellProtocol {
+protocol ConfigureNovelCellProtocol {
     func configureContent(content: AnyObject)
     func configureContent(content: AnyObject, view: UICollectionView?, indexPath: IndexPath?)
 }
 
-extension NRConfigureNovelCellProtocol where Self: UIView {
+extension ConfigureNovelCellProtocol where Self: UIView {
     func configureContent(content: AnyObject) {
-        // Optional Protocol implementation: intentionally empty
+        // Optional Protocal implementation: intentionally empty
     }
 
     func configureContent(content: AnyObject, view: UICollectionView?, indexPath: IndexPath?) {
-        // Optional Protocol implementation: intentionally empty
+        // Optional Protocal implementation: intentionally empty
     }
 }
 
 // MARK: BaseView Controller utility
-extension NRBaseViewController {
-    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+extension UIViewController {
+    open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == kShowNovelChapterList {
             configureShowNovelChapterList(segue, sender: sender)
         }
@@ -41,33 +41,33 @@ extension NRBaseViewController {
 }
 
 // MARK: UIStoryboardSegue
-fileprivate extension NRBaseViewController {
+fileprivate extension UIViewController {
     
     func configureShowNovelChapterList(_ segue: UIStoryboardSegue, sender: Any?) {
-        if let nextViewController = segue.destination as? NRNovelChapterViewController {
-            nextViewController.novel = sender as? NRNovel
+        if let nextViewController = segue.destination as? NovelChapterViewController {
+            nextViewController.novel = sender as? NovelModel
         }
     }
     
     func configureShowNovelReaderView(_ segue: UIStoryboardSegue, sender: Any?) {
-        let readerController: NRReaderViewController?
+        let readerController: ReaderViewController?
         
         if let nav = segue.destination as? UINavigationController {
-            readerController = nav.viewControllers.first as? NRReaderViewController
+            readerController = nav.viewControllers.first as? ReaderViewController
         }
         else {
-            readerController = segue.destination as? NRReaderViewController
+            readerController = segue.destination as? ReaderViewController
         }
         
         // Available from recent-novel-page
-        readerController?.novel = sender as? NRNovel
+        readerController?.novel = sender as? NovelModel
         // Available from chapter-list-page
-        readerController?.novelChapter = sender as? NRNovelChapter
+        readerController?.novelChapter = sender as? NovelChapterModel
     }
     
     func configureShowFontPicker(_ segue: UIStoryboardSegue, sender: Any?) {
-        if let controller = segue.destination as? FTFontPickerViewController {
-            if let self = self as? FTFontPickerViewprotocol {
+        if let controller = segue.destination as? FontPickerViewController {
+            if let self = self as? FontPickerViewProtocol {
                 controller.fontPickerViewDelegate = self
             }
             if let self = self as? UIPopoverPresentationControllerDelegate {

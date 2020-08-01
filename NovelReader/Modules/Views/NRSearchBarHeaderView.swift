@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NRSearchBarHeaderView: UIView {
+class NRSearchBarHeaderView: FTView {
     var searchBar: UISearchBar?
     weak var searchBarDelegate: UISearchBarDelegate?
 
@@ -30,11 +30,10 @@ class NRSearchBarHeaderView: UIView {
 
     func setupSearchBar() {
 
-        self.theme = FTThemeStyle.defaultStyle
+        self.theme = ThemeStyle.defaultStyle
 
         searchBar = UISearchBar(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 44)))
-        //textColor: .white
-        searchBar?.theme = FTThemeStyle.defaultStyle
+        searchBar?.theme = ThemeStyle.defaultStyle
         searchBar?.delegate = searchBarDelegate
 
         if let searchBar = searchBar {

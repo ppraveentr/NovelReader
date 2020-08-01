@@ -1,5 +1,5 @@
 //
-//  NRReaderViewController.swift
+//  ReaderViewController.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 26/08/17.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-class NRReaderViewController: NRBaseViewController {
+class ReaderViewController: BaseViewController, WebViewControllerProtocol {
     
-    var novelChapter: NRNovelChapter?
-    var novel: NRNovel?
+    var novelChapter: NovelChapterModel?
+    var novel: NovelModel?
 
     @IBOutlet
     private var fontPickerBarItem: UIBarButtonItem?
@@ -22,16 +22,14 @@ class NRReaderViewController: NRBaseViewController {
 //        }
 //    }
 
-    let contentView = FTContentView()
-
-    var fontPicker: FTFontPickerModel? {
+    var fontPicker: FontPickerModel? {
         set {
             if let fontPicker = newValue {
-                FTUserCache.setCacheObject(fontPicker, forType: FTFontPickerModel.self)
+                UserCacheManager.setCacheObject(fontPicker, forType: FontPickerModel.self)
             }
         }
         get {
-            return FTUserCache.getCachedObject(forType: FTFontPickerModel.self) as? FTFontPickerModel
+            return UserCacheManager.getCachedObject(forType: FontPickerModel.self) as? FontPickerModel
         }
     }
 
@@ -50,17 +48,17 @@ class NRReaderViewController: NRBaseViewController {
         let title = novelChapter?.shortTitle ?? novelChapter?.title ?? novel?.title ?? ""
         self.setupNavigationbar(
             title: title,
-            leftButton: UIBarButtonItem(itemType: .stop, target: self),
+            leftButton: UIBarButtonItem(itemType: .stop),
             rightButton: fontPickerBarItem
         )
 
         self.mainView?.pin(view: contentView)
 
         if let url = novelChapter?.identifier ?? novel?.identifier {
-            NRServiceProvider.getNovelChapter(url) { [unowned self] (chapter) in
+            NovelServiceProvider.getNovelChapter(url) { [unowned self] (chapter) in
 
-                if let shortTitle = chapter?.shortTitle {
-                    self.title = shortTitle
+                if let content = chapter?.shortTitle {
+                    self.title = content
                 }
                 if let content = chapter?.content {
                     self.loadWebContent(contnet: content)
@@ -72,11 +70,11 @@ class NRReaderViewController: NRBaseViewController {
     }
     
     func loadWebContent(contnet: String) {
-        contentView.webView.loadHTMLBody(contnet)
+        contentView.loadHTMLBody(contnet)
     }
     
     func configureWebview() {
-        // FTFontPickerViewprotocol
+        // FontPickerViewprotocol
         if let fontPicker = fontPicker {
             fontSize(fontPicker.fontSize)
             pickerColor(textColor: fontPicker.fontColor, backgroundColor: fontPicker.backgroundColor)
@@ -85,27 +83,27 @@ class NRReaderViewController: NRBaseViewController {
     }
 }
 
-extension NRReaderViewController: FTFontPickerViewprotocol {
+extension ReaderViewController: FontPickerViewProtocol {
 
     func fontSize(_ size: Float) {
-        contentView.webView.setContentFontSize(size)
+        contentView.setContentFontSize(size)
     }
     
     func pickerColor(textColor: UIColor, backgroundColor: UIColor) {
-        contentView.webView.setContentColor(textColor: textColor, backgroundColor: backgroundColor)
+        contentView.setContentColor(textColor: textColor, backgroundColor: backgroundColor)
         self.view.backgroundColor = backgroundColor
         self.mainView?.backgroundColor = backgroundColor
     }
     
     func fontFamily(_ fontName: String?) {
-        contentView.webView.setContentFontFamily(fontName)
+        contentView.setContentFontFamily(fontName)
     }
 }
 
-extension NRReaderViewController: UIPopoverPresentationControllerDelegate {
+extension ReaderViewController: UIPopoverPresentationControllerDelegate {
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        if let fontPickerController = controller.presentedViewController as? FTFontPickerViewController {
+        if let fontPickerController = controller.presentedViewController as? FontPickerViewController {
             if self.fontPicker == nil {
                 self.fontPicker = fontPickerController.fontPickerModel
             }

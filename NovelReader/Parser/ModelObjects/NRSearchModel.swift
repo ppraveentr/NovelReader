@@ -8,6 +8,6 @@
 
 import Foundation
 
-final class NRSearchModel: FTServiceModel {
+final class NRSearchModel: ServiceModel {
     var keyword: String?
 }

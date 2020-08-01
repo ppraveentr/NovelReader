@@ -42,13 +42,13 @@ public extension UIImageView {
     }
 }
 
-class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProtocol {
+class NRNovelCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProtocol {
  
     @IBOutlet
     private var titleLabel: UILabel?
     @IBOutlet
     private var contentImageView: UIImageView?
-    var imageViewCompletionHandler: FTUIImageViewComletionHandler?
+    var imageViewCompletionHandler: ImageViewComletionHandler?
 
     @IBOutlet
     private var chapterLabel: UILabel?
@@ -70,7 +70,7 @@ class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProto
     }
     
     func configureContent(content: AnyObject, view: UICollectionView? = nil, indexPath: IndexPath? = nil) {
-        guard let novel = content as? NRNovel else {
+        guard let novel = content as? NovelModel else {
             return
         }
         
@@ -79,7 +79,8 @@ class NRNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProto
             self.contentImageView?.image = image
         }
         if let url = novel.imageURL {
-            self.contentImageView?.downloadedFrom(link: url, comletionHandler: self.imageViewCompletionHandler)
+            self.contentImageView?.downloadedFrom(link: url,
+                                                  comletionHandler: self.imageViewCompletionHandler)
         }
 
         self.titleLabel?.text = novel.title

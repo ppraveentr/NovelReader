@@ -34,12 +34,15 @@ final class NRAppManager {
     // MARK: Model Binding
     func configureAppBase() {
 
+        // Register self's type as Bundle-Identifier for getting class name
+        Reflection.registerModuleIdentifier(NRAppDelegate.self)
+
         // Service Binding
-        FTMobileConfig.serviceBindingPath = kServiceBindingsName
-        FTMobileConfig.serviceBindingRulesName = kServiceBindingRulesName
+        NetworkMananger.serviceBindingPath = kServiceBindingsName
+        NetworkMananger.serviceBindingRulesName = kServiceBindingRulesName
 
         // App Config
-        FTMobileConfig.appBaseURL = NRAppManager.endpointURL
+        NetworkMananger.appBaseURL = NRAppManager.endpointURL
 
         // Debug-only code
         self.configDebug()
@@ -49,13 +52,13 @@ final class NRAppManager {
     func configDebug() {
         #if DEBUG
         // Console Loggin
-//        FTMobileConfig.enableConsoleLogging = true
+        Logger.enableConsoleLogging = true
         // Debug-Postman
 //        FTMobileConfig.appBaseURL = kPostmanURL
         // Debug-only code
-//        FTMobileConfig.appBaseURL = kMockServerURL
-//        FTMobileConfig.mockBundleResource = kMockBundleResource
-//        FTMobileConfig.isMockData = kMockDataEnabled
+//        NetworkMananger.appBaseURL = kMockServerURL
+        NetworkMananger.mockBundleResource = kMockBundleResource
+        NetworkMananger.isMockData = kMockDataEnabled
         #endif
     }
     
@@ -76,10 +79,10 @@ final class NRAppManager {
 
     func generateModelBinding() {
         // Model Binding Generator
-        if let resourcePath = Bundle.main.resourceURL {
-            FTModelCreator.configureSourcePath(path: resourcePath.appendingPathComponent(kModelBindingsName).path)
-            FTModelCreator.generateOutput()
-        }
+//        if let resourcePath = Bundle.main.resourceURL {
+//            ModelCreator.configureSourcePath(path: resourcePath.appendingPathComponent(kModelBindingsName).path)
+//            ModelCreator.generateOutput()
+//        }
     }
 
     // MARK: Theme
@@ -87,8 +90,8 @@ final class NRAppManager {
 
         if
             let theme = Bundle.main.path(forResource: kThemeFileName, ofType: nil),
-            let themeContent: FTThemeModel = try? theme.jsonContentAtPath() {
-            FTThemesManager.setupThemes(themes: themeContent, imageSourceBundle: [Bundle(for: NRAppDelegate.self)])
+            let themeContent: ThemeModel = try? theme.jsonContentAtPath() {
+            ThemesManager.setupThemes(themes: themeContent, imageSourceBundle: [Bundle(for: NRAppDelegate.self)])
         }
 
 //        let toolBarAppearance = UIToolbar.appearance(whenContainedInInstancesOf: [UINavigationController.self])
@@ -99,7 +102,10 @@ final class NRAppManager {
         //        textBarAppearance.tintColor = .blue
 
         //Status Bar 
-//        FTThemesManager.setStatusBarBackgroundColor(kNavigationBarColor)
+        ThemesManager.setStatusBarBackgroundColor(kNavigationBarColor)
+
+        // WARNING :
+        // UIApplication.shared.statusBarStyle = .lightContent
 
         //Loading Indicator
         setupLoadingIndicator()
@@ -108,15 +114,15 @@ final class NRAppManager {
     // MARK: LoadingIndicator
     func setupLoadingIndicator() {
 
-        var config: FTLoadingIndicator.Config = FTLoadingIndicator.Config()
+        var config: LoadingIndicator.Config = LoadingIndicator.Config()
         config.backgroundColor = UIColor.clear
         config.spinnerColor = kNavigationBarColor
         config.titleTextColor = UIColor.white
         config.spinnerLineWidth = 8.0
-        config.foregroundColor = kNavigationBarColor.darkerColor(30)
+        config.foregroundColor = kNavigationBarColor
         config.foregroundAlpha = 0.5
         config.title = ""
 
-        FTLoadingIndicator.setConfig(config: config)
+        LoadingIndicator.setConfig(config: config)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  NRRecentNovelCollectionViewCell.swift
+//  RecentNovelCollectionViewCell.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 28/04/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NRRecentNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCellProtocol {
+class RecentNovelCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProtocol {
     @IBOutlet
     private weak var novelTitle: UILabel?
     @IBOutlet
@@ -18,10 +18,10 @@ class NRRecentNovelCollectionViewCell: UICollectionViewCell, NRConfigureNovelCel
 
     var collectionView: UICollectionView?
     var indexPath: IndexPath?
-    var novelItem: NRNovel?
+    var novelItem: NovelModel?
 
     func configureContent(content: AnyObject, view: UICollectionView?, indexPath: IndexPath?) {
-        guard let novel = content as? NRNovel else {
+        guard let novel = content as? NovelModel else {
             return
         }
         

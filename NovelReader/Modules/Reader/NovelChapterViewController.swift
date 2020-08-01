@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  NovelChapterViewController.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 20/08/17.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class NRNovelChapterViewController: NRBaseViewController, FTTableViewControllerProtocol {
+class NovelChapterViewController: UIViewController, TableViewControllerProtocol {
     
-    var novel: NRNovel?
-    lazy var novelDescView: NRNovelDescriptionView? = NRNovelDescriptionView.fromNib() as? NRNovelDescriptionView
+    var novel: NovelModel?
+    lazy var novelDescView: NovelDescriptionView? = NovelDescriptionView.fromNib() as? NovelDescriptionView
     
     func tableStyle() -> UITableView.Style { return .grouped }
 //    override func tableViewEdgeOffsets() -> FTEdgeOffsets { return FTEdgeOffsets(10, 0, 10, 0) }
@@ -19,15 +19,17 @@ class NRNovelChapterViewController: NRBaseViewController, FTTableViewControllerP
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        
-        NRServiceProvider.getNovelChaptersList(novel.forceUnwrapped) { [weak self] novelResponse in
+        guard let novel = novel else {
+            return
+        }
+        NovelServiceProvider.getNovelChaptersList(novel) { [weak self] novelResponse in
             guard novelResponse != nil, let self = self else {
                 return
             }
             if let novelResponse = novelResponse {
                 self.novel?.merge(data: novelResponse)
             }
-            self.configureContent(content: self.novel.forceUnwrapped)
+            self.configureContent(content: novel)
         }
     }
     
@@ -41,7 +43,7 @@ class NRNovelChapterViewController: NRBaseViewController, FTTableViewControllerP
     }
     
     func configureContent(content: AnyObject) {
-        if let content = content as? NRNovel {
+        if let content = content as? NovelModel {
             self.novelDescView?.configureContent(content: content)
             self.tableView.setTableHeaderView(view: self.novelDescView)
             self.tableView.reloadData()
@@ -49,7 +51,7 @@ class NRNovelChapterViewController: NRBaseViewController, FTTableViewControllerP
     }
 }
 
-extension NRNovelChapterViewController: UITableViewDataSource, UITableViewDelegate {
+extension NovelChapterViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 20
@@ -88,7 +90,7 @@ extension NRNovelChapterViewController: UITableViewDataSource, UITableViewDelega
     }
 }
 
-extension NRNovelChapterViewController {
+extension NovelChapterViewController {
     
     func setupToolBar() {
 
@@ -99,8 +101,8 @@ extension NRNovelChapterViewController {
 
         self.setupNavigationbar(
             title: "",
-            leftButton: UIBarButtonItem(itemType: .stop, target: self),
-            rightButton: UIBarButtonItem(itemType: .bookmarks, target: self)
+            leftButton: UIBarButtonItem(itemType: .stop),
+            rightButton: UIBarButtonItem(itemType: .bookmarks)
         )
     }
     
