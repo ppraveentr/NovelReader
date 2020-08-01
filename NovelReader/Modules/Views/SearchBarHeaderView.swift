@@ -1,5 +1,5 @@
 //
-//  NRSearchBarHeaderView.swift
+//  SearchBarHeaderView.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 13/10/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NRSearchBarHeaderView: FTView {
+class SearchBarHeaderView: FTView {
     var searchBar: UISearchBar?
     weak var searchBarDelegate: UISearchBarDelegate?
 

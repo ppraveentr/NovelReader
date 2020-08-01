@@ -23,16 +23,10 @@ class SearchCollectionViewController: UIViewController, CollectionViewController
     
     // MARK: setupColletionView
     func setupColletionView() {
-
         // Register Cell
-        collectionView.register(
-            NRNovelCollectionViewCell.nib,
-            forCellWithReuseIdentifier: kNovelCellIdentifier
-        )
-
+        NovelCollectionViewCell.registerNib(for: collectionView)
         // Collection Header: Segment Control
-        self.topPinnedView = NRSearchBarHeaderView(delegate: self)
-
+        self.topPinnedView = SearchBarHeaderView(delegate: self)
         refreshCollectionView()
     }
     
@@ -65,12 +59,14 @@ extension SearchCollectionViewController: UICollectionViewDelegateFlowLayout, UI
     // cellForItem
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNovelCellIdentifier, for: indexPath)
+        guard let cell = try? NovelCollectionViewCell.dequeue(from: collectionView, for: indexPath),
+            let novel = viewModel.currentNovelList?[indexPath.row]
+            else {
+            return UICollectionViewCell()
+        }
 
-        if let cur = viewModel.currentNovelList?[indexPath.row] {
-            if let cell = cell as? ConfigureNovelCellProtocol {
-                cell.configureContent(content: cur, view: collectionView, indexPath: indexPath)
-            }
+       if let cell = cell as? ConfigureNovelCellProtocol {
+            cell.configureContent(content: novel, view: collectionView, indexPath: indexPath)
         }
 
         return cell

@@ -1,5 +1,5 @@
 //
-//  NRAppManager.swift
+//  AppManager.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 20/08/17.
@@ -15,9 +15,9 @@ import AppCenterAnalytics
 import AppCenterCrashes
 #endif
 
-final class NRAppManager {
+final class AppManager {
 
-    static let sharedInstance = NRAppManager()
+    static let sharedInstance = AppManager()
     
     // plist Endpoint
     static var endpointURL: String {
@@ -26,14 +26,13 @@ final class NRAppManager {
     
     // MARK: Setup
     static func setupApplication() {
-        NRAppManager.sharedInstance.configureAppBase()
-        NRAppManager.sharedInstance.configureAppTheme()
+        AppManager.sharedInstance.configureAppBase()
+        AppManager.sharedInstance.configureAppTheme()
         //NRGoogleAuth.setupGoogleAuth()
     }
 
     // MARK: Model Binding
     func configureAppBase() {
-
         // Register self's type as Bundle-Identifier for getting class name
         Reflection.registerModuleIdentifier(NRAppDelegate.self)
 
@@ -42,7 +41,7 @@ final class NRAppManager {
         NetworkMananger.serviceBindingRulesName = kServiceBindingRulesName
 
         // App Config
-        NetworkMananger.appBaseURL = NRAppManager.endpointURL
+        NetworkMananger.appBaseURL = AppManager.endpointURL
 
         // Debug-only code
         self.configDebug()
@@ -77,36 +76,13 @@ final class NRAppManager {
         #endif
     }
 
-    func generateModelBinding() {
-        // Model Binding Generator
-//        if let resourcePath = Bundle.main.resourceURL {
-//            ModelCreator.configureSourcePath(path: resourcePath.appendingPathComponent(kModelBindingsName).path)
-//            ModelCreator.generateOutput()
-//        }
-    }
-
     // MARK: Theme
     func configureAppTheme() {
-
-        if
-            let theme = Bundle.main.path(forResource: kThemeFileName, ofType: nil),
+        if let theme = Bundle.main.path(forResource: kThemeFileName, ofType: nil),
             let themeContent: ThemeModel = try? theme.jsonContentAtPath() {
             ThemesManager.setupThemes(themes: themeContent, imageSourceBundle: [Bundle(for: NRAppDelegate.self)])
         }
-
-//        let toolBarAppearance = UIToolbar.appearance(whenContainedInInstancesOf: [UINavigationController.self])
-//        toolBarAppearance.barTintColor = .white
-//        toolBarAppearance.isTranslucent = true
-
-        //        let textBarAppearance = UILabel.appearance(whenContainedInInstancesOf: [FTSearchBar.self])
-        //        textBarAppearance.tintColor = .blue
-
-        //Status Bar 
-        ThemesManager.setStatusBarBackgroundColor(kNavigationBarColor)
-
-        // WARNING :
-        // UIApplication.shared.statusBarStyle = .lightContent
-
+        
         //Loading Indicator
         setupLoadingIndicator()
     }

@@ -1,5 +1,5 @@
 //
-//  NRSearchModel.swift
+//  SearchNovelModel.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 13/10/18.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-final class NRSearchModel: ServiceModel {
+final class SearchNovelModel: ServiceModel {
     var keyword: String?
 }

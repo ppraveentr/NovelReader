@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NovelDescriptionView: UITableViewHeaderFooterView {
+final class NovelDescriptionView: UITableViewHeaderFooterView {
     
     @IBOutlet
     private var titleLabel: UILabel?

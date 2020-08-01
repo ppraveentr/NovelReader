@@ -1,5 +1,5 @@
 //
-//  NRBaseView.swift
+//  TabBarViewController.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 20/08/17.
@@ -8,5 +8,6 @@
 
 import Foundation
 
-class NRBaseView: FTView {
+final class TabBarViewController: UITabBarController {
+
 }

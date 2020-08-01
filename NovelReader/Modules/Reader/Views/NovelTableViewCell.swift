@@ -1,5 +1,5 @@
 //
-//  NRNovelTableViewCell.swift
+//  NovelTableViewCell.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 20/08/17.
@@ -8,17 +8,17 @@
 
 import Foundation
 
-class NRNovelTableViewCell: UITableViewCell {
+final class NovelTableViewCell: UITableViewCell {
     
     @IBOutlet
     private var chapterDate: UILabel?
     @IBOutlet
     private var titleLabel: UILabel?
     
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        self.addBorder()
-//    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.addBorder()
+    }
     
     func configureContent(content: AnyObject) {
         guard let novel = content as? NovelChapterModel else {
@@ -27,16 +27,7 @@ class NRNovelTableViewCell: UITableViewCell {
         self.titleLabel?.text = novel.shortTitle ?? novel.title
         self.chapterDate?.text = novel.releaseDate 
     }
-    
-//    override func draw(_ rect: CGRect) {
-//        
-//        self.contentView.layer.cornerRadius = 5
-//        self.contentView.layer.masksToBounds = true
-//        self.layer.borderWidth = 2.0
-//        
-//        super.draw(UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(10, 10 , 10, 10)))
-//    }
-    
+
     func addBorder() {
         self.layer.cornerRadius = 8
         
@@ -50,11 +41,4 @@ class NRNovelTableViewCell: UITableViewCell {
         self.layer.shadowRadius = 2.0
         self.layer.shadowOffset = CGSize(width: 3, height: 3)
     }
-    
-//    override var intrinsicContentSize: CGSize {
-//        get{
-//            return (self.titleLabel?.intrinsicContentSize)!
-//        }
-//    }
-    
 }

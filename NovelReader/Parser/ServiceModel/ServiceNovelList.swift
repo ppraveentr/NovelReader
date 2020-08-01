@@ -1,5 +1,5 @@
 //
-//  NRService_fetchRecentUpdatesList.swift
+//  ServiceNovelList.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 20/08/17.
@@ -8,12 +8,13 @@
 
 import Foundation
 
-final class FTServicefetchRecentUpdatesList: ServiceClient {
-    var inputStack: ServiceModel?
-    var serviceName = "fetchRecentUpdatesList"
+final class ServiceNovelList: ServiceClient {
+
+    var serviceName = "fetchNovelList"
+    var inputStack: NovelListModel?
     var responseStackType: Any? = NovelListModel.self
 
     init(inputStack: ServiceModel?) {
-        self.inputStack = inputStack
+        self.inputStack = inputStack as? NovelListModel
     }
 }

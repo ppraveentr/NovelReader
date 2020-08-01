@@ -1,5 +1,5 @@
 //
-//  NRSearchFilterViewController.swift
+//  SearchFilterViewController.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 13/10/18.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-class NRSearchFilterViewController: UIViewController, CollectionViewControllerProtocol {
+class SearchFilterViewController: UIViewController, CollectionViewControllerProtocol {
 
     // View Model
     lazy var viewModel = {
-        SearchFilterViewModel(delegate: self, modelStack: self.modelStack as? NRSearchFilterModel)
+        SearchFilterViewModel(delegate: self, modelStack: self.modelStack as? SearchFilterModel)
     }()
 
     // MARK: Life Cycle
@@ -34,14 +34,11 @@ class NRSearchFilterViewController: UIViewController, CollectionViewControllerPr
     func setupColletionView() {
 
         // Register Cell
-        collectionView.register(
-            NRSelectionCollectionViewCell.nib,
-            forCellWithReuseIdentifier: kSearchFilterCellIdentifier
-        )
+        SelectionCollectionViewCell.registerNib(for: collectionView)
 
         // Collection Header: Segment Control
         collectionView.register(
-            NRSectionHeaderView.self,
+            SectionHeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: "headerCell"
         )
@@ -53,7 +50,7 @@ class NRSearchFilterViewController: UIViewController, CollectionViewControllerPr
     }
 }
 
-extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
+extension SearchFilterViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModel.numberOfSections
@@ -73,7 +70,7 @@ extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout, UICo
             for: indexPath
         )
 
-        if let headerView = headerView as? NRSectionHeaderView {
+        if let headerView = headerView as? SectionHeaderView {
             headerView.setSectionHeader(title: viewModel.sectionTitleAt(indexPath), image: nil)
             headerView.setRightButton(title: nil, image: #imageLiteral(resourceName: "close-circle")) { [weak self] in
                 self?.viewModel.resetSelection(indexPath)
@@ -86,7 +83,9 @@ extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout, UICo
     // cellForItem
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kSearchFilterCellIdentifier, for: indexPath)
+        guard let cell = try? SelectionCollectionViewCell.dequeue(from: collectionView, for: indexPath) else {
+            return UICollectionViewCell()
+        }
 
         // CheckMark
         cell.isSelected = viewModel.isSelected(indexPath).found
@@ -108,7 +107,7 @@ extension NRSearchFilterViewController: UICollectionViewDelegateFlowLayout, UICo
     }
 }
 
-extension NRSearchFilterViewController: SearchFilterViewModelProtocal {
+extension SearchFilterViewController: SearchFilterViewModelProtocal {
     func refreshCollectionView() {
         self.configureColletionView()
     }

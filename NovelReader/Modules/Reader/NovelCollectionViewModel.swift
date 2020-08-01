@@ -15,7 +15,7 @@ protocol NovelCollectionViewModelProtocal {
     func configureColletionView(_ delegate: UICollectionViewDelegate?, _ source: UICollectionViewDataSource?)
 }
 
-class NovelCollectionViewModel {
+final class NovelCollectionViewModel {
 
     weak var lifeDelegate: NovelCollectionLifeCycleDelegate?
     var modelStack: ServiceModel?
@@ -66,36 +66,17 @@ enum NovelCollectionType: Int {
     case recentNovel = 0
     case topNovel
 
-    var cellIdentifier: String {
+    var cellType: UICollectionViewCell.Type {
         switch self {
         case .recentNovel:
-            return kRecentNovelCellIdentifier
+            return RecentNovelCollectionViewCell.self
         case .topNovel:
-            return kNovelCellIdentifier
+            return NovelCollectionViewCell.self
         }
     }
 
-    func registerCell(_ collectionView: UICollectionView) {
-        switch self {
-        case .recentNovel:
-            collectionView.register(
-                RecentNovelCollectionViewCell.nib,
-                forCellWithReuseIdentifier: self.cellIdentifier
-            )
-        case .topNovel:
-            collectionView.register(
-                NRNovelCollectionViewCell.nib,
-                forCellWithReuseIdentifier: self.cellIdentifier
-            )
-        }
-    }
-
-    func getNib() -> (UICollectionViewCell & ConfigureNovelCellProtocol)? {
-        switch self {
-        case .recentNovel:
-            return RecentNovelCollectionViewCell.fromNib() as? RecentNovelCollectionViewCell
-        case .topNovel:
-            return NRNovelCollectionViewCell.fromNib() as? NRNovelCollectionViewCell
-        }
+    static func registerCell(_ collectionView: UICollectionView) {
+        RecentNovelCollectionViewCell.registerNib(for: collectionView)
+        NovelCollectionViewCell.registerNib(for: collectionView)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  NRService_searchFilter.swift
+//  ServiceSearchFilter.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 13/10/18.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-final class FTServicesearchFilter: ServiceClient {
-    var inputStack: NRSearchModel?
+final class ServiceSearchFilter: ServiceClient {
+    var inputStack: SearchNovelModel?
     var serviceName = "searchFilter"
-    var responseStackType: Any? = NRSearchFilterModel.self
+    var responseStackType: Any? = SearchFilterModel.self
 
     init(inputStack: ServiceModel?) {
-        self.inputStack = inputStack as? NRSearchModel
+        self.inputStack = inputStack as? SearchNovelModel
     }
 }

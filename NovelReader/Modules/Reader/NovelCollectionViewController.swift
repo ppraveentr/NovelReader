@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NovelCollectionViewController: UIViewController, CollectionViewControllerProtocol {
+final class NovelCollectionViewController: UIViewController, CollectionViewControllerProtocol {
 
     // View Model
     lazy var viewModel = {
@@ -32,17 +32,12 @@ class NovelCollectionViewController: UIViewController, CollectionViewControllerP
 
     // MARK: SetUp UICollectionView
     func setupColletionView() {
-            
         // Register Cell
-        NovelCollectionType.topNovel.registerCell(collectionView)
-        NovelCollectionType.recentNovel.registerCell(collectionView)
+        NovelCollectionType.registerCell(collectionView)
 
         // Collection Header: Segment Control
-        collectionView.register(
-            NRSegmentCollectionHeaderView.self,
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: "headerCell"
-        )
+        SegmentCollectionHeaderView.registerClass(for: collectionView,
+                                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader)
     }
 
     // Navigation bar Button action
@@ -74,21 +69,14 @@ extension NovelCollectionViewController: UICollectionViewDelegateFlowLayout, UIC
 
     // viewForSupplementaryElement
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-
-        let headerView = collectionView.dequeueReusableSupplementaryView(
-            ofKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: "headerCell",
-            for: indexPath
-        )
-
-        if let headerView = headerView as? NRSegmentCollectionHeaderView {
-            headerView.segmentedControl?.handler = { [unowned self] _ in
-                if let segment = headerView.segmentedControl {
-                    self.updateNovelSegment(segmentControl: segment)
-                }
+        guard let headerView: SegmentCollectionHeaderView = try? .dequeue(from: collectionView, ofKind: kind, for: indexPath) else {
+            return UICollectionReusableView()
+        }
+        headerView.segmentedControl?.handler = { [weak self] _ in
+            if let segment = headerView.segmentedControl {
+                self?.updateNovelSegment(segmentControl: segment)
             }
         }
-
         return headerView
     }
 
@@ -99,27 +87,24 @@ extension NovelCollectionViewController: UICollectionViewDelegateFlowLayout, UIC
 
     // cellForItem
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        let cellIdentifier = viewModel.novelCollectionType.cellIdentifier
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
-
-        if let cur = viewModel.currentNovelList?[indexPath.row] {
-            if let cell = cell as? ConfigureNovelCellProtocol {
-                cell.configureContent(content: cur, view: collectionView, indexPath: indexPath)
-            }
+        let cellType = viewModel.novelCollectionType.cellType
+        guard let cell = try? cellType.dequeue(from: collectionView, for: indexPath) else {
+            return UICollectionViewCell()
         }
-
+        // update cell content
+        if let model = viewModel.currentNovelList?[indexPath.row] {
+            (cell as? ConfigureNovelCellProtocol)?.configureContent(content: model, view: collectionView, indexPath: indexPath)
+        }
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cur = viewModel.currentNovelList?[indexPath.row]
-
+        guard let model = viewModel.currentNovelList?[indexPath.row] else { return }
         if viewModel.novelCollectionType == .recentNovel {
-            self.performSegue(withIdentifier: kShowNovelReaderView, sender: cur)
+            self.performSegue(withIdentifier: kShowNovelReaderView, sender: model)
         }
         else {
-            self.performSegue(withIdentifier: kShowNovelChapterList, sender: cur)
+            self.performSegue(withIdentifier: kShowNovelChapterList, sender: model)
         }
     }
 }

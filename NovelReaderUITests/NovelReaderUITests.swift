@@ -10,7 +10,7 @@ import XCTest
 @testable
 import NovelReader
 
-class NovelReaderUITests: XCTestCase {
+final class NovelReaderUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

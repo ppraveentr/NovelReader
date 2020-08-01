@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +13,7 @@
             <objects>
                 <viewController title="Search" id="29j-l3-Nca" customClass="SearchCollectionViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mjV-aU-BQa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9av-Hg-BIx"/>
@@ -40,9 +42,9 @@
         <!--Search Filter-->
         <scene sceneID="0Ls-xg-3pU">
             <objects>
-                <viewController title="Search Filter" id="v0b-jn-Awu" customClass="NRSearchFilterViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Search Filter" id="v0b-jn-Awu" customClass="SearchFilterViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fm1-Yj-8as" userLabel="BaseView" customClass="FTView" customModule="FTMobileCoreUI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4ij-b9-TS8"/>
@@ -57,7 +59,7 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="bottomPinnedButtonView" destination="b8q-NK-ho5" id="zdS-QU-bx9"/>
+                        <outlet property="bottomPinnedView" destination="b8q-NK-ho5" id="Yoa-h8-ybQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlH-ED-SRv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -114,10 +116,10 @@
             </objects>
             <point key="canvasLocation" x="2527" y="-29"/>
         </scene>
-        <!--NRNovelChapterViewController-->
+        <!--NovelChapterViewController-->
         <scene sceneID="AEO-ib-W8q">
             <objects>
-                <viewControllerPlaceholder storyboardName="NovelReader" referencedIdentifier="NRNovelChapterViewController" id="SG6-mq-AhZ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="NovelReader" referencedIdentifier="NovelChapterViewController" id="SG6-mq-AhZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bhb-WW-b9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1604" y="486"/>
@@ -130,7 +132,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y6O-gK-6zP">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

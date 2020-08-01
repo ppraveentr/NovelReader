@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias NRSearchFilterLifeCycleDelegate = (ViewControllerProtocol & SearchFilterViewModelProtocal)
+typealias SearchFilterLifeCycleDelegate = (ViewControllerProtocol & SearchFilterViewModelProtocal)
 
 protocol SearchFilterViewModelProtocal {
     func refreshCollectionView()
@@ -16,14 +16,14 @@ protocol SearchFilterViewModelProtocal {
 
 class SearchFilterViewModel {
 
-    weak var lifeDelegate: NRSearchFilterLifeCycleDelegate?
-    var modelStack: NRSearchFilterModel? = nil {
+    weak var lifeDelegate: SearchFilterLifeCycleDelegate?
+    var modelStack: SearchFilterModel? = nil {
         didSet {
             lifeDelegate?.refreshCollectionView()
         }
     }
 
-    init(delegate: NRSearchFilterLifeCycleDelegate, modelStack: NRSearchFilterModel? = nil) {
+    init(delegate: SearchFilterLifeCycleDelegate, modelStack: SearchFilterModel? = nil) {
         self.lifeDelegate = delegate
         self.modelStack = modelStack
     }
@@ -57,31 +57,31 @@ enum NRSearchFilterType: String {
     }
 }
 
-struct NRSearchFilterCellContent {
+struct SearchFilterCellContent {
     var type: NRSearchFilterType
-    var contentArray: [NRFilterModel]
+    var contentArray: [FilterModel]
 }
 
 extension SearchFilterViewModel {
 
     // Cell Items
-    var sectionItems: [NRSearchFilterCellContent] {
-        var items = [NRSearchFilterCellContent]()
+    var sectionItems: [SearchFilterCellContent] {
+        var items = [SearchFilterCellContent]()
 
         if  let type = modelStack?.novelType, type.isEmpty {
-            let item = NRSearchFilterCellContent(type: .novelType, contentArray: type)
+            let item = SearchFilterCellContent(type: .novelType, contentArray: type)
             items.append(item)
         }
         if  let type = modelStack?.genres, type.isEmpty {
-            let item = NRSearchFilterCellContent(type: .genres, contentArray: type)
+            let item = SearchFilterCellContent(type: .genres, contentArray: type)
             items.append(item)
         }
         if  let type = modelStack?.language, type.isEmpty {
-            let item = NRSearchFilterCellContent(type: .language, contentArray: type)
+            let item = SearchFilterCellContent(type: .language, contentArray: type)
             items.append(item)
         }
         if  let type = modelStack?.completed, type.isEmpty {
-            let item = NRSearchFilterCellContent(type: .completed, contentArray: type)
+            let item = SearchFilterCellContent(type: .completed, contentArray: type)
             items.append(item)
         }
 
@@ -101,7 +101,7 @@ extension SearchFilterViewModel {
         return sectionItems[indexPath.section].type.headerTitle
     }
 
-    func cellForItemAt(_ indexPath: IndexPath) -> NRFilterModel? {
+    func cellForItemAt(_ indexPath: IndexPath) -> FilterModel? {
 
         let filterItem = sectionItems[indexPath.section]
         let cur = filterItem.contentArray[indexPath.row]

@@ -1,5 +1,5 @@
 //
-//  NRBaseCollectionViewController.swift
+//  CollectionViewController+Utility.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 30/09/18.

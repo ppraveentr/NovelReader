@@ -15,7 +15,7 @@ enum NovelServiceProvider {
 
         LoadingIndicator.show()
 
-        FTServicefetchRecentUpdatesList.make { response in
+        ServiceRecentUpdatesList.make { response in
             LoadingIndicator.hide()
 
             let response = response.status.responseModel as? NovelListModel
@@ -27,7 +27,7 @@ enum NovelServiceProvider {
     static func fetchNovelList(novel: NovelListModel?, _ completionHandler: @escaping (_ novelsList: NovelListModel?) -> Swift.Void) {
 
         LoadingIndicator.show()
-        FTServicefetchNovelList.make(modelStack: nil) { response in
+        ServiceNovelList.make(modelStack: nil) { response in
             LoadingIndicator.hide()
 
             let res = response.status.responseModel as? NovelListModel
@@ -61,7 +61,7 @@ enum NovelServiceProvider {
 
         let model: ServiceModel = ["id": novel.identifier]
 
-        FTServicefetchNovelChapters.make(modelStack: model) { response in
+        ServiceNovelChapters.make(modelStack: model) { response in
             LoadingIndicator.hide()
 
             let res = response.status.responseModel as? NovelModel
@@ -77,7 +77,7 @@ enum NovelServiceProvider {
 
         let model: ServiceModel = ["id": identifier]
 
-        FTServicefetchChapter.make(modelStack: model) { response in
+        ServiceNovelChapter.make(modelStack: model) { response in
             LoadingIndicator.hide()
 
             let res = response.status.responseModel as? NovelChapterModel
@@ -93,10 +93,10 @@ enum NovelServiceProvider {
 
         LoadingIndicator.show()
 
-        let model = NRSearchModel()
+        let model = SearchNovelModel()
         model.keyword = keyword
 
-        FTServicesearchNovel.make(modelStack: model) { response in
+        ServiceSearchNovel.make(modelStack: model) { response in
             LoadingIndicator.hide()
 
             let res = response.status.responseModel as? NovelListModel
@@ -105,14 +105,14 @@ enum NovelServiceProvider {
     }
 
     // Serch Novel
-    static func searchFilter(completionHandler: @escaping (_ novels: NRSearchFilterModel?) -> Swift.Void) {
+    static func searchFilter(completionHandler: @escaping (_ novels: SearchFilterModel?) -> Swift.Void) {
 
         LoadingIndicator.show()
 
-        FTServicesearchFilter.make(modelStack: nil) { response in
+        ServiceSearchFilter.make(modelStack: nil) { response in
             LoadingIndicator.hide()
 
-            let res = response.status.responseModel as? NRSearchFilterModel
+            let res = response.status.responseModel as? SearchFilterModel
             completionHandler(res?.response)
         }
     }

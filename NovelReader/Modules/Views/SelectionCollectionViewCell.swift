@@ -1,5 +1,5 @@
 //
-//  NRSelectionCollectionViewCell.swift
+//  SelectionCollectionViewCell.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 23/10/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NRSelectionCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProtocol {
+class SelectionCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProtocol {
 
     @IBOutlet
     private var titleLabel: UILabel?
@@ -35,7 +35,7 @@ class NRSelectionCollectionViewCell: UICollectionViewCell, ConfigureNovelCellPro
     }
 
     func configureContent(content: AnyObject) {
-        if let searchFilter = content as? NRFilterModel {
+        if let searchFilter = content as? FilterModel {
             self.titleLabel?.text = searchFilter.type
         }
 

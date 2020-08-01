@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NovelChapterViewController: UIViewController, TableViewControllerProtocol {
+final class NovelChapterViewController: UIViewController, TableViewControllerProtocol {
     
     var novel: NovelModel?
     lazy var novelDescView: NovelDescriptionView? = NovelDescriptionView.fromNib() as? NovelDescriptionView
@@ -39,7 +39,7 @@ class NovelChapterViewController: UIViewController, TableViewControllerProtocol 
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
-        tableView.register(NRNovelTableViewCell.nib, forCellReuseIdentifier: kNovelCellIdentifier)
+        NovelTableViewCell.registerNib(for: tableView)
     }
     
     func configureContent(content: AnyObject) {
@@ -71,10 +71,12 @@ extension NovelChapterViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: kNovelCellIdentifier, for: indexPath)
+        guard let cell = try? NovelTableViewCell.dequeue(from: tableView, for: indexPath) else {
+            return UITableViewCell()
+        }
         
         if
-            let cell = cell as? NRNovelTableViewCell,
+            let cell = cell as? NovelTableViewCell,
             let cur = novel?.chapterList?[indexPath.row] {
             cell.configureContent(content: cur)
         }

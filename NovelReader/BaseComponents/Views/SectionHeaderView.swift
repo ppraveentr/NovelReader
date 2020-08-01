@@ -1,5 +1,5 @@
 //
-//  NRSectionHeaderView.swift
+//  SectionHeaderView.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 24/10/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NRSectionHeaderView: UICollectionReusableView {
+class SectionHeaderView: UICollectionReusableView {
 
     var titleString: String?
     var tapAction: ActionBlock?
@@ -34,7 +34,7 @@ class NRSectionHeaderView: UICollectionReusableView {
 
     func setupView() {
         self.backgroundColor = .clear
-        contentXIBView = self.xibSetup(className: NRSectionHeaderView.self)
+        contentXIBView = self.xibSetup(className: SectionHeaderView.self)
         contentXIBView?.theme = self.theme
     }
 

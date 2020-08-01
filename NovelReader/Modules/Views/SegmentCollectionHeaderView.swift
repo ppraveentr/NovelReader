@@ -1,5 +1,5 @@
 //
-//  NRSegmentCollectionHeaderView.swift
+//  SegmentCollectionHeaderView.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 13/10/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NRSegmentCollectionHeaderView: UICollectionReusableView {
+final class SegmentCollectionHeaderView: UICollectionReusableView {
     var segmentedControl: UISegmentedControl? = nil
 
     override init(frame: CGRect) {
@@ -22,18 +22,18 @@ class NRSegmentCollectionHeaderView: UICollectionReusableView {
     }
 
     func setupSegmentView(_ items: [Any] = [ kRecentUpdateString, kTopViews ]) {
-
         // Remove previous segment
         segmentedControl?.removeSubviews()
-
-        self.theme = ThemeStyle.defaultStyle
-
-        segmentedControl = UISegmentedControl(items: items) { (segment) in
-            ftLog(segment)
-        }
-
+        segmentedControl = UISegmentedControl(items: items) { ftLog($0) }
         if let segment = segmentedControl {
             self.pin(view: segment, edgeOffsets: UIEdgeInsets(10))
         }
+        
+       setupViewTheme()
+    }
+    
+    func setupViewTheme() {
+        self.theme = ThemeStyle.defaultStyle
+        segmentedControl?.theme = ThemeStyle.defaultStyle
     }
 }

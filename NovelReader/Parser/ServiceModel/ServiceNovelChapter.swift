@@ -1,5 +1,5 @@
 //
-//  NRService_fetchNovelChapters.swift
+//  ServiceNovelChapter.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 20/08/17.
@@ -8,10 +8,11 @@
 
 import Foundation
 
-final class FTServicefetchNovelChapters: ServiceClient {
-    var serviceName = "fetchNovelChapters"
+final class ServiceNovelChapter: ServiceClient {
+    
+    var serviceName = "fetchChapter"
     var inputStack: ServiceModel?
-    var responseStackType: Any? = NovelModel.self
+    var responseStackType: Any? = NovelChapterModel.self
 
     init(inputStack: ServiceModel?) {
         self.inputStack = inputStack

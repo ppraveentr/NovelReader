@@ -1,5 +1,5 @@
 //
-//  NRService_searchNovel.swift
+//  ServiceSearchNovel.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 05/10/18.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-final class FTServicesearchNovel: ServiceClient {
-    var inputStack: NRSearchModel?
+final class ServiceSearchNovel: ServiceClient {
+    var inputStack: SearchNovelModel?
     var serviceName = "searchNovel"
     var responseStackType: Any? = NovelListModel.self
 
     init(inputStack: ServiceModel?) {
-        self.inputStack = inputStack as? NRSearchModel
+        self.inputStack = inputStack as? SearchNovelModel
     }
 }
