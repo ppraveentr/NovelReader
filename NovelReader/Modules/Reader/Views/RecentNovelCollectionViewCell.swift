@@ -21,9 +21,7 @@ class RecentNovelCollectionViewCell: UICollectionViewCell, ConfigureNovelCellPro
     var novelItem: NovelModel?
 
     func configureContent(content: AnyObject, view: UICollectionView?, indexPath: IndexPath?) {
-        guard let novel = content as? NovelModel else {
-            return
-        }
+        guard let novel = content as? NovelModel else { return }
         
         novelTitle?.isEnabled = true
         novelTitle?.text = novel.title

@@ -49,9 +49,7 @@ extension UIViewController {
     }
 
     func configureColletionView(_ delegate: UICollectionViewDelegate? = nil, _ source: UICollectionViewDataSource? = nil) {
-        guard let self = self as? CollectionViewControllerProtocol else {
-            return
-        }
+        guard let self = self as? CollectionViewControllerProtocol else { return }
         // Relaod collectionView on exit
         defer {
             DispatchQueue.main.async {
@@ -60,9 +58,7 @@ extension UIViewController {
         }
 
         // Setup collectionView once
-        guard self.collectionView.delegate == nil else {
-            return
-        }
+        guard self.collectionView.delegate == nil else { return }
 
         self.collectionView.theme = ThemeStyle.defaultStyle
 

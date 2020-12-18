@@ -55,7 +55,7 @@ final class AppManager {
         // Debug-Postman
 //        FTMobileConfig.appBaseURL = kPostmanURL
         // Debug-only code
-//        NetworkMananger.appBaseURL = kMockServerURL
+        NetworkMananger.appBaseURL = kMockServerURL
         NetworkMananger.mockBundleResource = kMockBundleResource
         NetworkMananger.isMockData = kMockDataEnabled
         #endif

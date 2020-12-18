@@ -19,9 +19,7 @@ final class NovelChapterViewController: UIViewController, TableViewControllerPro
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        guard let novel = novel else {
-            return
-        }
+        guard let novel = novel else { return }
         NovelServiceProvider.getNovelChaptersList(novel) { [weak self] novelResponse in
             guard novelResponse != nil, let self = self else {
                 return

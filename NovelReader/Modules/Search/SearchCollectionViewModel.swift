@@ -33,9 +33,7 @@ class SearchCollectionViewModel {
 
     // get-Novels from backend
     func searchNovel(keywoard: String) {
-        guard keywoard.count > 0 else {
-            return
-        }
+        guard keywoard.count > 0 else { return }
 
         NovelServiceProvider.searchNovel(keyword: keywoard) { novelList in
             self.currentNovelList = novelList
