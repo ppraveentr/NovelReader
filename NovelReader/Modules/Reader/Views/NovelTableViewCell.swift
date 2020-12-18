@@ -21,9 +21,7 @@ final class NovelTableViewCell: UITableViewCell {
     }
     
     func configureContent(content: AnyObject) {
-        guard let novel = content as? NovelChapterModel else {
-            return
-        }
+        guard let novel = content as? NovelChapterModel else { return }
         self.titleLabel?.text = novel.shortTitle ?? novel.title
         self.chapterDate?.text = novel.releaseDate 
     }

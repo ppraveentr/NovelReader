@@ -25,12 +25,10 @@ final class NovelDescriptionView: UITableViewHeaderFooterView {
     private var viewsButton: UIButton?
     
     func configureContent(content: AnyObject) {
-        guard let novel = content as? NovelModel else {
-            return
-        }
+        guard let novel = content as? NovelModel else { return }
 
         if let url = novel.imageURL {
-            self.contentImageView?.downloadedFrom(link: url )
+            self.contentImageView?.downloadedFrom(link: url, defaultImage: nil)
         }
         self.titleLabel?.text = novel.title
         self.descriptionLabel?.text = novel.contentDescription
