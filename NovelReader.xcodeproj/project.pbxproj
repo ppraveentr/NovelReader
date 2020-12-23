@@ -23,6 +23,7 @@
 		DE4EBE662067B6F5008AC70B /* ServiceNovelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EBE652067B6F5008AC70B /* ServiceNovelList.swift */; };
 		DE4FAC9B21635B18006EF94B /* NovelCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4FAC9A21635B18006EF94B /* NovelCollectionViewModel.swift */; };
 		DE5082322167D21400F3B26F /* ServiceSearchNovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5082312167D21400F3B26F /* ServiceSearchNovel.swift */; };
+		DE6FEFD9259396C70041C8A2 /* View+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6FEFD8259396C70041C8A2 /* View+Utility.swift */; };
 		DE818246208356BA001316E5 /* ServiceRecentUpdatesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE818242208356BA001316E5 /* ServiceRecentUpdatesList.swift */; };
 		DE8182592085020A001316E5 /* fetchRecentUpdatesList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE8182562085020A001316E5 /* fetchRecentUpdatesList.json */; };
 		DE84280A20558FE8006605C0 /* NovelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE84280520558FE7006605C0 /* NovelModel.swift */; };
@@ -124,6 +125,7 @@
 		DE4EBE652067B6F5008AC70B /* ServiceNovelList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceNovelList.swift; sourceTree = "<group>"; };
 		DE4FAC9A21635B18006EF94B /* NovelCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovelCollectionViewModel.swift; sourceTree = "<group>"; };
 		DE5082312167D21400F3B26F /* ServiceSearchNovel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchNovel.swift; sourceTree = "<group>"; };
+		DE6FEFD8259396C70041C8A2 /* View+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Utility.swift"; sourceTree = "<group>"; };
 		DE818242208356BA001316E5 /* ServiceRecentUpdatesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRecentUpdatesList.swift; sourceTree = "<group>"; };
 		DE81824C2084F8F6001316E5 /* FTNovelReaderMockBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FTNovelReaderMockBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE81824E2084F8F6001316E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -246,6 +248,61 @@
 			path = ServiceModel;
 			sourceTree = "<group>";
 		};
+		DE6FEFDD2593AC100041C8A2 /* RecentUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				DE6FEFDE2593AC300041C8A2 /* Views */,
+				DEBC6521209764790057F649 /* ReaderViewController.swift */,
+			);
+			path = RecentUpdate;
+			sourceTree = "<group>";
+		};
+		DE6FEFDE2593AC300041C8A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEBC652E209764790057F649 /* RecentNovelCollectionViewCell.swift */,
+				DEBC6525209764790057F649 /* RecentNovelCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE6FEFDF2593AC5A0041C8A2 /* TopView */ = {
+			isa = PBXGroup;
+			children = (
+				DE6FEFE02593ACA60041C8A2 /* Views */,
+				DE4FAC9A21635B18006EF94B /* NovelCollectionViewModel.swift */,
+				DEBC6522209764790057F649 /* NovelCollectionViewController.swift */,
+			);
+			path = TopView;
+			sourceTree = "<group>";
+		};
+		DE6FEFE02593ACA60041C8A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEBC652B209764790057F649 /* NovelCollectionViewCell.swift */,
+				DEBC6524209764790057F649 /* NovelCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE6FEFE12593ACC80041C8A2 /* ChapterList */ = {
+			isa = PBXGroup;
+			children = (
+				DEBC6523209764790057F649 /* Views */,
+				DEBC652F209764790057F649 /* NovelChapterViewController.swift */,
+			);
+			path = ChapterList;
+			sourceTree = "<group>";
+		};
+		DE6FEFE22593AD3C0041C8A2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				DEA7E1B61F49A67F0002C148 /* AppManager.swift */,
+				DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		DE81824D2084F8F6001316E5 /* FTNovelReaderMockBundle */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,7 +331,9 @@
 		DE88E7202180BC5D009433B8 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				DE6FEFE22593AD3C0041C8A2 /* Manager */,
 				DE88E7242180BC7A009433B8 /* NRUtility.swift */,
+				DE6FEFD8259396C70041C8A2 /* View+Utility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -348,8 +407,6 @@
 			isa = PBXGroup;
 			children = (
 				DEF2411B215E6DE400F7B0C6 /* NRConstants.swift */,
-				DEA7E1B61F49A67F0002C148 /* AppManager.swift */,
-				DEBC650D20970E1E0057F649 /* NRGoogleAuth.swift */,
 				DEA7E1A11F497B5D0002C148 /* TabBarViewController.swift */,
 				DEA7E1A01F497B5D0002C148 /* BaseViewController.swift */,
 				DEBC650520970CB50057F649 /* ViewController+Utility.swift */,
@@ -413,11 +470,9 @@
 			isa = PBXGroup;
 			children = (
 				DEBC6520209764790057F649 /* NovelReader.storyboard */,
-				DEBC6522209764790057F649 /* NovelCollectionViewController.swift */,
-				DE4FAC9A21635B18006EF94B /* NovelCollectionViewModel.swift */,
-				DEBC652F209764790057F649 /* NovelChapterViewController.swift */,
-				DEBC6521209764790057F649 /* ReaderViewController.swift */,
-				DEBC6523209764790057F649 /* Views */,
+				DE6FEFE12593ACC80041C8A2 /* ChapterList */,
+				DE6FEFDF2593AC5A0041C8A2 /* TopView */,
+				DE6FEFDD2593AC100041C8A2 /* RecentUpdate */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -429,10 +484,6 @@
 				DEBC6529209764790057F649 /* NovelDescriptionView.xib */,
 				DEBC652A209764790057F649 /* NovelTableViewCell.swift */,
 				DEBC652D209764790057F649 /* NovelTableViewCell.xib */,
-				DEBC652B209764790057F649 /* NovelCollectionViewCell.swift */,
-				DEBC6524209764790057F649 /* NovelCollectionViewCell.xib */,
-				DEBC652E209764790057F649 /* RecentNovelCollectionViewCell.swift */,
-				DEBC6525209764790057F649 /* RecentNovelCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -738,6 +789,7 @@
 				DEE9351620959E1D00B10398 /* ServiceNovelChapter.swift in Sources */,
 				DEA7E1A41F497B5D0002C148 /* TabBarViewController.swift in Sources */,
 				DEA7E1441F496BAB0002C148 /* AppDelegate.swift in Sources */,
+				DE6FEFD9259396C70041C8A2 /* View+Utility.swift in Sources */,
 				DE818246208356BA001316E5 /* ServiceRecentUpdatesList.swift in Sources */,
 				DEBC654E209764790057F649 /* NovelChapterViewController.swift in Sources */,
 				DE4EBE662067B6F5008AC70B /* ServiceNovelList.swift in Sources */,

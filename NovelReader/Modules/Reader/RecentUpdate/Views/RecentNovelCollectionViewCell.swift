@@ -20,6 +20,11 @@ class RecentNovelCollectionViewCell: UICollectionViewCell, ConfigureNovelCellPro
     var indexPath: IndexPath?
     var novelItem: NovelModel?
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.addGrayBorder()
+    }
+    
     func configureContent(content: AnyObject, view: UICollectionView?, indexPath: IndexPath?) {
         guard let novel = content as? NovelModel else { return }
         

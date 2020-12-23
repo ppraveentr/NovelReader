@@ -84,7 +84,6 @@ class ReaderViewController: BaseViewController, WebViewControllerProtocol {
 }
 
 extension ReaderViewController: FontPickerViewProtocol {
-
     func fontSize(_ size: Float) {
         contentView.setContentFontSize(size)
     }
@@ -101,7 +100,6 @@ extension ReaderViewController: FontPickerViewProtocol {
 }
 
 extension ReaderViewController: UIPopoverPresentationControllerDelegate {
-    
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         if let fontPickerController = controller.presentedViewController as? FontPickerViewController {
             if self.fontPicker == nil {

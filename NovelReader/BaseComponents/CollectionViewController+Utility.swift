@@ -10,38 +10,19 @@ import Foundation
 
 // default collectionView SectionInset
 private var defaultSectionInset: UIEdgeInsets {
-    return UIEdgeInsets(top: 15, left: 20, bottom: 10, right: 20)
+    return UIEdgeInsets(top: 25, left: 20, bottom: 10, right: 20)
 }
 
 extension UIViewController {
-
-    // MARK: Show/Hide Tabbar, View lifecycle
-//    func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        self.hidesBottomBarWhenPushed = false
-//    }
-//
-//    func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.hidesBottomBarWhenPushed = true
-//    }
-
     // MARK: SetUp UICollectionView
     public func sectionInset() -> UIEdgeInsets {
         return defaultSectionInset
     }
 
-    public func estimatedItemSize() -> CGSize {
-        return CGSize(width: screenWidth - (sectionInset().left + sectionInset().right), height: 20)
-    }
-
     @objc
     var flowLayout: UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = estimatedItemSize()
-        if #available(iOS 10.0, *) {
-            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        } 
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         layout.sectionInset = sectionInset()
         layout.headerReferenceSize = CGSize(width: 0, height: 45)
         layout.sectionHeadersPinToVisibleBounds = true
@@ -56,12 +37,9 @@ extension UIViewController {
                 self.collectionView.reloadData()
             }
         }
-
         // Setup collectionView once
         guard self.collectionView.delegate == nil else { return }
-
         self.collectionView.theme = ThemeStyle.defaultStyle
-
         // Collection delegates
         self.collectionView.dataSource = source
         self.collectionView.delegate = delegate
@@ -69,7 +47,6 @@ extension UIViewController {
 }
 
 extension UICollectionViewCell {
-
     override open func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes)
         -> UICollectionViewLayoutAttributes {
             let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)

@@ -26,7 +26,7 @@ final class NovelCollectionViewCell: UICollectionViewCell, ConfigureNovelCellPro
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.addBorder()
+        self.addGrayBorder()
     }
 
     override func prepareForReuse() {
@@ -43,20 +43,8 @@ final class NovelCollectionViewCell: UICollectionViewCell, ConfigureNovelCellPro
         }
 
         self.titleLabel?.text = novel.title
-        self.chapterLabel?.text = novel.lastChapter
+        self.chapterLabel?.text = novel.author
         self.lastUpdateLabel?.text = novel.lastUpdated
         self.viewsButton?.setTitle(novel.views ?? "", for: .normal)
-    }
-    
-    func addBorder() {
-        self.layer.cornerRadius = 8
-        // border
-        self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.borderWidth = 0.5
-        // drop shadow
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 1.0
-        self.layer.shadowRadius = 2.0
-        self.layer.shadowOffset = CGSize(width: 3, height: 3)
     }
 }

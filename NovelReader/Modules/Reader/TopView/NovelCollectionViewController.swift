@@ -18,14 +18,11 @@ final class NovelCollectionViewController: UIViewController, CollectionViewContr
     // View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Novel Segment type
         viewModel.novelCollectionType = .recentNovel
-
         // View Title
         let rightButtonItem = UIBarButtonItem(itemType: .search)
         self.setupNavigationbar(title: kNovelReaderTitle, rightButton: rightButtonItem)
-
         // Collection View
         setupColletionView()
     }
@@ -66,7 +63,6 @@ extension NovelCollectionViewController: NovelCollectionViewModelProtocal {
 
 // MARK: UICollectionView delegates
 extension NovelCollectionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
-
     // viewForSupplementaryElement
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let headerView: SegmentCollectionHeaderView = try? .dequeue(from: collectionView, ofKind: kind, for: indexPath) else {
