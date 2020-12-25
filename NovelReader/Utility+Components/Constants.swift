@@ -1,5 +1,5 @@
 //
-//  NRConstants.swift
+//  Constants.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 28/09/18.
@@ -11,10 +11,10 @@ import Foundation
 // MARK: Application Theme
 let kThemeFileName = "Themes.json"
 var kNavigationBarColor: UIColor {
-    return "#DF6E6E".hexColor() ?? UIColor.white
+    "#DF6E6E".hexColor() ?? UIColor.white
 }
 var kBarColor: UIColor {
-     return "#de6161".hexColor() ?? UIColor.black
+     "#de6161".hexColor() ?? UIColor.black
 }
 
 let kReaderFontSize = 10

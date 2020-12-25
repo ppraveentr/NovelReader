@@ -1,5 +1,5 @@
 //
-//  BaseViewController+Utility.swift
+//  ConfigureNovelCellProtocol.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 30/04/18.

@@ -75,6 +75,6 @@ class SectionHeaderView: UICollectionReusableView {
 
     // MARK: Customise View
     var rightButton: UIButton? {
-        return buttonRight
+        buttonRight
     }
 }

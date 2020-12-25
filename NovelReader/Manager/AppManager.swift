@@ -8,7 +8,7 @@
 
 import Foundation
 
-//MSAppCenter
+// MSAppCenter
 #if canImport(AppCenter)
 import AppCenter
 import AppCenterAnalytics
@@ -21,14 +21,14 @@ final class AppManager {
     
     // plist Endpoint
     static var endpointURL: String {
-        return Bundle.main.infoDictionary?[kEndpointURL] as? String ?? ""
+        Bundle.main.infoDictionary?[kEndpointURL] as? String ?? ""
     }
     
     // MARK: Setup
     static func setupApplication() {
         AppManager.sharedInstance.configureAppBase()
         AppManager.sharedInstance.configureAppTheme()
-        //NRGoogleAuth.setupGoogleAuth()
+        // NRGoogleAuth.setupGoogleAuth()
     }
 
     // MARK: Model Binding
@@ -83,7 +83,7 @@ final class AppManager {
             ThemesManager.setupThemes(themes: themeContent, imageSourceBundle: [Bundle(for: NRAppDelegate.self)])
         }
         
-        //Loading Indicator
+        // Loading Indicator
         setupLoadingIndicator()
     }
 

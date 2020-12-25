@@ -8,6 +8,12 @@
 
 import Foundation
 
+extension IndexPath {
+    public static func == (lhs: IndexPath, rhs: IndexPath) -> Bool {
+        lhs.row == rhs.row && lhs.section == rhs.section
+    }
+}
+
 extension UIView {
     func addGrayBorder() {
         // drop shadow

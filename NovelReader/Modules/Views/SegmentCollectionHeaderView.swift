@@ -9,7 +9,7 @@
 import Foundation
 
 final class SegmentCollectionHeaderView: UICollectionReusableView {
-    var segmentedControl: UISegmentedControl? = nil
+    var segmentedControl: UISegmentedControl?
 
     override init(frame: CGRect) {
         super.init(frame: frame)

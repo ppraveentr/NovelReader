@@ -9,11 +9,11 @@ before_install:
  - pod --version
  - pod setup --silent > /dev/null
  - pod repo update --silent
+ - pod install
  - xcpretty --version
  - xcodebuild -version
  - xcodebuild -showsdks
 script:
  - xcodebuild clean build -workspace "NovelReader.xcworkspace" -scheme "NovelReader" -configuration Release -sdk iphonesimulator | xcpretty -c
- #- sonar-scanner
 after_success:
  - bash <(curl -s https://codecov.io/bash)

@@ -33,8 +33,8 @@ final class NovelCollectionViewController: UIViewController, CollectionViewContr
         NovelCollectionType.registerCell(collectionView)
 
         // Collection Header: Segment Control
-        SegmentCollectionHeaderView.registerClass(for: collectionView,
-                                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader)
+        let kind = UICollectionView.elementKindSectionHeader
+        SegmentCollectionHeaderView.registerClass(for: collectionView, forSupplementaryViewOfKind: kind)
     }
 
     // Navigation bar Button action
@@ -78,7 +78,7 @@ extension NovelCollectionViewController: UICollectionViewDelegateFlowLayout, UIC
 
     // numberOfItemsInSection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.currentNovelList?.count ?? 0
+        viewModel.currentNovelList?.count ?? 0
     }
 
     // cellForItem

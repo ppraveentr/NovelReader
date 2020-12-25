@@ -13,7 +13,7 @@ final class NovelChapterViewController: UIViewController, TableViewControllerPro
     var novel: NovelModel?
     lazy var novelDescView: NovelDescriptionView? = NovelDescriptionView.fromNib() as? NovelDescriptionView
     
-    func tableStyle() -> UITableView.Style { return .grouped }
+    func tableStyle() -> UITableView.Style { .grouped }
 //    override func tableViewEdgeOffsets() -> FTEdgeOffsets { return FTEdgeOffsets(10, 0, 10, 0) }
 
     override func viewDidLoad() {
@@ -52,19 +52,19 @@ final class NovelChapterViewController: UIViewController, TableViewControllerPro
 extension NovelChapterViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 20
+        20
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 5.0
+        5.0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 5.0
+        5.0
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return novel?.chapterList?.count ?? 0
+        novel?.chapterList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

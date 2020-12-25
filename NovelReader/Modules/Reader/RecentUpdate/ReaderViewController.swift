@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ReaderViewController: BaseViewController, WebViewControllerProtocol {
+class ReaderViewController: UIViewController, WebViewControllerProtocol {
     
     var novelChapter: NovelChapterModel?
     var novel: NovelModel?
@@ -23,24 +23,25 @@ class ReaderViewController: BaseViewController, WebViewControllerProtocol {
 //    }
 
     var fontPicker: FontPickerModel? {
+        get {
+            UserCacheManager.getCachedObject(forType: FontPickerModel.self) as? FontPickerModel
+        }
         set {
             if let fontPicker = newValue {
                 UserCacheManager.setCacheObject(fontPicker, forType: FontPickerModel.self)
             }
         }
-        get {
-            return UserCacheManager.getCachedObject(forType: FontPickerModel.self) as? FontPickerModel
-        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCoreView()
         // setup view content
-        self.setupViewContent()
+        setupViewContent()
     }
     
     override var prefersStatusBarHidden: Bool {
-        return true
+        true
     }
 
     func setupViewContent() {
@@ -55,7 +56,7 @@ class ReaderViewController: BaseViewController, WebViewControllerProtocol {
         self.mainView?.pin(view: contentView)
 
         if let url = novelChapter?.identifier ?? novel?.identifier {
-            NovelServiceProvider.getNovelChapter(url) { [unowned self] (chapter) in
+            NovelServiceProvider.getNovelChapter(url) { [unowned self] chapter in
 
                 if let content = chapter?.shortTitle {
                     self.title = content

@@ -10,13 +10,13 @@ import Foundation
 
 // default collectionView SectionInset
 private var defaultSectionInset: UIEdgeInsets {
-    return UIEdgeInsets(top: 25, left: 20, bottom: 10, right: 20)
+    UIEdgeInsets(top: 25, left: 20, bottom: 10, right: 20)
 }
 
 extension UIViewController {
     // MARK: SetUp UICollectionView
     public func sectionInset() -> UIEdgeInsets {
-        return defaultSectionInset
+        defaultSectionInset
     }
 
     @objc

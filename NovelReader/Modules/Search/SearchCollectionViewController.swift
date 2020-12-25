@@ -53,7 +53,7 @@ extension SearchCollectionViewController: UICollectionViewDelegateFlowLayout, UI
     
     // numberOfItemsInSection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.currentNovelList?.count ?? 0
+        viewModel.currentNovelList?.count ?? 0
     }
 
     // cellForItem
