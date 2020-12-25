@@ -29,9 +29,7 @@ class SearchBarHeaderView: FTView {
     }
 
     func setupSearchBar() {
-
         self.theme = ThemeStyle.defaultStyle
-
         searchBar = UISearchBar(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 44)))
         searchBar?.theme = ThemeStyle.defaultStyle
         searchBar?.delegate = searchBarDelegate

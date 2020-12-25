@@ -24,7 +24,7 @@ class SearchFilterViewController: UIViewController, CollectionViewControllerProt
         viewModel.updateSearchFilter()
     }
 
-    public override var flowLayout: UICollectionViewLayout {
+    override var flowLayout: UICollectionViewLayout {
         let layout = super.flowLayout
         (layout as? UICollectionViewFlowLayout)?.sectionHeadersPinToVisibleBounds = false
         return layout
@@ -53,12 +53,12 @@ class SearchFilterViewController: UIViewController, CollectionViewControllerProt
 extension SearchFilterViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return viewModel.numberOfSections
+        viewModel.numberOfSections
     }
 
     // numberOfItemsInSection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfItemsInSection(section)
+        viewModel.numberOfItemsInSection(section)
     }
 
     // viewForSupplementaryElement
@@ -94,7 +94,7 @@ extension SearchFilterViewController: UICollectionViewDelegateFlowLayout, UIColl
         if
             let cell = cell as? ConfigureNovelCellProtocol,
             let cur = viewModel.cellForItemAt(indexPath) {
-            cell.configureContent(content: cur)
+            cell.configureContent(content: cur, indexPath: indexPath)
         }
 
         return cell
@@ -109,6 +109,5 @@ extension SearchFilterViewController: UICollectionViewDelegateFlowLayout, UIColl
 
 extension SearchFilterViewController: SearchFilterViewModelProtocal {
     func refreshCollectionView() {
-        self.configureColletionView()
     }
 }

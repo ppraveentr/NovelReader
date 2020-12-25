@@ -1,0 +1,13 @@
+
+#update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Run test cases"
+  lane :tests do
+    run_tests(workspace: "NovelReader.xcworkspace",
+            devices: ["iPhone X"],
+            scheme: "NovelReader")
+  end
+end

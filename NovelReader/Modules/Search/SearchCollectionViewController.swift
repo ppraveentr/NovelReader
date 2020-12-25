@@ -8,7 +8,8 @@
 
 import Foundation
 
-class SearchCollectionViewController: UIViewController, CollectionViewControllerProtocol, SearchCollectionViewModelProtocal {
+class SearchCollectionViewController: UIViewController, CollectionViewControllerProtocol,
+                                      SearchCollectionViewModelProtocal {
 
     // View Model
     lazy var viewModel = {
@@ -31,7 +32,6 @@ class SearchCollectionViewController: UIViewController, CollectionViewController
     }
     
     func refreshCollectionView() {
-        self.configureColletionView(self, self)
     }
 }
 
@@ -53,11 +53,12 @@ extension SearchCollectionViewController: UICollectionViewDelegateFlowLayout, UI
     
     // numberOfItemsInSection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.currentNovelList?.count ?? 0
+        viewModel.currentNovelList?.count ?? 0
     }
 
     // cellForItem
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         guard let cell = try? NovelCollectionViewCell.dequeue(from: collectionView, for: indexPath),
             let novel = viewModel.currentNovelList?[indexPath.row]
@@ -66,7 +67,7 @@ extension SearchCollectionViewController: UICollectionViewDelegateFlowLayout, UI
         }
 
        if let cell = cell as? ConfigureNovelCellProtocol {
-            cell.configureContent(content: novel, view: collectionView, indexPath: indexPath)
+            cell.configureContent(content: novel, indexPath: indexPath)
         }
 
         return cell
@@ -74,6 +75,6 @@ extension SearchCollectionViewController: UICollectionViewDelegateFlowLayout, UI
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cur = viewModel.currentNovelList?[indexPath.row]
-        self.performSegue(withIdentifier: "kShowNovelChapterList", sender: cur)
+        self.performSegue(withIdentifier: Storyboard.Segue.showNovelDetailsView, sender: cur)
     }
 }
