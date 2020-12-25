@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SectionHeaderView" customModule="NovelReader" customModuleProvider="target">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="theme" value="default"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="leftButton_" destination="toO-En-fcy" id="1Gl-Dt-OWD"/>
+                <outlet property="rightButton_" destination="hNb-HZ-cNd" id="Lln-if-w4W"/>
+                <outlet property="titleLabel" destination="bc5-cj-FIx" id="Dkm-VB-8Q8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SectionHeaderView" customModule="NovelReader" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="469" height="122"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xvT-8x-wdJ">
+                    <rect key="frame" x="10" y="54" width="439" height="24"/>
+                    <subviews>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="toO-En-fcy">
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc5-cj-FIx">
+                            <rect key="frame" x="0.0" y="2" width="439" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hNb-HZ-cNd">
+                            <rect key="frame" x="0.0" y="1" width="0.0" height="22"/>
+                            <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                            <state key="normal" backgroundImage="close-circle"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Fxm-YT-juE"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xvT-8x-wdJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="6xQ-5z-YQt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xvT-8x-wdJ" secondAttribute="trailing" constant="20" id="BhL-8y-6qx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xvT-8x-wdJ" secondAttribute="bottom" constant="10" id="JDn-59-X2P"/>
+                <constraint firstItem="xvT-8x-wdJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="uew-XL-xWh"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="leftButton_" destination="toO-En-fcy" id="ZVd-ow-8dl"/>
+                <outlet property="rightButton_" destination="hNb-HZ-cNd" id="Efb-dW-1wv"/>
+                <outlet property="titleLabel" destination="bc5-cj-FIx" id="tgd-jJ-Hp1"/>
+            </connections>
+            <point key="canvasLocation" x="13.768115942028986" y="-101.11607142857143"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close-circle" width="22" height="22"/>
+    </resources>
+</document>

@@ -8,7 +8,7 @@
 	</array>
 	<key>fetchNovelList</key>
 	<array>
-		<string>NRRules_fetchNovelList</string>
+		<string>RulesNovelList</string>
 	</array>
 </dict>
 </plist>
