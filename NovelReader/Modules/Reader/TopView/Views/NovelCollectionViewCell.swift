@@ -9,7 +9,6 @@
 import Foundation
 
 final class NovelCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProtocol {
- 
     @IBOutlet
     private var titleLabel: UILabel?
     @IBOutlet
@@ -26,7 +25,7 @@ final class NovelCollectionViewCell: UICollectionViewCell, ConfigureNovelCellPro
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.addGrayBorder()
+        self.contentView.addGrayBorder()
     }
 
     override func prepareForReuse() {

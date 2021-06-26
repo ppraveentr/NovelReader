@@ -91,7 +91,9 @@ class NRGoogleAuth: NSObject, GIDSignInDelegate {
     }
 
     // GIDSignInUIDelegate
-    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) { }
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+        // Optional Protocal implementation: intentionally empty
+    }
 
     // Present a view that prompts the user to sign in with Google
     func sign(_ signIn: GIDSignIn!,

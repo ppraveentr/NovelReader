@@ -48,11 +48,11 @@
 		DEBC653A209764790057F649 /* RecentNovelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6525209764790057F649 /* RecentNovelCollectionViewCell.xib */; };
 		DEBC6540209764790057F649 /* NovelDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC6528209764790057F649 /* NovelDescriptionView.swift */; };
 		DEBC6542209764790057F649 /* NovelDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6529209764790057F649 /* NovelDescriptionView.xib */; };
-		DEBC6544209764790057F649 /* NovelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC652A209764790057F649 /* NovelTableViewCell.swift */; };
+		DEBC6544209764790057F649 /* NovelChapterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC652A209764790057F649 /* NovelChapterViewCell.swift */; };
 		DEBC6546209764790057F649 /* NovelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC652B209764790057F649 /* NovelCollectionViewCell.swift */; };
-		DEBC654A209764790057F649 /* NovelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBC652D209764790057F649 /* NovelTableViewCell.xib */; };
+		DEBC654A209764790057F649 /* NovelChapterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBC652D209764790057F649 /* NovelChapterViewCell.xib */; };
 		DEBC654C209764790057F649 /* RecentNovelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC652E209764790057F649 /* RecentNovelCollectionViewCell.swift */; };
-		DEBC654E209764790057F649 /* NovelChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC652F209764790057F649 /* NovelChapterViewController.swift */; };
+		DEBC654E209764790057F649 /* ChapterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC652F209764790057F649 /* ChapterListViewController.swift */; };
 		DEBC6550209764790057F649 /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6531209764790057F649 /* SearchStoryboard.storyboard */; };
 		DEBC65552097661F0057F649 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC65542097661F0057F649 /* SearchCollectionViewController.swift */; };
 		DED79A00217DD6740021116A /* SearchFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED799FF217DD6740021116A /* SearchFilterViewModel.swift */; };
@@ -146,11 +146,11 @@
 		DEBC6525209764790057F649 /* RecentNovelCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentNovelCollectionViewCell.xib; sourceTree = "<group>"; };
 		DEBC6528209764790057F649 /* NovelDescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovelDescriptionView.swift; sourceTree = "<group>"; };
 		DEBC6529209764790057F649 /* NovelDescriptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NovelDescriptionView.xib; sourceTree = "<group>"; };
-		DEBC652A209764790057F649 /* NovelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovelTableViewCell.swift; sourceTree = "<group>"; };
+		DEBC652A209764790057F649 /* NovelChapterViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovelChapterViewCell.swift; sourceTree = "<group>"; };
 		DEBC652B209764790057F649 /* NovelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovelCollectionViewCell.swift; sourceTree = "<group>"; };
-		DEBC652D209764790057F649 /* NovelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NovelTableViewCell.xib; sourceTree = "<group>"; };
+		DEBC652D209764790057F649 /* NovelChapterViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NovelChapterViewCell.xib; sourceTree = "<group>"; };
 		DEBC652E209764790057F649 /* RecentNovelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNovelCollectionViewCell.swift; sourceTree = "<group>"; };
-		DEBC652F209764790057F649 /* NovelChapterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovelChapterViewController.swift; sourceTree = "<group>"; };
+		DEBC652F209764790057F649 /* ChapterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterListViewController.swift; sourceTree = "<group>"; };
 		DEBC6531209764790057F649 /* SearchStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchStoryboard.storyboard; sourceTree = "<group>"; };
 		DEBC65532097649B0057F649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEBC65542097661F0057F649 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
@@ -270,7 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				DEBC6523209764790057F649 /* Views */,
-				DEBC652F209764790057F649 /* NovelChapterViewController.swift */,
+				DEBC652F209764790057F649 /* ChapterListViewController.swift */,
 			);
 			path = ChapterList;
 			sourceTree = "<group>";
@@ -436,8 +436,8 @@
 			children = (
 				DEBC6528209764790057F649 /* NovelDescriptionView.swift */,
 				DEBC6529209764790057F649 /* NovelDescriptionView.xib */,
-				DEBC652A209764790057F649 /* NovelTableViewCell.swift */,
-				DEBC652D209764790057F649 /* NovelTableViewCell.xib */,
+				DEBC652A209764790057F649 /* NovelChapterViewCell.swift */,
+				DEBC652D209764790057F649 /* NovelChapterViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -509,7 +509,6 @@
 				DEA7E13E1F496BAB0002C148 /* Resources */,
 				DEA7E19B1F4970400002C148 /* Embed Frameworks */,
 				48F8DF59B9F1484675B1390A /* [CP] Embed Pods Frameworks */,
-				D73793C3D341CFE8A18BA874 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -608,7 +607,7 @@
 				DEBC6538209764790057F649 /* NovelCollectionViewCell.xib in Resources */,
 				DE19ADCF217F864500F58321 /* SelectionCollectionViewCell.xib in Resources */,
 				DEE935132094CDA000B10398 /* Assets.xcassets in Resources */,
-				DEBC654A209764790057F649 /* NovelTableViewCell.xib in Resources */,
+				DEBC654A209764790057F649 /* NovelChapterViewCell.xib in Resources */,
 				DEAD3422205826660064C46A /* Bindings in Resources */,
 				DEBC6550209764790057F649 /* SearchStoryboard.storyboard in Resources */,
 				DEDC0A2F2068BCC80013D84F /* NovelServiceRules.plist in Resources */,
@@ -638,17 +637,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NovelReader/Pods-NovelReader-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/MobileCore/MobileCore.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MobileCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
@@ -679,24 +672,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D73793C3D341CFE8A18BA874 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NovelReader/Pods-NovelReader-resources.sh",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NovelReader/Pods-NovelReader-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -714,13 +689,13 @@
 				DE4FAC9B21635B18006EF94B /* NovelCollectionViewModel.swift in Sources */,
 				DEA7E1B11F4996A90002C148 /* NovelServiceProvider.swift in Sources */,
 				DEBC650620970CB50057F649 /* ConfigureNovelCellProtocol.swift in Sources */,
-				DEBC6544209764790057F649 /* NovelTableViewCell.swift in Sources */,
+				DEBC6544209764790057F649 /* NovelChapterViewCell.swift in Sources */,
 				DEE9351620959E1D00B10398 /* ServiceNovelChapter.swift in Sources */,
 				DEA7E1A41F497B5D0002C148 /* TabBarViewController.swift in Sources */,
 				DEA7E1441F496BAB0002C148 /* AppDelegate.swift in Sources */,
 				DE6FEFD9259396C70041C8A2 /* View+Utility.swift in Sources */,
 				DE818246208356BA001316E5 /* ServiceRecentUpdatesList.swift in Sources */,
-				DEBC654E209764790057F649 /* NovelChapterViewController.swift in Sources */,
+				DEBC654E209764790057F649 /* ChapterListViewController.swift in Sources */,
 				DE4EBE662067B6F5008AC70B /* ServiceNovelList.swift in Sources */,
 				DEA7E1A31F497B5D0002C148 /* ViewController+Extension.swift in Sources */,
 				DEA7E1B71F49A67F0002C148 /* AppManager.swift in Sources */,

@@ -43,7 +43,7 @@ extension UIViewController {
 // MARK: UIStoryboardSegue
 fileprivate extension UIViewController {
     func configureShowNovelChapterList(_ segue: UIStoryboardSegue, sender: Any?) {
-        if let nextViewController = segue.destination as? NovelChapterViewController {
+        if let nextViewController = segue.destination as? ChapterListViewController {
             nextViewController.novel = sender as? NovelModel
         }
     }

@@ -1,5 +1,5 @@
 //
-//  NovelChapterViewController.swift
+//  ChapterListViewController.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 20/08/17.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-final class NovelChapterViewController: UIViewController, TableViewControllerProtocol {
+final class ChapterListViewController: UIViewController, TableViewControllerProtocol {
     
     var novel: NovelModel?
     lazy var novelDescView: NovelDescriptionView? = NovelDescriptionView.fromNib() as? NovelDescriptionView
     
     func tableStyle() -> UITableView.Style { .grouped }
-//    override func tableViewEdgeOffsets() -> FTEdgeOffsets { return FTEdgeOffsets(10, 0, 10, 0) }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +36,7 @@ final class NovelChapterViewController: UIViewController, TableViewControllerPro
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
-        NovelTableViewCell.registerNib(for: tableView)
+        NovelChapterViewCell.registerNib(for: tableView)
     }
     
     func configureContent(content: AnyObject) {
@@ -49,32 +48,19 @@ final class NovelChapterViewController: UIViewController, TableViewControllerPro
     }
 }
 
-extension NovelChapterViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        20
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        5.0
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        5.0
-    }
+extension ChapterListViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         novel?.chapterList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = try? NovelTableViewCell.dequeue(from: tableView, for: indexPath) else {
+        guard let cell = try? NovelChapterViewCell.dequeue(from: tableView, for: indexPath) else {
             return UITableViewCell()
         }
         
         if
-            let cell = cell as? NovelTableViewCell,
+            let cell = cell as? NovelChapterViewCell,
             let cur = novel?.chapterList?[indexPath.row] {
             cell.configureContent(content: cur)
         }
@@ -83,14 +69,13 @@ extension NovelChapterViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if let cur = novel?.chapterList?[indexPath.row] {
             self.performSegue(withIdentifier: kShowNovelReaderView, sender: cur)
         }
     }
 }
 
-extension NovelChapterViewController {
+extension ChapterListViewController {
     
     func setupToolBar() {
 

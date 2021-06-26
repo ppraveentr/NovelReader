@@ -1,5 +1,5 @@
 //
-//  NovelTableViewCell.swift
+//  NovelChapterViewCell.swift
 //  NovelReader
 //
 //  Created by Praveen Prabhakar on 20/08/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class NovelTableViewCell: UITableViewCell {
+final class NovelChapterViewCell: UITableViewCell {
     
     @IBOutlet
     private var chapterDate: UILabel?
@@ -23,6 +23,6 @@ final class NovelTableViewCell: UITableViewCell {
     func configureContent(content: AnyObject) {
         guard let novel = content as? NovelChapterModel else { return }
         self.titleLabel?.text = novel.shortTitle ?? novel.title
-        self.chapterDate?.text = novel.releaseDate 
+        self.chapterDate?.text = novel.releaseDate
     }
 }

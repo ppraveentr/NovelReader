@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +19,7 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navArrow" translatesAutoresizingMaskIntoConstraints="NO" id="6Gh-98-tSv">
                         <rect key="frame" x="375" y="36.5" width="20" height="20"/>
-                        <color key="tintColor" red="1" green="0.56898993180000002" blue="0.5228666153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="ftJ-OA-P7Z"/>
                             <constraint firstAttribute="height" constant="20" id="iYl-BW-MXp"/>
@@ -59,6 +59,7 @@
                     </stackView>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ufX-HO-55h"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="6Gh-98-tSv" secondAttribute="trailing" constant="4" id="0QY-Lg-bhK"/>
@@ -71,7 +72,6 @@
                 <constraint firstItem="lhe-Uf-VP9" firstAttribute="leading" secondItem="TsU-yb-VIy" secondAttribute="leading" constant="10" id="l1f-Fr-8oD"/>
                 <constraint firstItem="6Gh-98-tSv" firstAttribute="centerY" secondItem="TsU-yb-VIy" secondAttribute="centerY" id="qIx-k6-1ZP"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ufX-HO-55h"/>
             <size key="customSize" width="399" height="93"/>
             <connections>
                 <outlet property="lastUpdateTimeLabel" destination="4ZZ-5I-57W" id="7y1-XT-8qQ"/>
