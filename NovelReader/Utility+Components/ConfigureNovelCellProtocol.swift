@@ -27,14 +27,14 @@ extension ConfigureNovelCellProtocol where Self: UIView {
 // MARK: BaseView Controller utility
 extension UIViewController {
     open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == kShowNovelChapterList {
+        if segue.identifier == Storyboard.Segue.showNovelChapterList {
             configureShowNovelChapterList(segue, sender: sender)
         }
-        else if segue.identifier == kShowNovelReaderView {
+        else if segue.identifier == Storyboard.Segue.showNovelReaderView {
            configureShowNovelReaderView(segue, sender: sender)
         }
         // segue for the popover configuration window
-        else if segue.identifier == kShowFontPicker {
+        else if segue.identifier == Storyboard.Segue.showFontPicker {
             configureShowFontPicker(segue, sender: sender)
         }
     }

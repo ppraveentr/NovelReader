@@ -70,7 +70,7 @@ extension ChapterListViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cur = novel?.chapterList?[indexPath.row] {
-            self.performSegue(withIdentifier: kShowNovelReaderView, sender: cur)
+            self.performSegue(withIdentifier: Storyboard.Segue.showNovelReaderView, sender: cur)
         }
     }
 }
@@ -79,7 +79,8 @@ extension ChapterListViewController {
     
     func setupToolBar() {
 
-//        let searchBar = FTSearchBar(frame: CGRect(origin: .zero, size: CGSize(width: 300, height: 44)), textColor: .white)
+//        let searchBar = FTSearchBar(frame: CGRect(origin: .zero,
+//          size: CGSize(width: 300, height: 44)), textColor: .white)
 //        searchBar.placeholder = "Search"
 //        searchBar.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 //        self.navigationItem.titleView = searchBar
@@ -92,7 +93,6 @@ extension ChapterListViewController {
     }
     
     //     func setupToolBar() {
-    // 
     //         let refresh = UIRefreshControl()
     //         refresh.addTarget(self, action: #selector(setupSearchBar), for: .valueChanged)
     //         self.tableView.addSubview(refresh)

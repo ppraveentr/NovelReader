@@ -26,7 +26,7 @@ class SelectionCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProto
             checkMarkImage?.isHidden = !isSelected
 
             if isSelected {
-                self.layer.borderColor = kNavigationBarColor.cgColor
+                self.layer.borderColor = AppTheme.navigationBarColor.cgColor
             }
             else {
                 self.layer.borderColor = UIColor.gray.cgColor
@@ -47,7 +47,7 @@ class SelectionCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProto
         self.layer.cornerRadius = 8
 
         // border
-        self.layer.borderColor = kNavigationBarColor.cgColor
+        self.layer.borderColor = AppTheme.navigationBarColor.cgColor
         self.layer.borderWidth = 0.5
 
         // drop shadow

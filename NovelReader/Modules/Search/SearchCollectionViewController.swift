@@ -8,7 +8,8 @@
 
 import Foundation
 
-class SearchCollectionViewController: UIViewController, CollectionViewControllerProtocol, SearchCollectionViewModelProtocal {
+class SearchCollectionViewController: UIViewController, CollectionViewControllerProtocol,
+                                      SearchCollectionViewModelProtocal {
 
     // View Model
     lazy var viewModel = {
@@ -57,7 +58,8 @@ extension SearchCollectionViewController: UICollectionViewDelegateFlowLayout, UI
     }
 
     // cellForItem
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         guard let cell = try? NovelCollectionViewCell.dequeue(from: collectionView, for: indexPath),
             let novel = viewModel.currentNovelList?[indexPath.row]
@@ -74,6 +76,6 @@ extension SearchCollectionViewController: UICollectionViewDelegateFlowLayout, UI
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cur = viewModel.currentNovelList?[indexPath.row]
-        self.performSegue(withIdentifier: "kShowNovelChapterList", sender: cur)
+        self.performSegue(withIdentifier: Storyboard.Segue.showNovelChapterList, sender: cur)
     }
 }

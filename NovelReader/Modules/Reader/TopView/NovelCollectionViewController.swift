@@ -15,6 +15,8 @@ final class NovelCollectionViewController: UIViewController, CollectionViewContr
         NovelCollectionViewModel(delegate: self, modelStack: self.modelStack as? ServiceModel)
     }()
 
+    var headerView: SegmentCollectionHeaderView?
+    
     // View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,7 @@ final class NovelCollectionViewController: UIViewController, CollectionViewContr
         viewModel.novelCollectionType = .recentNovel
         // View Title
         let rightButtonItem = UIBarButtonItem(itemType: .search)
-        self.setupNavigationbar(title: kNovelReaderTitle, rightButton: rightButtonItem)
+        self.setupNavigationbar(title: Constants.novelReaderTitle, rightButton: rightButtonItem)
         // Collection View
         setupColletionView()
     }
@@ -39,7 +41,7 @@ final class NovelCollectionViewController: UIViewController, CollectionViewContr
 
     // Navigation bar Button action
     override func rightButtonAction() {
-        performSegue(withIdentifier: kSearchStoryboardID, sender: nil)
+        performSegue(withIdentifier: Storyboard.searchStoryboardID, sender: nil)
     }
 }
 
@@ -47,8 +49,10 @@ final class NovelCollectionViewController: UIViewController, CollectionViewContr
 extension NovelCollectionViewController: NovelCollectionViewModelProtocal {
     
     func showRetryAlert() {
-        let alert = UIAlertController(title: kServiceFailureAlertTitle, message: kServiceFailureAlertMessage, preferredStyle: UIAlertController.Style.alert)
-        let action = UIAlertAction(title: kRetryString, style: .default) { [weak self] _ in
+        let alert = UIAlertController(title: Constants.serviceFailureAlertTitle,
+                                      message: Constants.serviceFailureAlertMessage,
+                                      preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: Constants.retryString, style: .default) { [weak self] _ in
             self?.viewModel.fetchNovelList()
         }
         alert.addAction(action)
@@ -56,22 +60,24 @@ extension NovelCollectionViewController: NovelCollectionViewModelProtocal {
     }
 
     // Updates novelCollectionType, which interns fetchNovelList from backend
-    func updateNovelSegment(segmentControl: UISegmentedControl) {
-        viewModel.novelCollectionType = NovelCollectionType(rawValue: segmentControl.selectedSegmentIndex) ?? .recentNovel
+    func updateNovelSegment(_ index: Int) {
+        viewModel.novelCollectionType = NovelCollectionType(rawValue: index) ?? .recentNovel
     }
 }
 
 // MARK: UICollectionView delegates
-extension NovelCollectionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
+extension NovelCollectionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate,
+                                         UICollectionViewDataSource {
     // viewForSupplementaryElement
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let headerView: SegmentCollectionHeaderView = try? .dequeue(from: collectionView, ofKind: kind, for: indexPath) else {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let headerView: SegmentCollectionHeaderView = try? .dequeue(from: collectionView, ofKind: kind,
+                                                                          for: indexPath) else {
             return UICollectionReusableView()
         }
-        headerView.segmentedControl?.handler = { [weak self] _ in
-            if let segment = headerView.segmentedControl {
-                self?.updateNovelSegment(segmentControl: segment)
-            }
+        self.headerView = headerView
+        headerView.segmentedControl.handler = { [weak self] index in
+            self?.updateNovelSegment(index)
         }
         return headerView
     }
@@ -82,25 +88,33 @@ extension NovelCollectionViewController: UICollectionViewDelegateFlowLayout, UIC
     }
 
     // cellForItem
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellType = viewModel.novelCollectionType.cellType
         guard let cell = try? cellType.dequeue(from: collectionView, for: indexPath) else {
             return UICollectionViewCell()
         }
         // update cell content
         if let model = viewModel.currentNovelList?[indexPath.row] {
-            (cell as? ConfigureNovelCellProtocol)?.configureContent(content: model, view: collectionView, indexPath: indexPath)
+            (cell as? ConfigureNovelCellProtocol)?.configureContent(content: model, view: collectionView,
+                                                                    indexPath: indexPath)
         }
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let height = self.headerView?.preferredLayoutAttributesFitting(.init()).frame.height ?? 50
+        return CGSize(width: view.frame.width, height: height)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let model = viewModel.currentNovelList?[indexPath.row] else { return }
         if viewModel.novelCollectionType == .recentNovel {
-            self.performSegue(withIdentifier: kShowNovelReaderView, sender: model)
+            self.performSegue(withIdentifier: Storyboard.Segue.showNovelReaderView, sender: model)
         }
         else {
-            self.performSegue(withIdentifier: kShowNovelChapterList, sender: model)
+            self.performSegue(withIdentifier: Storyboard.Segue.showNovelChapterList, sender: model)
         }
     }
 }

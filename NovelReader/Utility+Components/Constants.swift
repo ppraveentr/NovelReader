@@ -9,48 +9,62 @@
 import Foundation
 
 // MARK: Application Theme
-let kThemeFileName = "Themes.json"
-var kNavigationBarColor: UIColor {
-    "#DF6E6E".hexColor() ?? UIColor.white
+enum AppTheme {
+    static let fileName = "Themes.json"
+    // Color base
+    static let appBase = "appBase"
+    static let navBar = "navBar"
+    
+    static var navigationBarColor: UIColor {
+        ThemesManager.getColor(AppTheme.appBase) ?? UIColor.white
+    }
+    
+    static var barColor: UIColor {
+        ThemesManager.getColor(AppTheme.navBar) ?? UIColor.black
+    }
 }
-var kBarColor: UIColor {
-     "#de6161".hexColor() ?? UIColor.black
+
+enum EndPoint {
+    // MARK: Service URL
+    static let endpointURL = "EndpointURL"
+    static let modelBindingsName = "Bindings/ModelBindings"
+    static let serviceBindingsName = "Bindings/ServiceBindings"
+    static let serviceBindingRulesName = "NovelServiceRules.plist"
+    
+    // MARK: Mock
+    enum Mock {
+        static let postmanURL = "https://9b5d34ef-b082-479b-87cb-a845d678b371.mock.pstmn.io"
+        static let mockServerURL = "http://127.0.0.1:3000"
+        static let mockBundleResource = "FTNovelReaderMockBundle.bundle".bundleURL()
+        static let mockDataEnabled = true
+    }
+    
+    // MARK: 3rd Party
+    static let kMSAppCenter = "6778a47c-7742-4dea-ace3-63c28b424350"
 }
 
-let kReaderFontSize = 10
-let kReaderInitalFontSize = 140
+enum Constants {
+    // MARK: Constants
+    static let serviceFailureAlertTitle = "Service Error!"
+    static let serviceFailureAlertMessage = "Unable to reach service host, please try again."
 
-// MARK: Service URL
-let kEndpointURL = "EndpointURL"
-let kModelBindingsName = "Bindings/ModelBindings"
-let kServiceBindingsName = "Bindings/ServiceBindings"
-let kServiceBindingRulesName = "NovelServiceRules.plist"
+    // MARK: App
+    static let retryString = "Retry"
+    static let recentUpdateString = "Recent Update"
+    static let topViews = "Top Views"
+    
+    // MARK: Title
+    static let novelReaderTitle = "Novel Reader"
+}
 
-// MARK: 3rd Party
-let kMSAppCenter = "6778a47c-7742-4dea-ace3-63c28b424350"
-
-// MARK: Mock
-let kPostmanURL = "https://9b5d34ef-b082-479b-87cb-a845d678b371.mock.pstmn.io"
-let kMockServerURL = "http://127.0.0.1:3000"
-let kMockBundleResource = "FTNovelReaderMockBundle.bundle".bundleURL()
-let kMockDataEnabled = true
-
-// MARK: Constantss
-let kServiceFailureAlertTitle = "Service Error!"
-let kServiceFailureAlertMessage = "Unable to reach service host, please try again."
-
-// MARK: App
-let kRetryString = "Retry"
-let kRecentUpdateString = "Recent Update"
-let kTopViews = "Top Views"
-
-// MARK: Title
-let kNovelReaderTitle = "Novel Reader"
-
-// MARK: StoryboardID
-let kSearchStoryboardID = "kSearchStoryboardID"
-
-// MARK: SegueID
-let kShowNovelChapterList = "kShowNovelChapterList"
-let kShowFontPicker = "kShowFontPicker"
-let kShowNovelReaderView = "kShowNovelReaderView"
+enum Storyboard {
+    // MARK: StoryboardID
+    static let searchStoryboardID = "kSearchStoryboardID"
+    
+    enum Segue {
+        // MARK: SegueID
+        static let showNovelChapterList = "kShowNovelChapterList"
+        static let showFontPicker = "kShowFontPicker"
+        static let showNovelReaderView = "kShowNovelReaderView"
+        }
+}

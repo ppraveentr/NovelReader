@@ -21,7 +21,7 @@ final class AppManager {
     
     // plist Endpoint
     static var endpointURL: String {
-        Bundle.main.infoDictionary?[kEndpointURL] as? String ?? ""
+        Bundle.main.infoDictionary?[EndPoint.endpointURL] as? String ?? ""
     }
     
     // MARK: Setup
@@ -37,8 +37,8 @@ final class AppManager {
         Reflection.registerModuleIdentifier(NRAppDelegate.self)
 
         // Service Binding
-        NetworkMananger.serviceBindingPath = kServiceBindingsName
-        NetworkMananger.serviceBindingRulesName = kServiceBindingRulesName
+        NetworkMananger.serviceBindingPath = EndPoint.serviceBindingsName
+        NetworkMananger.serviceBindingRulesName = EndPoint.serviceBindingRulesName
 
         // App Config
         NetworkMananger.appBaseURL = AppManager.endpointURL
@@ -55,9 +55,9 @@ final class AppManager {
         // Debug-Postman
 //        FTMobileConfig.appBaseURL = kPostmanURL
         // Debug-only code
-        NetworkMananger.appBaseURL = kMockServerURL
-        NetworkMananger.mockBundleResource = kMockBundleResource
-        NetworkMananger.isMockData = kMockDataEnabled
+        NetworkMananger.appBaseURL = EndPoint.Mock.mockServerURL
+        NetworkMananger.mockBundleResource = EndPoint.Mock.mockBundleResource
+        NetworkMananger.isMockData = EndPoint.Mock.mockDataEnabled
         #endif
     }
     
@@ -78,9 +78,10 @@ final class AppManager {
 
     // MARK: Theme
     func configureAppTheme() {
-        if let theme = Bundle.main.path(forResource: kThemeFileName, ofType: nil),
+        if let theme = Bundle.main.path(forResource: AppTheme.fileName, ofType: nil),
             let themeContent: ThemeModel = try? theme.jsonContentAtPath() {
-            ThemesManager.setupThemes(themes: themeContent, imageSourceBundle: [Bundle(for: NRAppDelegate.self)])
+            ThemesManager.setupThemes(themes: themeContent,
+                                      imageSourceBundle: [Bundle(for: NRAppDelegate.self)])
         }
         
         // Loading Indicator
@@ -92,10 +93,10 @@ final class AppManager {
 
         var config: LoadingIndicator.Config = LoadingIndicator.Config()
         config.backgroundColor = UIColor.clear
-        config.spinnerColor = kNavigationBarColor
+        config.spinnerColor = AppTheme.navigationBarColor
         config.titleTextColor = UIColor.white
         config.spinnerLineWidth = 8.0
-        config.foregroundColor = kNavigationBarColor
+        config.foregroundColor = AppTheme.navigationBarColor
         config.foregroundAlpha = 0.5
         config.title = ""
 
