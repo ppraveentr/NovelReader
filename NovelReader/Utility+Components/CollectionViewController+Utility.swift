@@ -47,13 +47,14 @@ extension UIViewController {
 }
 
 extension UICollectionViewCell {
-    override open func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes)
-        -> UICollectionViewLayoutAttributes {
-            let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
-            var newFrame = layoutAttributes.frame
-            newFrame.size.width = ceil(screenWidth) - (defaultSectionInset.left + defaultSectionInset.right)
-            newFrame.size.height = ceil(size.height)
-            layoutAttributes.frame = newFrame
-            return layoutAttributes
+    open override
+    func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        var newFrame = layoutAttributes.frame
+        let requiredWidth = ceil(screenWidth) - (defaultSectionInset.left + defaultSectionInset.right)
+        newFrame.size = systemLayoutSizeFitting(CGSize(width: requiredWidth, height: .greatestFiniteMagnitude),
+                                                withHorizontalFittingPriority: .required,
+                                                verticalFittingPriority: .fittingSizeLevel)
+        layoutAttributes.frame = newFrame
+        return layoutAttributes
     }
 }

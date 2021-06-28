@@ -21,6 +21,9 @@
 		DE3834812172666C00DD4B27 /* ServiceSearchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3834802172666C00DD4B27 /* ServiceSearchFilter.swift */; };
 		DE383484217266C000DD4B27 /* SearchFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE383483217266C000DD4B27 /* SearchFilterModel.swift */; };
 		DE4AEA8A26872A4800C873AB /* ScollableSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4AEA8926872A4800C873AB /* ScollableSegmentControl.swift */; };
+		DE4AEA932687AF0700C873AB /* NovelDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4AEA922687AF0700C873AB /* NovelDetailsViewController.swift */; };
+		DE4AEA992687AF9100C873AB /* NovelDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4AEA972687AF9100C873AB /* NovelDetailsView.swift */; };
+		DE4AEA9A2687AF9100C873AB /* NovelDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4AEA982687AF9100C873AB /* NovelDetailsView.xib */; };
 		DE4EBE662067B6F5008AC70B /* ServiceNovelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EBE652067B6F5008AC70B /* ServiceNovelList.swift */; };
 		DE4FAC9B21635B18006EF94B /* NovelCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4FAC9A21635B18006EF94B /* NovelCollectionViewModel.swift */; };
 		DE5082322167D21400F3B26F /* ServiceSearchNovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5082312167D21400F3B26F /* ServiceSearchNovel.swift */; };
@@ -115,6 +118,9 @@
 		DE3834802172666C00DD4B27 /* ServiceSearchFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchFilter.swift; sourceTree = "<group>"; };
 		DE383483217266C000DD4B27 /* SearchFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterModel.swift; sourceTree = "<group>"; };
 		DE4AEA8926872A4800C873AB /* ScollableSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScollableSegmentControl.swift; sourceTree = "<group>"; };
+		DE4AEA922687AF0700C873AB /* NovelDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovelDetailsViewController.swift; sourceTree = "<group>"; };
+		DE4AEA972687AF9100C873AB /* NovelDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovelDetailsView.swift; sourceTree = "<group>"; };
+		DE4AEA982687AF9100C873AB /* NovelDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NovelDetailsView.xib; sourceTree = "<group>"; };
 		DE4EBE652067B6F5008AC70B /* ServiceNovelList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceNovelList.swift; sourceTree = "<group>"; };
 		DE4FAC9A21635B18006EF94B /* NovelCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovelCollectionViewModel.swift; sourceTree = "<group>"; };
 		DE5082312167D21400F3B26F /* ServiceSearchNovel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchNovel.swift; sourceTree = "<group>"; };
@@ -218,6 +224,33 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		DE4AEA912687AEE300C873AB /* NovelDetails */ = {
+			isa = PBXGroup;
+			children = (
+				DE4AEA922687AF0700C873AB /* NovelDetailsViewController.swift */,
+			);
+			path = NovelDetails;
+			sourceTree = "<group>";
+		};
+		DE4AEA9D2688406400C873AB /* ReaderView */ = {
+			isa = PBXGroup;
+			children = (
+				DEBC6521209764790057F649 /* ReaderViewController.swift */,
+			);
+			path = ReaderView;
+			sourceTree = "<group>";
+		};
+		DE4AEA9E2688408C00C873AB /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				DE4FAC9A21635B18006EF94B /* NovelCollectionViewModel.swift */,
+				DEBC6522209764790057F649 /* NovelCollectionViewController.swift */,
+				DE6FEFDD2593AC100041C8A2 /* RecentUpdate */,
+				DE6FEFDF2593AC5A0041C8A2 /* TopView */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 		DE4EBE642067B6F5008AC70B /* ServiceModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,38 +267,19 @@
 		DE6FEFDD2593AC100041C8A2 /* RecentUpdate */ = {
 			isa = PBXGroup;
 			children = (
-				DE6FEFDE2593AC300041C8A2 /* Views */,
-				DEBC6521209764790057F649 /* ReaderViewController.swift */,
-			);
-			path = RecentUpdate;
-			sourceTree = "<group>";
-		};
-		DE6FEFDE2593AC300041C8A2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
 				DEBC652E209764790057F649 /* RecentNovelCollectionViewCell.swift */,
 				DEBC6525209764790057F649 /* RecentNovelCollectionViewCell.xib */,
 			);
-			path = Views;
+			path = RecentUpdate;
 			sourceTree = "<group>";
 		};
 		DE6FEFDF2593AC5A0041C8A2 /* TopView */ = {
 			isa = PBXGroup;
 			children = (
-				DE6FEFE02593ACA60041C8A2 /* Views */,
-				DE4FAC9A21635B18006EF94B /* NovelCollectionViewModel.swift */,
-				DEBC6522209764790057F649 /* NovelCollectionViewController.swift */,
-			);
-			path = TopView;
-			sourceTree = "<group>";
-		};
-		DE6FEFE02593ACA60041C8A2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
 				DEBC652B209764790057F649 /* NovelCollectionViewCell.swift */,
 				DEBC6524209764790057F649 /* NovelCollectionViewCell.xib */,
 			);
-			path = Views;
+			path = TopView;
 			sourceTree = "<group>";
 		};
 		DE6FEFE12593ACC80041C8A2 /* ChapterList */ = {
@@ -427,9 +441,10 @@
 			isa = PBXGroup;
 			children = (
 				DEBC6520209764790057F649 /* NovelReader.storyboard */,
+				DE4AEA9E2688408C00C873AB /* Dashboard */,
+				DE4AEA9D2688406400C873AB /* ReaderView */,
+				DE4AEA912687AEE300C873AB /* NovelDetails */,
 				DE6FEFE12593ACC80041C8A2 /* ChapterList */,
-				DE6FEFDF2593AC5A0041C8A2 /* TopView */,
-				DE6FEFDD2593AC100041C8A2 /* RecentUpdate */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -437,6 +452,8 @@
 		DEBC6523209764790057F649 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE4AEA972687AF9100C873AB /* NovelDetailsView.swift */,
+				DE4AEA982687AF9100C873AB /* NovelDetailsView.xib */,
 				DEBC6528209764790057F649 /* NovelDescriptionView.swift */,
 				DEBC6529209764790057F649 /* NovelDescriptionView.xib */,
 				DEBC652A209764790057F649 /* NovelChapterViewCell.swift */,
@@ -615,6 +632,7 @@
 				DEBC6550209764790057F649 /* SearchStoryboard.storyboard in Resources */,
 				DEDC0A2F2068BCC80013D84F /* NovelServiceRules.plist in Resources */,
 				DEBC653A209764790057F649 /* RecentNovelCollectionViewCell.xib in Resources */,
+				DE4AEA9A2687AF9100C873AB /* NovelDetailsView.xib in Resources */,
 				DEBC6542209764790057F649 /* NovelDescriptionView.xib in Resources */,
 				DEBC65142097601A0057F649 /* Main.storyboard in Resources */,
 				DEBC6532209764790057F649 /* NovelReader.storyboard in Resources */,
@@ -703,6 +721,7 @@
 				DEA7E1A31F497B5D0002C148 /* ViewController+Extension.swift in Sources */,
 				DEA7E1B71F49A67F0002C148 /* AppManager.swift in Sources */,
 				DE84280A20558FE8006605C0 /* NovelModel.swift in Sources */,
+				DE4AEA992687AF9100C873AB /* NovelDetailsView.swift in Sources */,
 				DEBC6534209764790057F649 /* ReaderViewController.swift in Sources */,
 				DEBC65552097661F0057F649 /* SearchCollectionViewController.swift in Sources */,
 				DEBC6536209764790057F649 /* NovelCollectionViewController.swift in Sources */,
@@ -716,6 +735,7 @@
 				DEFB28362171FF6C00B0E06B /* SearchCollectionViewModel.swift in Sources */,
 				DE0173BD216148B7007F5546 /* CollectionViewController+Utility.swift in Sources */,
 				DEBC6546209764790057F649 /* NovelCollectionViewCell.swift in Sources */,
+				DE4AEA932687AF0700C873AB /* NovelDetailsViewController.swift in Sources */,
 				DEBC654C209764790057F649 /* RecentNovelCollectionViewCell.swift in Sources */,
 				DE19ADCC217F837800F58321 /* SelectionCollectionViewCell.swift in Sources */,
 				DE5082322167D21400F3B26F /* ServiceSearchNovel.swift in Sources */,

@@ -6,7 +6,7 @@
 		"black": "#293551",
 		"appBase": "#F8F8F8",
 		"navBar": "#293551",
-		"appWhite": "#F7F3F0",
+		"appWhite": "#F8F8F8",
         "halfBlack": "#9A9A9A99",
         "arrow": "#666666",
 		"blue": "#1059ce",
@@ -153,13 +153,14 @@
                 "textcolor": "white",
                 "backgroundColor": "appBase"
             },
-            "button17W": {
+            "segment": {
                 "_super": "default",
                 "textfont": "system17",
-                "textcolor": "white"
+                "textcolor": "gray"
             },
-            "button17W:selected": {
-                "textfont": "bold17"
+            "segment:selected": {
+                "textfont": "bold17",
+                "textcolor": "white"
             },
 			"googleButton": {
 				"_super": "default",

@@ -1,17 +1,17 @@
 //
-//  ChapterListViewController.swift
+//  NovelDetailsViewController.swift
 //  NovelReader
 //
-//  Created by Praveen Prabhakar on 20/08/17.
-//  Copyright © 2017 Praveen Prabhakar. All rights reserved.
+//  Created by Praveen Prabhakar on 27/06/21.
+//  Copyright © 2021 Praveen Prabhakar. All rights reserved.
 //
 
 import UIKit
 
-final class ChapterListViewController: UIViewController, TableViewControllerProtocol {
+final class NovelDetailsViewController: UIViewController, TableViewControllerProtocol {
     
     var novel: NovelModel?
-    lazy var novelDescView = NovelDetailsView.fromNib() as? NovelDetailsView
+    lazy var novelDescView: NovelDetailsView? = NovelDetailsView.fromNib() as? NovelDetailsView
     
     func tableStyle() -> UITableView.Style { .grouped }
 
@@ -31,8 +31,6 @@ final class ChapterListViewController: UIViewController, TableViewControllerProt
     }
     
     func configureTableView() {
-        setupNavigationBar()
-        // Table View delegate
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
@@ -48,7 +46,7 @@ final class ChapterListViewController: UIViewController, TableViewControllerProt
     }
 }
 
-extension ChapterListViewController: UITableViewDataSource, UITableViewDelegate {
+extension NovelDetailsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         novel?.chapterList?.count ?? 0
@@ -59,7 +57,9 @@ extension ChapterListViewController: UITableViewDataSource, UITableViewDelegate 
             return UITableViewCell()
         }
         
-        if let cell = cell as? NovelChapterViewCell, let cur = novel?.chapterList?[indexPath.row] {
+        if
+            let cell = cell as? NovelChapterViewCell,
+            let cur = novel?.chapterList?[indexPath.row] {
             cell.configureContent(content: cur)
         }
         
@@ -70,15 +70,5 @@ extension ChapterListViewController: UITableViewDataSource, UITableViewDelegate 
         if let cur = novel?.chapterList?[indexPath.row] {
             self.performSegue(withIdentifier: Storyboard.Segue.showNovelReaderView, sender: cur)
         }
-    }
-}
-
-extension ChapterListViewController {
-    func setupNavigationBar() {
-        self.setupNavigationbar(
-            title: "",
-            leftButton: UIBarButtonItem(itemType: .stop),
-            rightButton: UIBarButtonItem(itemType: .bookmarks)
-        )
     }
 }

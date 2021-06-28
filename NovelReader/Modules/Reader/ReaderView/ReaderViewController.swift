@@ -22,6 +22,10 @@ class ReaderViewController: UIViewController, WebViewControllerProtocol {
 //        }
 //    }
 
+    deinit {
+        self.cleanContentView()
+    }
+    
     var fontPicker: FontPickerModel? {
         get {
             UserCacheManager.getCachedObject(forType: FontPickerModel.self) as? FontPickerModel
@@ -40,12 +44,15 @@ class ReaderViewController: UIViewController, WebViewControllerProtocol {
         setupViewContent()
     }
     
-    override var prefersStatusBarHidden: Bool {
-        true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
 
     func setupViewContent() {
-        
+        // To hide navBar on scroll
+        contentView.setHideNavigationOnScroll(hide: true)
+        // Fetch content
         let title = novelChapter?.shortTitle ?? novelChapter?.title ?? novel?.title ?? ""
         self.setupNavigationbar(
             title: title,
@@ -57,14 +64,12 @@ class ReaderViewController: UIViewController, WebViewControllerProtocol {
 
         if let url = novelChapter?.identifier ?? novel?.identifier {
             NovelServiceProvider.getNovelChapter(url) { [unowned self] chapter in
-
                 if let content = chapter?.shortTitle {
                     self.title = content
                 }
                 if let content = chapter?.content {
                     self.loadWebContent(contnet: content)
                 }
-                
                 self.configureWebview()
             }
         }
@@ -75,7 +80,6 @@ class ReaderViewController: UIViewController, WebViewControllerProtocol {
     }
     
     func configureWebview() {
-        // FontPickerViewprotocol
         if let fontPicker = fontPicker {
             fontSize(fontPicker.fontSize)
             pickerColor(textColor: fontPicker.fontColor, backgroundColor: fontPicker.backgroundColor)
@@ -93,6 +97,10 @@ extension ReaderViewController: FontPickerViewProtocol {
         contentView.setContentColor(textColor: textColor, backgroundColor: backgroundColor)
         self.view.backgroundColor = backgroundColor
         self.mainView?.backgroundColor = backgroundColor
+        // webview color
+        contentView.backgroundColor = .clear
+        contentView.isOpaque = false
+        contentView.scrollView.backgroundColor = .clear
     }
     
     func fontFamily(_ fontName: String?) {
@@ -100,7 +108,11 @@ extension ReaderViewController: FontPickerViewProtocol {
     }
 }
 
-extension ReaderViewController: UIPopoverPresentationControllerDelegate {
+extension ReaderViewController: UIPopoverPresentationControllerDelegate, StoryboardSegueProtocol {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        configure(segue: segue, sender: sender)
+    }
+    
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         if let fontPickerController = controller.presentedViewController as? FontPickerViewController {
             if self.fontPicker == nil {

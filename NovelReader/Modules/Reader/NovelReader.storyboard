@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,19 +24,20 @@
                     <navigationItem key="navigationItem" id="Bfs-eg-ZLe"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <segue destination="tP7-z7-4Ne" kind="show" identifier="kShowNovelChapterList" id="WkK-Ij-5Tn"/>
                         <segue destination="80R-PJ-s8a" kind="presentation" identifier="kSearchStoryboardID" modalPresentationStyle="fullScreen" id="bMb-2j-5H3"/>
-                        <segue destination="sKg-cZ-zqw" kind="show" identifier="kShowNovelReaderView" id="a88-70-y9v"/>
+                        <segue destination="Psn-I5-7bq" kind="presentation" identifier="kShowNovelDetailsView" id="upS-tj-gkU"/>
+                        <segue destination="29H-3o-t4f" kind="presentation" identifier="kShowNovelReaderView" modalPresentationStyle="overFullScreen" id="tZe-l8-3vV"/>
+                        <segue destination="tP7-z7-4Ne" kind="show" identifier="kShowNovelChapterList" id="FPM-6T-aSc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2628" y="358"/>
+            <point key="canvasLocation" x="2670" y="358"/>
         </scene>
         <!--Chapter List View Controller-->
         <scene sceneID="UhB-cv-9ef">
             <objects>
-                <viewController storyboardIdentifier="NovelChapterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tP7-z7-4Ne" customClass="ChapterListViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NovelChapterViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tP7-z7-4Ne" customClass="ChapterListViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WRy-C6-geq"/>
                         <viewControllerLayoutGuide type="bottom" id="MET-v2-xev"/>
@@ -50,12 +52,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="7bC-Bl-Bmm"/>
                     <connections>
-                        <segue destination="sKg-cZ-zqw" kind="show" identifier="kShowNovelReaderView" id="Dya-nU-n04"/>
+                        <segue destination="29H-3o-t4f" kind="presentation" identifier="kShowNovelReaderView" modalPresentationStyle="overFullScreen" id="Dya-nU-n04"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="izn-Cb-Qc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3567" y="358"/>
+            <point key="canvasLocation" x="3580" y="1081"/>
         </scene>
         <!--Reader View Controller-->
         <scene sceneID="4hy-43-CL3">
@@ -83,13 +85,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RC7-Jv-W4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <barButtonItem image="filter" width="45" style="plain" id="bdI-Le-MFg">
                     <connections>
-                        <segue destination="afr-kd-Wru" kind="popoverPresentation" identifier="kShowFontPicker" popoverAnchorBarButtonItem="bdI-Le-MFg" id="iz1-PS-4L4">
+                        <segue destination="afr-kd-Wru" kind="popoverPresentation" identifier="kShowFontPicker" popoverAnchorBarButtonItem="bdI-Le-MFg" id="2XE-UV-Z4Z">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>
                 </barButtonItem>
             </objects>
-            <point key="canvasLocation" x="2675" y="1181"/>
+            <point key="canvasLocation" x="3605.7971014492755" y="1783.9285714285713"/>
         </scene>
         <!--Font Picker View Controller-->
         <scene sceneID="cAT-De-duD">
@@ -107,6 +109,7 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="theme" value="default"/>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <navigationItem key="navigationItem" id="0Gl-mN-LiW"/>
                     <value key="contentSizeForViewInPopover" type="size" width="250" height="320"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -116,7 +119,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqd-qv-diI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3446" y="1182"/>
+            <point key="canvasLocation" x="4489.130434782609" y="1783.59375"/>
+        </scene>
+        <!--Novel Details View Controller-->
+        <scene sceneID="9Zi-Dn-tx2">
+            <objects>
+                <viewController id="Psn-I5-7bq" customClass="NovelDetailsViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O1H-xp-OFK"/>
+                        <viewControllerLayoutGuide type="bottom" id="DbC-81-yqe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vrX-AQ-aYU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OIY-vL-4CA"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="tP7-z7-4Ne" kind="show" identifier="kShowNovelChapterList" id="DMi-by-1Yv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1W0-qg-mRX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3580" y="358"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aaX-Aw-qtB">
@@ -145,13 +171,36 @@
                 <viewControllerPlaceholder storyboardName="SearchStoryboard" referencedIdentifier="kSearchStoryboardID" id="80R-PJ-s8a" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5T-JR-d1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1996" y="869"/>
+            <point key="canvasLocation" x="1843" y="773"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pRp-7R-3yS">
+            <objects>
+                <navigationController id="29H-3o-t4f" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="H6O-AL-VhI"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JJc-JC-itG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sKg-cZ-zqw" kind="relationship" relationship="rootViewController" id="hU3-iC-Snf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J52-Uz-ELg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2695.6521739130435" y="1783.9285714285713"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Dya-nU-n04"/>
+        <segue reference="FPM-6T-aSc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="filter" width="22" height="22"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

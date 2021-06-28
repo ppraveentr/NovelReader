@@ -32,7 +32,7 @@ final class SegmentCollectionHeaderView: UICollectionReusableView {
 
     func setupSegmentView(_ items: [String] = [ Constants.recentUpdateString, Constants.topViews ]) {
         for (index, obj) in items.enumerated() {
-            segmentedControl.insertSegment(withTitle: obj, image: nil, theme: "button17W", at: index)
+            segmentedControl.insertSegment(withTitle: obj, image: nil, theme: "segment", at: index)
         }
     }
 }

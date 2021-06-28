@@ -63,6 +63,7 @@ enum Storyboard {
     
     enum Segue {
         // MARK: SegueID
+        static let showNovelDetailsView = "kShowNovelDetailsView"
         static let showNovelChapterList = "kShowNovelChapterList"
         static let showFontPicker = "kShowFontPicker"
         static let showNovelReaderView = "kShowNovelReaderView"

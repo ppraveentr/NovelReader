@@ -24,10 +24,17 @@ extension ConfigureNovelCellProtocol where Self: UIView {
     }
 }
 
-// MARK: BaseView Controller utility
-extension UIViewController {
-    open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Storyboard.Segue.showNovelChapterList {
+// MARK: UIStoryboardSegue
+protocol StoryboardSegueProtocol {
+    func configure(segue: UIStoryboardSegue, sender: Any?)
+}
+
+extension StoryboardSegueProtocol {
+    func configure(segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Storyboard.Segue.showNovelDetailsView {
+            configureShowNovelDetailsView(segue, sender: sender)
+        }
+        else if segue.identifier == Storyboard.Segue.showNovelChapterList {
             configureShowNovelChapterList(segue, sender: sender)
         }
         else if segue.identifier == Storyboard.Segue.showNovelReaderView {
@@ -40,8 +47,13 @@ extension UIViewController {
     }
 }
 
-// MARK: UIStoryboardSegue
-fileprivate extension UIViewController {
+fileprivate extension StoryboardSegueProtocol {
+    func configureShowNovelDetailsView(_ segue: UIStoryboardSegue, sender: Any?) {
+        if let nextViewController = segue.destination as? NovelDetailsViewController {
+            nextViewController.novel = sender as? NovelModel
+        }
+    }
+    
     func configureShowNovelChapterList(_ segue: UIStoryboardSegue, sender: Any?) {
         if let nextViewController = segue.destination as? ChapterListViewController {
             nextViewController.novel = sender as? NovelModel

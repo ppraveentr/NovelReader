@@ -76,6 +76,6 @@ extension SearchCollectionViewController: UICollectionViewDelegateFlowLayout, UI
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cur = viewModel.currentNovelList?[indexPath.row]
-        self.performSegue(withIdentifier: Storyboard.Segue.showNovelChapterList, sender: cur)
+        self.performSegue(withIdentifier: Storyboard.Segue.showNovelDetailsView, sender: cur)
     }
 }

@@ -20,6 +20,7 @@ final class NovelCollectionViewController: UIViewController, CollectionViewContr
     // View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true        
         // Novel Segment type
         viewModel.novelCollectionType = .recentNovel
         // View Title
@@ -67,7 +68,7 @@ extension NovelCollectionViewController: NovelCollectionViewModelProtocal {
 
 // MARK: UICollectionView delegates
 extension NovelCollectionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate,
-                                         UICollectionViewDataSource {
+                                         UICollectionViewDataSource, StoryboardSegueProtocol {
     // viewForSupplementaryElement
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
@@ -110,11 +111,12 @@ extension NovelCollectionViewController: UICollectionViewDelegateFlowLayout, UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let model = viewModel.currentNovelList?[indexPath.row] else { return }
-        if viewModel.novelCollectionType == .recentNovel {
-            self.performSegue(withIdentifier: Storyboard.Segue.showNovelReaderView, sender: model)
-        }
-        else {
-            self.performSegue(withIdentifier: Storyboard.Segue.showNovelChapterList, sender: model)
-        }
+        let segue = viewModel.novelCollectionType == .recentNovel ?
+            Storyboard.Segue.showNovelReaderView : Storyboard.Segue.showNovelChapterList
+        self.performSegue(withIdentifier: segue, sender: model)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        configure(segue: segue, sender: sender)
     }
 }

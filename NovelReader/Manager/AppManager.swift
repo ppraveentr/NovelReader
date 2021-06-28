@@ -96,8 +96,8 @@ final class AppManager {
         config.spinnerColor = AppTheme.navigationBarColor
         config.titleTextColor = UIColor.white
         config.spinnerLineWidth = 8.0
-        config.foregroundColor = AppTheme.navigationBarColor
-        config.foregroundAlpha = 0.5
+        config.foregroundColor = AppTheme.barColor
+        config.foregroundAlpha = 0.8
         config.title = ""
 
         LoadingIndicator.setConfig(config: config)
