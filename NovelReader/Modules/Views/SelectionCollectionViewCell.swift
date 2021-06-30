@@ -8,17 +8,12 @@
 
 import Foundation
 
-class SelectionCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProtocol {
+class SelectionCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet
     private var titleLabel: UILabel?
     @IBOutlet
     private var checkMarkImage: UIImageView?
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.addBorder()
-    }
 
     override var isSelected: Bool {
         didSet {
@@ -32,15 +27,6 @@ class SelectionCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProto
                 self.layer.borderColor = UIColor.gray.cgColor
             }
         }
-    }
-
-    func configureContent(content: AnyObject) {
-        if let searchFilter = content as? FilterModel {
-            self.titleLabel?.text = searchFilter.type
-        }
-
-        setNeedsLayout()
-        layoutIfNeeded()
     }
 
     func addBorder() {
@@ -68,5 +54,15 @@ class SelectionCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProto
             newFrame.size.height = ceil(size.height)
             layoutAttributes.frame = newFrame
             return layoutAttributes
+    }
+}
+
+extension SelectionCollectionViewCell: ConfigureNovelCellProtocol {
+    func configureContent(content: AnyObject, indexPath: IndexPath?) {
+        if let searchFilter = content as? FilterModel {
+            self.titleLabel?.text = searchFilter.type
+        }
+        setNeedsLayout()
+        layoutIfNeeded()
     }
 }

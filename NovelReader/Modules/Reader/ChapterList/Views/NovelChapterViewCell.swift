@@ -9,18 +9,14 @@
 import Foundation
 
 final class NovelChapterViewCell: UITableViewCell {
-    
     @IBOutlet
     private var chapterDate: UILabel?
     @IBOutlet
     private var titleLabel: UILabel?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.addGrayBorder()
-    }
-    
-    func configureContent(content: AnyObject) {
+}
+
+extension NovelChapterViewCell: ConfigureNovelCellProtocol {
+    func configureContent(content: AnyObject, indexPath: IndexPath?) {
         guard let novel = content as? NovelChapterModel else { return }
         self.titleLabel?.text = novel.shortTitle ?? novel.title
         self.chapterDate?.text = novel.releaseDate

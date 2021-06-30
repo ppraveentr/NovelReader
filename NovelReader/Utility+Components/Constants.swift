@@ -67,5 +67,5 @@ enum Storyboard {
         static let showNovelChapterList = "kShowNovelChapterList"
         static let showFontPicker = "kShowFontPicker"
         static let showNovelReaderView = "kShowNovelReaderView"
-        }
+    }
 }

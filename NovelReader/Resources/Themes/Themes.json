@@ -15,6 +15,18 @@
 		"white": "#E8E8E8",
 		"gray": "#A2A2A2"
 	},
+    "layer": {
+        "roundButton" : {
+            "cornerRadius": 22
+        },
+        "elevatedGrey": {
+            "masksToBounds": false,
+            "shadowSize": 20,
+            "shadowColor": "navBar",
+            "shadowRadius": 2.0,
+            "shadowOpacity": 0.35
+        }
+    },
 	"font": {
 		"default": {
 			"name": "system",
@@ -87,6 +99,16 @@
             },
             "underline": {
                 "backgroundColor": "green"
+            }
+        },
+        "RecentNovelCollectionViewCell": {
+            "default": {
+                "layer": "elevatedGrey"
+            }
+        },
+        "NovelCollectionViewCell": {
+            "default": {
+                "layer": "elevatedGrey"
             }
         },
         "SectionHeaderView": {
@@ -166,9 +188,7 @@
 				"_super": "default",
 				"image": "@google",
 				"backgroundColor": "white",
-				"layer": {
-					"cornerRadius": 22
-				}
+				"layer": "roundButton"
 			}
 		},
 		"UILabel": {

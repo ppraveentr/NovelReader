@@ -9,35 +9,53 @@
 import Foundation
 
 final class NovelCollectionViewController: UIViewController, CollectionViewControllerProtocol {
-
     // View Model
     lazy var viewModel = {
         NovelCollectionViewModel(delegate: self, modelStack: self.modelStack as? ServiceModel)
     }()
 
     var headerView: SegmentCollectionHeaderView?
-    
+    lazy var manager = DataSourceManager(collectionDelegate: self)
+
     // View lifecycle
     override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = true        
+        super.viewDidLoad()   
         // Novel Segment type
         viewModel.novelCollectionType = .recentNovel
         // View Title
-        let rightButtonItem = UIBarButtonItem(itemType: .search)
-        self.setupNavigationbar(title: Constants.novelReaderTitle, rightButton: rightButtonItem)
+        setupNavigationBar()
         // Collection View
         setupColletionView()
     }
 
-    // MARK: SetUp UICollectionView
+    // MARK: Setup CollectionView
     func setupColletionView() {
         // Register Cell
-        NovelCollectionType.registerCell(collectionView)
-
+        NovelCollectionType.registerCell(manager)
         // Collection Header: Segment Control
-        let kind = UICollectionView.elementKindSectionHeader
-        SegmentCollectionHeaderView.registerClass(for: collectionView, forSupplementaryViewOfKind: kind)
+        manager.register(SegmentCollectionHeaderView.self, kind: UICollectionView.elementKindSectionHeader)
+        manager.layoutReferenceSize = { _ -> UICollectionReusableView? in
+            self.headerView
+        }
+        manager.dequeueReusableView = { indexPath, _ -> DataSourceManager.DequeueReusableViewReturn in
+            let block: ActionWithObjectBlock = { obj in
+                guard let headerView = obj as? SegmentCollectionHeaderView else { return }
+                headerView.segmentedControl.handler = { [weak self] index in
+                    self?.updateNovelSegment(index)
+                }
+                self.headerView = headerView
+            }
+            return (SegmentCollectionHeaderView.self, block)
+        }
+        // Collection View Cell
+        manager.dequeueView = { indexPath -> UICollectionViewCell.Type in
+            self.viewModel.novelCollectionType.cellType
+        }
+        manager.configureDidSelect = { _, obj in
+            let segue = self.viewModel.novelCollectionType == .recentNovel ?
+                Storyboard.Segue.showNovelReaderView : Storyboard.Segue.showNovelChapterList
+            self.performSegue(withIdentifier: segue, sender: obj)
+        }
     }
 
     // Navigation bar Button action
@@ -48,6 +66,11 @@ final class NovelCollectionViewController: UIViewController, CollectionViewContr
 
 // MARK: Fetch - Novels from backend
 extension NovelCollectionViewController: NovelCollectionViewModelProtocal {
+    func reloadCellObjects() {
+        manager.removeAllObjects()
+        guard let objects = viewModel.currentNovelList else { return }
+        manager.updateCellObjects([objects])
+    }
     
     func showRetryAlert() {
         let alert = UIAlertController(title: Constants.serviceFailureAlertTitle,
@@ -66,57 +89,15 @@ extension NovelCollectionViewController: NovelCollectionViewModelProtocal {
     }
 }
 
-// MARK: UICollectionView delegates
-extension NovelCollectionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate,
-                                         UICollectionViewDataSource, StoryboardSegueProtocol {
-    // viewForSupplementaryElement
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,
-                        at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let headerView: SegmentCollectionHeaderView = try? .dequeue(from: collectionView, ofKind: kind,
-                                                                          for: indexPath) else {
-            return UICollectionReusableView()
-        }
-        self.headerView = headerView
-        headerView.segmentedControl.handler = { [weak self] index in
-            self?.updateNovelSegment(index)
-        }
-        return headerView
-    }
-
-    // numberOfItemsInSection
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.currentNovelList?.count ?? 0
-    }
-
-    // cellForItem
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellType = viewModel.novelCollectionType.cellType
-        guard let cell = try? cellType.dequeue(from: collectionView, for: indexPath) else {
-            return UICollectionViewCell()
-        }
-        // update cell content
-        if let model = viewModel.currentNovelList?[indexPath.row] {
-            (cell as? ConfigureNovelCellProtocol)?.configureContent(content: model, view: collectionView,
-                                                                    indexPath: indexPath)
-        }
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                        referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let height = self.headerView?.preferredLayoutAttributesFitting(.init()).frame.height ?? 50
-        return CGSize(width: view.frame.width, height: height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let model = viewModel.currentNovelList?[indexPath.row] else { return }
-        let segue = viewModel.novelCollectionType == .recentNovel ?
-            Storyboard.Segue.showNovelReaderView : Storyboard.Segue.showNovelChapterList
-        self.performSegue(withIdentifier: segue, sender: model)
-    }
-    
+// MARK: StoryboardSegueProtocol
+extension NovelCollectionViewController: StoryboardSegueProtocol {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         configure(segue: segue, sender: sender)
+    }
+    
+    func setupNavigationBar() {
+        // View Title
+        let rightButtonItem = UIBarButtonItem(itemType: .search)
+        self.setupNavigationbar(title: Constants.novelReaderTitle, rightButton: rightButtonItem)        
     }
 }

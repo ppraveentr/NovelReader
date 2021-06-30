@@ -90,8 +90,7 @@ final class AppManager {
 
     // MARK: LoadingIndicator
     func setupLoadingIndicator() {
-
-        var config: LoadingIndicator.Config = LoadingIndicator.Config()
+        var config: LoaderConfig = LoaderConfig()
         config.backgroundColor = UIColor.clear
         config.spinnerColor = AppTheme.navigationBarColor
         config.titleTextColor = UIColor.white
@@ -99,7 +98,6 @@ final class AppManager {
         config.foregroundColor = AppTheme.barColor
         config.foregroundAlpha = 0.8
         config.title = ""
-
         LoadingIndicator.setConfig(config: config)
     }
 }

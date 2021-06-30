@@ -9,20 +9,7 @@
 import Foundation
 
 // MARK: Novel Cell protocol
-protocol ConfigureNovelCellProtocol {
-    func configureContent(content: AnyObject)
-    func configureContent(content: AnyObject, view: UICollectionView?, indexPath: IndexPath?)
-}
-
-extension ConfigureNovelCellProtocol where Self: UIView {
-    func configureContent(content: AnyObject) {
-        // Optional Protocal implementation: intentionally empty
-    }
-
-    func configureContent(content: AnyObject, view: UICollectionView?, indexPath: IndexPath?) {
-        // Optional Protocal implementation: intentionally empty
-    }
-}
+typealias ConfigureNovelCellProtocol = DSConfigureContentProtocol 
 
 // MARK: UIStoryboardSegue
 protocol StoryboardSegueProtocol {
@@ -32,7 +19,7 @@ protocol StoryboardSegueProtocol {
 extension StoryboardSegueProtocol {
     func configure(segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.Segue.showNovelDetailsView {
-            configureShowNovelDetailsView(segue, sender: sender)
+            // configureShowNovelDetailsView(segue, sender: sender)
         }
         else if segue.identifier == Storyboard.Segue.showNovelChapterList {
             configureShowNovelChapterList(segue, sender: sender)
@@ -48,12 +35,6 @@ extension StoryboardSegueProtocol {
 }
 
 fileprivate extension StoryboardSegueProtocol {
-    func configureShowNovelDetailsView(_ segue: UIStoryboardSegue, sender: Any?) {
-        if let nextViewController = segue.destination as? NovelDetailsViewController {
-            nextViewController.novel = sender as? NovelModel
-        }
-    }
-    
     func configureShowNovelChapterList(_ segue: UIStoryboardSegue, sender: Any?) {
         if let nextViewController = segue.destination as? ChapterListViewController {
             nextViewController.novel = sender as? NovelModel

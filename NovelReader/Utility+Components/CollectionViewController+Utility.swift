@@ -24,25 +24,11 @@ extension UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         layout.sectionInset = sectionInset()
-        layout.headerReferenceSize = CGSize(width: 0, height: 45)
+        layout.headerReferenceSize = CGSize(width: 0, height: 50)
         layout.sectionHeadersPinToVisibleBounds = true
+        layout.minimumInteritemSpacing = 20
+        layout.minimumLineSpacing = 20
         return layout
-    }
-
-    func configureColletionView(_ delegate: UICollectionViewDelegate? = nil, _ source: UICollectionViewDataSource? = nil) {
-        guard let self = self as? CollectionViewControllerProtocol else { return }
-        // Relaod collectionView on exit
-        defer {
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
-        // Setup collectionView once
-        guard self.collectionView.delegate == nil else { return }
-        self.collectionView.theme = ThemeStyle.defaultStyle
-        // Collection delegates
-        self.collectionView.dataSource = source
-        self.collectionView.delegate = delegate
     }
 }
 
@@ -51,7 +37,7 @@ extension UICollectionViewCell {
     func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         var newFrame = layoutAttributes.frame
         let requiredWidth = ceil(screenWidth) - (defaultSectionInset.left + defaultSectionInset.right)
-        newFrame.size = systemLayoutSizeFitting(CGSize(width: requiredWidth, height: .greatestFiniteMagnitude),
+        newFrame.size = systemLayoutSizeFitting(CGSize(width: requiredWidth, height: 200),
                                                 withHorizontalFittingPriority: .required,
                                                 verticalFittingPriority: .fittingSizeLevel)
         layoutAttributes.frame = newFrame

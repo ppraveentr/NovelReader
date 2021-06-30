@@ -11,69 +11,52 @@ import UIKit
 final class ChapterListViewController: UIViewController, TableViewControllerProtocol {
     
     var novel: NovelModel?
-    lazy var novelDescView = NovelDetailsView.fromNib() as? NovelDetailsView
+    lazy var manager = DataSourceManager(delegate: self)
+    lazy var novelDescView: NovelDetailsView? = try? .loadNibFromBundle()
     
     func tableStyle() -> UITableView.Style { .grouped }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        guard let novel = novel else { return }
+        if let novel = novel {
+            fetchNovelDetails(novel: novel)
+        }
+    }
+}
+
+private extension ChapterListViewController {
+    func fetchNovelDetails(novel: NovelModel) {
         NovelServiceProvider.getNovelChaptersList(novel) { [weak self] novelResponse in
-            guard novelResponse != nil, let self = self else {
+            guard let novelResponse = novelResponse, let self = self else {
                 return
             }
-            if let novelResponse = novelResponse {
-                self.novel?.merge(data: novelResponse)
-            }
-            self.configureContent(content: novel)
+            self.novel?.merge(data: novelResponse)
+            self.configureContent()
         }
     }
     
     func configureTableView() {
         setupNavigationBar()
-        // Table View delegate
-        tableView.delegate = self
-        tableView.dataSource = self
         tableView.backgroundColor = .clear
-        NovelChapterViewCell.registerNib(for: tableView)
+        manager.register(NovelChapterViewCell.self)
+        manager.dequeueView = { indexPath -> UITableViewCell.Type in
+            return NovelChapterViewCell.self
+        }
+        manager.configureDidSelect = { _, obj in
+            self.performSegue(withIdentifier: Storyboard.Segue.showNovelReaderView, sender: obj)
+        }
     }
     
-    func configureContent(content: AnyObject) {
-        if let content = content as? NovelModel {
-            self.novelDescView?.configureContent(content: content)
-            self.tableView.setTableHeaderView(view: self.novelDescView)
-            self.tableView.reloadData()
+    func configureContent() {
+        guard let novel = novel else { return }
+        novelDescView?.configureContent(content: novel)
+        tableView.setTableHeaderView(view: self.novelDescView)
+        if let list = novel.chapterList {
+            manager.updateCellObjects([list])
         }
     }
-}
 
-extension ChapterListViewController: UITableViewDataSource, UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        novel?.chapterList?.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = try? NovelChapterViewCell.dequeue(from: tableView, for: indexPath) else {
-            return UITableViewCell()
-        }
-        
-        if let cell = cell as? NovelChapterViewCell, let cur = novel?.chapterList?[indexPath.row] {
-            cell.configureContent(content: cur)
-        }
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cur = novel?.chapterList?[indexPath.row] {
-            self.performSegue(withIdentifier: Storyboard.Segue.showNovelReaderView, sender: cur)
-        }
-    }
-}
-
-extension ChapterListViewController {
     func setupNavigationBar() {
         self.setupNavigationbar(
             title: "",

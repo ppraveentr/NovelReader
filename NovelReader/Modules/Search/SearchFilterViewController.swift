@@ -94,7 +94,7 @@ extension SearchFilterViewController: UICollectionViewDelegateFlowLayout, UIColl
         if
             let cell = cell as? ConfigureNovelCellProtocol,
             let cur = viewModel.cellForItemAt(indexPath) {
-            cell.configureContent(content: cur)
+            cell.configureContent(content: cur, indexPath: indexPath)
         }
 
         return cell
@@ -109,6 +109,5 @@ extension SearchFilterViewController: UICollectionViewDelegateFlowLayout, UIColl
 
 extension SearchFilterViewController: SearchFilterViewModelProtocal {
     func refreshCollectionView() {
-        self.configureColletionView()
     }
 }

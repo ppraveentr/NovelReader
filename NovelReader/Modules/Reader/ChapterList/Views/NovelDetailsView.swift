@@ -33,8 +33,5 @@ final class NovelDetailsView: UITableViewHeaderFooterView {
         self.statusLabel?.text = novel.status
         self.viewsLabel?.text = novel.views
         self.descriptionLabel?.text = novel.contentDescription
-        
-//        setNeedsLayout()
-//        layoutIfNeeded()
     }
 }

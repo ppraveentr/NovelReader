@@ -73,6 +73,9 @@
                 <constraint firstItem="6Gh-98-tSv" firstAttribute="centerY" secondItem="TsU-yb-VIy" secondAttribute="centerY" id="qIx-k6-1ZP"/>
             </constraints>
             <size key="customSize" width="399" height="93"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="theme" value="default"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="lastUpdateTimeLabel" destination="4ZZ-5I-57W" id="7y1-XT-8qQ"/>
                 <outlet property="lastUpdateTitleLabel" destination="eXk-Ac-Emq" id="XVs-o5-ZL8"/>

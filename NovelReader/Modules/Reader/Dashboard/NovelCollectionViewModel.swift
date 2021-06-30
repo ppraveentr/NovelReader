@@ -8,11 +8,11 @@
 
 import Foundation
 
-typealias NovelCollectionLifeCycleDelegate = (ViewControllerProtocol & NovelCollectionViewModelProtocal & UICollectionViewDelegate & UICollectionViewDataSource)
+typealias NovelCollectionLifeCycleDelegate = (ViewControllerProtocol & NovelCollectionViewModelProtocal)
 
 protocol NovelCollectionViewModelProtocal {
     func showRetryAlert()
-    func configureColletionView(_ delegate: UICollectionViewDelegate?, _ source: UICollectionViewDataSource?)
+    func reloadCellObjects()
 }
 
 final class NovelCollectionViewModel {
@@ -30,7 +30,7 @@ final class NovelCollectionViewModel {
     // Update collectionView when contentList changes
     var currentNovelList: [NovelModel]? = [] {
         didSet {
-            lifeDelegate?.configureColletionView(self.lifeDelegate, self.lifeDelegate)
+            lifeDelegate?.reloadCellObjects()
         }
     }
 
@@ -42,7 +42,6 @@ final class NovelCollectionViewModel {
     }
 
     func fetchNovelList() {
-
         switch novelCollectionType {
         case .recentNovel:
             NovelServiceProvider.fetchRecentUpdateList { [weak self] novelList in
@@ -75,8 +74,8 @@ enum NovelCollectionType: Int {
         }
     }
 
-    static func registerCell(_ collectionView: UICollectionView) {
-        RecentNovelCollectionViewCell.registerNib(for: collectionView)
-        NovelCollectionViewCell.registerNib(for: collectionView)
+    static func registerCell(_ manager: DataSourceManager) {
+        manager.register(RecentNovelCollectionViewCell.self)
+        manager.register(NovelCollectionViewCell.self)
     }
 }

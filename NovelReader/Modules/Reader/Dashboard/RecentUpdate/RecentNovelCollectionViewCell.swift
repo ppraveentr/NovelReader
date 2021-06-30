@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecentNovelCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProtocol {
+class RecentNovelCollectionViewCell: UICollectionViewCell {
     @IBOutlet
     private weak var novelTitle: UILabel?
     @IBOutlet
@@ -16,22 +16,21 @@ class RecentNovelCollectionViewCell: UICollectionViewCell, ConfigureNovelCellPro
     @IBOutlet
     private weak var lastUpdateTimeLabel: UILabel?
 
-    weak var collectionView: UICollectionView?
-    var indexPath: IndexPath?
     weak var novelItem: NovelModel?
+}
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.addGrayBorder()
-    }
-    
-    func configureContent(content: AnyObject, view: UICollectionView?, indexPath: IndexPath?) {
+extension RecentNovelCollectionViewCell: ConfigureNovelCellProtocol {
+    func configureContent(content: AnyObject, indexPath: IndexPath?) {
         guard let novel = content as? NovelModel else { return }
+        self.theme = ThemeStyle.defaultStyle
         novelItem = novel
         novelTitle?.text = novel.title
         lastUpdateTitleLabel?.text = "Last Update:"
         lastUpdateTimeLabel?.text = novel.lastUpdated
-        self.collectionView = view
-        self.indexPath = indexPath
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.updateShadowPathIfNeeded()
     }
 }

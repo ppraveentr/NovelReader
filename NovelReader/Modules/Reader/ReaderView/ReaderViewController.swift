@@ -21,10 +21,6 @@ class ReaderViewController: UIViewController, WebViewControllerProtocol {
 //            return self.chapterToolBarItem?.items?.sorted(by: { $0.tag > $1.tag })
 //        }
 //    }
-
-    deinit {
-        self.cleanContentView()
-    }
     
     var fontPicker: FontPickerModel? {
         get {
