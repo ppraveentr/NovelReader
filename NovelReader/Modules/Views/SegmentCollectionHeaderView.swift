@@ -9,31 +9,30 @@
 import Foundation
 
 final class SegmentCollectionHeaderView: UICollectionReusableView {
-    var segmentedControl: UISegmentedControl? = nil
-
+    lazy var segmentedControl: ScrollableSegmentControl = {
+        let view = ScrollableSegmentControl()
+        self.pin(view: view, edgeOffsets: UIEdgeInsets(20, 10, -20, 0))
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setupSegmentView()
+        self.configureUI()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.setupSegmentView()
-    }
-
-    func setupSegmentView(_ items: [Any] = [ kRecentUpdateString, kTopViews ]) {
-        // Remove previous segment
-        segmentedControl?.removeSubviews()
-        segmentedControl = UISegmentedControl(items: items) { ftLog($0) }
-        if let segment = segmentedControl {
-            self.pin(view: segment, edgeOffsets: UIEdgeInsets(10))
-        }
-        
-       setupViewTheme()
+        self.configureUI()
     }
     
-    func setupViewTheme() {
+    func configureUI() {
         self.theme = ThemeStyle.defaultStyle
-        segmentedControl?.theme = ThemeStyle.defaultStyle
+        setupSegmentView()
+    }
+
+    func setupSegmentView(_ items: [String] = [ Constants.recentUpdateString, Constants.topViews ]) {
+        for (index, obj) in items.enumerated() {
+            segmentedControl.insertSegment(withTitle: obj, image: nil, theme: "segment", at: index)
+        }
     }
 }
