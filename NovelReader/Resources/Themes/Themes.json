@@ -84,7 +84,10 @@
 	"components": {
 		"FTView": {
 			"default": {
-				"backgroundColor": "appWhite"
+                "gradientLayer": {
+                    "colors": ["navBar", "navBar", "white"],
+                    "locations": [0.0, 0.5, 1.0]
+                }
 			},
             "clearView": {
                 "backgroundColor": "clear"

@@ -47,7 +47,7 @@ class ReaderViewController: UIViewController, WebViewControllerProtocol {
 
     func setupViewContent() {
         // To hide navBar on scroll
-        contentView.setHideNavigationOnScroll(hide: true)
+        self.hideNavigationOnScroll(for: contentView)
         // Fetch content
         let title = novelChapter?.shortTitle ?? novelChapter?.title ?? novel?.title ?? ""
         self.setupNavigationbar(

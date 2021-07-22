@@ -32,8 +32,8 @@ final class NovelCollectionViewCell: UICollectionViewCell {
     }
     
     override func layoutSubviews() {
-        super.layoutSubviews()
         self.updateShadowPathIfNeeded()
+        super.layoutSubviews()
     }
 }
 

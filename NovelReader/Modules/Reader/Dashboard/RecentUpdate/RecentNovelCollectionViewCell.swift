@@ -30,7 +30,7 @@ extension RecentNovelCollectionViewCell: ConfigureNovelCellProtocol {
     }
     
     override func layoutSubviews() {
-        super.layoutSubviews()
         self.updateShadowPathIfNeeded()
+        super.layoutSubviews()
     }
 }

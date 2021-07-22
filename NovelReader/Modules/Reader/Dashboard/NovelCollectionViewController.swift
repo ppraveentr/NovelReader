@@ -19,7 +19,7 @@ final class NovelCollectionViewController: UIViewController, CollectionViewContr
 
     // View lifecycle
     override func viewDidLoad() {
-        super.viewDidLoad()   
+        super.viewDidLoad()
         // Novel Segment type
         viewModel.novelCollectionType = .recentNovel
         // View Title
@@ -98,6 +98,9 @@ extension NovelCollectionViewController: StoryboardSegueProtocol {
     func setupNavigationBar() {
         // View Title
         let rightButtonItem = UIBarButtonItem(itemType: .search)
-        self.setupNavigationbar(title: Constants.novelReaderTitle, rightButton: rightButtonItem)        
+        self.setupNavigationbar(title: Constants.novelReaderTitle, rightButton: rightButtonItem)
+        // Hide Navigation bar on Scroll
+        self.hideNavigationOnScroll(for: collectionView)
+        self.view.theme = ThemeStyle.defaultStyle
     }
 }
