@@ -26,7 +26,7 @@ final class SegmentCollectionHeaderView: UICollectionReusableView {
     }
     
     func configureUI() {
-        self.theme = ThemeStyle.defaultStyle
+        self.theme = ThemeStyle.defaultStyle.rawValue
         setupSegmentView()
     }
 

@@ -101,6 +101,6 @@ extension NovelCollectionViewController: StoryboardSegueProtocol {
         self.setupNavigationbar(title: Constants.novelReaderTitle, rightButton: rightButtonItem)
         // Hide Navigation bar on Scroll
         self.hideNavigationOnScroll(for: collectionView)
-        self.view.theme = ThemeStyle.defaultStyle
+        self.view.theme = ThemeStyle.defaultStyle.rawValue
     }
 }

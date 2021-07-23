@@ -22,7 +22,7 @@ class RecentNovelCollectionViewCell: UICollectionViewCell {
 extension RecentNovelCollectionViewCell: ConfigureNovelCellProtocol {
     func configureContent(content: AnyObject, indexPath: IndexPath?) {
         guard let novel = content as? NovelModel else { return }
-        self.theme = ThemeStyle.defaultStyle
+        self.theme = ThemeStyle.defaultStyle.rawValue
         novelItem = novel
         novelTitle?.text = novel.title
         lastUpdateTitleLabel?.text = "Last Update:"

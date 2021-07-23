@@ -40,7 +40,7 @@ final class NovelCollectionViewCell: UICollectionViewCell {
 extension NovelCollectionViewCell: ConfigureNovelCellProtocol {
     func configureContent(content: AnyObject, indexPath: IndexPath? = nil) {
         guard let novel = content as? NovelModel else { return }
-        self.theme = ThemeStyle.defaultStyle
+        self.theme = ThemeStyle.defaultStyle.rawValue
         if let urlString = novel.imageURL, let url = URL(string: urlString) {
             self.contentImageView?.downloadedFrom(url, defaultImage: defaultImage)
         }

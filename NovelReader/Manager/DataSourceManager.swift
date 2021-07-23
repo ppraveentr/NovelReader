@@ -101,7 +101,7 @@ extension DataSourceManager: UITableViewDelegate, UITableViewDataSource {
     func configureTable(delegate: UITableViewDelegate? = nil, source: UITableViewDataSource? = nil) {
         guard let tableView = tableView else { return }
         // Setup TableView
-        tableView.theme = ThemeStyle.defaultStyle
+        tableView.theme = ThemeStyle.defaultStyle.rawValue
         // TableView delegates
         tableView.dataSource = source
         tableView.delegate = delegate
@@ -161,7 +161,7 @@ extension DataSourceManager {
     func configureCollection(delegate: UICollectionViewDelegate? = nil, source: UICollectionViewDataSource? = nil) {
         guard let collectionView = collectionView else { return }
         // Setup TableView
-        collectionView.theme = ThemeStyle.defaultStyle
+        collectionView.theme = ThemeStyle.defaultStyle.rawValue
         // CollectionView delegates
         collectionView.dataSource = source
         collectionView.delegate = delegate

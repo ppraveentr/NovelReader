@@ -20,11 +20,12 @@
             "cornerRadius": 22
         },
         "elevatedGrey": {
+            "cornerRadius": 10,
             "masksToBounds": false,
             "shadowPath": true,
             "shadowColor": "navBar",
-            "shadowRadius": 1.0,
-            "shadowOpacity": 0.35
+            "shadowRadius": 5.0,
+            "shadowOpacity": 0.15
         }
     },
 	"font": {
