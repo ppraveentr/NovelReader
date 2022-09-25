@@ -12,25 +12,27 @@ final class ChapterListViewController: UIViewController, TableViewControllerProt
     
     var novel: NovelModel?
     lazy var manager = DataSourceManager(delegate: self)
-    lazy var novelDescView: NovelDetailsView? = try? .loadNibFromBundle()
+//    lazy var novelDescView: NovelDetailsView? = try? .loadNibFromBundle()
+    lazy var novelDescView: NovelDescriptionView? = try? .loadNibFromBundle()
     
     func tableStyle() -> UITableView.Style { .grouped }
 
+    override func topSafeAreaLayoutGuide() -> Bool { false }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         if let novel = novel {
             fetchNovelDetails(novel: novel)
         }
+        setBarStatus(hidden: false)
     }
 }
 
 private extension ChapterListViewController {
     func fetchNovelDetails(novel: NovelModel) {
         NovelServiceProvider.getNovelChaptersList(novel) { [weak self] novelResponse in
-            guard let novelResponse = novelResponse, let self = self else {
-                return
-            }
+            guard let self = self, let novelResponse = novelResponse else { return }
             self.novel?.merge(data: novelResponse)
             self.configureContent()
         }
@@ -40,7 +42,7 @@ private extension ChapterListViewController {
         setupNavigationBar()
         tableView.backgroundColor = .clear
         manager.register(NovelChapterViewCell.self)
-        manager.dequeueView = { indexPath -> UITableViewCell.Type in
+        manager.dequeueView = { _ -> UITableViewCell.Type in
             return NovelChapterViewCell.self
         }
         manager.configureDidSelect = { _, obj in

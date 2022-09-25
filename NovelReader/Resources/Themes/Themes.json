@@ -95,6 +95,9 @@
             },
             "halfView": {
                 "backgroundColor": "halfBlack"
+            },
+            "appWhite": {
+                "backgroundColor": "appWhite"
             }
 		},
         "UIView": {

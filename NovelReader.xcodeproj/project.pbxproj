@@ -59,6 +59,9 @@
 		DEBC6550209764790057F649 /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6531209764790057F649 /* SearchStoryboard.storyboard */; };
 		DEBC65552097661F0057F649 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC65542097661F0057F649 /* SearchCollectionViewController.swift */; };
 		DEC1D76E268C108300F452E1 /* DataSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC1D76D268C108300F452E1 /* DataSourceManager.swift */; };
+		DED7171126AB1F2C0098D16E /* FontPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7170E26AB1F2C0098D16E /* FontPickerView.swift */; };
+		DED7171226AB1F2C0098D16E /* FontPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7170F26AB1F2C0098D16E /* FontPickerViewController.swift */; };
+		DED7171326AB1F2C0098D16E /* FontPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED7171026AB1F2C0098D16E /* FontPickerView.xib */; };
 		DED79A00217DD6740021116A /* SearchFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED799FF217DD6740021116A /* SearchFilterViewModel.swift */; };
 		DED97546259639D900B0EE72 /* AppManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED97545259639D900B0EE72 /* AppManagerTests.swift */; };
 		DEDC0A2F2068BCC80013D84F /* NovelServiceRules.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDC0A2E2068BCC80013D84F /* NovelServiceRules.plist */; };
@@ -162,6 +165,9 @@
 		DEBC65532097649B0057F649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEBC65542097661F0057F649 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
 		DEC1D76D268C108300F452E1 /* DataSourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceManager.swift; sourceTree = "<group>"; };
+		DED7170E26AB1F2C0098D16E /* FontPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontPickerView.swift; sourceTree = "<group>"; };
+		DED7170F26AB1F2C0098D16E /* FontPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontPickerViewController.swift; sourceTree = "<group>"; };
+		DED7171026AB1F2C0098D16E /* FontPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FontPickerView.xib; sourceTree = "<group>"; };
 		DED799FF217DD6740021116A /* SearchFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterViewModel.swift; sourceTree = "<group>"; };
 		DED97543259639D900B0EE72 /* NovelReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NovelReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED97545259639D900B0EE72 /* AppManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManagerTests.swift; sourceTree = "<group>"; };
@@ -423,6 +429,7 @@
 		DEBC651E209764790057F649 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DED7170D26AB1F2C0098D16E /* FontPicker */,
 				DE3834732172538F00DD4B27 /* Views */,
 				DEBC651F209764790057F649 /* Reader */,
 				DEBC6530209764790057F649 /* Search */,
@@ -472,6 +479,16 @@
 				DEBC65532097649B0057F649 /* Info.plist */,
 			);
 			path = plist;
+			sourceTree = "<group>";
+		};
+		DED7170D26AB1F2C0098D16E /* FontPicker */ = {
+			isa = PBXGroup;
+			children = (
+				DED7170E26AB1F2C0098D16E /* FontPickerView.swift */,
+				DED7170F26AB1F2C0098D16E /* FontPickerViewController.swift */,
+				DED7171026AB1F2C0098D16E /* FontPickerView.xib */,
+			);
+			path = FontPicker;
 			sourceTree = "<group>";
 		};
 		DED97544259639D900B0EE72 /* NovelReaderTests */ = {
@@ -621,6 +638,7 @@
 				DEE935132094CDA000B10398 /* Assets.xcassets in Resources */,
 				DEBC654A209764790057F649 /* NovelChapterViewCell.xib in Resources */,
 				DEAD3422205826660064C46A /* Bindings in Resources */,
+				DED7171326AB1F2C0098D16E /* FontPickerView.xib in Resources */,
 				DEBC6550209764790057F649 /* SearchStoryboard.storyboard in Resources */,
 				DEDC0A2F2068BCC80013D84F /* NovelServiceRules.plist in Resources */,
 				DEBC653A209764790057F649 /* RecentNovelCollectionViewCell.xib in Resources */,
@@ -710,11 +728,13 @@
 				DE818246208356BA001316E5 /* ServiceRecentUpdatesList.swift in Sources */,
 				DEBC654E209764790057F649 /* ChapterListViewController.swift in Sources */,
 				DE4EBE662067B6F5008AC70B /* ServiceNovelList.swift in Sources */,
+				DED7171126AB1F2C0098D16E /* FontPickerView.swift in Sources */,
 				DEA7E1A31F497B5D0002C148 /* ViewController+Extension.swift in Sources */,
 				DEA7E1B71F49A67F0002C148 /* AppManager.swift in Sources */,
 				DE84280A20558FE8006605C0 /* NovelModel.swift in Sources */,
 				DEC1D76E268C108300F452E1 /* DataSourceManager.swift in Sources */,
 				DE4AEA992687AF9100C873AB /* NovelDetailsView.swift in Sources */,
+				DED7171226AB1F2C0098D16E /* FontPickerViewController.swift in Sources */,
 				DEBC6534209764790057F649 /* ReaderViewController.swift in Sources */,
 				DEBC65552097661F0057F649 /* SearchCollectionViewController.swift in Sources */,
 				DEBC6536209764790057F649 /* NovelCollectionViewController.swift in Sources */,

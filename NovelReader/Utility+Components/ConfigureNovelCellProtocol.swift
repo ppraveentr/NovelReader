@@ -43,7 +43,6 @@ fileprivate extension StoryboardSegueProtocol {
     
     func configureShowNovelReaderView(_ segue: UIStoryboardSegue, sender: Any?) {
         let readerController: ReaderViewController?
-        
         if let nav = segue.destination as? UINavigationController {
             readerController = nav.viewControllers.first as? ReaderViewController
         }
@@ -58,14 +57,14 @@ fileprivate extension StoryboardSegueProtocol {
     }
     
     func configureShowFontPicker(_ segue: UIStoryboardSegue, sender: Any?) {
-//        if let controller = segue.destination as? FontPickerViewController {
-//            if let self = self as? FontPickerViewProtocol {
-//                controller.fontPickerViewDelegate = self
-//            }
-//            if let self = self as? UIPopoverPresentationControllerDelegate {
-//                controller.popoverPresentationController?.delegate = self
-//            }
-//            controller.preferredContentSize = CGSize(width: 250, height: 320)
-//        }
+        if let controller = segue.destination as? FontPickerViewController {
+            if let self = self as? FontPickerViewProtocol {
+                controller.fontPickerViewDelegate = self
+            }
+            if let self = self as? UIPopoverPresentationControllerDelegate {
+                controller.popoverPresentationController?.delegate = self
+            }
+            controller.preferredContentSize = CGSize(width: 250, height: 320)
+        }
     }
 }

@@ -18,7 +18,7 @@ public extension DataSourceManager {
     // Collection View
     typealias DequeueReusableViewReturn = (type: UICollectionReusableView.Type, block: ActionWithObjectBlock?)
     typealias DequeueReusableViewBlock = (_ indexPath: IndexPath, _ kind: String) -> DequeueReusableViewReturn
-    typealias referenceSizeBlock = (_ section: Int) -> UICollectionReusableView?
+    typealias ReferenceSizeBlock = (_ section: Int) -> UICollectionReusableView?
     // Common
     typealias DequeueViewBlock = (_ indexPath: IndexPath) -> UIView.Type
     typealias DidSelectCellBlock = (_ indexPath: IndexPath, _ object: AnyObject) -> Void
@@ -29,7 +29,7 @@ open class DataSourceManager: NSObject {
     var dequeueView: DequeueViewBlock?
     var dequeueReusableView: DequeueReusableViewBlock?
     var configureDidSelect: DidSelectCellBlock?
-    var layoutReferenceSize: referenceSizeBlock?
+    var layoutReferenceSize: ReferenceSizeBlock?
 
     var tableDelegate: TableViewControllerProtocol? {
         didSet {

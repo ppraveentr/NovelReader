@@ -22,16 +22,18 @@ class ReaderViewController: UIViewController, WebViewControllerProtocol {
 //        }
 //    }
     
-//    var fontPicker: FontPickerModel? {
-//        get {
-//            UserCacheManager.getCachedObject(forType: FontPickerModel.self) as? FontPickerModel
-//        }
-//        set {
-//            if let fontPicker = newValue {
-//                UserCacheManager.setCacheObject(fontPicker, forType: FontPickerModel.self)
-//            }
-//        }
-//    }
+    var fontPicker: FontPickerModel? {
+        get {
+            UserCacheManager.getCachedObject(forType: FontPickerModel.self) as? FontPickerModel
+        }
+        set {
+            if let fontPicker = newValue {
+                UserCacheManager.setCacheObject(fontPicker, forType: FontPickerModel.self)
+            }
+        }
+    }
+    
+    override func topSafeAreaLayoutGuide() -> Bool { false }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,14 +112,14 @@ extension ReaderViewController: UIPopoverPresentationControllerDelegate, Storybo
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-//        if let fontPickerController = controller.presentedViewController as? FontPickerViewController {
-//            if self.fontPicker == nil {
-//                self.fontPicker = fontPickerController.fontPickerModel
-//            }
-//            else {
-//                fontPickerController.fontPickerModel = self.fontPicker
-//            }
-//        }
+        if let fontPickerController = controller.presentedViewController as? FontPickerViewController {
+            if self.fontPicker == nil {
+                self.fontPicker = fontPickerController.fontPickerModel
+            }
+            else {
+                fontPickerController.fontPickerModel = self.fontPicker
+            }
+        }
         return .none
     }
 }
