@@ -27,8 +27,8 @@ final class NovelDescriptionView: UITableViewHeaderFooterView {
     func configureContent(content: AnyObject) {
         guard let novel = content as? NovelModel else { return }
 
-        if let url = novel.imageURL {
-            self.contentImageView?.downloadedFrom(link: url, defaultImage: nil)
+        if let urlString = novel.imageURL, let url = URL(string: urlString) {
+            self.contentImageView?.downloadedFrom(url, defaultImage: nil)
         }
         self.titleLabel?.text = novel.title
         self.descriptionLabel?.text = novel.contentDescription

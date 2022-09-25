@@ -8,17 +8,12 @@
 
 import Foundation
 
-class SelectionCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProtocol {
+class SelectionCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet
     private var titleLabel: UILabel?
     @IBOutlet
     private var checkMarkImage: UIImageView?
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.addBorder()
-    }
 
     override var isSelected: Bool {
         didSet {
@@ -26,7 +21,7 @@ class SelectionCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProto
             checkMarkImage?.isHidden = !isSelected
 
             if isSelected {
-                self.layer.borderColor = kNavigationBarColor.cgColor
+                self.layer.borderColor = AppTheme.navigationBarColor.cgColor
             }
             else {
                 self.layer.borderColor = UIColor.gray.cgColor
@@ -34,20 +29,11 @@ class SelectionCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProto
         }
     }
 
-    func configureContent(content: AnyObject) {
-        if let searchFilter = content as? FilterModel {
-            self.titleLabel?.text = searchFilter.type
-        }
-
-        setNeedsLayout()
-        layoutIfNeeded()
-    }
-
     func addBorder() {
         self.layer.cornerRadius = 8
 
         // border
-        self.layer.borderColor = kNavigationBarColor.cgColor
+        self.layer.borderColor = AppTheme.navigationBarColor.cgColor
         self.layer.borderWidth = 0.5
 
         // drop shadow
@@ -68,5 +54,15 @@ class SelectionCollectionViewCell: UICollectionViewCell, ConfigureNovelCellProto
             newFrame.size.height = ceil(size.height)
             layoutAttributes.frame = newFrame
             return layoutAttributes
+    }
+}
+
+extension SelectionCollectionViewCell: ConfigureNovelCellProtocol {
+    func configureContent(content: AnyObject, indexPath: IndexPath?) {
+        if let searchFilter = content as? FilterModel {
+            self.titleLabel?.text = searchFilter.type
+        }
+        setNeedsLayout()
+        layoutIfNeeded()
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b1N-KR-xHQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b1N-KR-xHQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,22 +20,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Bfs-eg-ZLe"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Bfs-eg-ZLe"/>
                     <connections>
-                        <segue destination="tP7-z7-4Ne" kind="show" identifier="kShowNovelChapterList" id="WkK-Ij-5Tn"/>
-                        <segue destination="4eN-BC-EyU" kind="presentation" identifier="kShowNovelReaderView" id="fSp-SM-qua"/>
                         <segue destination="80R-PJ-s8a" kind="presentation" identifier="kSearchStoryboardID" modalPresentationStyle="fullScreen" id="bMb-2j-5H3"/>
+                        <segue destination="29H-3o-t4f" kind="presentation" identifier="kShowNovelReaderView" modalPresentationStyle="overFullScreen" id="tZe-l8-3vV"/>
+                        <segue destination="tP7-z7-4Ne" kind="show" identifier="kShowNovelChapterList" animates="NO" id="FPM-6T-aSc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2628" y="358"/>
+            <point key="canvasLocation" x="2670" y="358"/>
         </scene>
-        <!--Novel Chapter View Controller-->
+        <!--Chapter List View Controller-->
         <scene sceneID="UhB-cv-9ef">
             <objects>
-                <viewController storyboardIdentifier="NovelChapterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tP7-z7-4Ne" customClass="NovelChapterViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NovelChapterViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tP7-z7-4Ne" customClass="ChapterListViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WRy-C6-geq"/>
                         <viewControllerLayoutGuide type="bottom" id="MET-v2-xev"/>
@@ -48,25 +47,25 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="theme" value="default"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <navigationItem key="navigationItem" id="7bC-Bl-Bmm"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="7bC-Bl-Bmm"/>
                     <connections>
-                        <segue destination="4eN-BC-EyU" kind="presentation" identifier="kShowNovelReaderView" id="N08-mK-hS3"/>
+                        <segue destination="29H-3o-t4f" kind="presentation" identifier="kShowNovelReaderView" modalPresentationStyle="overFullScreen" id="Dya-nU-n04"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="izn-Cb-Qc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3567" y="358"/>
+            <point key="canvasLocation" x="3490" y="358"/>
         </scene>
         <!--Reader View Controller-->
         <scene sceneID="4hy-43-CL3">
             <objects>
-                <viewController id="sKg-cZ-zqw" customClass="ReaderViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="sKg-cZ-zqw" customClass="ReaderViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vMM-5n-pHr"/>
                         <viewControllerLayoutGuide type="bottom" id="spt-6q-3YW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dpE-fc-eO6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <userDefinedRuntimeAttributes>
@@ -75,6 +74,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="QlO-ka-8Ou"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="fontPickerBarItem" destination="bdI-Le-MFg" id="8JR-0I-jIF"/>
                     </connections>
@@ -82,18 +82,18 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RC7-Jv-W4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <barButtonItem image="filter" width="45" style="plain" id="bdI-Le-MFg">
                     <connections>
-                        <segue destination="afr-kd-Wru" kind="popoverPresentation" identifier="kShowFontPicker" popoverAnchorBarButtonItem="bdI-Le-MFg" id="iz1-PS-4L4">
+                        <segue destination="afr-kd-Wru" kind="popoverPresentation" identifier="kShowFontPicker" popoverAnchorBarButtonItem="bdI-Le-MFg" id="2XE-UV-Z4Z">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>
                 </barButtonItem>
             </objects>
-            <point key="canvasLocation" x="3567.1999999999998" y="1157.2713643178411"/>
+            <point key="canvasLocation" x="3490" y="1122"/>
         </scene>
         <!--Font Picker View Controller-->
         <scene sceneID="cAT-De-duD">
             <objects>
-                <viewController definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" modalPresentationStyle="pageSheet" id="afr-kd-Wru" customClass="FontPickerViewController" customModule="MobileCore" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" modalPresentationStyle="pageSheet" id="afr-kd-Wru" customClass="FontPickerViewController" customModule="NovelReader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VVU-n6-w4s"/>
                         <viewControllerLayoutGuide type="bottom" id="9Qh-cd-LLz"/>
@@ -106,6 +106,7 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="theme" value="default"/>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <navigationItem key="navigationItem" id="0Gl-mN-LiW"/>
                     <value key="contentSizeForViewInPopover" type="size" width="250" height="320"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -115,36 +116,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqd-qv-diI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4343.1999999999998" y="1156.3718140929536"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="AWa-xD-Ofm">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnTap="YES" id="4eN-BC-EyU" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RaO-So-NJG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="sKg-cZ-zqw" kind="relationship" relationship="rootViewController" id="JUD-4x-eVJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h08-FB-yHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2628" y="1157.2713643178411"/>
+            <point key="canvasLocation" x="4278" y="1122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aaX-Aw-qtB">
             <objects>
-                <navigationController storyboardIdentifier="kNovelReaderStroyboardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b1N-KR-xHQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="tNg-m4-Q2z"/>
+                <navigationController storyboardIdentifier="kNovelReaderStroyboardID" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b1N-KR-xHQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" selectedImage="close-circle" systemItem="topRated" id="tNg-m4-Q2z"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k1K-4i-tFe">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="k1K-4i-tFe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -162,13 +145,33 @@
                 <viewControllerPlaceholder storyboardName="SearchStoryboard" referencedIdentifier="kSearchStoryboardID" id="80R-PJ-s8a" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5T-JR-d1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1996" y="869"/>
+            <point key="canvasLocation" x="1840" y="830"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pRp-7R-3yS">
+            <objects>
+                <navigationController id="29H-3o-t4f" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="H6O-AL-VhI"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JJc-JC-itG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sKg-cZ-zqw" kind="relationship" relationship="rootViewController" id="hU3-iC-Snf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J52-Uz-ELg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2670" y="1122"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fSp-SM-qua"/>
+        <segue reference="tZe-l8-3vV"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="close-circle" width="22" height="22"/>
         <image name="filter" width="22" height="22"/>
     </resources>
 </document>

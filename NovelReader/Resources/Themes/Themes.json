@@ -2,19 +2,32 @@
 	"type": "Themes",
 	"color": {
 		"default": "#000000",
-		"AA": "#16c5ce",
 		"clear": "clear",
-		"black": "#000000",
-		"appRed": "#DD6060",
-		"navBarRed": "#DF6E6E",
-		"appWhite": "#F7F3F0",
+		"black": "#293551",
+		"appBase": "#F8F8F8",
+		"navBar": "#293551",
+		"appWhite": "#F8F8F8",
         "halfBlack": "#9A9A9A99",
+        "arrow": "#666666",
 		"blue": "#1059ce",
-		"green": "#10ce1a",
+		"green": "#2CA4BF",
 		"yellow": "#cecb10",
-		"white": "#FFFFFF",
-		"gray": "#A9A9A9"
+		"white": "#E8E8E8",
+		"gray": "#A2A2A2"
 	},
+    "layer": {
+        "roundButton" : {
+            "cornerRadius": 22
+        },
+        "elevatedGrey": {
+            "cornerRadius": 10,
+            "masksToBounds": false,
+            "shadowPath": true,
+            "shadowColor": "navBar",
+            "shadowRadius": 5.0,
+            "shadowOpacity": 0.15
+        }
+    },
 	"font": {
 		"default": {
 			"name": "system",
@@ -54,7 +67,7 @@
 		"UINavigationBar:UINavigationController": {
 			"barTintColor": "white",
 			"tintColor": "white",
-			"isTranslucent": true,
+			"isTranslucent": false,
 			"backgroundImage": {
 				"default": "@Pixel",
 				"landScape": "@Pixel"
@@ -66,21 +79,45 @@
 		},
 		"UIToolbar:UINavigationController": {
 			"barTintColor": "white",
-			"isTranslucent": true
+			"isTranslucent": false
 		}
 	},
 	"components": {
 		"FTView": {
 			"default": {
-				"backgroundColor": "appWhite"
+                "gradientLayer": {
+                    "colors": ["navBar", "navBar", "white"],
+                    "locations": [0.0, 0.5, 1.0]
+                }
 			},
             "clearView": {
                 "backgroundColor": "clear"
             },
             "halfView": {
                 "backgroundColor": "halfBlack"
+            },
+            "appWhite": {
+                "backgroundColor": "appWhite"
             }
 		},
+        "UIView": {
+            "default": {
+                "backgroundColor": "appWhite"
+            },
+            "underline": {
+                "backgroundColor": "green"
+            }
+        },
+        "RecentNovelCollectionViewCell": {
+            "default": {
+                "layer": "elevatedGrey"
+            }
+        },
+        "NovelCollectionViewCell": {
+            "default": {
+                "layer": "elevatedGrey"
+            }
+        },
         "SectionHeaderView": {
             "default": {
                 "backgroundColor": "appWhite"
@@ -97,19 +134,19 @@
         },
 		"SegmentCollectionHeaderView": {
 			"default": {
-				"backgroundColor": "navBarRed"
+				"backgroundColor": "navBar"
 			}
 		},
         "SearchBarHeaderView": {
             "default": {
-                "backgroundColor": "navBarRed"
+                "backgroundColor": "navBar"
             }
         },
         "UISearchBar": {
             "default": {
                 "textcolor": "white",
                 "tintColor": "white",
-                "barTintColor": "navBarRed"
+                "barTintColor": "navBar"
             }
         },
         "UISegmentedControl": {
@@ -117,7 +154,7 @@
                "tintColor": "white",
                "iOS12Style": true,
                "ios_13": {
-                   "tintColor": "navBarRed",
+                   "tintColor": "navBar",
                    "textcolor": "white"
                }
            }
@@ -130,7 +167,7 @@
 			},
 			"button14R": {
 				"_super": "default",
-				"textcolor": "appRed"
+				"textcolor": "appBase"
 			},
 			"button14R:highlighted": {
 				"_super": "default",
@@ -143,15 +180,22 @@
             "buttonR17bW": {
                 "textfont": "bold17",
                 "textcolor": "white",
-                "backgroundColor": "appRed"
+                "backgroundColor": "appBase"
+            },
+            "segment": {
+                "_super": "default",
+                "textfont": "system17",
+                "textcolor": "gray"
+            },
+            "segment:selected": {
+                "textfont": "bold17",
+                "textcolor": "white"
             },
 			"googleButton": {
 				"_super": "default",
 				"image": "@google",
 				"backgroundColor": "white",
-				"layer": {
-					"cornerRadius": 22
-				}
+				"layer": "roundButton"
 			}
 		},
 		"UILabel": {
@@ -169,12 +213,12 @@
 			"system17R": {
 				"_super": "default",
 				"textfont": "system17",
-				"textcolor": "appRed"
+				"textcolor": "black"
 			},
 			"selectionCell": {
 				"_super": "default",
                 "textfont": "system17",
-				"textcolor": "appRed"
+				"textcolor": "black"
 			},
             "selectionCell:disabled": {
                 "_super": "default",

@@ -9,9 +9,12 @@
 import UIKit
 
 @UIApplicationMain
-class NRAppDelegate: AppDelegate {
-    override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions
+                        launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         AppManager.setupApplication()
-        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+        return true
     }
 }
