@@ -6,7 +6,10 @@
 //  Copyright © 2017 Praveen Prabhakar. All rights reserved.
 //
 
-import Foundation
+import AppTheming
+import CoreComponents
+import CoreUtility
+import NetworkLayer
 
 final class NovelCollectionViewController: UIViewController, CollectionViewControllerProtocol {
     // View Model
@@ -37,7 +40,7 @@ final class NovelCollectionViewController: UIViewController, CollectionViewContr
         manager.layoutReferenceSize = { _ -> UICollectionReusableView? in
             self.headerView
         }
-        manager.dequeueReusableView = { indexPath, _ -> DataSourceManager.DequeueReusableViewReturn in
+        manager.dequeueReusableView = { _, _ -> DataSourceManager.DequeueReusableViewReturn in
             let block: ActionWithObjectBlock = { obj in
                 guard let headerView = obj as? SegmentCollectionHeaderView else { return }
                 headerView.segmentedControl.handler = { [weak self] index in
@@ -48,7 +51,7 @@ final class NovelCollectionViewController: UIViewController, CollectionViewContr
             return (SegmentCollectionHeaderView.self, block)
         }
         // Collection View Cell
-        manager.dequeueView = { indexPath -> UICollectionViewCell.Type in
+        manager.dequeueView = { _ -> UICollectionViewCell.Type in
             self.viewModel.novelCollectionType.cellType
         }
         manager.configureDidSelect = { _, obj in
@@ -100,7 +103,7 @@ extension NovelCollectionViewController: StoryboardSegueProtocol {
         let rightButtonItem = UIBarButtonItem(itemType: .search)
         self.setupNavigationbar(title: Constants.novelReaderTitle, rightButton: rightButtonItem)
         // Hide Navigation bar on Scroll
-        self.hideNavigationOnScroll(for: collectionView)
+        // self.hideNavigationOnScroll(for: collectionView)
         self.view.theme = ThemeStyle.defaultStyle.rawValue
     }
 }

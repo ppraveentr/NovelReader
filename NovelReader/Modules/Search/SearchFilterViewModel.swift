@@ -6,7 +6,7 @@
 //  Copyright © 2018 Praveen Prabhakar. All rights reserved.
 //
 
-import Foundation
+import CoreComponents
 
 typealias SearchFilterLifeCycleDelegate = (ViewControllerProtocol & SearchFilterViewModelProtocal)
 
@@ -17,7 +17,7 @@ protocol SearchFilterViewModelProtocal {
 class SearchFilterViewModel {
 
     weak var lifeDelegate: SearchFilterLifeCycleDelegate?
-    var modelStack: SearchFilterModel? = nil {
+    var modelStack: SearchFilterModel? {
         didSet {
             lifeDelegate?.refreshCollectionView()
         }

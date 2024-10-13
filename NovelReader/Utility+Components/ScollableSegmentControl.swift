@@ -6,7 +6,7 @@
 //  Copyright © 2021 Praveen Prabhakar. All rights reserved.
 //
 
-import Foundation
+import CoreUtility
 
 final class ScrollableSegmentControl: UIScrollView {
     typealias SegmentHandler = ( (_ index: Int) -> Void )
@@ -56,7 +56,7 @@ private extension ScrollableSegmentControl {
     func didSelectSegement(data: SegmentData) {
         selectedSegment = data
         let index: Int = segmentsList.firstIndex(of: data) ?? 0
-        //setContentOffset(CGPoint(x: data.view.frame.origin.x - 100, y: 0), animated: true)
+        // setContentOffset(CGPoint(x: data.view.frame.origin.x - 100, y: 0), animated: true)
         handler?(index)
     }
     

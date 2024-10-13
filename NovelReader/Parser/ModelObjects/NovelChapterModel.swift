@@ -1,3 +1,5 @@
+import NetworkLayer
+
 final class NovelChapterModel: ServiceModel {
 
     // Request Model

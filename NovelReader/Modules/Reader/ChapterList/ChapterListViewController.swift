@@ -6,7 +6,8 @@
 //  Copyright © 2017 Praveen Prabhakar. All rights reserved.
 //
 
-import UIKit
+import CoreComponents
+import CoreUtility
 
 final class ChapterListViewController: UIViewController, TableViewControllerProtocol {
     
@@ -25,7 +26,7 @@ final class ChapterListViewController: UIViewController, TableViewControllerProt
         if let novel = novel {
             fetchNovelDetails(novel: novel)
         }
-        setBarStatus(hidden: false)
+//        setBarStatus(hidden: false)
     }
 }
 
@@ -43,7 +44,7 @@ private extension ChapterListViewController {
         tableView.backgroundColor = .clear
         manager.register(NovelChapterViewCell.self)
         manager.dequeueView = { _ -> UITableViewCell.Type in
-            return NovelChapterViewCell.self
+            NovelChapterViewCell.self
         }
         manager.configureDidSelect = { _, obj in
             self.performSegue(withIdentifier: Storyboard.Segue.showNovelReaderView, sender: obj)

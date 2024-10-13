@@ -1,3 +1,5 @@
+import NetworkLayer
+
 final class NovelModel: ServiceModel {
     var identifier: String?
     var lastChapter: String?

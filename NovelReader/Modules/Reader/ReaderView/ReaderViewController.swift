@@ -6,7 +6,9 @@
 //  Copyright © 2017 Praveen Prabhakar. All rights reserved.
 //
 
-import Foundation
+import CoreComponents
+import CoreUtility
+import NetworkLayer
 
 class ReaderViewController: UIViewController, WebViewControllerProtocol {
     
@@ -49,7 +51,7 @@ class ReaderViewController: UIViewController, WebViewControllerProtocol {
 
     func setupViewContent() {
         // To hide navBar on scroll
-        self.hideNavigationOnScroll(for: contentView)
+        // self.hideNavigationOnScroll(for: contentView)
         // Fetch content
         let title = novelChapter?.shortTitle ?? novelChapter?.title ?? novel?.title ?? ""
         self.setupNavigationbar(

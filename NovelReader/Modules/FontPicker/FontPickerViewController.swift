@@ -12,7 +12,7 @@ open class FontPickerViewController: UIViewController {
     
     lazy var pickerView: FontPickerView? = try? FontPickerView.loadNibFromBundle()
     
-    open var fontPickerViewDelegate: FontPickerViewProtocol? = nil {
+    open var fontPickerViewDelegate: FontPickerViewProtocol? {
         didSet {
             pickerView?.pickerDelegate = fontPickerViewDelegate
         }

@@ -6,6 +6,8 @@
 //  Copyright © 2017 Praveen Prabhakar. All rights reserved.
 //
 
+import NetworkLayer
+
 final class NovelListModel: ServiceModel {
     // TODO: Yet to setup model creator for Static data
     var state: String?

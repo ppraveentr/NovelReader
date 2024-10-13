@@ -6,7 +6,8 @@
 //  Copyright © 2018 Praveen Prabhakar. All rights reserved.
 //
 
-import Foundation
+import AppTheming
+import CoreComponents
 
 class SearchBarHeaderView: FTView {
     var searchBar: UISearchBar?

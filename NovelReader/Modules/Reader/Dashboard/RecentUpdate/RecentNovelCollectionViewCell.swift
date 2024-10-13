@@ -6,7 +6,7 @@
 //  Copyright © 2018 Praveen Prabhakar. All rights reserved.
 //
 
-import UIKit
+import AppTheming
 
 class RecentNovelCollectionViewCell: UICollectionViewCell {
     @IBOutlet

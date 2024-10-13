@@ -6,7 +6,7 @@
 //  Copyright © 2018 Praveen Prabhakar. All rights reserved.
 //
 
-import Foundation
+import CoreUtility
 
 // default collectionView SectionInset
 private var defaultSectionInset: UIEdgeInsets {
@@ -33,7 +33,7 @@ extension UIViewController {
 }
 
 extension UICollectionViewCell {
-    open override
+    override open
     func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         var newFrame = layoutAttributes.frame
         let requiredWidth = ceil(screenWidth) - (defaultSectionInset.left + defaultSectionInset.right)

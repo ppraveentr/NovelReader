@@ -6,7 +6,7 @@
 //  Copyright © 2017 Praveen Prabhakar. All rights reserved.
 //
 
-import Foundation
+import AppTheming
 
 final class NovelCollectionViewCell: UICollectionViewCell {
     @IBOutlet

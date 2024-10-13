@@ -6,7 +6,7 @@
 //  Copyright © 2018 Praveen Prabhakar. All rights reserved.
 //
 
-import Foundation
+import AppTheming
 
 final class SegmentCollectionHeaderView: UICollectionReusableView {
     lazy var segmentedControl: ScrollableSegmentControl = {

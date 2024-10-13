@@ -6,7 +6,8 @@
 //  Copyright © 2017 Praveen Prabhakar. All rights reserved.
 //
 
-import Foundation
+import CoreComponents
+import NetworkLayer
 
 enum NovelServiceProvider {
     // Get list of all Novels
@@ -21,25 +22,25 @@ enum NovelServiceProvider {
 
     // Get list of all Novels
     static func fetchNovelList(novel: NovelListModel?, completionHandler: @escaping (_ novelsList: NovelListModel?) -> Void) {
-        LoadingIndicator.show()
-        ServiceNovelList.make(modelStack: nil) { response in
-            LoadingIndicator.hide()
-            let res = response.status.responseModel as? NovelListModel
-            if let novelList = res?.response {
-                let novel = novel ?? NovelListModel()
-//                if(novel.novelList == nil) {
-                    novel.novelList = []
-//                }
-                novel.novelList?.append(contentsOf: novelList)
-            }
-            completionHandler(novel)
-//            //FIXIT: Has be done in ServiceClient
-//            if let novelResponse = res?.responseStack as? NRNovels {
-//                var novel = novel
-//                novel!.merge(data: novelResponse)
-//                completionHandler(novel)
+//        LoadingIndicator.show()
+//        ServiceNovelList.make { response in
+//            LoadingIndicator.hide()
+//            let res = response.status.responseModel as? NovelListModel
+//            if let novelList = res?.response {
+//                let novel = novel ?? NovelListModel()
+////                if(novel.novelList == nil) {
+//                    novel.novelList = []
+////                }
+//                novel.novelList?.append(contentsOf: novelList)
 //            }
-        }
+//            completionHandler(novel)
+////            //FIXIT: Has be done in ServiceClient
+////            if let novelResponse = res?.responseStack as? NRNovels {
+////                var novel = novel
+////                novel!.merge(data: novelResponse)
+////                completionHandler(novel)
+////            }
+//        }
     }
     
     // Get list of all chapters from a single NRNovelObject

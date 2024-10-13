@@ -6,7 +6,8 @@
 //  Copyright © 2018 Praveen Prabhakar. All rights reserved.
 //
 
-import Foundation
+import CoreComponents
+import NetworkLayer
 
 typealias NovelCollectionLifeCycleDelegate = (ViewControllerProtocol & NovelCollectionViewModelProtocal)
 
@@ -53,7 +54,7 @@ final class NovelCollectionViewModel {
                 }
             }
         case .topNovel:
-            NovelServiceProvider.fetchNovelList(novel: self.novel) { [weak self] novelList in
+            NovelServiceProvider.fetchNovelList(novel: self.novel) { [weak self] _ in
                 self?.currentNovelList = self?.novel?.novelList
             }
         }

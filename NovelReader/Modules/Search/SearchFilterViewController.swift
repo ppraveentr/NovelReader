@@ -6,7 +6,7 @@
 //  Copyright © 2018 Praveen Prabhakar. All rights reserved.
 //
 
-import Foundation
+import CoreComponents
 
 class SearchFilterViewController: UIViewController, CollectionViewControllerProtocol {
 
