@@ -6,7 +6,8 @@
 //  Copyright © 2018 Praveen Prabhakar. All rights reserved.
 //
 
-import Foundation
+import CoreComponents
+import NetworkLayer
 
 typealias NRSearchCollectionLifeCycleDelegate = (ViewControllerProtocol & SearchCollectionViewModelProtocal)
 
@@ -33,7 +34,7 @@ class SearchCollectionViewModel {
 
     // get-Novels from backend
     func searchNovel(keywoard: String) {
-        guard keywoard.count > 0 else { return }
+        guard keywoard.isEmpty else { return }
 
         NovelServiceProvider.searchNovel(keyword: keywoard) { novelList in
             self.currentNovelList = novelList

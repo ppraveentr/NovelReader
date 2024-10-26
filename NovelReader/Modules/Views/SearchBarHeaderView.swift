@@ -6,7 +6,8 @@
 //  Copyright © 2018 Praveen Prabhakar. All rights reserved.
 //
 
-import Foundation
+import AppTheming
+import CoreComponents
 
 class SearchBarHeaderView: FTView {
     var searchBar: UISearchBar?
@@ -29,11 +30,9 @@ class SearchBarHeaderView: FTView {
     }
 
     func setupSearchBar() {
-
-        self.theme = ThemeStyle.defaultStyle
-
+        self.theme = ThemeStyle.defaultStyle.rawValue
         searchBar = UISearchBar(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 44)))
-        searchBar?.theme = ThemeStyle.defaultStyle
+        searchBar?.theme = ThemeStyle.defaultStyle.rawValue
         searchBar?.delegate = searchBarDelegate
 
         if let searchBar = searchBar {

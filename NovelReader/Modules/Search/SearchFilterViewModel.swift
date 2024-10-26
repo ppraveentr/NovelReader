@@ -6,7 +6,7 @@
 //  Copyright © 2018 Praveen Prabhakar. All rights reserved.
 //
 
-import Foundation
+import CoreComponents
 
 typealias SearchFilterLifeCycleDelegate = (ViewControllerProtocol & SearchFilterViewModelProtocal)
 
@@ -17,7 +17,7 @@ protocol SearchFilterViewModelProtocal {
 class SearchFilterViewModel {
 
     weak var lifeDelegate: SearchFilterLifeCycleDelegate?
-    var modelStack: SearchFilterModel? = nil {
+    var modelStack: SearchFilterModel? {
         didSet {
             lifeDelegate?.refreshCollectionView()
         }
@@ -90,15 +90,15 @@ extension SearchFilterViewModel {
 
     // Collection cell
     var numberOfSections: Int {
-        return sectionItems.count
+        sectionItems.count
     }
 
     func numberOfItemsInSection(_ section: Int) -> Int {
-        return sectionItems[section].contentArray.count
+        sectionItems[section].contentArray.count
     }
 
     func sectionTitleAt(_ indexPath: IndexPath) -> String {
-        return sectionItems[indexPath.section].type.headerTitle
+        sectionItems[indexPath.section].type.headerTitle
     }
 
     func cellForItemAt(_ indexPath: IndexPath) -> FilterModel? {

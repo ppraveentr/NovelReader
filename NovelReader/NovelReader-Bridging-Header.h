@@ -4,4 +4,5 @@
 
 #pragma mark - Mobile Core
 
-@import MobileCore;
+@import UIKit;
+@import Foundation;

@@ -1,0 +1,56 @@
+//
+//  NovelCollectionViewCell.swift
+//  NovelReader
+//
+//  Created by Praveen Prabhakar on 20/08/17.
+//  Copyright © 2017 Praveen Prabhakar. All rights reserved.
+//
+
+import AppTheming
+
+final class NovelCollectionViewCell: UICollectionViewCell {
+    @IBOutlet
+    private var titleLabel: UILabel?
+    @IBOutlet
+    private var contentImageView: UIImageView?
+
+    @IBOutlet
+    private var chapterLabel: UILabel?
+    @IBOutlet
+    private var genresLabel: UILabel?
+    @IBOutlet
+    private var typeLabel: UILabel?
+    @IBOutlet
+    private var statusButton: UIButton?
+    @IBInspectable
+    private var defaultImage: UIImage?
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        // Reset image
+        self.contentImageView?.image = nil
+    }
+    
+    override func layoutSubviews() {
+        self.updateShadowPathIfNeeded()
+        super.layoutSubviews()
+    }
+}
+
+extension NovelCollectionViewCell: ConfigureNovelCellProtocol {
+    func configureContent(content: AnyObject, indexPath: IndexPath? = nil) {
+        guard let novel = content as? NovelModel else { return }
+        self.theme = ThemeStyle.defaultStyle.rawValue
+        if let urlString = novel.imageURL, let url = URL(string: urlString) {
+            self.contentImageView?.downloadedFrom(url, defaultImage: defaultImage)
+        }
+        self.titleLabel?.text = novel.title
+        self.chapterLabel?.text = novel.author
+        if var genres = novel.genres?.joined(separator: ", ") {
+            genres = "Genres: " + genres
+            self.genresLabel?.text = genres
+        }
+        self.typeLabel?.text = novel.novelType
+        self.statusButton?.setTitle(novel.status ?? "", for: .normal)
+    }
+}

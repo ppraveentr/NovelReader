@@ -35,18 +35,6 @@ Packages/
 Package.pins
 .build/
 
-# CocoaPods
-Pods/
-Pods/*
-Pods/**/*
-
-# Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
-Carthage/Build
-
 # fastlane
 #
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
@@ -64,4 +52,3 @@ Frameworks/
 .DS_Store
 
 *.xcuserstate
-Podfile.lock

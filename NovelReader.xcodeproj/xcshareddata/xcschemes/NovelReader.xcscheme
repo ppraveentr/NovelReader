@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1210"
+   LastUpgradeVersion = "1610"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DEA7E1551F496BAB0002C148"
+               BlueprintIdentifier = "DED97542259639D900B0EE72"
                BuildableName = "NovelReaderTests.xctest"
                BlueprintName = "NovelReaderTests"
                ReferencedContainer = "container:NovelReader.xcodeproj">
